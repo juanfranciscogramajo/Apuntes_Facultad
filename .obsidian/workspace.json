@@ -11,10 +11,14 @@
             "id": "9b6a9865b781fa86",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "OBJ1/Teoria/a.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "title": "a"
             }
           }
         ]
@@ -179,11 +183,25 @@
       "daily-notes:Abrir la nota de hoy": false,
       "templates:Insertar plantilla": false,
       "command-palette:Abrir paleta de comandos": false,
-      "bases:Crear nueva base": false
+      "bases:Crear nueva base": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "f2f6aa1a85234347",
   "lastOpenFiles": [
+    "OBJ1/Practica/a.md",
+    "OBJ1/Teoria/a.md",
+    "OBJ1/Material/a.md",
+    "ISO/Teoria/a.md",
+    "ISO/Practica/a.md",
+    "ISO/Material/a.md",
+    "ING1/Teoria/a.md",
+    "ING1/Practica/a.md",
+    "ING1/Material/a.md",
+    "DBD/Teoria/a.md",
+    "DBD/Practica/a.md",
+    "DBD/Material/a.md",
+    "git",
     "OBJ1/Material",
     "ISO/Material",
     "ING1/Material",
@@ -193,8 +211,6 @@
     "OBJ1",
     "ING1/Teoria",
     "ING1/Practica",
-    "ING1",
-    "DBD/Practica",
     "Sin título.md",
     "Bienvenido.md"
   ]
