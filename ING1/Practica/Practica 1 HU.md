@@ -1,5 +1,4 @@
-># Plantilla
->># [Número del Ejercicio] - [Título del Sistema/Módulo]
+# (PLANTILLA)[Número del Ejercicio] - [Título del Sistema/Módulo]
 
 **Rol de usuarios:**
 - [Rol 1]
@@ -193,18 +192,18 @@
 
 **Historias de usuario:**
 - Registro Usuario
-- 
+- Compra de productos.
 
-> [!info] FRENTE - ID: [Nombre o código de la HU]
-> **Como** [Rol del usuario]
-> **Quiero** [Acción u objetivo]
-> **Para** [Beneficio o valor]
+> [!info] FRENTE - ID: Registro Usuario
+> **Como** Usuario
+> **Quiero** Registrar mis datos
+> **Para** poder hacer una compra
 > 
 > > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
-> > - [Regla 1]
-> > - [Regla 2]
-> > 
+> > - Se registren al sitio personas mayores a 18 años y mostrar en pantalla el texto de la ley que impide la venta de bebidas alcohólicas a menores.
+> > - Si el registro es exitoso el sistema genera una contraseña que es enviada al email ingresado en el registro.
+> >
 > > **Criterios de aceptación ([Nombre de la historia]):**
 > > **Escenario 1: [Nombre del escenario exitoso]**
 > > - **Dado** [Condición inicial]
