@@ -4,9 +4,9 @@
 
 ==FRENTE==
 
->[!Important]ID:
+ID:
 
-Titulo: Como quiero para
+==Titulo==: Como quiero para
 
 REGLAS DE NEGOCIO:
 
