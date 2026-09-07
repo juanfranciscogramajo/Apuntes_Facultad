@@ -1,6 +1,6 @@
 ---
 epoch: 1788818150261
-modelKey: "google/gemini-2.5-flash|openrouterai"
+modelKey: "d11201c8-1cb9-4510-8a63-5fcd2bf34409"
 topic: "Revisión de la Práctica 1"
 
 tags:
@@ -215,3 +215,39 @@ La base conceptual está muy sólida. Los flujos cubren las reglas de negocio so
 - Al completar el ingreso, el sistema debe emitir aviso al conserje (para guiar al huésped) y a los botones (
 <errorChunk>[GoogleGenerativeAI Error]: Failed to parse stream</errorChunk>
 [Timestamp: 2026/09/07 18:59:31]
+
+**user**: <font color="#ff0000">Rol de usuarios:</font>
+
+<font color="#ff0000">Historias de usuario:</font>
+
+<p align="right"><font color="#de7802">FRENTE</font></p>
+
+<font color="#ff0000">ID:</font>
+
+<font color="#ff0000">Titulo: Como quiero para</font>
+
+<font color="#ff0000">REGLAS DE NEGOCIO:</font>
+
+<p align="right"><font color="#f79646">REVERSO</font></p>
+
+<font color="#ff0000">Criterios de aceptación:</font>
+
+<font color="#ffc000">Escenario :</font>
+
+<font color="#00b050">Dado</font>
+
+<font color="#00b050">cuando</font>
+
+<font color="#00b050">entonces</font>
+esta es la plantilla para hacer las historias de usuario. Necesito que sigas esa plantilla para las historias de usuarios del documento
+[Context: Notes: ING1/Practica/Practica 1 HU.md]
+[Timestamp: 2026/09/07 20:21:48]
+
+**ai**: 
+<errorChunk>[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:streamGenerateContent?alt=sse: [429 ] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro
+Please retry in 12.474506733s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"model":"gemini-3.1-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.1-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.1-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerDay-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.1-pro"}}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"12s"}]</errorChunk>
+[Timestamp: 2026/09/07 20:21:48]

@@ -1,26 +1,26 @@
-**Rol de usuarios:
+<font color="#ff0000">Rol de usuarios:</font>
 
-Historias de usuario:
+<font color="#ff0000">Historias de usuario:</font>
 
 <p align="right"><font color="#de7802">FRENTE</font></p>
 
-ID:
+<font color="#ff0000">ID:</font>
 
-Titulo: Como quiero para
+<font color="#ff0000">Titulo: Como quiero para</font>
 
-REGLAS DE NEGOCIO:
+<font color="#ff0000">REGLAS DE NEGOCIO:</font>
 
-REVERSO
+<p align="right"><font color="#f79646">REVERSO</font></p>
 
-Criterios de aceptación:
+<font color="#ff0000">Criterios de aceptación:</font>
 
-Escenario :
+<font color="#ffc000">Escenario :</font>
 
-Dado
+<font color="#00b050">Dado</font>
 
-cuando
+<font color="#00b050">cuando</font>
 
-entonces
+<font color="#00b050">entonces</font>
 
   
 
@@ -254,4 +254,4 @@ Dado que una habitación posee consumos o gastos pendientes de pago, 
 
 cuando el conserje intenta ingresar su número para procesar la salida, 
 
-entonces el sistema le advierte que no puede hacerse el check-out hasta que el usuario abone los gastos.**
+entonces el sistema le advierte que no puede hacerse el check-out hasta que el usuario abone los gastos.

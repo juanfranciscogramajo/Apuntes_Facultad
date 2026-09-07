@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "0e127e4194c6d18a",
+        "id": "6006355a85d97ef6",
         "type": "tabs",
         "children": [
           {
-            "id": "e7d03892b3f1cd7e",
+            "id": "eead92b8ff182394",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "ING1/Practica/Practica 1 HU.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "title": "Practica 1 HU"
             }
           }
         ]
@@ -79,7 +83,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "befe0b92c4573c88",
@@ -113,6 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "ING1/Practica/Practica 1 HU.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -155,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Bienvenido.md",
+                "file": "ING1/Practica/Practica 1 HU.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -165,7 +171,7 @@
             }
           },
           {
-            "id": "8640f8885582b98a",
+            "id": "87366823269ad375",
             "type": "leaf",
             "state": {
               "type": "git-view",
@@ -175,17 +181,27 @@
             }
           },
           {
-            "id": "a1bf1211232b593e",
+            "id": "93675662fa931923",
             "type": "leaf",
             "state": {
-              "type": "advanced-tables-toolbar",
+              "type": "copilot-agent-chat-view",
               "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
+              "icon": "copilot-agent",
+              "title": "Copilot Agent"
+            }
+          },
+          {
+            "id": "0edeceb8a8c048ee",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-chat-view",
+              "state": {},
+              "icon": "message-square",
+              "title": "Copilot (Quick Chat)"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -201,49 +217,50 @@
       "command-palette:Abrir paleta de comandos": false,
       "bases:Crear nueva base": false,
       "obsidian-git:Open Git source control": false,
-      "omnisearch:Omnisearch": false,
       "templater-obsidian:Templater": false,
+      "omnisearch:Omnisearch": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-excalidraw-plugin:Nuevo Bosquejo": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "copilot:Open Copilot Agent Chat": false
     }
   },
-  "active": "e7d03892b3f1cd7e",
+  "active": "eead92b8ff182394",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
-    "copilot/skills/openartifacts-publish/themes/research-memo.md",
+    "copilot/copilot-conversations/Revisión_de_la_Práctica_1@20260907_185550.md",
+    "copilot/copilot-conversations/Revisión_de_texto_de_práctica@20260907_185419.md",
+    "copilot/copilot-conversations",
+    "copilot/skills/obsidian-cli/SKILL.md",
+    "copilot/skills/obsidian-cli/LICENSE",
+    "copilot/skills/obsidian-cli",
+    "copilot/skills/json-canvas/SKILL.md",
+    "copilot/skills/json-canvas/LICENSE",
+    "copilot/skills/json-canvas/references/EXAMPLES.md",
+    "copilot/skills/json-canvas/references",
+    "copilot/skills/json-canvas",
+    "copilot/skills/obsidian-bases/SKILL.md",
+    "copilot/skills/obsidian-bases/LICENSE",
+    "copilot/skills/obsidian-bases/references/EXAMPLES.md",
+    "copilot/skills/obsidian-bases/references/FUNCTIONS_REFERENCE.md",
+    "copilot/skills/obsidian-bases/references",
+    "copilot/skills/obsidian-bases",
+    "copilot/skills/obsidian-markdown/SKILL.md",
+    "copilot/skills/obsidian-markdown/LICENSE",
     "copilot/skills/obsidian-markdown/references/PROPERTIES.md",
     "copilot/skills/obsidian-markdown/references/EMBEDS.md",
     "copilot/skills/obsidian-markdown/references/CALLOUTS.md",
-    "copilot/skills/obsidian-bases/references/FUNCTIONS_REFERENCE.md",
-    "copilot/skills/obsidian-bases/references/EXAMPLES.md",
-    "copilot/skills/json-canvas/references/EXAMPLES.md",
-    "copilot/skills/openartifacts-publish/themes",
     "copilot/skills/openartifacts-publish/SKILL.md",
-    "copilot/skills/openartifacts-publish/openartifacts-publish.sh",
-    "copilot/skills/openartifacts-publish/openartifacts-publish.ps1",
-    "copilot/skills/openartifacts-publish/openartifacts-publish.cmd",
-    "copilot/skills/obsidian-markdown/SKILL.md",
-    "copilot/skills/obsidian-markdown/references",
-    "copilot/skills/obsidian-markdown/LICENSE",
-    "copilot/skills/obsidian-cli/SKILL.md",
-    "copilot/skills/obsidian-cli/LICENSE",
-    "copilot/skills/obsidian-bases/SKILL.md",
-    "copilot/skills/obsidian-bases/references",
-    "copilot/skills/obsidian-bases/LICENSE",
-    "copilot/skills/json-canvas/references",
-    "copilot/skills/json-canvas/SKILL.md",
-    "copilot/skills/copilot-youtube-transcript/SKILL.md",
-    "copilot/skills/copilot-web-search/SKILL.md",
-    "copilot/skills/copilot-web-fetch/SKILL.md",
-    "copilot/skills/copilot-read-pdf/SKILL.md",
+    "copilot/skills/openartifacts-publish/themes/research-memo.md",
     "copilot/skills/copilot-fetch-x/SKILL.md",
-    "copilot/copilot-conversations/Revisión_de_texto_de_práctica@20260907_185419.md",
-    "copilot/copilot-conversations/Revisión_de_la_Práctica_1@20260907_185550.md",
-    "ING1/Teoria/a.md",
-    "Excalidraw/Drawing 2026-09-07 18.29.33.excalidraw.md",
+    "copilot/skills/copilot-youtube-transcript/SKILL.md",
+    "copilot/skills/copilot-read-pdf/SKILL.md",
+    "copilot/skills/copilot-web-fetch/SKILL.md",
+    "copilot/skills/copilot-web-search/SKILL.md",
     "ING1/Practica/Practica 1 HU.md",
+    "DBD/Practica/a.md",
     "DBD/Material/Link Material.md",
-    "OBJ1/Material/Link Material.md",
-    "ISO/Material/Link Material.md"
+    "ING1/Material/Link Material.md",
+    "conflict-files-obsidian-git.md",
+    "DBD/Teoria/a.md",
+    "OBJ1/Material/Link Material.md"
   ]
 }
