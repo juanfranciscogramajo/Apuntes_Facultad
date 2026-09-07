@@ -1,24 +1,24 @@
 **Rol de usuarios:
 
-==Historias de usuario:==
+Historias de usuario:
 
-==FRENTE==
+<font color="#de7802">FRENTE</font>
 
 ID:
 
-==Titulo==: Como quiero para
+Titulo: Como quiero para
 
 REGLAS DE NEGOCIO:
 
-<mark style="background: #BBFABBA6;">REVERSO</mark> 
+REVERSO
 
 Criterios de aceptación:
 
-<mark style="background: #FF5582A6;">Escenario</mark> :
+Escenario :
 
-#Dado
+Dado
 
->!important Cuando
+cuando
 
 entonces
 
