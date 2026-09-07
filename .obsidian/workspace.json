@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OBJ1/Teoria/a.md",
+                "file": "DBD/Teoria/a.md",
                 "mode": "source",
                 "source": false
               },
@@ -167,13 +167,23 @@
               "icon": "lucide-list",
               "title": "Esquema"
             }
+          },
+          {
+            "id": "87366823269ad375",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -187,20 +197,20 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f2f6aa1a85234347",
+  "active": "9b6a9865b781fa86",
   "lastOpenFiles": [
-    "OBJ1/Practica/a.md",
+    "OBJ1/Material/Link Material.md",
+    "ISO/Material/Link Material.md",
+    "DBD/Material/Link Material.md",
+    "ING1/Material/Link Material.md",
+    "ING1/Practica/a.md",
+    "ING1/Teoria/a.md",
     "OBJ1/Teoria/a.md",
-    "OBJ1/Material/a.md",
+    "OBJ1/Practica/a.md",
     "ISO/Teoria/a.md",
     "ISO/Practica/a.md",
-    "ISO/Material/a.md",
-    "ING1/Teoria/a.md",
-    "ING1/Practica/a.md",
-    "ING1/Material/a.md",
     "DBD/Teoria/a.md",
     "DBD/Practica/a.md",
-    "DBD/Material/a.md",
     "git",
     "OBJ1/Material",
     "ISO/Material",
