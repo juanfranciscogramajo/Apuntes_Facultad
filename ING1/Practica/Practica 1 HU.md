@@ -10,15 +10,15 @@ ID:
 
 REGLAS DE NEGOCIO:
 
-REVERSO
+<mark style="background: #BBFABBA6;">REVERSO</mark> 
 
 Criterios de aceptación:
 
-Escenario :
+<mark style="background: #FF5582A6;">Escenario</mark> :
 
-Dado
+#Dado
 
-cuando
+>!important Cuando
 
 entonces
 
