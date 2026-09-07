@@ -1,0 +1,16 @@
+diff --git a/.obsidian/community-plugins.json b/.obsidian/community-plugins.json
+index 000000..000000 100644
+--- a/.obsidian/community-plugins.json
++++ b/.obsidian/community-plugins.json
+@@ -1,0 +1,10 @@
++[
++  "obsidian-git",
++  "highlightr-plugin",
++  "omnisearch",
++  "obsidian-outliner",
++  "templater-obsidian",
++  "obsidian-excalidraw-plugin",
++  "table-editor-obsidian",
++  "editing-toolbar"
++]
+\ No newline at end of file

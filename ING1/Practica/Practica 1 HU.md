@@ -1,12 +1,12 @@
 **Rol de usuarios:
 
-==Historias de usuario:==
+Historias de usuario:
 
-==FRENTE==
+<font color="#de7802">FRENTE</font>
 
 ID:
 
-==Titulo==: Como quiero para
+Titulo: Como quiero para
 
 REGLAS DE NEGOCIO:
 
