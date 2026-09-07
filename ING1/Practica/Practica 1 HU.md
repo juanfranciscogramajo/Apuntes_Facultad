@@ -2,7 +2,7 @@
 
 Historias de usuario:
 
-<font color="#de7802">FRENTE</font>
+<p align="right"><font color="#de7802">FRENTE</font></p>
 
 ID:
 
