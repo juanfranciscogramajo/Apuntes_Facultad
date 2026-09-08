@@ -295,6 +295,37 @@
 > > - **entonces** el sistema le informa que debe autenticarse para poder realizar un prestamo.
 > >
 
+ >[!info] FRENTE - ID: Agregar elementos
+> **Como** administrador
+> **Quiero** agregar nuevos elementos
+> **Para** formar parte de un kit y se pueda prestar
+> 
+> > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
+> > **REGLAS DE NEGOCIO:**
+> > - Precio de compra no puede superar el millon de pesos
+> > - Un usuario no puede solicitar un préstamo si tiene algún préstamo anterior activo
+> > 
+> > **Criterios de aceptación (Prestamo de un kit):**
+> > **Escenario 1: Usuario realiza un prestamo correctamente**
+> > - **Dado** un usuario que previamente inicio sesion,
+> > - **cuando** selecciona el kit basico, dia 8, hora 12:00 y la duracion de 2 horas,
+> > - **entonces** el sistema detecta que el usuario no tiene ningún préstamo activo y lo registra en la web.
+> > 
+> > **Escenario 2: Usuario intenta prestamo mayor a 3 horas**
+> > - **Dado** un usuario autenticado,
+> > - **cuando** selecciona el kit avanzado, dia 9, hora 11, y duracion de 5 horas,
+> > - **entonces** el sistema indica que la duracion maxima de un prestamo es 3 horas.
+> > 
+> >**Escenario 3: Usuario intenta prestamo teniendo uno activo**
+> > - **Dado** un usuario autenticado,
+> > - **cuando** elige la opcion de realizar un prestamo,
+> > - **entonces** el sistema le informa que tiene un prestamo activo.
+> > 
+> >**Escenario 4: Usuario intenta prestamo sin autenticarse**
+> > - **Dado** un usuario,
+> > - **cuando** elige la opcion de realizar un prestamo,
+> > - **entonces** el sistema le informa que debe autenticarse para poder realizar un prestamo.
+> >
 
 
 
