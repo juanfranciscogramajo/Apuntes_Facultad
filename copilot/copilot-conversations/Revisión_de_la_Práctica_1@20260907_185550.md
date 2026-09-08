@@ -81,7 +81,7 @@ La base conceptual está muy sólida. Los flujos cubren las reglas de negocio so
 [Context: Notes: ING1/Practica/Practica 1 HU.md]
 [Timestamp: 2026/09/07 18:58:14]
 
-**ai**: Aquí tienes la versión completa y corregida de la práctica, lista para reemplazar o actualizar en tu nota [[Practica 1 HU]]:
+**ai**: Aquí tienes la versión completa y corregida de la práctica, lista para reemplazar o actualizar en tu nota [[Practica 2 HU]]:
 
 ---
 
