@@ -260,24 +260,24 @@
 - Administradores
 
 **Historias de usuario:**
-- Prestamo de un kit
+- Préstamo de un kit
 - Agregar nuevos elementos
 
 > [!info] FRENTE - ID: Prestamo de un kit
-> **Como** usuario(estudiante o docente)
-> **Quiero** solicitar el prestamo de un kit
+> **Como** usuario (estudiante o docente)
+> **Quiero** solicitar el préstamo de un kit
 > **Para** un trabajo academico.
 > 
 > > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
-> > - [Regla 1]
-> > - [Regla 2]
+> > - Los prestamos no pueden durar mas de 3 horas
+> > - Un usuario no puede solicitar un préstamo si tiene algún préstamo anterior activo
 > > 
 > > **Criterios de aceptación ([Nombre de la historia]):**
-> > **Escenario 1: [Nombre del escenario exitoso]**
-> > - **Dado** [Condición inicial]
-> > - **cuando** [Acción que realiza el usuario]
-> > - **entonces** [Resultado esperado del sistema]
+> > **Escenario 1: Usuario realiza un prestamo correctamente**
+> > - **Dado** un usuario que previamente inicio sesion,
+> > - **cuando** selecciona el kit basico, dia 8, hora 12:00 y la duracion de 2 horas,
+> > - **entonces** el sistema detecta que el usuario no tiene ningún préstamo activo y lo registra en la web.
 > > 
 > > **Escenario 2: [Nombre del escenario alternativo/fallido]**
 > > - **Dado** [Condición inicial]
