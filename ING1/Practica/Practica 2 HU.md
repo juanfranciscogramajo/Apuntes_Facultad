@@ -273,16 +273,21 @@
 > > - Los prestamos no pueden durar mas de 3 horas
 > > - Un usuario no puede solicitar un préstamo si tiene algún préstamo anterior activo
 > > 
-> > **Criterios de aceptación ([Nombre de la historia]):**
+> > **Criterios de aceptación (Prestamo de un kit):**
 > > **Escenario 1: Usuario realiza un prestamo correctamente**
 > > - **Dado** un usuario que previamente inicio sesion,
 > > - **cuando** selecciona el kit basico, dia 8, hora 12:00 y la duracion de 2 horas,
 > > - **entonces** el sistema detecta que el usuario no tiene ningún préstamo activo y lo registra en la web.
 > > 
-> > **Escenario 2: [Nombre del escenario alternativo/fallido]**
-> > - **Dado** [Condición inicial]
-> > - **cuando** [Acción]
-> > - **entonces** [Resultado]
+> > **Escenario 2: Usuario intenta prestamo mayor a 3 horas**
+> > - **Dado** un usuario autenticado,
+> > - **cuando** selecciona el kit avanzado, dia 9, hora 11, y duracion de 5 horas,
+> > - **entonces** el sistema indica que la duracion maxima de un prestamo es 3 horas.
+> > 
+> >**Escenario 3: Usuario intenta prestamo teniendo uno activo**
+> > - **Dado** un usuario autenticado,
+> > - **cuando** intenta realizar un prestamo,
+> > - **entonces** el sistema le informa que tiene un prestamo activo.
 
 
 
