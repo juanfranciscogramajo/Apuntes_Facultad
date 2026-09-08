@@ -194,12 +194,12 @@
 - Registro Usuario  
 - Compra de productos.
 
-> [!info] FRENTE - ID: Registro Usuario
-> **Como** Usuario
+> [!info] HU FRENTE - ID: Registro Usuario
+> **Como** persona
 > **Quiero** Registrar mis datos
-> **Para** poder hacer una compra
+> **Para** poder hacer una compra de bebidas alcoholicas
 > 
-> > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
+> > [!info]- HU REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
 > > - Se registren al sitio personas mayores a 18 años y mostrar en pantalla el texto de la ley que impide la venta de bebidas alcohólicas a menores.
 > > - Si el registro es exitoso el sistema genera una contraseña que es enviada al email ingresado en el registro.
@@ -210,11 +210,12 @@
 > > - **Dado** los datos de una persona mayor a 18 años y con mail unico 
 > > - **cuando** el usuario confirma los datos
 > > - **entonces** el sistema genera una contraseña que es enviada al email ingresado en el registro
-
+> > - 
 > > **Escenario 2: Fallo en registro por mail de usuario repetido**
 > > - **Dado** el ingreso de datos de una persona mayor a 18 anIos 
 > > - **cuando** el usuario confirma los datos ingresados,
 > > - **entonces** el sistema informa de un error ya que el mail se encuentra registrado.
+> > - 
 > >**Escenario 3 Fallo en registro por edad ingresada**
 > > - **Dado** el ingreso los datos personales 
 > > - **cuando** el usuario ingresa una edad menor a 19 años,
