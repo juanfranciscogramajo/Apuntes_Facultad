@@ -256,17 +256,17 @@
 # 4 - Prestamos de Kits
 
 **Rol de usuarios:**
-- [Rol 1]
-- [Rol 2]
+- Usuario
+- Administradores
 
 **Historias de usuario:**
-- [Nombre de la historia 1]
-- [Nombre de la historia 2]
+- Prestamo de un kit
+- Agregar nuevos elementos
 
-> [!info] FRENTE - ID: [Nombre o código de la HU]
-> **Como** [Rol del usuario]
-> **Quiero** [Acción u objetivo]
-> **Para** [Beneficio o valor]
+> [!info] FRENTE - ID: Prestamo de un kit
+> **Como** usuario(estudiante o docente)
+> **Quiero** solicitar el prestamo de un kit
+> **Para** un trabajo academico.
 > 
 > > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
