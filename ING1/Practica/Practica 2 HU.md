@@ -363,12 +363,13 @@
 
 > [!info] FRENTE - ID: Solicitar licencia medica
 > **Como** empleado 
-> **Quiero** solicitar una licencia
+> **Quiero** solicitar una licencia medica
 > **Para** justificar la inasistencia por motivos de salud propios o de un familiar
 > 
 > > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
 > > - Para poder solicitar una licencia el empleado debe tener más de 1 mes de antigüedad sino se rechaza.
+> > - El empleado debe estar registrado y autenticado en el sistema.
 > > - podrá solicitar una licencia un empleado que no tenga una licencia vigente.
 > > - Para solicitar una licencia debe ingresar el tipo de licencia (presencial o telemedicina), la fecha de inicio de reposo, la matrícula de su médico personal, el diagnóstico y si es para el titular o para un familiar enfermo.
 > > - el sistema debe generar un código de licencia y lo envía vía mail a la casilla del empleado con la confirmación de la licencia y los días otorgados.
@@ -376,15 +377,15 @@
 > > **Criterios de aceptación (Solicitar una licencia):**
 > > **Escenario 1: Empleado solicita licencia exitosamente**
 > > - **Dado** un empleado registrado, autenticado en el sistema, sin tener una licencia vigente y antiguedad de mas de 1 mes,
-> > - **cuando** solicita una licencia con los datos, tipo de licencia presencial, fecha de inicio de reposo 02/10/2026, matricula del medico personal 1250Ml, por operacion de vista, para el titular,
-> > - **entonces** el sistema genera un codigo y lo envia al mail del empleado con la confirmacion de la licencia y los dias otorgados.
+> > - **cuando** solicita una licencia con los datos, tipo de licencia presencial, fecha de inicio de reposo 02/10/2026, matricula del medico personal 1250Ml, por operacion de vista, para el titular y confirma el formulario,
+> > - **entonces** el sistema genera un codigo y lo envia al mail del empleado con la confirmacion de la licencia, los dias otorgados y registra la solicitud.
 > > 
 > > **Escenario 2: Empleado con antiguedad de 20 dias solicita licencia**
 > > - **Dado** un empleado registrado, autenticado en el sistema, con una antiguedad de 20 dias,
 > > - **cuando** solicita una licencia con los datos, tipo de licencia presencial, fecha de inicio de reposo 02/10/2026, matricula del medico personal 1250Ml, por operacion de vista, para el titular,
 > > - **entonces** el sistema detecta que el empleado tiene antiguedad menor de 1 mes y informa el rechazo de la licencia.
 > >
-> >**Escenario 3: Empleado solicita licencia con una licencia activa**
+> >**Escenario 3: Solicitud  fallida licencia con una licencia activa**
 > > - **Dado** un empleado registrado y autenticado en el sistema,
 > > - **cuando** selecciona la opcion de solicitar una licencia,
 > > - **entonces** el sistema informa que no es posible solicitar una licencia teniendo una vigente.
