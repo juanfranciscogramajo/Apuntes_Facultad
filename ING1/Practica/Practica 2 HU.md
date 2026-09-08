@@ -286,8 +286,14 @@
 > > 
 > >**Escenario 3: Usuario intenta prestamo teniendo uno activo**
 > > - **Dado** un usuario autenticado,
-> > - **cuando** intenta realizar un prestamo,
+> > - **cuando** elige la opcion de realizar un prestamo,
 > > - **entonces** el sistema le informa que tiene un prestamo activo.
+> > 
+> >**Escenario 4: Usuario intenta prestamo sin autenticarse**
+> > - **Dado** un usuario,
+> > - **cuando** elige la opcion de realizar un prestamo,
+> > - **entonces** el sistema le informa que debe autenticarse para poder realizar un prestamo.
+> >
 
 
 
