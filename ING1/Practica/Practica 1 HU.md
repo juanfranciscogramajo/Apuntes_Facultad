@@ -204,11 +204,11 @@
 > > - Se registren al sitio personas mayores a 18 años y mostrar en pantalla el texto de la ley que impide la venta de bebidas alcohólicas a menores.
 > > - Si el registro es exitoso el sistema genera una contraseña que es enviada al email ingresado en el registro.
 > >
-> > **Criterios de aceptación ([Nombre de la historia]):**
-> > **Escenario 1: [Nombre del escenario exitoso]**
-> > - **Dado** [Condición inicial]
-> > - **cuando** [Acción que realiza el usuario]
-> > - **entonces** [Resultado esperado del sistema]
+> > **Criterios de aceptación (Registro de usuario):**
+> > **Escenario 1: Registro exitoso**
+> > - **Dado** los datos de una persona mayor a 18 años y con mail unico 
+> > - **cuando** el usuario confirma los datos
+> > - **entonces** el sistema genera una contraseña que es enviada al email ingresado en el registro
 > > 
 > > **Escenario 2: [Nombre del escenario alternativo/fallido]**
 > > - **Dado** [Condición inicial]
