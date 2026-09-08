@@ -380,20 +380,20 @@
 > > - **cuando** solicita una licencia con los datos, tipo de licencia presencial, fecha de inicio de reposo 02/10/2026, matricula del medico personal 1250Ml, por operacion de vista, para el titular y confirma el formulario,
 > > - **entonces** el sistema genera un codigo y lo envia al mail del empleado con la confirmacion de la licencia, los dias otorgados y registra la solicitud.
 > > 
-> > **Escenario 2: Empleado con antiguedad de 20 dias solicita licencia**
+> > **Escenario 2: Solicitud fallida por antiguedad insuficiente**
 > > - **Dado** un empleado registrado, autenticado en el sistema, con una antiguedad de 20 dias,
 > > - **cuando** solicita una licencia con los datos, tipo de licencia presencial, fecha de inicio de reposo 02/10/2026, matricula del medico personal 1250Ml, por operacion de vista, para el titular,
 > > - **entonces** el sistema detecta que el empleado tiene antiguedad menor de 1 mes y informa el rechazo de la licencia.
 > >
-> >**Escenario 3: Solicitud  fallida licencia con una licencia activa**
+> >**Escenario 3: Solicitud fallida por tener licencia activa**
 > > - **Dado** un empleado registrado y autenticado en el sistema,
 > > - **cuando** selecciona la opcion de solicitar una licencia,
-> > - **entonces** el sistema informa que no es posible solicitar una licencia teniendo una vigente.
+> > - **entonces** el sistema rechaza la accion y informa que no es posible solicitar una licencia teniendo una vigente.
 > >
-> >**Escenario 4: Empleado sin iniciar sesion intenta solicitar licencia**
-> > - **Dado** un empleado selecciona solicitar una licencia,
+> >**Escenario 4: Solicitud fallida por falta de autenticacion**
+> > - **Dado** un usuario que no ha iniciado sesión en el sistema,
 > > - **cuando** selecciona la opcion de solicitar una licencia,
-> > - **entonces** el sistema solicita al empleado que inicie sesion.
+> > - **entonces** el sistema deniega la accion y le solicita que inicie sesion.
 
 > [!info] FRENTE - ID: Consultar Licencias Solicitadas
 > **Como** administrativo 
@@ -406,9 +406,9 @@
 > > - Para consultar una licencia se debe ingresar el cuil del empleado y un rango de fechas
 > > - El sistema imprime un informe de las licencias solicitadas
 > > 
-> > **Criterios de aceptación (Consultar una licencia):**
+> > **Criterios de aceptación (Consultar una licencia solicitada):**
 > > **Escenario 1: Administrador consulta una licencia exitosamente**
-> > - **Dado** un administrador que selecciona consultar licencia solicitada
+> > - **Dado** un administrativo autenticado y un empleado con CUIL "20-24521125-2" al cual no se le ha impreso ningún informe durante el mes en curso,
 > > - **cuando** llena el campo de cuil del empleado 20-24521125-2, el rango de fecha 20/10/2025 al 02/11/2025 y confirma los datos,
 > > - **entonces** el sistema imprime un informe con la licencia solicitada.
 > > 
