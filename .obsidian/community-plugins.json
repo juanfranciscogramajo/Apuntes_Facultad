@@ -1,13 +1,12 @@
 [
   "obsidian-git",
-  "highlightr-plugin",
+  "templater-obsidian",
   "omnisearch",
   "obsidian-outliner",
-  "templater-obsidian",
-  "obsidian-excalidraw-plugin",
   "table-editor-obsidian",
-  "editing-toolbar"
+  "obsidian-excalidraw-plugin",
   "highlightr-plugin",
   "editing-toolbar",
-  "copilot"
+  "copilot",
+  "obsidian-linter"
 ]

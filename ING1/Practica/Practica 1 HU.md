@@ -210,8 +210,8 @@
 > > - **cuando** el usuario confirma los datos
 > > - **entonces** el sistema genera una contraseña que es enviada al email ingresado en el registro
 > > 
-> > **Escenario 2: [Nombre del escenario alternativo/fallido]**
-> > - **Dado** [Condición inicial]
+> > **Escenario 2: Fallo en registro por mail de usuario repetido**
+> > - **Dado** los datos de una persona mayor a 18 anios 
 > > - **cuando** [Acción]
 > > - **entonces** [Resultado]
-> > - 
+> > -  
