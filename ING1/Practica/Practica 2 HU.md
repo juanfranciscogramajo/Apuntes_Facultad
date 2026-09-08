@@ -304,22 +304,23 @@
 > > **REGLAS DE NEGOCIO:**
 > > - Precio de compra no puede superar el millón de pesos
 > > - Un usuario no puede solicitar un préstamo si tiene algún préstamo anterior activo
+> > - Numero de serie debe ser unico
 > > 
 > > **Criterios de aceptación (Agregar elementos al kit):**
 > > **Escenario 1: El administrador ingresa elementos al kit**
 > > - **Dado** un administrador autenticado
-> > - **cuando** registra el numero de serie único 888, el tipo camara, con precio de compra $500.000, origen argentino y la fecha de alta 02/03/2026,
-> > - **entonces** el sistema agrega al kit el elemento para ser prestado.
+> > - **cuando** ingresa el numero de serie único 888, el tipo camara, con precio de compra $500.000, origen argentino y la fecha de alta 02/03/2026,
+> > - **entonces** al confirmar los datos el sistema agrega al kit el elemento para ser prestado.
 > > 
- >>**Escenario 2: El administrador ingresa elemento al kit importado **
-> > - **dado** un administrador autenticado
-> > - **cuando** registra el numero de serie único 888, el tipo camara, con precio de compra $500.000, origen Estadounidense y la fecha de alta 02/03/2026,
-> > - **entonces** el sistema agrega al kit el elemento para ser prestado y le aplica un impuesto del 10% sobre el precio de compra.
+ >>**Escenario 2: El administrador ingresa elemento al kit importado**
+> > - **Dado** un administrador autenticado,
+> > - **cuando** ingresa el numero de serie único 888, el tipo camara, con precio de compra $500.000, origen Estadounidense y la fecha de alta 02/03/2026,
+> > - **entonces** al confirmar los datos el sistema agrega al kit el elemento para ser prestado y le aplica un impuesto del 10% sobre el precio de compra.
 > > 
-> >**Escenario 3: El administrador ingresa elemento con precio de compra invalido**
-> > - **Dado** un usuario autenticado,
-> > - **cuando** elige la opcion de realizar un prestamo,
-> > - **entonces** el sistema le informa que tiene un prestamo activo.
+> >**Escenario 3: El administrador ingresa elemento con numero de serie repetido**
+> > - **Dado** un administrador autenticado,
+> > - **cuando** ingresa el numero de serie 888,
+> > - **entonces** el sistema informa que el sistema el numero de serie ya se encuentra registrado
 > > 
 > >**Escenario 4: Usuario intenta prestamo sin autenticarse**
 > > - **Dado** un usuario,
