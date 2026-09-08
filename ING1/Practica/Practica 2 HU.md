@@ -302,12 +302,12 @@
 > 
 > > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
-> > - Precio de compra no puede superar el millon de pesos
+> > - Precio de compra no puede superar el millón de pesos
 > > - Un usuario no puede solicitar un préstamo si tiene algún préstamo anterior activo
 > > 
-> > **Criterios de aceptación (Prestamo de un kit):**
-> > **Escenario 1: Usuario realiza un prestamo correctamente**
-> > - **Dado** un usuario que previamente inicio sesion,
+> > **Criterios de aceptación (Agregar elementos al kit):**
+> > **Escenario 1: El administrador ingresa elementos al kit**
+> > - **Dado** un administrador 
 > > - **cuando** selecciona el kit basico, dia 8, hora 12:00 y la duracion de 2 horas,
 > > - **entonces** el sistema detecta que el usuario no tiene ningún préstamo activo y lo registra en la web.
 > > 
