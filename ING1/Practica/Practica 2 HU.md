@@ -228,17 +228,27 @@
 > 
 > > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
-> > - Usuario premium 20% de descuento y se informa 
-> > - Monto total mayor a $4500 se hace 10% de descuento y se informa
-> > - Usuario premium se puede acumular ambos descuentos
+> > - Usuario premium 20% de descuento y se informa .
+> > - Monto total mayor a $4500 se hace 10% de descuento y se informa.
+> > - Usuario premium se puede acumular ambos descuentos.
 > > 
 > > **Criterios de aceptación (Compra de productos):**
-> > **Escenario 1: [Nombre del escenario exitoso]**
-> > - **Dado** [Condición inicial]
-> > - **cuando** [Acción que realiza el usuario]
-> > - **entonces** [Resultado esperado del sistema]
+> > **Escenario 1: Compra cliente premium con 10% descuento**
+> > - **Dado** que el cliente inicia sesion como premium,
+> > - **cuando** selecciona los productos que desea comprar y como el monto total supera $4500,
+> > - **entonces**  se le realiza un 10% ademas del 20% por ser premium y se muestra en pantalla
 > > 
-> > **Escenario 2: [Nombre del escenario alternativo/fallido]**
-> > - **Dado** [Condición inicial]
-> > - **cuando** [Acción]
-> > - **entonces** [Resultado]
+> > **Escenario 2: Compra cliente premium**
+> > - **Dado** un inicio de sesión de un cliente premium,
+> > - **cuando** el cliente selecciona productos que desea comprar y el monto es menor a $4500
+> > - **entonces** el sistema le realiza un 20% de descuento por ser cliente premium y lo informa en pantalla
+> > 
+> > **Escenario 3: Compra cliente con 10%**
+> > - **Dado** un inicio de sesión de un cliente,
+> > - **cuando** el cliente selecciona productos que desea comprar y el monto es mayor a $4500
+> > - **entonces** el sistema le realiza un 10% de descuento por ser cliente premium y lo informa en pantalla
+> > - 
+> > **Escenario 4: Compra cliente**
+> > - **Dado** un inicio de sesión de un cliente,
+> > - **cuando** el cliente selecciona productos que desea comprar y el monto es menor a $4500
+> > - **entonces** el sistema informa el monto total en pantalla
