@@ -407,21 +407,22 @@
 > > - El sistema imprime un informe de las licencias solicitadas
 > > 
 > > **Criterios de aceptación (Consultar una licencia solicitada):**
-> > **Escenario 1: Administrador consulta una licencia exitosamente**
+> > **Escenario 1: Consulta e impresión exitosa**
 > > - **Dado** un administrativo autenticado y un empleado con CUIL "20-24521125-2" al cual no se le ha impreso ningún informe durante el mes en curso,
 > > - **cuando** llena el campo de cuil del empleado 20-24521125-2, el rango de fecha 20/10/2025 al 02/11/2025 y confirma los datos,
-> > - **entonces** el sistema imprime un informe con la licencia solicitada.
+> > - **entonces** el sistema imprime el informe con el detalle de las licencias solicitadas para dicho período..
 > > 
-> > **Escenario 2: Administrador consulta licencia de empleado ya consultado en el mes**
-> > - **Dado** un administrador que selecciona consultar licencia solicitada
+> > **Escenario 2: Consulta fallida por límite mensual alcanzado**
+> > - **Dado** un administrativo autenticado y un empleado con CUIL "20-24521125-2" que ya registra un informe impreso dentro del mes en curso,
 > > - **cuando** llena el campo de Cuil del empleado 20-24521125-2, el rango de fecha 20/10/2025 al 02/11/2025 y confirma los datos,
-> > - **entonces** el sistema informa que no es posible imprimir una licencia ya que ya fue consultada en este mes.
+> > - **entonces** el sistema bloquea la acción e informa que ya se emitió el informe mensual permitido para ese empleado.
 > >
-> > **Escenario 3: Administrador consulta una licencia de empleado inexistente**
-> > - **Dado** un administrador que selecciona consultar licencia solicitada,
+> > **Escenario 3: Consulta sin licencias registradas para el rango**
+> > - **Dado** un administrativo autenticado y un empleado con CUIL "20-24521125-2" que no registra licencias en el rango de fechas seleccionado y no tiene impresiones este mes,
 > > - **cuando** llena el campo de cuil del empleado 20-24521125-2, el rango de fecha 20/10/2025 al 02/11/2025 y confirma los datos,
-> > - **entonces** el sistema informa que no existe ninguna licencia para el empleado ingresado.
+> > - **entonces** el sistema informa que no existen licencias registradas para el empleado en dicho período y no genera la impresión.
+> > 
 > >**Escenario 4: Administrador sin iniciar sesión intenta consultar una licencia**
 > > - **Dado** un administrador selecciona consultar una licencia,
 > > - **cuando** selecciona la opcion de consultar una licencia,
-> > - **entonces** el sistema solicita al administrador que inicie sesion.
+> > - **entonces** el sistema deniega el acceso y solicita el inicie sesion.
