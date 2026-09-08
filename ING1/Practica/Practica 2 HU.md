@@ -410,13 +410,12 @@
 > > **Escenario 2: Administrador consulta licencia de empleado ya consultado en el mes**
 > > - **Dado** un administrador que selecciona consultar licencia solicitada
 > > - **cuando** llena el campo de cuil del empleado 20-24521125-2,
-> > - **entonces** el sistema informa que no es posible imprimir 
+> > - **entonces** el sistema informa que no es posible imprimir una licencia ya que ya fue consultada en este mes.
 > >
-> >**Escenario 3: Empleado solicita licencia con una licencia activa**
-> > - **Dado** un empleado registrado y autenticado en el sistema,
-> > - **cuando** selecciona la opcion de solicitar una licencia,
-> > - **entonces** el sistema informa que no es posible solicitar una licencia teniendo una vigente.
-> >
+> > **Escenario 3: Administrador consulta una licencia de empleado inexistente**
+> > - **Dado** un administrador que selecciona consultar licencia solicitada
+> > - **cuando** llena el campo de cuil del empleado 20-24521125-2,
+> > - **entonces** el sistema informa que no existe ningun empleado con ese cuil en el sistema.
 > >**Escenario 4: Empleado sin iniciar sesion intenta solicitar licencia**
 > > - **Dado** un empleado selecciona solicitar una licencia,
 > > - **cuando** selecciona la opcion de solicitar una licencia,
