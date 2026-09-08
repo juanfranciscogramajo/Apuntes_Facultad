@@ -35,8 +35,7 @@
               "title": "PRACTICA 2 HU NICO"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -240,10 +239,10 @@
       "copilot:Open Copilot Agent Chat": false
     }
   },
-  "active": "e6ceeb1f35c5994c",
+  "active": "eead92b8ff182394",
   "lastOpenFiles": [
-    "ING1/Practica/Practica 2 HU.md",
     "ING1/Practica/PRACTICA 2 HU NICO.md",
+    "ING1/Practica/Practica 2 HU.md",
     "Practica-2-Limpio.md",
     "copilot/copilot-conversations/Revisión_de_la_Práctica_1@20260907_185550.md",
     "copilot/copilot-conversations/Revisión_de_texto_de_práctica@20260907_185419.md",

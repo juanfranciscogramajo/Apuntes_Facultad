@@ -307,12 +307,12 @@
 > > - Numero de serie debe ser unico
 > > 
 > > **Criterios de aceptación (Agregar elementos al kit):**
-> > **Escenario 1: El administrador ingresa elementos al kit**
+> > **Escenario 1: El administrador da de alta elemento nacional al kit**
 > > - **Dado** un administrador autenticado
 > > - **cuando** ingresa el numero de serie único 888, el tipo camara, con precio de compra $500.000, origen argentino y la fecha de alta 02/03/2026,
 > > - **entonces** al confirmar los datos el sistema agrega al kit el elemento para ser prestado.
 > > 
- >>**Escenario 2: El administrador ingresa elemento al kit importado**
+ >>**Escenario 2: El administrador da de alta elemento importado al kit**
 > > - **Dado** un administrador autenticado,
 > > - **cuando** ingresa el numero de serie único 888, el tipo camara, con precio de compra $500.000, origen Estadounidense y la fecha de alta 02/03/2026,
 > > - **entonces** al confirmar los datos el sistema agrega al kit el elemento para ser prestado y le aplica un impuesto del 10% sobre el precio de compra.
@@ -326,6 +326,7 @@
 > > - **Dado** un administrador autenticado 
 > > - **cuando** ingresa el numero de serie único 888, el tipo camara, con precio de compra $999.000, origen Estadounidense y la fecha de alta 02/03/2026,
 > > - **entonces** al confirmar los datos el sistema detecta que al sumarle el 10% supera el 1.000.000 de pesos por lo tanto informa que el precio de compra debe ser menor a 1.000.000
+> > 
 > >**Escenario 5: El administrador ingresa un elemento con precio de compra mayor a 1 millon**
 > > - **Dado** un administrador autenticado 
 > > - **cuando** ingresa el numero de serie único 888, el tipo camara, con precio de compra $1.010.000,
@@ -350,3 +351,33 @@
 
 
 
+# 5 - Manejo de licencias
+
+**Rol de usuarios:**
+- [Rol 1]
+- [Rol 2]
+
+**Historias de usuario:**
+- [Nombre de la historia 1]
+- [Nombre de la historia 2]
+
+> [!info] FRENTE - ID: [Nombre o código de la HU]
+> **Como** [Rol del usuario]
+> **Quiero** [Acción u objetivo]
+> **Para** [Beneficio o valor]
+> 
+> > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
+> > **REGLAS DE NEGOCIO:**
+> > - [Regla 1]
+> > - [Regla 2]
+> > 
+> > **Criterios de aceptación ([Nombre de la historia]):**
+> > **Escenario 1: [Nombre del escenario exitoso]**
+> > - **Dado** [Condición inicial]
+> > - **cuando** [Acción que realiza el usuario]
+> > - **entonces** [Resultado esperado del sistema]
+> > 
+> > **Escenario 2: [Nombre del escenario alternativo/fallido]**
+> > - **Dado** [Condición inicial]
+> > - **cuando** [Acción]
+> > - **entonces** [Resultado]
