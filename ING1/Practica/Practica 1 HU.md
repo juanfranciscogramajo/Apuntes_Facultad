@@ -191,7 +191,7 @@
 - Usuario
 
 **Historias de usuario:**
-- Registro Usuario
+- Registro Usuario  
 - Compra de productos.
 
 > [!info] FRENTE - ID: Registro Usuario
@@ -205,13 +205,19 @@
 > > - Si el registro es exitoso el sistema genera una contraseña que es enviada al email ingresado en el registro.
 > >
 > > **Criterios de aceptación (Registro de usuario):**
+> > 
 > > **Escenario 1: Registro exitoso**
 > > - **Dado** los datos de una persona mayor a 18 años y con mail unico 
 > > - **cuando** el usuario confirma los datos
 > > - **entonces** el sistema genera una contraseña que es enviada al email ingresado en el registro
-> > 
+> > - 
 > > **Escenario 2: Fallo en registro por mail de usuario repetido**
-> > - **Dado** los datos de una persona mayor a 18 anios 
-> > - **cuando** [Acción]
-> > - **entonces** [Resultado]
-> > -  
+> > - **Dado** el ingreso de datos de una persona mayor a 18 anIos 
+> > - **cuando** el usuario confirma los datos ingresados,
+> > - **entonces** el sistema informa de un error ya que el mail se encuentra registrado.
+> > - 
+> >**Escenario 3 Fallo en registro por edad ingresada**
+> > - **Dado** el ingreso los datos personales 
+> > - **cuando** el usuario ingresa una edad menor a 19 años,
+> > - **entonces** el sistema muestra en pantalla el texto de la ley que impide la venta de bebidas alcohólicas a menores
+> > - 
