@@ -386,3 +386,8 @@
 > > - **Dado** un empleado registrado y autenticado en el sistema,
 > > - **cuando** selecciona la opcion de solicitar una licencia,
 > > - **entonces** el sistema informa que no es posible solicitar una licencia teniendo una vigente.
+> >
+> >**Escenario 4: Empleado solicita licencia con una licencia activa**
+> > - **Dado** un empleado selecciona solicitar una licencia,
+> > - **cuando** selecciona la opcion de solicitar una licencia,
+> > - **entonces** el sistema informa que no es posible solicitar una licencia teniendo una vigente.
