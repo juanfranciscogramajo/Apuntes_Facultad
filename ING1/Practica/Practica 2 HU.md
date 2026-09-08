@@ -28,7 +28,7 @@
 > > - **Dado** [Condición inicial]
 > > - **cuando** [Acción]
 > > - **entonces** [Resultado]
-# 1- Alquiler de Mobiliario
+# 1 - Alquiler de Mobiliario
 **Rol de usuarios:**
 - Encargado del departamento de mobiliario.
 - Cliente
@@ -100,7 +100,7 @@
 > > - **entonces** la operación es cancelada y el sistema informa al cliente que la tarjeta no posee saldo suficiente. 
 
 
-# 2- Hospedaje
+# 2 - Hospedaje
 
 **Rol de usuarios:**
 - Conserje.
@@ -185,8 +185,9 @@
 >> - **cuando** el conserje intenta ingresar su número para procesar la salida, 
 >> - **entonces** el sistema le advierte que no puede hacerse el check-out hasta que el usuario abone los gastos.
 
-# 3 - Venta de bebidas
 
+
+# 3 - Venta de bebidas
 **Rol de usuarios:**
 - Usuario
 
@@ -228,27 +229,79 @@
 > 
 > > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
-> > - Usuario premium 20% de descuento y se informa .
+> > - Usuario premium 20% de descuento y se informa.
 > > - Monto total mayor a $4500 se hace 10% de descuento y se informa.
 > > - Usuario premium se puede acumular ambos descuentos.
 > > 
 > > **Criterios de aceptación (Compra de productos):**
 > > **Escenario 1: Compra cliente premium con 10% descuento**
-> > - **Dado** que el cliente inicia sesion como premium,
+> > - **Dado** que el cliente inicia sesión como premium,
 > > - **cuando** selecciona los productos que desea comprar y como el monto total supera $4500,
-> > - **entonces**  se le realiza un 10% ademas del 20% por ser premium y se muestra en pantalla
+> > - **entonces**  se le realiza un 10% ademas del 20% por ser premium y informa el monto total de los productos seleccionados.
 > > 
 > > **Escenario 2: Compra cliente premium**
 > > - **Dado** un inicio de sesión de un cliente premium,
-> > - **cuando** el cliente selecciona productos que desea comprar y el monto es menor a $4500
-> > - **entonces** el sistema le realiza un 20% de descuento por ser cliente premium y lo informa en pantalla
+> > - **cuando** el cliente selecciona productos que desea comprar y el monto es menor a $4500,
+> > - **entonces** el sistema le realiza un 20% de descuento por ser cliente premium y informa el monto total de los productos seleccionados.
 > > 
 > > **Escenario 3: Compra cliente con 10%**
 > > - **Dado** un inicio de sesión de un cliente,
-> > - **cuando** el cliente selecciona productos que desea comprar y el monto es mayor a $4500
-> > - **entonces** el sistema le realiza un 10% de descuento por ser cliente premium y lo informa en pantalla
-> > - 
+> > - **cuando** el cliente selecciona productos que desea comprar y el monto es mayor a $4500,
+> > - **entonces** el sistema le realiza un 10% de descuento por ser cliente premium y informa el monto total de los productos seleccionados.
+> > 
 > > **Escenario 4: Compra cliente**
 > > - **Dado** un inicio de sesión de un cliente,
-> > - **cuando** el cliente selecciona productos que desea comprar y el monto es menor a $4500
-> > - **entonces** el sistema informa el monto total en pantalla
+> > - **cuando** el cliente selecciona productos que desea comprar y el monto es menor a $4500,
+> > - **entonces** el sistema informa el monto total de los productos seleccionados en pantalla.
+# 4 - Prestamos de Kits
+
+**Rol de usuarios:**
+- [Rol 1]
+- [Rol 2]
+
+**Historias de usuario:**
+- [Nombre de la historia 1]
+- [Nombre de la historia 2]
+
+> [!info] FRENTE - ID: [Nombre o código de la HU]
+> **Como** [Rol del usuario]
+> **Quiero** [Acción u objetivo]
+> **Para** [Beneficio o valor]
+> 
+> > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
+> > **REGLAS DE NEGOCIO:**
+> > - [Regla 1]
+> > - [Regla 2]
+> > 
+> > **Criterios de aceptación ([Nombre de la historia]):**
+> > **Escenario 1: [Nombre del escenario exitoso]**
+> > - **Dado** [Condición inicial]
+> > - **cuando** [Acción que realiza el usuario]
+> > - **entonces** [Resultado esperado del sistema]
+> > 
+> > **Escenario 2: [Nombre del escenario alternativo/fallido]**
+> > - **Dado** [Condición inicial]
+> > - **cuando** [Acción]
+> > - **entonces** [Resultado]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
