@@ -385,4 +385,4 @@
 > >**Escenario 3: Empleado solicita licencia con una licencia activa**
 > > - **Dado** un empleado registrado y autenticado en el sistema,
 > > - **cuando** selecciona la opcion de solicitar una licencia,
-> > - **entonces** el sistema detecta que el empleado tiene antiguedad menor de 1 mes y informa el rechazo de la licencia.
+> > - **entonces** el sistema informa que no es posible solicitar una licencia teniendo una vigente.
