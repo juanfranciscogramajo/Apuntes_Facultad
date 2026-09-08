@@ -361,24 +361,26 @@
 - Solicitar licencia
 - Consultar licencias solicitadas
 
-> [!info] FRENTE - ID: Solicitar licencia
+> [!info] FRENTE - ID: Solicitar licencia medica
 > **Como** empleado 
 > **Quiero** solicitar una licencia
-> **Para** poder recuperarme de una enfermedad
+> **Para** justificar la inasistencia por motivos de salud propios o de un familiar
 > 
 > > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
 > > - Para poder solicitar una licencia el empleado debe tener más de 1 mes de antigüedad sino se rechaza.
 > > - podrá solicitar una licencia un empleado que no tenga una licencia vigente.
+> > - Para solicitar una licencia debe ingresar el tipo de licencia (presencial o telemedicina), la fecha de inicio de reposo, la matrícula de su médico personal, el diagnóstico y si es para el titular o para un familiar enfermo.
+> > - el sistema debe generar un código de licencia y lo envía vía mail a la casilla del empleado con la confirmación de la licencia y los días otorgados.
 > > 
 > > **Criterios de aceptación (Solicitar una licencia):**
 > > **Escenario 1: Empleado solicita licencia exitosamente**
-> > - **Dado** un empleado registrado y autenticado en el sistema,
+> > - **Dado** un empleado registrado, autenticado en el sistema, sin tener una licencia vigente y antiguedad de mas de 1 mes,
 > > - **cuando** solicita una licencia con los datos, tipo de licencia presencial, fecha de inicio de reposo 02/10/2026, matricula del medico personal 1250Ml, por operacion de vista, para el titular,
-> > - **entonces** el sistema al empleado no tener una licencia vigente y antiguedad de mas de 1 mes el sistema genera un codigo y lo envia al mail del empleado con la confirmacion de la licencia y los dias otorgados.
+> > - **entonces** el sistema genera un codigo y lo envia al mail del empleado con la confirmacion de la licencia y los dias otorgados.
 > > 
 > > **Escenario 2: Empleado con antiguedad de 20 dias solicita licencia**
-> > - **Dado** un empleado registrado y autenticado en el sistema,
+> > - **Dado** un empleado registrado, autenticado en el sistema, con una antiguedad de 20 dias,
 > > - **cuando** solicita una licencia con los datos, tipo de licencia presencial, fecha de inicio de reposo 02/10/2026, matricula del medico personal 1250Ml, por operacion de vista, para el titular,
 > > - **entonces** el sistema detecta que el empleado tiene antiguedad menor de 1 mes y informa el rechazo de la licencia.
 > >
@@ -400,8 +402,10 @@
 > > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
 > > - Solo se podrá imprimir un informe por mes para cada empleado.
+> > - Para consultar una licencia se debe ingresar el cuil del empleado y un rango de fechas
+> > - El sistema imprime un informe de las licencias solicitadas
 > > 
-> > **Criterios de aceptación (Solicitar una licencia):**
+> > **Criterios de aceptación (Consultar una licencia):**
 > > **Escenario 1: Administrador consulta una licencia exitosamente**
 > > - **Dado** un administrador que selecciona consultar licencia solicitada
 > > - **cuando** llena el campo de cuil del empleado 20-24521125-2, el rango de fecha 20/10/2025 al 02/11/2025 y confirma los datos,
@@ -409,7 +413,7 @@
 > > 
 > > **Escenario 2: Administrador consulta licencia de empleado ya consultado en el mes**
 > > - **Dado** un administrador que selecciona consultar licencia solicitada
-> > - **cuando** llena el campo de cuil del empleado 20-24521125-2,
+> > - **cuando** llena el campo de Cuil del empleado 20-24521125-2, el rango de fecha 20/10/2025 al 02/11/2025 y confirma los datos,
 > > - **entonces** el sistema informa que no es posible imprimir una licencia ya que ya fue consultada en este mes.
 > >
 > > **Escenario 3: Administrador consulta una licencia de empleado inexistente**
