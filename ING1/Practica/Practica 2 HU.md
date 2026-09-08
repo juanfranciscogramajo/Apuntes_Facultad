@@ -354,12 +354,12 @@
 # 5 - Manejo de licencias
 
 **Rol de usuarios:**
-- [Rol 1]
-- [Rol 2]
+- Empleado
+- Administrativo
 
 **Historias de usuario:**
-- [Nombre de la historia 1]
-- [Nombre de la historia 2]
+- Solicitar licencia
+- Consultar licencias solicitadas
 
 > [!info] FRENTE - ID: [Nombre o código de la HU]
 > **Como** [Rol del usuario]
