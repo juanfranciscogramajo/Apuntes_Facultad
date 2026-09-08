@@ -222,14 +222,14 @@
 > > - **entonces** el sistema muestra en pantalla el texto de la ley que impide la venta de bebidas alcohólicas a menores
 
 > [!info] FRENTE - ID: Compra de productos
-> **Como** [Rol del usuario]
-> **Quiero** [Acción u objetivo]
-> **Para** [Beneficio o valor]
+> **Como** usuario
+> **Quiero** seleccionar productos 
+> **Para** luego comprarlos
 > 
 > > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
-> > - [Regla 1]
-> > - [Regla 2]
+> > - Usuario premium 20% de descuento y se informa 
+> > - Monto total may
 > > 
 > > **Criterios de aceptación ([Nombre de la historia]):**
 > > **Escenario 1: [Nombre del escenario exitoso]**
