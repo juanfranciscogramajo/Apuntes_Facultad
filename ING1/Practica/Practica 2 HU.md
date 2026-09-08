@@ -361,7 +361,7 @@
 - Solicitar licencia
 - Consultar licencias solicitadas
 
-> [!info] FRENTE - ID: [Nombre o código de la HU]
+> [!info] FRENTE - ID: Solicitar licencia
 > **Como** empleado 
 > **Quiero** solicitar una licencia
 > **Para** poder recuperarme de una enfermedad
@@ -387,7 +387,37 @@
 > > - **cuando** selecciona la opcion de solicitar una licencia,
 > > - **entonces** el sistema informa que no es posible solicitar una licencia teniendo una vigente.
 > >
-> >**Escenario 4: Empleado solicita licencia con una licencia activa**
+> >**Escenario 4: Empleado sin iniciar sesion intenta solicitar licencia**
 > > - **Dado** un empleado selecciona solicitar una licencia,
 > > - **cuando** selecciona la opcion de solicitar una licencia,
+> > - **entonces** el sistema solicita al empleado que inicie sesion.
+
+> [!info] FRENTE - ID: Consultar Licencias Solicitadas
+> **Como** administrativo 
+> **Quiero** consultar licencias solicitadas
+> **Para** obtener un infrome
+> 
+> > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
+> > **REGLAS DE NEGOCIO:**
+> > - Solo se podrá imprimir un informe por mes para cada empleado.
+> > 
+> > **Criterios de aceptación (Solicitar una licencia):**
+> > **Escenario 1: Administrador consulta una licencia exitosamente**
+> > - **Dado** un administrador que selecciona consultar licencia solicitada
+> > - **cuando** llena el campo de cuil del empleado 20-24521125-2, el rango de fecha 20/10/2025 al 02/11/2025 y confirma los datos,
+> > - **entonces** el sistema imprime un informe con la licencia solicitada.
+> > 
+> > **Escenario 2: Administrador consulta licencia de empleado ya consultado en el mes**
+> > - **Dado** un administrador que selecciona consultar licencia solicitada
+> > - **cuando** llena el campo de cuil del empleado 20-24521125-2,
+> > - **entonces** el sistema informa que no es posible imprimir 
+> >
+> >**Escenario 3: Empleado solicita licencia con una licencia activa**
+> > - **Dado** un empleado registrado y autenticado en el sistema,
+> > - **cuando** selecciona la opcion de solicitar una licencia,
 > > - **entonces** el sistema informa que no es posible solicitar una licencia teniendo una vigente.
+> >
+> >**Escenario 4: Empleado sin iniciar sesion intenta solicitar licencia**
+> > - **Dado** un empleado selecciona solicitar una licencia,
+> > - **cuando** selecciona la opcion de solicitar una licencia,
+> > - **entonces** el sistema solicita al empleado que inicie sesion.
