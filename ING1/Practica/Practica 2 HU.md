@@ -229,9 +229,10 @@
 > > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
 > > - Usuario premium 20% de descuento y se informa 
-> > - Monto total may
+> > - Monto total mayor a $4500 se hace 10% de descuento y se informa
+> > - Usuario premium se puede acumular ambos descuentos
 > > 
-> > **Criterios de aceptación ([Nombre de la historia]):**
+> > **Criterios de aceptación (Compra de productos):**
 > > **Escenario 1: [Nombre del escenario exitoso]**
 > > - **Dado** [Condición inicial]
 > > - **cuando** [Acción que realiza el usuario]
