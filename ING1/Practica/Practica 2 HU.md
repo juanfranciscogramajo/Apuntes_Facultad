@@ -362,22 +362,27 @@
 - Consultar licencias solicitadas
 
 > [!info] FRENTE - ID: [Nombre o código de la HU]
-> **Como** [Rol del usuario]
-> **Quiero** [Acción u objetivo]
-> **Para** [Beneficio o valor]
+> **Como** empleado 
+> **Quiero** solicitar una licencia
+> **Para** poder recuperarme de una enfermedad
 > 
 > > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
-> > - [Regla 1]
-> > - [Regla 2]
+> > - Para poder solicitar una licencia el empleado debe tener más de 1 mes de antigüedad sino se rechaza.
+> > - podrá solicitar una licencia un empleado que no tenga una licencia vigente.
 > > 
-> > **Criterios de aceptación ([Nombre de la historia]):**
-> > **Escenario 1: [Nombre del escenario exitoso]**
-> > - **Dado** [Condición inicial]
-> > - **cuando** [Acción que realiza el usuario]
-> > - **entonces** [Resultado esperado del sistema]
+> > **Criterios de aceptación (Solicitar una licencia):**
+> > **Escenario 1: Empleado solicita licencia exitosamente**
+> > - **Dado** un empleado registrado y autenticado en el sistema,
+> > - **cuando** solicita una licencia con los datos, tipo de licencia presencial, fecha de inicio de reposo 02/10/2026, matricula del medico personal 1250Ml, por operacion de vista, para el titular,
+> > - **entonces** el sistema al empleado no tener una licencia vigente y antiguedad de mas de 1 mes el sistema genera un codigo y lo envia al mail del empleado con la confirmacion de la licencia y los dias otorgados.
 > > 
-> > **Escenario 2: [Nombre del escenario alternativo/fallido]**
-> > - **Dado** [Condición inicial]
-> > - **cuando** [Acción]
-> > - **entonces** [Resultado]
+> > **Escenario 2: Empleado con antiguedad de 20 dias solicita licencia**
+> > - **Dado** un empleado registrado y autenticado en el sistema,
+> > - **cuando** solicita una licencia con los datos, tipo de licencia presencial, fecha de inicio de reposo 02/10/2026, matricula del medico personal 1250Ml, por operacion de vista, para el titular,
+> > - **entonces** el sistema detecta que el empleado tiene antiguedad menor de 1 mes y informa el rechazo de la licencia.
+> >
+> >**Escenario 3: Empleado solicita licencia con una licencia activa**
+> > - **Dado** un empleado registrado y autenticado en el sistema,
+> > - **cuando** selecciona la opcion de solicitar una licencia,
+> > - **entonces** el sistema detecta que el empleado tiene antiguedad menor de 1 mes y informa el rechazo de la licencia.
