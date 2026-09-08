@@ -322,12 +322,14 @@
 > > - **cuando** ingresa el numero de serie 888,
 > > - **entonces** el sistema informa que el sistema el numero de serie ya se encuentra registrado
 > > 
-> >**Escenario 4: Usuario intenta prestamo sin autenticarse**
-> > - **Dado** un usuario,
-> > - **cuando** elige la opcion de realizar un prestamo,
-> > - **entonces** el sistema le informa que debe autenticarse para poder realizar un prestamo.
-> >
-
+> >**Escenario 4: El administrador ingresa un elemento que al aplicar el impuesto supera el  precio de compra maximo ???**
+> > - **Dado** un administrador autenticado 
+> > - **cuando** ingresa el numero de serie único 888, el tipo camara, con precio de compra $999.000, origen Estadounidense y la fecha de alta 02/03/2026,
+> > - **entonces** al confirmar los datos el sistema detecta que al sumarle el 10% supera el 1.000.000 de pesos por lo tanto informa que el precio de compra debe ser menor a 1.000.000
+> >**Escenario 5: El administrador ingresa un elemento con precio de compra mayor a 1 millon**
+> > - **Dado** un administrador autenticado 
+> > - **cuando** ingresa el numero de serie único 888, el tipo camara, con precio de compra $1.010.000,
+> > - **entonces** el sistema le informa que el precio debe ser menor a 1.000.000
 
 
 
