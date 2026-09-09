@@ -83,7 +83,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "befe0b92c4573c88",
@@ -226,6 +227,7 @@
   },
   "active": "9ae4a67ac1f84f17",
   "lastOpenFiles": [
+    "Pasted image 20260909150039.png",
     "OBJ1/Teoria/Clase.md",
     "OBJ1/Teoria/Teoria 10-09-26.md",
     "ING1/Practica/PRACTICA 2 HU NICO.md",
@@ -260,7 +262,6 @@
     "copilot/skills/copilot-read-pdf/SKILL.md",
     "copilot/skills/copilot-web-fetch/SKILL.md",
     "copilot/skills/copilot-web-search/SKILL.md",
-    "DBD/Practica/a.md",
-    "DBD/Material/Link Material.md"
+    "DBD/Practica/a.md"
   ]
 }
