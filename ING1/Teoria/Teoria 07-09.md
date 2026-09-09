@@ -99,13 +99,13 @@ $$C = (P, T, I, O)$$
 
 ## 4. Patrones de Modelado en Redes de Petri
 
-### A. Paralelismo (Bifurcación / Fork)
+### A. Paralelismo (*Bifurcación / Fork*)
 Una transición produce tokens en dos o más lugares independientes al mismo tiempo, habilitando la ejecución en paralelo.
 
-### B. Sincronización (Join)
+### B. Sincronización (*Join*)
 Una transición exige tokens de varios lugares de entrada simultáneamente para activarse, coordinando procesos paralelos en un punto común.
 
-### C. Exclusión Mutua (Mutex)
+### C. Exclusión Mutua (*Mutex*)
 Varios procesos compiten por un recurso crítico limitado. Se modela con un lugar con capacidad fija (ej. 1 token). La transición que dispara primero consume el token y bloquea a las demás hasta que el recurso sea liberado.
 
 ### D. Productor - Consumidor
@@ -116,31 +116,3 @@ Estado en el cual ninguna transición de la red queda habilitada, paralizando la
 
 ---
 
-## 5. Ejemplos Prácticos de la Cátedra
-
-### 1. Brazo Robot (Manufactura Flexible)
-* **Lugares del modelo:**
-  * $p_1$: Pieza en banda de entrada.
-  * $p_2$: Robot disponible.
-  * $p_3$: Pieza cargada en el brazo.
-  * $p_4$: Máquina de proceso disponible.
-  * $p_5$: Máquina en operación.
-  * $p_6$: Pieza descargada del proceso.
-  * $p_7$: Pieza en banda de salida.
-* **Ciclo de estados (Marcaciones):**
-  1. $M_0 = (1, 1, 0, 1, 0, 0, 0)$: Pieza en entrada, robot y máquina libres. Se habilita $t_1$.
-  2. $M_1 = (0, 0, 1, 1, 0, 0, 0)$: Robot toma la pieza ($t_1$).
-  3. $M_2 = (0, 1, 0, 0, 1, 0, 0)$: Robot deposita la pieza en la máquina ($t_2$); robot queda libre, máquina ocupada.
-  4. $M_3 = (0, 0, 0, 0, 0, 1, 0)$: Robot toma la pieza procesada ($t_3$).
-  5. $M_4 = (0, 1, 0, 1, 0, 0, 1)$: Robot deposita la pieza en salida ($t_4$); robot y máquina vuelven a quedar libres.
-  6. Disparo de $t_5$: La pieza se retira y el sistema vuelve a $M_0$.
-
-### 2. Estación de Servicio
-* **Condiciones del problema:**
-  * Espera interna limitada a **5 autos** (los que superen el cupo esperan afuera).
-  * **3 surtidores** de combustible (1 auto por surtidor a la vez: exclusión mutua).
-  * Cola para pagar: capacidad sin límite.
-  * **2 cajas** de pago (1 auto por caja a la vez: exclusión mutua).
-* **Estrategia en Redes de Petri:**
-  * La entrada se restringe con un lugar de control inicializado con **5 tokens**, impidiendo que entren más de 5 autos hasta que uno avance a la zona de carga.
-  * Los recursos con exclusión mutua se modelan con lugares de control dedicados: un lugar con **3 tokens** para los surtidores libres y otro con **2 tokens** para las cajas libres.
