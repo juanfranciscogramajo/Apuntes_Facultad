@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "0e127e4194c6d18a",
+        "id": "27248bfde1b4b7fb",
         "type": "tabs",
         "children": [
           {
-            "id": "e7d03892b3f1cd7e",
+            "id": "f709ba1cba96f989",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -183,9 +183,19 @@
               "icon": "spreadsheet",
               "title": "Advanced Tables"
             }
+          },
+          {
+            "id": "47633a5f070b9aba",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-chat-view",
+              "state": {},
+              "icon": "message-square",
+              "title": "Copilot (Quick Chat)"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -204,10 +214,11 @@
       "omnisearch:Omnisearch": false,
       "templater-obsidian:Templater": false,
       "obsidian-excalidraw-plugin:Nuevo Bosquejo": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "copilot:Open Copilot Agent Chat": false
     }
   },
-  "active": "e7d03892b3f1cd7e",
+  "active": "47633a5f070b9aba",
   "lastOpenFiles": [
     "conflict-files-obsidian-git.md",
     "copilot/skills/openartifacts-publish/themes/research-memo.md",
