@@ -474,11 +474,10 @@ Particiones:
 13. Usuarios:  
 
    14. ¿Qué archivos son utilizados en un sistema GNU/Linux para guardar la información de los usuarios?
-       $cat/etc/passwd nombre de usuario, id, nombre, interprete de comandos
-       $cat/etc/shadow guarda las contraseñas del usuario encriptado
+       $cat/etc/passwd nombre de usuario, id, nombre, interprete de comandos.
+       $cat/etc/shadow guarda las contraseñas del usuario encriptado.
        $cat/etc/group guarda informacion y configuracion correspodiente a grupos del sistema.
-   15. ¿A qué hacen referencia las siglas *UID* y *GID*? ¿Pueden coexistir UIDs iguales en un sistema GNU/Linux? Justifique.  
-
+   15. ¿A qué hacen referencia las siglas *UID* y *GID*? ¿Pueden coexistir UIDs iguales en un sistema GNU/Linux? Justifique. 
    16. ¿Qué es el usuario root? ¿Puede existir más de un usuario con este perfil en GNU/Linux? ¿Cuál es la *UID* de *root*? 
 
    17. Agregue un nuevo usuario llamado *isocso* a su instalación de GNU/Linux, especifique que su home sea creada en /home/*isocso*, y hágalo miembro del grupo *informatica* (si no existe, deberá crearlo). Luego, sin iniciar sesión como este usuario cree un archivo en su home personal que le pertenezca. Luego de todo esto, borre el usuario y verifique que no queden registros de él en los archivos de información de los usuarios y grupos.  
