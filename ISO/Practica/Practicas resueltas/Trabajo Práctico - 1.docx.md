@@ -478,8 +478,10 @@ Particiones:
        $cat/etc/shadow guarda las contraseñas del usuario encriptado.
        $cat/etc/group guarda informacion y configuracion correspodiente a grupos del sistema.
    15. ¿A qué hacen referencia las siglas *UID* y *GID*? ¿Pueden coexistir UIDs iguales en un sistema GNU/Linux? Justifique. 
+       UID: id unico que el so asigna a cada user para gestionar accesos, procesos y privilegios.
+       GID: id numerico que representa gp de usuarios, que pertenece a una cuenta para la asignacion y control de permisos sobre archivos y recursos.
    16. ¿Qué es el usuario root? ¿Puede existir más de un usuario con este perfil en GNU/Linux? ¿Cuál es la *UID* de *root*? 
-
+       Es el superusuario administrador del sistema, 
    17. Agregue un nuevo usuario llamado *isocso* a su instalación de GNU/Linux, especifique que su home sea creada en /home/*isocso*, y hágalo miembro del grupo *informatica* (si no existe, deberá crearlo). Luego, sin iniciar sesión como este usuario cree un archivo en su home personal que le pertenezca. Luego de todo esto, borre el usuario y verifique que no queden registros de él en los archivos de información de los usuarios y grupos.  
 
    18. Investigue la funcionalidad y parámetros de los siguientes comandos:  
