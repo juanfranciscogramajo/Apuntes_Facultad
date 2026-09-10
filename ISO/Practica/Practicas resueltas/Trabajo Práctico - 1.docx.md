@@ -508,11 +508,12 @@ Particiones:
        w: write permite mod o eliminar archivo. Valor 2 octal.
        x: permite ejecutar archivo si es un script/programa. Valor 1 octal.
    21. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con los permisos en GNU/Linux:
-       chmod
-       chown
-       chgrp  
+       chmod: cambia permisos de acceso de un directorio.
+       chown: cambia el uuario propietario de un directorio.
+       chgrp: cambia el grupo asignado a un directorio.
 
-   22. Al utilizar el comando chmod generalmente se utiliza una notación octal asociada para definir permisos. ¿Qué significa esto? ¿A qué hace referencia cada valor?  
+   22. Al utilizar el comando chmod generalmente se utiliza una notación octal asociada para definir permisos. ¿Qué significa esto? ¿A qué hace referencia cada valor?
+       el modo octal sirve para definir proceso numericamente de 3 digitos,
 
    23. ¿Existe la posibilidad de que algún usuario del sistema pueda acceder a determinado archivo para el cual no posee permisos? Indiquelo y realice las pruebas correspondientes. 
 
