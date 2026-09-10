@@ -459,14 +459,13 @@ Particiones:
 7. *SystemD* (https://github.com/systemd/systemd):  
 
    8. ¿Qué es *systemd*?
-   
-
+      es un sistema que centraliza la admin de servicios y librerias del sistema
    9. ¿A qué hace referencia el concepto de *Unit* en SystemD?  
-
+      son las unidades de trabajo.
    10. ¿Para qué sirve el comando *systemctl* en SystemD?  
-
+       
    11. ¿A qué hace referencia el concepto de *target* en SystemD? 
-
+       agrupa units o establece untos de sincronizacion en  el arranque
    12. Ejecutar el comando *pstree*. ¿Qué es lo que se puede observar a partir de la ejecución de este comando?  
 
        
