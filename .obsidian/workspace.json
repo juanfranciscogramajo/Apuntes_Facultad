@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "c261473a1d2b0137",
+        "id": "04481daebfef1762",
         "type": "tabs",
         "children": [
           {
-            "id": "966091caf3abe67e",
+            "id": "9ae4a67ac1f84f17",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -117,6 +117,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "ING1/Practica/Practica 1 HU.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -159,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Bienvenido.md",
+                "file": "ING1/Practica/Practica 1 HU.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -169,7 +170,7 @@
             }
           },
           {
-            "id": "8640f8885582b98a",
+            "id": "87366823269ad375",
             "type": "leaf",
             "state": {
               "type": "git-view",
@@ -179,17 +180,27 @@
             }
           },
           {
-            "id": "a1bf1211232b593e",
+            "id": "93675662fa931923",
             "type": "leaf",
             "state": {
-              "type": "advanced-tables-toolbar",
+              "type": "copilot-agent-chat-view",
               "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
+              "icon": "copilot-agent",
+              "title": "Copilot Agent"
+            }
+          },
+          {
+            "id": "0edeceb8a8c048ee",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-chat-view",
+              "state": {},
+              "icon": "message-square",
+              "title": "Copilot (Quick Chat)"
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -206,50 +217,51 @@
       "command-palette:Abrir paleta de comandos": false,
       "bases:Crear nueva base": false,
       "obsidian-git:Open Git source control": false,
-      "omnisearch:Omnisearch": false,
       "templater-obsidian:Templater": false,
-      "obsidian-excalidraw-plugin:Nuevo Bosquejo": false,
+      "omnisearch:Omnisearch": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-excalidraw-plugin:Nuevo Bosquejo": false,
       "copilot:Open Copilot Agent Chat": false
     }
   },
-  "active": "966091caf3abe67e",
+  "active": "9ae4a67ac1f84f17",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
+    "ING1/Teoria/Teoria 07-09.md",
+    "ISO/Practica/Explicacion practica 10-09-26.md",
+    "Practica-2-Limpio.md",
     "Pasted image 20260909150039.png",
     "OBJ1/Teoria/Teoria 10-09-26.md",
     "OBJ1/Teoria/Clase.md",
-    "ING1/Teoria/Teoria 07-09.md",
-    "ING1/Practica/Practica 2 HU.md",
     "ING1/Practica/PRACTICA 2 HU NICO.md",
-    "copilot/skills/openartifacts-publish/themes/research-memo.md",
+    "ING1/Practica/Practica 2 HU.md",
+    "copilot/copilot-conversations/Revisión_de_la_Práctica_1@20260907_185550.md",
+    "copilot/copilot-conversations/Revisión_de_texto_de_práctica@20260907_185419.md",
+    "copilot/copilot-conversations",
+    "copilot/skills/obsidian-cli/SKILL.md",
+    "copilot/skills/obsidian-cli/LICENSE",
+    "copilot/skills/obsidian-cli",
+    "copilot/skills/json-canvas/SKILL.md",
+    "copilot/skills/json-canvas/LICENSE",
+    "copilot/skills/json-canvas/references/EXAMPLES.md",
+    "copilot/skills/json-canvas/references",
+    "copilot/skills/json-canvas",
+    "copilot/skills/obsidian-bases/SKILL.md",
+    "copilot/skills/obsidian-bases/LICENSE",
+    "copilot/skills/obsidian-bases/references/EXAMPLES.md",
+    "copilot/skills/obsidian-bases/references/FUNCTIONS_REFERENCE.md",
+    "copilot/skills/obsidian-bases/references",
+    "copilot/skills/obsidian-bases",
+    "copilot/skills/obsidian-markdown/SKILL.md",
+    "copilot/skills/obsidian-markdown/LICENSE",
     "copilot/skills/obsidian-markdown/references/PROPERTIES.md",
     "copilot/skills/obsidian-markdown/references/EMBEDS.md",
     "copilot/skills/obsidian-markdown/references/CALLOUTS.md",
-    "copilot/skills/obsidian-bases/references/FUNCTIONS_REFERENCE.md",
-    "copilot/skills/obsidian-bases/references/EXAMPLES.md",
-    "copilot/skills/json-canvas/references/EXAMPLES.md",
-    "copilot/skills/openartifacts-publish/themes",
     "copilot/skills/openartifacts-publish/SKILL.md",
-    "copilot/skills/openartifacts-publish/openartifacts-publish.sh",
-    "copilot/skills/openartifacts-publish/openartifacts-publish.ps1",
-    "copilot/skills/openartifacts-publish/openartifacts-publish.cmd",
-    "copilot/skills/obsidian-markdown/SKILL.md",
-    "copilot/skills/obsidian-markdown/references",
-    "copilot/skills/obsidian-markdown/LICENSE",
-    "copilot/skills/obsidian-cli/SKILL.md",
-    "copilot/skills/obsidian-cli/LICENSE",
-    "copilot/skills/obsidian-bases/SKILL.md",
-    "copilot/skills/obsidian-bases/references",
-    "copilot/skills/obsidian-bases/LICENSE",
-    "copilot/skills/json-canvas/references",
-    "copilot/skills/json-canvas/SKILL.md",
-    "copilot/skills/copilot-youtube-transcript/SKILL.md",
-    "copilot/skills/copilot-web-search/SKILL.md",
-    "copilot/skills/copilot-web-fetch/SKILL.md",
-    "copilot/skills/copilot-read-pdf/SKILL.md",
+    "copilot/skills/openartifacts-publish/themes/research-memo.md",
     "copilot/skills/copilot-fetch-x/SKILL.md",
-    "copilot/copilot-conversations/Revisión_de_texto_de_práctica@20260907_185419.md",
-    "copilot/copilot-conversations/Revisión_de_la_Práctica_1@20260907_185550.md"
+    "copilot/skills/copilot-youtube-transcript/SKILL.md",
+    "copilot/skills/copilot-read-pdf/SKILL.md",
+    "copilot/skills/copilot-web-fetch/SKILL.md",
+    "copilot/skills/copilot-web-search/SKILL.md"
   ]
 }
