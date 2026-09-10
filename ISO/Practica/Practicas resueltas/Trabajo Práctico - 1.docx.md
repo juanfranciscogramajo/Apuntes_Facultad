@@ -516,11 +516,12 @@ Particiones:
        el modo octal sirve para definir proceso numericamente de 3 digitos, cada valor tiene asignado una accion y se puede sumar para obtener un digito del 0 al 7 que def combinacion de accesos.
 
    23. ¿Existe la posibilidad de que algún usuario del sistema pueda acceder a determinado archivo para el cual no posee permisos? Indiquelo y realice las pruebas correspondientes. 
+       el superusuario puede acceder a cualquier archivo del sistema. Los de
 
    24. Explique los conceptos de “full path name” (path absoluto) y “relative path name” (path relativo). De ejemplos claros de cada uno de ellos.  
-
+       Full path name = 
    25. ¿Con qué comando puede determinar en qué directorio se encuentra actualmente? ¿Existe alguna forma de ingresar a su directorio personal sin necesidad de escribir todo el path completo? ¿Podría utilizar la misma idea para acceder a otros directorios? ¿Cómo? Explique con un ejemplo. 
-
+       
    26. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con el uso del FileSystem:  
 
 | umount   du   df iv. 	mount    | mkfs   fdisk (con cuidado)   write  losetup  sta  |
