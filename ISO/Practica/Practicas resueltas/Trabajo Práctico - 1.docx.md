@@ -482,13 +482,16 @@ Particiones:
        Es el superusuario administrador del sistema, se puede mas de uno para eso se le debe asignar manualmente el UID 0 (UID root) en el /etc/passwd 
    17. Agregue un nuevo usuario llamado *isocso* a su instalación de GNU/Linux, especifique que su home sea creada en /home/*isocso*, y hágalo miembro del grupo *informatica* (si no existe, deberá crearlo). Luego, sin iniciar sesión como este usuario cree un archivo en su home personal que le pertenezca. Luego de todo esto, borre el usuario y verifique que no queden registros de él en los archivos de información de los usuarios y grupos.  
 
-   18. Investigue la funcionalidad y parámetros de los siguientes comandos:  
-
-    useradd y adduser  	v. 	groupadd  
-
-     2. usermod  	vi. 	who  
-
-    3. userdel  	vii. 	groupdel  iv. 	su 	viii. 	passwd 
+   18. Investigue la funcionalidad y parámetros de los siguientes comandos:
+       useradd: añadir un usuario, modifica $cat/etc/passwd
+       adduser: crear cuentas de usuario. -m direc home, -d <ruta> def home, -g <grupo> asigna gp primario, -s <shell> def shell x defecto
+       groupadd: crea nuevo grupo en el sistema. -g <GID> asigna id, -r crea gp del sist.
+       usermod: mod prop de una cuenta de usuario existente
+       who: muestra info sobre users con sesion activa en sist.
+       userdel: elimina cuenta de usuario del sist. 
+       groupdel:
+       su:
+       passwd: 
 
 
  
