@@ -465,15 +465,18 @@ Particiones:
    10. ¿Para qué sirve el comando *systemctl* en SystemD?  
        
    11. ¿A qué hace referencia el concepto de *target* en SystemD? 
-       agrupa units o establece untos de sincronizacion en  el arranque
+       agrupa units o establece untos de sincronizacion en  el arranque.
    12. Ejecutar el comando *pstree*. ¿Qué es lo que se puede observar a partir de la ejecución de este comando?  
+       
 
        
 
 13. Usuarios:  
 
-   14. ¿Qué archivos son utilizados en un sistema GNU/Linux para guardar la información de los usuarios?  
-
+   14. ¿Qué archivos son utilizados en un sistema GNU/Linux para guardar la información de los usuarios?
+       $cat/etc/passwd nombre de usuario, id, nombre, interprete de comandos
+       $cat/etc/shadow guarda las contraseñas del usuario encriptado
+       $cat/etc/group guarda informacion y configuracion correspodiente a grupos del sistema.
    15. ¿A qué hacen referencia las siglas *UID* y *GID*? ¿Pueden coexistir UIDs iguales en un sistema GNU/Linux? Justifique.  
 
    16. ¿Qué es el usuario root? ¿Puede existir más de un usuario con este perfil en GNU/Linux? ¿Cuál es la *UID* de *root*? 
