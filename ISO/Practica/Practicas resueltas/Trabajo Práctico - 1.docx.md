@@ -505,14 +505,12 @@ Particiones:
        o: El resto de los usuarios del sistema.
        Permisos basicos:
        r: read permite ver contenido archivo. Valor 4 octal.
-       w: write permite mod o elimina
-   21. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con los permisos en GNU/Linux:  
-
-      1. chmod  
-
-         2. chown  
-
-            3. chgrp  
+       w: write permite mod o eliminar archivo. Valor 2 octal.
+       x: permite ejecutar archivo si es un script/programa. Valor 1 octal.
+   21. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con los permisos en GNU/Linux:
+       chmod
+       chown
+       chgrp  
 
    22. Al utilizar el comando chmod generalmente se utiliza una notación octal asociada para definir permisos. ¿Qué significa esto? ¿A qué hace referencia cada valor?  
 
