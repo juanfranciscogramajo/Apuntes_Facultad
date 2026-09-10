@@ -488,10 +488,10 @@ Particiones:
        groupadd: crea nuevo grupo en el sistema. -g <GID> asigna id, -r crea gp del sist.
        usermod: mod prop de una cuenta de usuario existente
        who: muestra info sobre users con sesion activa en sist.
-       userdel: elimina cuenta de usuario del sist. 
-       groupdel:
-       su:
-       passwd: 
+       userdel: elimina cuenta de usuario del sist. -r ademas borra home y correo, -f elimina hasta con sesion iniciada
+       groupdel: elimina gp existente.
+       su: permite alternal la sesion hacia otro usuario o super
+       passwd: permite cambiar la contra de un usuario.
 
 
  
@@ -499,7 +499,13 @@ Particiones:
 19. FileSystem y permisos:  
 
    20. ¿Cómo son definidos los permisos sobre archivos en un sistema GNU/Linux?  
-
+       Permisos de usuarios:
+       u: El usuario duenio del archivo.
+       g: El grupo asignado al archivo.
+       o: El resto de los usuarios del sistema.
+       Permisos basicos:
+       r: read permite ver contenido archivo. Valor 4 octal.
+       w: write permite mod o elimina
    21. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con los permisos en GNU/Linux:  
 
       1. chmod  
