@@ -542,13 +542,14 @@ Particiones:
        Foreground(primer plano): se ejecuta en la terminal directamente tomando el control bloqueando la linea de comandos hasta que el proceso termine.
        Background(segundo plano): el proceso se ejecuta independientemente de la interac del usuario y no bloquea la terminal.
     2. ¿Cómo puedo hacer para ejecutar un proceso en Background? ¿Como puedo hacer para pasar un proceso de background a foreground y viceversa?
+       &: background al final ara ejecutar en background.
+       Corriendo un proceso en primer plano, Ctrl + z suspende y bg reanuda en background. y si quiero de vueltr foregound fg.
        
-    3. Pipe ( **|** ). ¿Cuál es su finalidad? Cite ejemplos de su utilización.  
-
-    4. Redirección. ¿Qué tipo de redirecciones existen? ¿Cuál es su finalidad? Cite ejemplos de utilización.  
-
-        
-
+    3. Pipe ( **|** ). ¿Cuál es su finalidad? Cite ejemplos de su utilización.
+       Lo que hace es unir procesos permitiendo encadenar y procesar datos sin crear arch tmp. 
+    4. Redirección. ¿Qué tipo de redirecciones existen? ¿Cuál es su finalidad? Cite ejemplos de utilización.
+       
+       
 28. Otros comandos de Linux (Indique funcionalidad y parámetros):  
 
     1. ¿A qué hace referencia el concepto de empaquetar archivos en GNU/Linux?  
