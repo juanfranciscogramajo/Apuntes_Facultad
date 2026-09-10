@@ -155,7 +155,7 @@ Para las<font color="#ffff00"> inversiones en acciones</font> el valor actual se
    
 De las inversiones en acciones es importante poder conocer su nombre, la cantidad de acciones en las que se invertirá y el valor unitario de cada acción. Por su parte, los <font color="#ffff00">plazos fijos</font> se constituyen en una <font color="#00b0f0">fecha</font>, es importante conocer el <font color="#00b0f0">monto depositado</font> y cuál es el <font color="#00b0f0">porcentaje de interés</font> que genera.   
    
-Por último, el valor de inversión actual de un inversor es la suma de los valores actuales de todas las inversiones que posee. Un inversor puede agregar y sacar inversiones de su cartera de inversiones cuando lo desee. Las inversiones pueden ser tanto en acciones como en plazo fijos y pueden estar mezcladas.   
+Por último, el valor de <font color="#00b0f0">inversión actual</font> de un <font color="#ffff00">inversor</font> es la suma de los valores actuales de todas las inversiones que posee. Un inversor puede <font color="#00b050">agregar</font> y <font color="#00b050">sacar</font> inversiones de su cartera de inversiones cuando lo desee. Las inversiones pueden ser tanto en acciones como en plazo fijos y pueden estar mezcladas.   
    
 **Tareas:**  
 Utilizando el siguiente template visto en teoría  
