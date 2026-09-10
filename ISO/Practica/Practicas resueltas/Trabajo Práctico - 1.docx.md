@@ -463,13 +463,11 @@ Particiones:
    9. ¿A qué hace referencia el concepto de *Unit* en SystemD?  
       son las unidades de trabajo.
    10. ¿Para qué sirve el comando *systemctl* en SystemD?  
-       
+       sirve para interactuar con sysD para controlar, administrar el estado del sistema y sus units Ej: start, stop, restart, enable, status.
    11. ¿A qué hace referencia el concepto de *target* en SystemD? 
        agrupa units o establece untos de sincronizacion en  el arranque.
-   12. Ejecutar el comando *pstree*. ¿Qué es lo que se puede observar a partir de la ejecución de este comando?  
-       
-
-       
+   12. Ejecutar el comando *pstree*. ¿Qué es lo que se puede observar a partir de la ejecución de este comando?
+       Se observa los procesos activos organizados en forma de arbol jerarquico. La raiz es sistemd o init.
 
 13. Usuarios:  
 
@@ -486,15 +484,12 @@ Particiones:
 
    18. Investigue la funcionalidad y parámetros de los siguientes comandos:  
 
-      1. useradd y adduser  	v. 	groupadd  
+    useradd y adduser  	v. 	groupadd  
 
-         2. usermod  	vi. 	who  
+     2. usermod  	vi. 	who  
 
-            3. userdel  	vii. 	groupdel  iv. 	su 	viii. 	passwd 
+    3. userdel  	vii. 	groupdel  iv. 	su 	viii. 	passwd 
 
-          
-
-          
 
  
 
