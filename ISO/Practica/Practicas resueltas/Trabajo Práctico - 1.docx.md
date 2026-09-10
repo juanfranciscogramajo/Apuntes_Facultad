@@ -519,17 +519,24 @@ Particiones:
        el superusuario puede acceder a cualquier archivo del sistema. Los de
 
    24. Explique los conceptos de “full path name” (path absoluto) y “relative path name” (path relativo). De ejemplos claros de cada uno de ellos.  
-       Full path name = 
-   25. ¿Con qué comando puede determinar en qué directorio se encuentra actualmente? ¿Existe alguna forma de ingresar a su directorio personal sin necesidad de escribir todo el path completo? ¿Podría utilizar la misma idea para acceder a otros directorios? ¿Cómo? Explique con un ejemplo. 
-       
-   26. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con el uso del FileSystem:  
-
-| umount   du   df iv. 	mount    | mkfs   fdisk (con cuidado)   write  losetup  sta  |
-| :---- | :---- |
-
+       Full path name = ubicacion exacta de un archivo o directorio desde la raiz. es unica e invariable.
+       relative path name = ruta especifica de un elemento partiendo de la ubi actual de trabajo. 
+   25. ¿Con qué comando puede determinar en qué directorio se encuentra actualmente? ¿Existe alguna forma de ingresar a su directorio personal sin necesidad de escribir todo el path completo? ¿Podría utilizar la misma idea para acceder a otros directorios? ¿Cómo? Explique con un ejemplo.
+       Con pwd informa el dir actual. Cd para ingresar al dir perso solo sin args.
+       `~` (para subdirectorios del home), `.` (directorio actual) o `..` (directorio superior/padre) sin necesidad de escribir la ruta absoluta completa desde `/`.
+   26. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con el uso del FileSystem:
+       umount
+       du
+       df
+       mount
+       mkfs
+       fdisk (con cuidado)
+       write
+       losetup
+       sta 
  
 
-10. Procesos:  
+27. Procesos:  
 
     1. ¿Qué significa que un proceso se está ejecutando en Background? ¿Y en Foreground? 
 
@@ -541,7 +548,7 @@ Particiones:
 
         
 
-11. Otros comandos de Linux (Indique funcionalidad y parámetros):  
+28. Otros comandos de Linux (Indique funcionalidad y parámetros):  
 
     1. ¿A qué hace referencia el concepto de empaquetar archivos en GNU/Linux?  
 
