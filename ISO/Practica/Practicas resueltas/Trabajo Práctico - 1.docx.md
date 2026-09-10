@@ -525,15 +525,15 @@ Particiones:
        Con pwd informa el dir actual. Cd para ingresar al dir perso solo sin args.
        `~` (para subdirectorios del home), `.` (directorio actual) o `..` (directorio superior/padre) sin necesidad de escribir la ruta absoluta completa desde `/`.
    26. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con el uso del FileSystem:
-       umount
-       du
-       df
-       mount
-       mkfs
-       fdisk (con cuidado)
-       write
-       losetup
-       sta 
+       umount: desmonta sistema de archivos o disp montado en arbol de dir
+       du: muestra espacio ocupado en disco por arch y dir
+       df: muestra info del espacio libre y ocupado en particiones y sist mont
+       mount: monta un disp de almacenamiento en un punto del arbol o lista los disp montados actualmente.
+       mkfs: da formato a una particion creando un sist de archivos sobre ella.
+       fdisk (con cuidado): herramienta par ver, crear y eliminar tabla de particiones
+       write: envia mensajes de texo a la terminal de otro usuario conectado en la pc.
+       losetup: asocia o desacopla archivos regulares con disp de bucle.
+       stat: muestra el estado y metadatos de un filesystem.
  
 
 27. Procesos:  
