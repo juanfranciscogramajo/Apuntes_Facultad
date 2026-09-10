@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ISO/Practica/Practicas resueltas/Trabajo Práctico - 1.docx.md",
+                "file": "OBJ1/Practica/Cuadernillo de actividades 2026- PUBLICO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Trabajo Práctico - 1.docx"
+              "title": "Cuadernillo de actividades 2026- PUBLICO"
             }
           }
         ]
@@ -83,8 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 230.5,
-    "collapsed": true
+    "width": 230.5
   },
   "right": {
     "id": "befe0b92c4573c88",
@@ -226,8 +225,11 @@
   },
   "active": "9ae4a67ac1f84f17",
   "lastOpenFiles": [
-    "ISO/Practica/Explicacion Practica/Explicacion practica 10-09-26.md",
+    "OBJ1/Practica/Trabajando con proyectos Maven v2.docx.md",
     "ISO/Practica/Practicas resueltas/Trabajo Práctico - 1.docx.md",
+    "OBJ1/Practica/Practica 1.md",
+    "OBJ1/Practica/Cuadernillo de actividades 2026- PUBLICO.md",
+    "ISO/Practica/Explicacion Practica/Explicacion practica 10-09-26.md",
     "ISO/Practica/Practicas resueltas",
     "ISO/Practica/Explicacion Practica",
     "ING1/Teoria/Teoria 07-09.md",
@@ -259,9 +261,6 @@
     "copilot/skills/obsidian-markdown/references/CALLOUTS.md",
     "copilot/skills/openartifacts-publish/SKILL.md",
     "copilot/skills/openartifacts-publish/themes/research-memo.md",
-    "copilot/skills/copilot-fetch-x/SKILL.md",
-    "copilot/skills/copilot-youtube-transcript/SKILL.md",
-    "copilot/skills/copilot-read-pdf/SKILL.md",
-    "copilot/skills/copilot-web-fetch/SKILL.md"
+    "copilot/skills/copilot-fetch-x/SKILL.md"
   ]
 }
