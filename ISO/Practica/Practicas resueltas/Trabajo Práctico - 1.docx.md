@@ -513,7 +513,7 @@ Particiones:
        chgrp: cambia el grupo asignado a un directorio.
 
    22. Al utilizar el comando chmod generalmente se utiliza una notación octal asociada para definir permisos. ¿Qué significa esto? ¿A qué hace referencia cada valor?
-       el modo octal sirve para definir proceso numericamente de 3 digitos, cada valor tiene asignado una accion y se puede sumar para obtener un digito del 0 al 7 que def combinacion de accesos
+       el modo octal sirve para definir proceso numericamente de 3 digitos, cada valor tiene asignado una accion y se puede sumar para obtener un digito del 0 al 7 que def combinacion de accesos.P
 
    23. ¿Existe la posibilidad de que algún usuario del sistema pueda acceder a determinado archivo para el cual no posee permisos? Indiquelo y realice las pruebas correspondientes. 
 
