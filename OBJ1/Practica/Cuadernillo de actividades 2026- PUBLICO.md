@@ -149,7 +149,7 @@ Si todo salió bien, su implementación debería pasar las pruebas que definen l
 
 ## **Ejercicio 3: Inversores**
 
-Estamos desarrollando una aplicación móvil para que un <font color="#ff0000">inversor</font> pueda conocer el estado de sus inversiones. El sistema permite manejar dos tipos de inversiones: <font color="#ffff00">Inversión en acciones</font> e <font color="#ffff00">inversión en plazo fijo</font>. En todo momento, se desea poder conocer el <font color="#8064a2">valor</font> actual de cada inversión y de las inversiones realizadas por el inversor.  
+Estamos desarrollando una aplicación móvil para que un <font color="#ffff00">inversor</font> pueda conocer el estado de sus inversiones. El sistema permite manejar dos tipos de inversiones: <font color="#ffff00">Inversión en acciones</font> e <font color="#ffff00">inversión en plazo fijo</font>. En todo momento, se desea poder conocer el <font color="#8064a2">valor</font> actual de cada inversión y de las inversiones realizadas por el inversor.  
    
 Para las<font color="#ffff00"> inversiones en acciones</font> el valor actual se calcula multiplicando el<font color="#4bacc6"> valor unitario</font> de una acción por la cantidad de acciones que se posee. De las <font color="#4bacc6">acciones</font> se conoce el <font color="#4bacc6">nombre</font> que las identifica en el mercado de valores, un inversor puede invertir en diferentes acciones con diferentes <font color="#4bacc6">valores unitarios.</font> Por su parte, para los <font color="#ffff00">plazo fijos</font>, el <font color="#00b0f0">valor actual </font>consiste en el cálculo del valor inicial de constitución del plazo fijos sumando los intereses diarios desde la <font color="#00b0f0">fecha</font> de constitución hasta hoy.   
    
