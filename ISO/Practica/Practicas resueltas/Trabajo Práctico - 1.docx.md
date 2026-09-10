@@ -538,10 +538,11 @@ Particiones:
 
 27. Procesos:  
 
-    1. ¿Qué significa que un proceso se está ejecutando en Background? ¿Y en Foreground? 
-
-    2. ¿Cómo puedo hacer para ejecutar un proceso en Background? ¿Como puedo hacer para pasar un proceso de background a foreground y viceversa?  
-
+    1. ¿Qué significa que un proceso se está ejecutando en Background? ¿Y en Foreground?
+       Foreground(primer plano): se ejecuta en la terminal directamente tomando el control bloqueando la linea de comandos hasta que el proceso termine.
+       Background(segundo plano): el proceso se ejecuta independientemente de la interac del usuario y no bloquea la terminal.
+    2. ¿Cómo puedo hacer para ejecutar un proceso en Background? ¿Como puedo hacer para pasar un proceso de background a foreground y viceversa?
+       
     3. Pipe ( **|** ). ¿Cuál es su finalidad? Cite ejemplos de su utilización.  
 
     4. Redirección. ¿Qué tipo de redirecciones existen? ¿Cuál es su finalidad? Cite ejemplos de utilización.  
