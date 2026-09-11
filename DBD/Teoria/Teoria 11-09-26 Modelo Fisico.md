@@ -6,13 +6,8 @@ restricciones
 dependencias
 normalizacion
 
-Modelo fisico(relacional): rep la bd como coleccion de relaciones. Cada relacion = tabla de valores o archivo plano. un reg o tabla se denomina tupla. Cada entidad del ER es una tabla.
-Pasos: 
-Eliminacion de id externos
-Seleccion de claves 
-conversion de entidades
-Relaciones.
-Relaciones:
-cardinalidad muchos a muchos
-Cardinalidad uno a muchos
-
+Modelo fisico(relacional): la bd pasa a ser un conjunto de tablas, una fila/registro es una tupla, columna es un atributo y los valores para un atributo forman su dominio.
+Entidades pasan a ser tablas.
+seleccion clave primaria: si una ent tiene varios identificaores se opta por uno o def un id subrogado autoincremental. si eligen id naturales que sean simples y compactos. 
+Conversion de relaciones a tablas:
+muchos a muchos(N:M)
