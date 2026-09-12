@@ -197,78 +197,76 @@ El **BIOS** (*Basic I/O System*) es el software grabado en un chip de memoria no
   1. Directamente en el **MBR** (o el espacio contiguo *MBR gap*)[cite: 3].
   2. En el sector de arranque de una partición específica (**VBR** / *Volume Boot Record*)[cite: 3].
 * **Gestores conocidos:** `GRUB`, `LILO`, `NTLDR`, `GAG`, `YaST`[cite: 3].
-   1. ¿Cuáles son los pasos que se suceden desde que se prende una computadora hasta que el Sistema Operativo es cargado (proceso de *bootstrap*)? 
+## <font color="#00b0f0"> f. ¿Cuáles son los pasos que se suceden desde que se prende una computadora hasta que el Sistema Operativo es cargado (proceso de bootstrap)?</font>
+1. Se empieza a ejecutar el código del **BIOS**.
+2. El BIOS ejecuta el **POST** (*Power-On Self-Test*).
+3. El BIOS lee el sector de arranque (**MBR**).
+4. Se carga el gestor de arranque a través del **MBC** (*Master Boot Code*).
+5. El **bootloader** (ej. GRUB) carga el **Kernel** y el **initrd** (*initial ram disk*).
+6. Se monta el **initrd** como sistema de archivos raíz temporal y se inicializan componentes esenciales del núcleo (como el *scheduler*).
+7. El Kernel ejecuta el proceso **init** (PID 1) y se desmonta el **initrd**.
+8. Se lee el archivo de configuración **/etc/inittab**.
+9. Se ejecutan los scripts asociados al **runlevel 1**.
+10. El final del runlevel 1 indica la transición hacia el **runlevel por defecto**.
+11. Se ejecutan los scripts apuntados por el **runlevel por defecto**.
+12. El sistema queda listo para ser usado (presentando la pantalla de *login*).
 
-   1\. Se empieza a ejecutar el código del BIOS.
+---
 
-   2\. El BIOS ejecuta el POST.
+## <font color="#00b0f0">g. Analice el proceso de arranque en GNU/Linux y describa sus principales pasos.</font>
+* **Arranque por BIOS clásico:** El gestor de arranque (comúnmente **GRUB**) opera por fases encadenadas; la **Fase 1** en el MBR invoca a la **Fase 1.5** (en el *MBR gap*), y esta carga la **Fase 2**, encargada de presentar la interfaz de selección y cargar la imagen del Kernel en memoria.
+* **Arranque por UEFI:** **GRUB** se ejecuta de manera directa como una aplicación UEFI almacenada en una partición con formato FAT32, prescindiendo del esquema por etapas intermedias.
+* **Inicialización del Kernel:** El Kernel toma el control, analiza el hardware, monta el entorno temporal para cargar controladores críticos y cede el mando al primer proceso del espacio de usuario (**init** o **systemd**).
 
-   3\. El BIOS lee el sector de arranque (MBR).
+---
 
-   4\. Se carga el gestor de arranque (MBC).
+**h. ¿Cuáles son los pasos que se suceden en el proceso de parada (shutdown) de GNU/Linux?**
+1. El sistema envía una **señal de terminación** (`SIGTERM` / `SIGKILL`) a todos los procesos activos para cerrarlos ordenadamente.
+2. Se sincronizan los búferes de disco y se **desmontan de forma segura los sistemas de archivos** (remontándolos en modo de solo lectura para evitar daños o corrupción).
+3. Se envía la **señal de corte de energía** (*poweroff*) al hardware o se detiene la CPU de manera definitiva.
 
-   5\. El bootloader carga el kernel y el initrd (initial ram disk).
+---
 
-   6\. Se monta el initrd como sistema de archivos raíz y se inicializan
+**i. ¿Es posible tener en una PC GNU/Linux y otro Sistema Operativo instalado? Justifique.**  
+**Sí, es totalmente posible.**  
+* **Particionado independiente:** La arquitectura permite alojar cada sistema operativo en particiones lógicas o primarias separadas dentro del mismo disco físico.
+* **Gestor de arranque múltiple:** Se utiliza un gestor como **GRUB** (*GRand Unified Bootloader*) para seleccionar dinámicamente qué sistema operativo iniciar en cada arranque[cite: 1, 8].
+* **Consideración de instalación:** Si el instalador de un sistema operativo no detecta el SO previo y sobrescribe el sector de arranque primario, puede dejarlo temporalmente inaccesible hasta que se reconfigure el gestor de booteo[cite: 1, 8].
 
-   componentes esenciales (por ejemplo, el scheduler).
+---
 
-   7\. El Kernel ejecuta el proceso init y se desmonta el initrd.
+## 9. Archivos y Editores
 
-   8\. Se lee el /etc/inittab.
+**a. ¿Cómo se identifican los archivos en GNU/Linux?**  
+En GNU/Linux los archivos se identifican internamente por su **número de inodo** (*inode*) y su **ruta dentro del árbol jerárquico de directorios**. A diferencia de otros sistemas como Windows, las extensiones (como `.txt` o `.exe`) son meramente descriptivas u opcionales y no determinan el tipo real ni los privilegios de ejecución del archivo.
 
-   9\. Se ejecutan los scripts apuntados por el runlevel 1\.
+---
 
-   10\. El final del runlevel 1 le indica que vaya al runlevel por defecto.
+**b. Investigue el funcionamiento de los editores vim, nano y mcedit, y los comandos cat, more y less.**
 
-   11\. Se ejecutan los scripts apuntados por el runlevel por defecto.
+* **Editores de texto:**
+  * **vim:** Editor de consola avanzado basado en modos (**modo comando**, **modo inserción** y **modo visual**), operado completamente mediante comandos de teclado.
+  * **nano:** Editor interactivo sencillo y directo, orientado a principiantes, con una barra de atajos visibles al pie de pantalla.
+  * **mcedit:** Editor provisto por el entorno *Midnight Commander*, visualmente semejante a los editores clásicos de DOS, amigable para modificaciones rápidas.
 
-   12\. El sistema está listo para ser usado.
+* **Comandos de visualización:**
+  * **`cat`:** Concatena y muestra todo el contenido de un archivo directamente en la terminal sin realizar pausas.
+  * **`more`:** Paginador interactivo que muestra el contenido pantalla por pantalla permitiendo únicamente avanzar en el texto.
+  * **`less`:** Paginador avanzado que permite desplazarse libremente hacia adelante y hacia atrás mediante atajos de navegación y búsquedas.
 
-   2. Analice el proceso de arranque en *GNU/Linux* y describa sus principales pasos.  
+---
 
-   3. ¿Cuáles son los pasos que se suceden en el proceso de parada (*shutdown*) de *GNU/Linux*?  
-
-   El sistema envía una señal de terminación a todos los procesos activos, desmonta de forma segura los sistemas de archivos (pasándolos a modo de solo lectura para evitar corrupción) y, finalmente, envía la señal de corte de energía al hardware o detiene la CPU.
-
-   4. ¿Es posible tener en una PC *GNU/Linux* y otro Sistema Operativo instalado?  Justifique.  
-
-   Sí, es totalmente posible. La arquitectura permite que cada sistema operativo sea instalado en una partición separada dentro del mismo disco físico.  Para poder elegir cuál iniciar, se hace uso de gestores de arranque múltiple, como GRUB (GRand Unified Bootloader). No obstante, durante la instalación se debe tener cuidado; si el instalador no detecta el SO previo, sobreescribir el gestor primario puede dejar temporalmente inaccesible al otro sistema.
-
-       
-
-5. Archivos y editores:  
-
-   6. ¿Cómo se identifican los archivos en *GNU/Linux*?  
-
-   Identificación de archivos: En GNU/Linux, los archivos se identifican internamente por su número de inodo (inode) y su ubicación en el árbol de directorios. A diferencia de Windows, las extensiones (como .txt o .exe) son opcionales y no determinan obligatoriamente el formato ni la función del archivo.
-
-      2. Investigue el funcionamiento de los editores **vim, nano** y **mcedit**, y los comandos **cat,** **more y less**. 
-
-   vim: Es un editor avanzado que funciona mediante modos (inserción, comando, visual). Requiere aprender atajos de teclado específicos para usarse.
-
-   nano: Es un editor muy sencillo y directo, ideal para principiantes, que muestra las opciones de guardado y salida en la parte inferior de la pantalla.
-
-   mcedit: Es el editor que viene integrado con el gestor Midnight Commander; es muy amigable y visualmente similar a editores clásicos de DOS.
-
-    cat: Muestra todo el contenido de un archivo en la terminal de una sola vez.
-
-   more: Es un paginador que permite leer archivos largos pausando pantalla por pantalla, pero solo permite avanzar.
-
-   less: Es un paginador más avanzado que permite desplazarse libremente tanto hacia adelante como hacia atrás por el texto.
-
-      3. Cree un archivo llamado “prueba.exe” en su directorio personal usando el **vim**. El mismo debe contener su número de alumno y su nombre.  
-
-      4. Investigue el funcionamiento del comando **file**. Pruébelo con diferentes archivos. ¿Qué diferencia nota?  file: Su funcionalidad es determinar el tipo real de un archivo analizando su estructura interna (magic numbers) en lugar de confiar en su extensión. Si lo pruebas con el archivo "prueba.exe" (del punto c), la diferencia que notarás es que file te indicará que es un archivo de texto ASCII normal, ignorando la extensión ".exe".
+**c. Cree un archivo llamado “prueba.exe” en su directorio personal usando vim (debe contener su número de alumno y su nombre).**
+1. Abrir la terminal y ejecutar:
+   {```bash
+   vim ~/prueba.exe
+   } 
+2. Investigue el funcionamiento del comando **file**. Pruébelo con diferentes archivos. ¿Qué diferencia nota?  file: Su funcionalidad es determinar el tipo real de un archivo analizando su estructura interna (magic numbers) en lugar de confiar en su extensión. Si lo pruebas con el archivo "prueba.exe" (del punto c), la diferencia que notarás es que file te indicará que es un archivo de texto ASCII normal, ignorando la extensión ".exe".
 
       5. Investigue la funcionalidad y parámetros de los siguientes comandos 
 
-| relacionados con el uso de archivos:  |  |  |
-| :---- | ----- | :---- |
-| cd   mkdir   rmdir  iv. 	ln  	v. 	tail  | vi.  vii.  viii. ix.  x.  | locate  ls   pwd  cp  mv  |
-|  | xi.  | find   |
 
- 
+cd   mkdir   rmdir  iv. 	ln  	v. 	tail locate  ls   pwd  cp  mv find                     |
 
 4. Indique qué comando es necesario utilizar para realizar cada una de las siguientes acciones. Investigue su funcionamiento y parámetros más importantes:  
 
