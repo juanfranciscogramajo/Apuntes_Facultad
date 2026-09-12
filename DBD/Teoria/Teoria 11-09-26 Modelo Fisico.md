@@ -22,4 +22,16 @@ esto depende de su cardinalidad.
 	Recursivas: como es una relacion consigo misma, para pasarla al físico se trata como las binarias. Para implementarlas se hace clave foránea en la misma tabla con valor nulo. Ej. empleado y jefe(es empleado tmb), en tabla empleado agregas un campo q es una clave foránea que apunta a la clave primaria de la misma tabla.
 	![[Pasted image 20260911210713.png]]
 Claves Foráneas(FK): atributo en una tabla que hace referencia a CP de otra para conectar ambas estructuras.
-Integridad referencial: garantiza la inexistencia de tuplas huérfanas. si una tupla apunta a 
+Integridad referencial: Establece que cualquier valor que aparezca en una tabla como **clave foránea (FK)** debe existir previamente como **clave primaria (CP/PK)** en la tabla a la que hace referencia, o bien ser nulo (si la relación lo permite). 
+	No permite borrar/mod fila padre si tiene reg vinculados.
+	al borrar mod reg padrese actualizan filas hijas.
+	pone el campo de la FK en nulo en lo reg hijos.
+restricciones del modelo fisico:
+Dominio: cada atributo debe recibir valor compatible con su tipo de dato.
+CP: los id no se pueden repetir.
+Inegridad de entidad: ningun atributo que forme parte de CP puede null.
+impacto en operaciones: 
+alta: puede violar valor nulo para clave, repeticion, integridad referencial y restricciones de dominio.
+baja: puede violar integridad referencial(se procede como caso anterior)
+modificacion: puede violar cualquiera de las operaciones.
+
