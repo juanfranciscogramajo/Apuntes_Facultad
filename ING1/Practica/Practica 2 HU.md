@@ -331,26 +331,6 @@
 > > - **Dado** un administrador autenticado 
 > > - **cuando** ingresa el numero de serie único 888, el tipo camara, con precio de compra $1.010.000,
 > > - **entonces** el sistema le informa que el precio debe ser menor a 1.000.000
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # 5 - Manejo de licencias
 
 **Rol de usuarios:**
@@ -425,4 +405,4 @@
 > >**Escenario 4: Administrador sin iniciar sesión intenta consultar una licencia**
 > > - **Dado** un administrador selecciona consultar una licencia,
 > > - **cuando** selecciona la opcion de consultar una licencia,
-> > - **entonces** el sistema deniega el acceso y solicita el inicie sesion.
+> > - **entonces** el sistema deniega el acceso y solicita el inicie sesion
