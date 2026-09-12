@@ -13,7 +13,10 @@ Conversion de relaciones a tablas:
 esto depende de su cardinalidad.
 	(N:N): la relacion simepre se convierte en una nueva tabla. Hereda como claves foraneas las claves primarias de las entidades que relaciona, ademas de los atributos propios de la relacion.
 	(1:N) con cobertura total: no crea tabla, la clave primaria del lado 1 viaja clave foranea a la tabla del lado N.
-	1:N cobertura parcial del lado 1: cuando la participacion es opcional (0,1)
+	1:N cobertura parcial lado N: no se convierte en tabla y no mod analisis.
+	1:N cobertura parcial lado 1: cuando la participacion es opcional (0,1)
 		opcion 1: se pasa la FK a la tabla del N permitiendo val null si no hay relacion
 		Opcion 2: se crea tabla intermedia para la relacion (evita nulos, pero costo crea tabla).
-relacion
+	1:1: si una depende de la otra se pueden unificar en una tabla, unico caso que una entidad puede no tener tabla propia.
+	Ternarias: gral relaciones N:N, se crea una tabla intermedia con FK con cp de las 3 entidades.
+	Recursivas. 
