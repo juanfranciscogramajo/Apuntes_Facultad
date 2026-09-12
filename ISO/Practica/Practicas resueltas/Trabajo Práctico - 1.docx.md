@@ -261,158 +261,195 @@ En GNU/Linux los archivos se identifican internamente por su **número de inodo*
    {```bash
    vim ~/prueba.exe
    } 
-2. Investigue el funcionamiento del comando **file**. Pruébelo con diferentes archivos. ¿Qué diferencia nota?  file: Su funcionalidad es determinar el tipo real de un archivo analizando su estructura interna (magic numbers) en lugar de confiar en su extensión. Si lo pruebas con el archivo "prueba.exe" (del punto c), la diferencia que notarás es que file te indicará que es un archivo de texto ASCII normal, ignorando la extensión ".exe".
+2. ## 9. Archivos, Editores y Comandos de Archivos
+
+**¿Cómo funciona el comando file y qué diferencia se observa al probarlo con "prueba.exe"?**
+* **Funcionamiento:** Determina el tipo real de un archivo examinando su estructura interna y números mágicos (*magic numbers*), sin basarse en la extensión que posea.
+* **Diferencia:** Al ejecutarlo sobre `prueba.exe`, indica que es un archivo de texto plano ASCII (`ASCII text`), demostrando que la extensión `.exe` no lo convierte en un ejecutable binario para el sistema operativo.
+
+---
+
+**Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con el uso de archivos:**
+* **`cd`:** Cambia el directorio de trabajo actual.
+* **`mkdir`:** Crea nuevos directorios dentro del sistema de archivos.
+* **`rmdir`:** Elimina directorios exclusivamente cuando se encuentran vacíos.
+* **`ln`:** Crea enlaces hacia archivos; por defecto genera enlaces duros y con el parámetro `-s` crea enlaces simbólicos.
+* **`tail`:** Muestra las últimas líneas de un archivo (10 por defecto)[cite: 1, 3]. Admite `-n` para especificar la cantidad y `-f` para monitorizarlo en tiempo real[cite: 1, 3].
+* **`locate`:** Realiza búsquedas rápidas de archivos a través de una base de datos indexada[cite: 1].
+* **`ls`:** Lista los ficheros y carpetas de un directorio[cite: 1, 3]. Parámetros comunes: `-l` (detallado) y `-a` (incluye ocultos)[cite: 1, 3].
+* **`pwd`:** Imprime en pantalla la ruta absoluta del directorio donde se encuentra posicionado el usuario[cite: 1, 3].
+* **`cp`:** Copia archivos o directorios[cite: 1, 3]. Admite `-r` para realizar copias recursivas de carpetas completas[cite: 1, 3].
+* **`mv`:** Mueve o renombra ficheros y directorios[cite: 1, 3].
+* **`find`:** Busca archivos en tiempo real recorriendo el árbol de directorios según criterios como `-name` (nombre) o `-type` (tipo)[cite: 1, 3].
+
+---
+
+**Comandos necesarios para realizar cada una de las siguientes acciones:**
+* **Crear la carpeta ISOCSO:**  
+  `mkdir ISOCSO`[cite: 1, 3]
+* **Acceder a la carpeta:**  
+  `cd ISOCSO`[cite: 1, 3]
+* **Crear dos archivos con los nombres isocso.txt e isocso.csv:**  
+  `touch isocso.txt isocso.csv`[cite: 3]
+* **Listar el contenido del directorio actual:**  
+  `ls -l`[cite: 1, 3]
+* **Visualizar la ruta donde estoy situado:**  
+  `pwd`[cite: 1, 3]
+* **Buscar todos los archivos en los que su nombre contiene la cadena “iso*”:**  
+  `find . -name "iso*"`[cite: 1, 3]
+* **Informar la cantidad de espacio libre en disco:**  
+  `df -h`[cite: 1, 3]
+* **Verificar los usuarios conectados al sistema:**  
+  `who`[cite: 1, 3]
+* **Editar el archivo isocso.txt e ingresar Nombre y Apellido:**  
+  `nano isocso.txt` *(o `vim isocso.txt`)*[cite: 1]
+* **Mostrar en pantalla las últimas líneas de un archivo:**  
+  `tail isocso.txt`[cite: 1, 3]
+
+---
+
+## 10. Comandos del Sistema
+
+| Comando | Objetivo | Parámetros Comunes | Ubicación (Directorio) |
+| :--- | :--- | :--- | :--- |
+| **`man`** | Muestra el manual de referencia de comandos y utilidades[cite: 1]. | `-k` (busca por palabra clave)[cite: 1]. | `/usr/bin/man`[cite: 1] |
+| **`shutdown`** | Apaga o reinicia el equipo de forma planificada y segura[cite: 1]. | `-h` (apagar), `-r` (reiniciar), `now` (inmediato)[cite: 1]. | `/sbin/shutdown`[cite: 1] |
+| **`reboot`** | Reinicia el sistema operativo de forma inmediata[cite: 1]. | `-f` (fuerza reinicio sin desmontar ordenadamente)[cite: 1]. | `/sbin/reboot`[cite: 1] |
+| **`halt`** | Detiene todos los procesos y apaga la CPU[cite: 1]. | `-f` (fuerza la detención)[cite: 1]. | `/sbin/halt`[cite: 1] |
+| **`uname`** | Muestra información del sistema y arquitectura[cite: 1]. | `-a` (toda la información), `-r` (versión del Kernel)[cite: 1]. | `/bin/uname`[cite: 1] |
+| **`dmesg`** | Imprime los mensajes del búfer del Kernel[cite: 1]. | `-c` (limpia el búfer), `-T` (fechas legibles)[cite: 1]. | `/bin/dmesg`[cite: 1] |
+| **`lspci`** | Lista los buses PCI y dispositivos conectados[cite: 1]. | `-v` (modo detallado), `-nn` (códigos numéricos)[cite: 1]. | `/sbin/lspci`[cite: 1] |
+| **`at`** | Programa tareas para una única ejecución futura[cite: 1]. | `-l` (lista pendientes), `-r` (elimina tarea)[cite: 1]. | `/usr/bin/at`[cite: 1] |
+| **`head`** | Muestra las primeras líneas de un archivo de texto[cite: 1]. | `-n [número]` (define la cantidad de líneas)[cite: 1]. | `/usr/bin/head`[cite: 1] |
+| **`tail`** | Muestra las últimas líneas de un archivo de texto[cite: 1]. | `-n [número]`, `-f` (sigue cambios en tiempo real)[cite: 1]. | `/usr/bin/tail`[cite: 1] |
+
+---
+
+## 11. Proceso de Arranque SystemV
+
+**a. Pasos del proceso de inicio desde el encendido hasta el login:**
+1. Se empieza a ejecutar el código del BIOS/UEFI[cite: 1].
+2. El BIOS ejecuta el POST para verificar componentes de hardware[cite: 1].
+3. El BIOS lee el sector de arranque primario (MBR)[cite: 1].
+4. Se carga el gestor de arranque mediante el MBC (*Master Boot Code*)[cite: 1].
+5. El *bootloader* transfiere a la memoria RAM el Kernel y el *initrd*[cite: 1].
+6. Se monta el *initrd* como sistema de archivos raíz temporal y se inicializan componentes esenciales[cite: 1].
+7. El Kernel ejecuta el proceso `init` (PID 1) y desmonta el *initrd*[cite: 1].
+8. El proceso `init` lee el archivo de configuración `/etc/inittab`[cite: 1].
+9. Se ejecutan los scripts apuntados por el runlevel 1[cite: 1].
+10. La finalización del runlevel 1 indica el pasaje al runlevel por defecto[cite: 1].
+11. Se ejecutan los scripts del runlevel por defecto[cite: 1].
+12. El sistema queda listo para operar y presenta el prompt de login[cite: 1].
+
+---
+
+**b. Proceso INIT: ¿Quién lo ejecuta? ¿Cuál es su objetivo?**
+* **Ejecutor:** Es lanzado por el Kernel al finalizar su carga y la detección de hardware[cite: 1].
+* **Objetivo:** Es el proceso padre de todos los demás procesos en el espacio de usuario (se le asigna el **PID 1**) y tiene como función cargar los subprocesos y demonios para que el sistema opere correctamente[cite: 1].
+
+---
+
+**c. RunLevels: ¿Qué son? ¿Cuál es su objetivo?**
+* **Definición:** Son modos o estados de operación preconfigurados en el sistema operativo[cite: 1].
+* **Objetivo:** Iniciar o detener un conjunto específico de servicios según las necesidades del equipo (modo monousuario, multiusuario en texto o gráfico)[cite: 1].
+
+---
+
+**d. Niveles de ejecución según el estándar, archivo de definición y soporte entre distribuciones:**
+* **Niveles estándar:**
+  * `0`: *Halt* (parada o apagado total)[cite: 1].
+  * `1` / `S`: *Single-user mode* (modo monousuario de mantenimiento)[cite: 1].
+  * `2`: Modo multiusuario sin soporte de red[cite: 1].
+  * `3`: Modo multiusuario en consola con red[cite: 1].
+  * `4`: No utilizado / reservado para personalizaciones[cite: 1].
+  * `5`: Modo multiusuario con entorno gráfico (*X11*)[cite: 1].
+  * `6`: *Reboot* (reinicio)[cite: 1].
+* **Definición de inicio:** Se define mediante la directiva `initdefault` dentro del archivo `/etc/inittab`[cite: 1].
+* **Respeto del estándar:** No todas las distribuciones lo respetan de forma idéntica; distribuciones basadas en Debian utilizan los niveles del 2 al 5 indistintamente, mientras que familias como Red Hat los diferenciaban estrictamente[cite: 1].
 
-      5. Investigue la funcionalidad y parámetros de los siguientes comandos 
+---
 
+**e. Archivo /etc/inittab: Finalidad, información y estructura:**
+* **Finalidad:** Dictar las directivas e instrucciones principales al proceso `init`[cite: 1].
+* **Información almacenada:** Define el runlevel por defecto y las acciones o scripts a ejecutar durante transiciones de estado[cite: 1].
+* **Estructura:** Sus campos están delimitados por dos puntos (`:`):  
+  `id:runlevel:accion:proceso`  
+  *(Ejemplo: `id:5:initdefault:`)*[cite: 1].
 
-cd   mkdir   rmdir  iv. 	ln  	v. 	tail locate  ls   pwd  cp  mv find                     |
+---
 
-4. Indique qué comando es necesario utilizar para realizar cada una de las siguientes acciones. Investigue su funcionamiento y parámetros más importantes:  
+**f. Cambio de runlevel: Comando y permanencia:**
+* **Comando:** Ejecutar como superusuario `init <Y>` (o `telinit <Y>`)[cite: 1].
+* **Permanencia:** No es permanente[cite: 1]. Solo se mantiene durante la sesión en curso; al reiniciar la máquina, el sistema volverá a cargar el nivel configurado en `/etc/inittab`[cite: 1].
 
-   1. Cree la carpeta **ISOCSO**  
+---
 
-   2. Acceda a la carpeta  
+**g. Scripts RC: Finalidad, almacenamiento y orden de ejecución:**
+* **Finalidad:** Iniciar (*start*) o detener (*stop*) los servicios y demonios del sistema operativo[cite: 1].
+* **Almacenamiento:** Residen físicamente en `/etc/init.d/`, y se asocian mediante enlaces simbólicos dentro de directorios específicos para cada nivel (ej. `/etc/rc5.d/`)[cite: 1].
+* **Determinación de acción:** Los scripts que inician con **`S`** (*Start*) se ejecutan para levantar el servicio, y los que inician con **`K`** (*Kill*) se ejecutan para detenerlo[cite: 1].
+* **Orden de ejecución:** Se guían por un número de orden inmediato a la letra (ejemplo: `S20apache` arranca antes que `S99local`), garantizando que se respeten las dependencias entre servicios[cite: 1].
 
-   3. Cree dos archivos con los nombres **isocso.txt** e **isocso.csv**  
+---
 
-   4. Liste el contenido del directorio actual  
+## 12. SystemD
 
-   5. Visualizar la ruta donde estoy situado  
+**a. ¿Qué es systemd?**  
+Es el administrador de sistema y gestor de servicios moderno en distribuciones GNU/Linux[cite: 1]. Se ejecuta como el primer proceso en espacio de usuario (**PID 1**) centralizando la administración de demonios, procesos y dependencias[cite: 1].
 
-   6. Busque todos los archivos en los que su nombre contiene la cadena “iso\*”  
+---
 
-   7. Informar la cantidad de espacio libre en disco  
+**b. ¿A qué hace referencia el concepto de Unit en SystemD?**  
+Una **Unit** (unidad) es el objeto fundamental de trabajo y configuración que administra SystemD[cite: 1]. Representa un recurso del sistema y se define en ficheros con extensiones como `.service`, `.socket`, `.mount` o `.target`[cite: 1].
 
-   8. Verifique los usuarios conectados al sistema  
+---
 
-   9. Editar a el archivo **isocso.txt** e ingresar Nombre y Apellido  
+**c. ¿Para qué sirve el comando systemctl en SystemD?**  
+Es la herramienta de control por línea de comandos para consultar y administrar el estado del sistema y sus *units*[cite: 1]. Permite iniciar (`start`), detener (`stop`), reiniciar (`restart`), habilitar en el arranque (`enable`), deshabilitar (`disable`) y comprobar el estado (`status`) de los servicios.
 
-   10. Mostrar en pantalla las últimas líneas de un archivo.  
+---
 
-        
+**d. ¿A qué hace referencia el concepto de target en SystemD?**  
+Un **target** es una unidad especial (`.target`) que agrupa varias unidades para establecer puntos de sincronización durante el inicio del equipo[cite: 1]. Cumple la función equivalente a los *Runlevels* clásicos de SystemV (por ejemplo, `multi-user.target` reemplaza al nivel 3 y `graphical.target` al nivel 5)[cite: 1].
 
-5. Investigue el objetivo, parámetros  y ubicación (directorio) de los siguientes comandos:  
+---
 
-   Man: Muestra el manual de usuario de comandos y programas.	 Parametros comunes: \-k (busca una palabra clave). Ubicación: /usr/bin/man
+**e. ¿Qué se observa a partir de la ejecución del comando pstree?**  
+Muestra todos los procesos activos organizados en forma de **árbol jerárquico** de dependencias, donde se visualiza claramente que la raíz principal del sistema es `systemd` (o `init`)[cite: 1, 3].
 
-   Shutdown: Apaga o reinicia el sistema de forma segura.	Parametros comunes: \-h (apagar), \-r (reiniciar), now (ahora). Ubicacion: /sbin/shutdown
+---
 
-   reboot: Reinicia el sistema operativo inmediatamente. Parametros comunes: \-f (fuerza el reinicio sin apagar servicios). Ubicacion: /sbin/reboot
+## 13. Usuarios
 
-   halt: Detiene el sistema (apaga) inmediatamente. Parametros comunes: \-f (forzar apagado).	Ubicacion: /sbin/halt
+**a. ¿Qué archivos son utilizados en GNU/Linux para guardar la información de usuarios?**
+* **`/etc/passwd`:** Almacena los datos principales de las cuentas (nombre de usuario, UID, GID primario, comentario, ruta del directorio home y shell predeterminada)[cite: 1].
+* **`/etc/shadow`:** Almacena de forma segura y cifrada las contraseñas de los usuarios y las políticas de expiración[cite: 1].
+* **`/etc/group`:** Almacena la definición de los grupos del sistema y sus miembros asociados[cite: 1].
 
-   uname: Muestra información del sistema operativo y hardware. Parametros comunes: \-a (toda la info), \-r (versión del Kernel). Ubicacion: /bin/uname
+---
 
-   dmesg: Imprime los mensajes del buffer del Kernel (útil para hardware). Parametros comunes:	\-c (limpia el buffer), \-T (fecha legible). Ubicacion:  /bin/dmesg
+**b. ¿A qué hacen referencia las siglas UID y GID? ¿Pueden coexistir UIDs iguales?**
+* **UID (*User Identifier*):** Identificador numérico único asignado a cada usuario para gestionar permisos y accesos[cite: 1].
+* **GID (*Group Identifier*):** Identificador numérico asignado a cada grupo para la gestión colectiva de privilegios[cite: 1].
+* **Coexistencia de UIDs:** Sí, técnicamente pueden coexistir si se configuran de forma manual en `/etc/passwd`[cite: 1]. Sin embargo, representa una mala práctica de seguridad porque para el Kernel ambos nombres compartirán exactamente los mismos permisos y privilegios sobre los recursos[cite: 1].
 
-   lspci: Lista todos los buses PCI y los dispositivos conectados a ellos. Parametros comunes:	\-v (modo detallado), \-nn (muestra códigos).Ubicacion: /sbin/lspci
+---
 
-   at: Programa la ejecución de comandos para una única vez en el futuro. Parametros comunes: \-l (lista trabajos pendientes), \-r (borra). Ubicacion: /usr/bin/at
+**c. ¿Qué es el usuario root? ¿Puede existir más de un usuario con este perfil? ¿Cuál es su UID?**
+* **Definición:** Es el superusuario y administrador global con privilegios absolutos sobre el sistema operativo[cite: 1].
+* **UID:** Su identificador numérico siempre es **`0`**[cite: 1].
+* **Múltiples perfiles:** Sí, es posible crear otra cuenta con facultades totales asignándole manualmente el **UID 0** en el archivo `/etc/passwd`[cite: 1].
 
-   head: Muestra las primeras líneas de un archivo de texto. Parametros comunes: \-n \[número\] (define cuántas líneas mostrar).Ubicacion: /usr/bin/head
+---
 
-   tail: Muestra las últimas líneas de un archivo de texto. Parametros comunes: \-n \[número\], \-f (sigue el archivo en tiempo real). Ubicacion: /usr/bin/tail 
+**d. Ejercicio práctico (creación, asignación, archivo y eliminación):**
 
- 
+1. Crear el grupo `informatica`:
+   {```bash
+   sudo groupadd informatica}
+   2. Agregue un nuevo usuario llamado *isocso* a su instalación de GNU/Linux, especifique que su home sea creada en /home/*isocso*, y hágalo miembro del grupo *informatica* (si no existe, deberá crearlo). Luego, sin iniciar sesión como este usuario cree un archivo en su home personal que le pertenezca. Luego de todo esto, borre el usuario y verifique que no queden registros de él en los archivos de información de los usuarios y grupos.  
 
-6. Proceso de Arranque *SystemV* :  
-
-   1. Enumere los pasos del proceso de inicio de un sistema GNU/Linux, desde que se prende la PC hasta que se logra obtener el login en el sistema.  
-
-   1\. Se empieza a ejecutar el código del BIOS.
-
-   2\. El BIOS ejecuta el POST.
-
-   3\. El BIOS lee el sector de arranque (MBR).
-
-   4\. Se carga el gestor de arranque (MBC).
-
-   5\. El bootloader carga el kernel y el initrd (initial ram disk).
-
-   6\. Se monta el initrd como sistema de archivos raíz y se inicializan
-
-   componentes esenciales (por ejemplo, el scheduler).
-
-   7\. El Kernel ejecuta el proceso init y se desmonta el initrd.
-
-   8\. Se lee el /etc/inittab.
-
-   9\. Se ejecutan los scripts apuntados por el runlevel 1\.
-
-   10\. El final del runlevel 1 le indica que vaya al runlevel por defecto.
-
-   11\. Se ejecutan los scripts apuntados por el runlevel por defecto.
-
-   12\. El sistema está listo para ser usado.
-
-   2. Proceso **INIT**. ¿Quién lo ejecuta? ¿Cuál es su objetivo?  
-
-   Lo carga el Kernel al finalizar su carga y su objetivo es cargar los subprocesos para que el SO funcione correctamente. Es el padre de los procesos, tiene PID 1
-
-   3. RunLevels. ¿Qué son? ¿Cuál es su objetivo?  
-
-   Son los modos en que arranca GNU/Linux, su objetivo es iniciar o apagar una serie de servicios.
-
-   4. ¿A qué hace referencia cada nivel de ejecución según el estándar? ¿Dónde se define qué Runlevel ejecutar al iniciar el sistema operativo? ¿Todas las distribuciones respetan estos estándares?  
-
-   0 → halt (parada o apagado).
-
-   • 1 → single-user mode (modo monousuario).
-
-   • 2 → multi-user without network support (multiusuario sin soporte de red).
-
-   • 3 → multi-user console mode (modo multiusuario en consola).
-
-   • 4 → N/A (no se utiliza).
-
-   • 5 → X11 (modo multiusuario con entorno gráfico basado en X.org).
-
-   • 6 → reboot (reinicio).
-
-   El runlevel por defecto se define en el archivo /etc/inittab. No todas las distribuciones respetan este estándar exacto; por ejemplo, Debian usa del 2 al 5 de forma idéntica, mientras que Red Hat los diferenciaba más estrictamente.
-
-   5. Archivo /etc/inittab. ¿Cuál es su finalidad? ¿Qué tipo de información se almacena en el? ¿Cuál es la estructura de la información que en él se almacena? 
-
-   Su finalidad es dictar las instrucciones principales para el proceso init. Almacena el runlevel por defecto y qué acciones tomar al cambiar de estado. Su estructura se divide por dos puntos (:): id:runlevel:accion:proceso (ejemplo: id:5:initdefault:).
-
-   6. Suponga que se encuentra en el runlevel \<X\>. Indique qué comando(s) deberá ejecutar para cambiar al runlevel \<Y\>. ¿Este cambio es permanente? ¿Por qué?  
-
-   Ejecutar como admin Init Y, seria hasta que apagues sino mod el por defecto
-
-   7. Scripts RC. ¿Cuál es su finalidad? ¿Dónde se almacenan? Cuando un sistema GNU/Linux arranca o se detiene se ejecutan scripts, indique cómo determina qué script ejecutar ante cada acción. ¿Existe un orden para llamarlos? Justifique.
-
-   Su finalidad es iniciar (start) o detener (stop) los demonios/servicios del sistema. Se almacenan físicamente en /etc/init.d/, pero se crean accesos directos en carpetas numeradas como /etc/rc5.d/ para cada runlevel. El sistema determina qué ejecutar y en qué orden basándose en el nombre de los accesos directos: los que empiezan con S (Start) se inician, y los que empiezan con K (Kill) se detienen. Tienen un orden numérico (ej. S20apache arranca antes que S99local) para asegurar que las dependencias lógicas se respeten.
-
-       
-
-7. *SystemD* (https://github.com/systemd/systemd):  
-
-   8. ¿Qué es *systemd*?
-      es un sistema que centraliza la admin de servicios y librerias del sistema
-   9. ¿A qué hace referencia el concepto de *Unit* en SystemD?  
-      son las unidades de trabajo.
-   10. ¿Para qué sirve el comando *systemctl* en SystemD?  
-       sirve para interactuar con sysD para controlar, administrar el estado del sistema y sus units Ej: start, stop, restart, enable, status.
-   11. ¿A qué hace referencia el concepto de *target* en SystemD? 
-       agrupa units o establece untos de sincronizacion en  el arranque.
-   12. Ejecutar el comando *pstree*. ¿Qué es lo que se puede observar a partir de la ejecución de este comando?
-       Se observa los procesos activos organizados en forma de arbol jerarquico. La raiz es sistemd o init.
-
-13. Usuarios:  
-
-   14. ¿Qué archivos son utilizados en un sistema GNU/Linux para guardar la información de los usuarios?
-       $cat/etc/passwd nombre de usuario, id, nombre, interprete de comandos.
-       $cat/etc/shadow guarda las contraseñas del usuario encriptado.
-       $cat/etc/group guarda informacion y configuracion correspodiente a grupos del sistema.
-   15. ¿A qué hacen referencia las siglas *UID* y *GID*? ¿Pueden coexistir UIDs iguales en un sistema GNU/Linux? Justifique. 
-       UID: id unico que el so asigna a cada user para gestionar accesos, procesos y privilegios.
-       GID: id numerico que representa gp de usuarios, que pertenece a una cuenta para la asignacion y control de permisos sobre archivos y recursos.
-   16. ¿Qué es el usuario root? ¿Puede existir más de un usuario con este perfil en GNU/Linux? ¿Cuál es la *UID* de *root*? 
-       Es el superusuario administrador del sistema, se puede mas de uno para eso se le debe asignar manualmente el UID 0 (UID root) en el /etc/passwd 
-   17. Agregue un nuevo usuario llamado *isocso* a su instalación de GNU/Linux, especifique que su home sea creada en /home/*isocso*, y hágalo miembro del grupo *informatica* (si no existe, deberá crearlo). Luego, sin iniciar sesión como este usuario cree un archivo en su home personal que le pertenezca. Luego de todo esto, borre el usuario y verifique que no queden registros de él en los archivos de información de los usuarios y grupos.  
-
-   18. Investigue la funcionalidad y parámetros de los siguientes comandos:
+   3. Investigue la funcionalidad y parámetros de los siguientes comandos:
        useradd: añadir un usuario, modifica $cat/etc/passwd
        adduser: crear cuentas de usuario. -m direc home, -d <ruta> def home, -g <grupo> asigna gp primario, -s <shell> def shell x defecto
        groupadd: crea nuevo grupo en el sistema. -g <GID> asigna id, -r crea gp del sist.
@@ -426,9 +463,9 @@ cd   mkdir   rmdir  iv. 	ln  	v. 	tail locate  ls   pwd  cp  mv find            
 
  
 
-19. FileSystem y permisos:  
+4. FileSystem y permisos:  
 
-   20. ¿Cómo son definidos los permisos sobre archivos en un sistema GNU/Linux?  
+   5. ¿Cómo son definidos los permisos sobre archivos en un sistema GNU/Linux?  
        Permisos de usuarios:
        u: El usuario duenio del archivo.
        g: El grupo asignado al archivo.
@@ -437,24 +474,24 @@ cd   mkdir   rmdir  iv. 	ln  	v. 	tail locate  ls   pwd  cp  mv find            
        r: read permite ver contenido archivo. Valor 4 octal.
        w: write permite mod o eliminar archivo. Valor 2 octal.
        x: permite ejecutar archivo si es un script/programa. Valor 1 octal.
-   21. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con los permisos en GNU/Linux:
+   6. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con los permisos en GNU/Linux:
        chmod: cambia permisos de acceso de un directorio.
        chown: cambia el uuario propietario de un directorio.
        chgrp: cambia el grupo asignado a un directorio.
 
-   22. Al utilizar el comando chmod generalmente se utiliza una notación octal asociada para definir permisos. ¿Qué significa esto? ¿A qué hace referencia cada valor?
+   7. Al utilizar el comando chmod generalmente se utiliza una notación octal asociada para definir permisos. ¿Qué significa esto? ¿A qué hace referencia cada valor?
        el modo octal sirve para definir proceso numericamente de 3 digitos, cada valor tiene asignado una accion y se puede sumar para obtener un digito del 0 al 7 que def combinacion de accesos.
 
-   23. ¿Existe la posibilidad de que algún usuario del sistema pueda acceder a determinado archivo para el cual no posee permisos? Indiquelo y realice las pruebas correspondientes. 
+   8. ¿Existe la posibilidad de que algún usuario del sistema pueda acceder a determinado archivo para el cual no posee permisos? Indiquelo y realice las pruebas correspondientes. 
        el superusuario puede acceder a cualquier archivo del sistema. Los demas solo a los que posean permisos.
 
-   24. Explique los conceptos de “full path name” (path absoluto) y “relative path name” (path relativo). De ejemplos claros de cada uno de ellos.  
+   9. Explique los conceptos de “full path name” (path absoluto) y “relative path name” (path relativo). De ejemplos claros de cada uno de ellos.  
        Full path name = ubicacion exacta de un archivo o directorio desde la raiz. es unica e invariable.
        relative path name = ruta especifica de un elemento partiendo de la ubi actual de trabajo. 
-   25. ¿Con qué comando puede determinar en qué directorio se encuentra actualmente? ¿Existe alguna forma de ingresar a su directorio personal sin necesidad de escribir todo el path completo? ¿Podría utilizar la misma idea para acceder a otros directorios? ¿Cómo? Explique con un ejemplo.
+   10. ¿Con qué comando puede determinar en qué directorio se encuentra actualmente? ¿Existe alguna forma de ingresar a su directorio personal sin necesidad de escribir todo el path completo? ¿Podría utilizar la misma idea para acceder a otros directorios? ¿Cómo? Explique con un ejemplo.
        Con pwd informa el dir actual. Cd para ingresar al dir perso solo sin args.
        `~` (para subdirectorios del home), `.` (directorio actual) o `..` (directorio superior/padre) sin necesidad de escribir la ruta absoluta completa desde `/`.
-   26. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con el uso del FileSystem:
+   11. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con el uso del FileSystem:
        umount: desmonta sistema de archivos o disp montado en arbol de dir
        du: muestra espacio ocupado en disco por arch y dir
        df: muestra info del espacio libre y ocupado en particiones y sist mont
@@ -466,7 +503,7 @@ cd   mkdir   rmdir  iv. 	ln  	v. 	tail locate  ls   pwd  cp  mv find            
        stat: muestra el estado y metadatos de un filesystem.
  
 
-27. Procesos:  
+12. Procesos:  
 
     1. ¿Qué significa que un proceso se está ejecutando en Background? ¿Y en Foreground?
        Foreground(primer plano): se ejecuta en la terminal directamente tomando el control bloqueando la linea de comandos hasta que el proceso termine.
