@@ -516,7 +516,7 @@ Particiones:
        el modo octal sirve para definir proceso numericamente de 3 digitos, cada valor tiene asignado una accion y se puede sumar para obtener un digito del 0 al 7 que def combinacion de accesos.
 
    23. ¿Existe la posibilidad de que algún usuario del sistema pueda acceder a determinado archivo para el cual no posee permisos? Indiquelo y realice las pruebas correspondientes. 
-       el superusuario puede acceder a cualquier archivo del sistema. Los de
+       el superusuario puede acceder a cualquier archivo del sistema. Los demas solo a los que posean permisos.
 
    24. Explique los conceptos de “full path name” (path absoluto) y “relative path name” (path relativo). De ejemplos claros de cada uno de ellos.  
        Full path name = ubicacion exacta de un archivo o directorio desde la raiz. es unica e invariable.
@@ -548,8 +548,11 @@ Particiones:
     3. Pipe ( **|** ). ¿Cuál es su finalidad? Cite ejemplos de su utilización.
        Lo que hace es unir procesos permitiendo encadenar y procesar datos sin crear arch tmp. 
     4. Redirección. ¿Qué tipo de redirecciones existen? ¿Cuál es su finalidad? Cite ejemplos de utilización.
-       
-       
+       Permite cambiar el origen de la entrada o el destino de las salidas de un comando, conectándolos directamente con archivos en vez de usar el teclado o la pantalla.
+       Tipos: 
+        **Entrada ("< solo el de la izq>"):** Lee datos desde un archivo como entrada estándar (_stdin_).
+
+_Ejemplo:_
 28. Otros comandos de Linux (Indique funcionalidad y parámetros):  
 
     1. ¿A qué hace referencia el concepto de empaquetar archivos en GNU/Linux?  
@@ -739,9 +742,9 @@ Asuma que “usuario” indica cuál es su nombre de usuario. Además deberá te
 
           - Otros: Todos los permisos  
 
-   7. Renombre los archivos "f3” y “f4" de manera que se llamen "f3.exe” y “f4.exe” respectivamente.  
+7. Renombre los archivos "f3” y “f4" de manera que se llamen "f3.exe” y “f4.exe” respectivamente.  
 
-   8. Utilizando un único comando cambie los permisos de los dos archivos renombrados en el inciso anterior, de manera de reflejar lo siguiente:  
+8. Utilizando un único comando cambie los permisos de los dos archivos renombrados en el inciso anterior, de manera de reflejar lo siguiente:  
 
       - Usuario: Ningún permiso 
 
@@ -751,7 +754,7 @@ Asuma que “usuario” indica cuál es su nombre de usuario. Además deberá te
 
          
 
-18. Indique qué comando/s es necesario para realizar cada una de las acciones de la siguiente secuencia de pasos (considerando su orden de aparición):  
+9. Indique qué comando/s es necesario para realizar cada una de las acciones de la siguiente secuencia de pasos (considerando su orden de aparición):  
 
     1. Cree un directorio llamado *logs* en el directorio /tmp.  
 
