@@ -1,271 +1,203 @@
-	 	**Trabajo Práctico N° 1**   
-   
-**Objetivo**  
+# Objetivo  
+El objetivo del presente trabajo práctico es que el estudiante se familiarice con los conceptos básicos del sistema operativo **GNU/Linux**, su **instalación**, **organización**, **entorno** y **comandos principales**. También se tratará el **manejo de usuarios**, **permisos** y su **sistemas de archivos**. 
 
-El objetivo del presente trabajo práctico es que el estudiante se familiarice con los conceptos básicos del sistema operativo *GNU/Linux*, su instalación, organización, entorno y comandos principales. También se tratará el manejo de usuarios,  permisos y su sistemas de archivos. 
+---
 
+## Temas Incluidos 
+* **GNU/Linux**, **instalación** y **conceptos básicos**.
+* **Permisos**, **arranque**, **usuarios**. 
+* **Organización interna**. 
 
-**Temas Incluidos** 
+---
 
-GNU/Linux, instalación y conceptos básicos, permisos, arranque, usuarios. 
+## 1. Características de GNU/Linux
 
-organización interna. 
+### a. Características más relevantes:
+* **Software Libre:** Garantiza la libertad de usar, estudiar, modificar y redistribuir el código bajo licencias como la **GNU GPL**. 
+* **Kernel Monolítico Híbrido:** Ejecuta los controladores en un espacio privilegiado, pero permite cargar y descargar módulos dinámicamente en tiempo de ejecución (**Loadable Kernel Modules**). 
+* **Portabilidad:** Se adapta y funciona en una amplia variedad de arquitecturas de hardware y procesadores. 
+* **Soporte de Virtualización:** Puede operar tanto como sistema anfitrión (**host**) o como invitado (**guest**) sobre diferentes hipervisores y emuladores. 
+* **Multitarea y Multiusuario:** Permite la ejecución concurrente de múltiples procesos y la sesión simultánea de diferentes usuarios garantizando **aislamiento y seguridad**. 
 
- 
+### b. Comparación con otros Sistemas Operativos:
+* **Windows:** Es software propietario de código cerrado con **kernel híbrido**; su portabilidad está más restringida a arquitecturas comerciales (**x86/x64** y recientemente **ARM**).
+* **macOS:** Basado en kernel híbrido (**XNU/Mach**) y estándares **UNIX**, pero gran parte de sus capas superiores y controladores son de código cerrado y de uso exclusivo en hardware de Apple.
 
-**1\. Características de GNU/Linux**
+### c. ¿Qué es GNU?
+Es un proyecto iniciado en **1983** para desarrollar un sistema operativo completo y compatible con **Unix**, compuesto en su totalidad por **software libre**. 
 
-* **a. Características más relevantes:**
+### d. Breve historia del proyecto GNU:
+Fundado por **Richard Stallman**, quien en **1985** creó la **Free Software Foundation (FSF)**. En **1990** el proyecto disponía de herramientas esenciales (editor **Emacs**, compilador **GCC**, bibliotecas del sistema), pero carecía de un núcleo funcional debido al estancamiento del desarrollo del núcleo **Hurd**. En **1992**, las herramientas GNU se integraron con el kernel desarrollado por **Linus Torvalds**, completando el sistema operativo funcional **GNU/Linux**. 
 
-  * **Software Libre:** Garantiza la libertad de usar, estudiar, modificar y redistribuir el código bajo licencias como la GNU GPL. 
+### e. Multitarea:
+Capacidad de un sistema operativo para alternar y procesar múltiples tareas o procesos concurrentemente. GNU/Linux hace uso activo de la **multitarea preferente** (*preemptive multitasking*), asignando tiempos de CPU y prioridades mediante el **planificador del kernel**. 
 
-  * **Kernel Monolítico Híbrido:** Ejecuta los controladores en un espacio privilegiado, pero permite cargar y descargar módulos dinámicamente en tiempo de ejecución (*Loadable Kernel Modules*). 
+### f. ¿Qué es POSIX?
+**Portable Operating System Interface:** Conjunto de estándares definidos por el **IEEE** que establece interfaces de programación de aplicaciones (**API**) y utilidades de línea de comandos para asegurar la **compatibilidad y portabilidad** del software entre sistemas derivados y similares a UNIX.
 
-  * **Portabilidad:** Se adapta y funciona en una amplia variedad de arquitecturas de hardware y procesadores. 
+---
 
-  * **Soporte de Virtualización:** Puede operar tanto como sistema anfitrión (*host*) o como invitado (*guest*) sobre diferentes hipervisores y emuladores. 
+## 2. Distribuciones de GNU/Linux
 
-  * **Multitarea y Multiusuario:** Permite la ejecución concurrente de múltiples procesos y la sesión simultánea de diferentes usuarios garantizando aislamiento y seguridad. 
+### a. Definición y ejemplos:
+Una **distribución (o distro)** es un conjunto empaquetado que integra el kernel Linux, las herramientas del proyecto GNU, un sistema de gestión de paquetes, instaladores y aplicaciones adicionales. 
+* **Debian:** Destaca por su estabilidad estricta, software completamente libre y su gestor `dpkg`/`apt`. 
+* **Arch Linux:** Distribución minimalista enfocada en usuarios avanzados, con modelo de actualización continua (*rolling release*) y gestor `pacman`. 
+* **Red Hat Enterprise Linux (RHEL) / Fedora:** Enfocadas en estabilidad corporativa y empresarial (RHEL) o innovación continua (Fedora), usando paquetes **RPM** y gestores `dnf`/`yum`. 
+* **Slackware:** Una de las distribuciones más antiguas, enfocada en la simplicidad de diseño Unix tradicional y mínima intervención sobre el software original. 
 
-* **b. Comparación con otros Sistemas Operativos:**
+### b. Diferencias principales entre distribuciones:
+* **Gestor y formato de paquetes** (`.deb`, `.rpm`, compilación desde fuentes). 
+* **Ciclo de actualizaciones y versiones** (estable/congelado vs. *rolling release*).
+* **Herramientas de administración y configuración** del sistema. 
+* **Selección de entornos de escritorio** y paquetería preinstalada por defecto. 
 
-  * **Windows:** Es software propietario de código cerrado con kernel híbrido; su portabilidad está más restringida a arquitecturas comerciales (x86/x64 y recientemente ARM).
+### c. Debian (Objetivos y Cronología):
+* **Objetivos:** Crear y mantener un sistema operativo universal, estable y 100% libre, sostenido de forma democrática por una comunidad voluntaria sin fines de lucro.
+* **Cronología básica:** Fundado en **agosto de 1993** por **Ian Murdock**. En **1996** se adoptó el **Manifiesto de Debian** y la versión 1.1; a lo largo de las décadas se consolidó como la base directa de decenas de distribuciones modernas (como **Ubuntu**, **Linux Mint** y **Kali Linux**). 
 
-  * **macOS:** Basado en kernel híbrido (XNU/Mach) y estándares UNIX, pero gran parte de sus capas superiores y controladores son de código cerrado y de uso exclusivo en hardware de Apple.
+---
 
-* **c. ¿Qué es GNU?**
+## 3. Estructura de GNU/Linux
 
-  * Es un proyecto iniciado en 1983 para desarrollar un sistema operativo completo y compatible con Unix, compuesto en su totalidad por software libre. 
+### a. Componentes fundamentales:
+* **Kernel (Núcleo):** Intermediario directo entre el hardware y el software. 
+* **Shell (Intérprete de comandos):** Interfaz para recibir y traducir instrucciones del usuario. 
+* **Sistema de Archivos (Filesystem):** Organización y administración del almacenamiento de datos. 
 
-* **d. Breve historia del proyecto GNU:**
+### b. Estructura básica del sistema:
+* **Hardware:** Componentes físicos (CPU, RAM, discos, periféricos). 
+* **Espacio de Kernel (Kernel Space):** Controla drivers, administración de memoria, llamadas al sistema y planificación de procesos. 
+* **Espacio de Usuario (User Space):** Bibliotecas compartidas de GNU (como `glibc`), servicios/demonios, el Shell y aplicaciones de usuario. 
 
-  * Fundado por Richard Stallman, quien en 1985 creó la *Free Software Foundation* (FSF). En 1990 el proyecto disponía de herramientas esenciales (editor Emacs, compilador GCC, bibliotecas del sistema), pero carecía de un núcleo funcional debido al estancamiento del desarrollo del núcleo *Hurd*. En 1992, las herramientas GNU se integraron con el kernel desarrollado por Linus Torvalds, completando el sistema operativo funcional GNU/Linux. 
+---
 
-* **e. Multitarea:**
+## 4. Kernel
 
-  * Capacidad de un sistema operativo para alternar y procesar múltiples tareas o procesos concurrentemente. GNU/Linux hace uso activo de la multitarea preferente (*preemptive multitasking*), asignando tiempos de CPU y prioridades mediante el planificador del kernel. 
+### a. Funciones principales:
+* Administración y asignación de la **memoria RAM**. 
+* Planificación y sincronización de **procesos en la CPU**. 
+* Gestión de **controladores de dispositivos (drivers)** e **interrupciones de hardware**. 
+* Control del acceso al **sistema de archivos y redes**. 
 
-* **f. ¿Qué es POSIX?**
+### b. Múltiples kernels instalados:
+**Sí, es completamente posible.** Las distintas imágenes binarias del kernel coexisten dentro del directorio `/boot` (bajo nombres como `vmlinuz-<versión>`). Al iniciar la computadora, el gestor de arranque (como **GRUB**) permite al usuario seleccionar qué versión del kernel ejecutar. 
 
-  * *Portable Operating System Interface*: Conjunto de estándares definidos por el IEEE que establece interfaces de programación de aplicaciones (API) y utilidades de línea de comandos para asegurar la compatibilidad y portabilidad del software entre sistemas derivados y similares a UNIX.
+### c. Directorio de ubicación:
+`/boot`. 
 
-**2\. Distribuciones de GNU/Linux**
+---
 
-* **a. Definición y ejemplos:**
+## 5. Intérprete de comandos (Shell)
 
-  * Una distribución (o *distro*) es un conjunto empaquetado que integra el kernel Linux, las herramientas del proyecto GNU, un sistema de gestión de paquetes, instaladores y aplicaciones adicionales. 
+### a. Definición y funciones:
+Programa en **espacio de usuario** que lee texto de entrada (órdenes), lo interpreta y solicita su ejecución al kernel a través de **llamadas al sistema**, devolviendo los resultados en pantalla. 
 
-  * **Debian:** Destaca por su estabilidad estricta, software completamente libre y su gestor dpkg/apt. 
+### b. Intérpretes de comandos comunes:
+* **sh (Bourne Shell):** El estándar histórico de UNIX; sintaxis simple, altamente portable pero con funciones interactivas limitadas. 
+* **bash (Bourne Again Shell):** Shell por defecto en la mayoría de distros GNU/Linux; incluye historial persistente, autocompletado avanzado y gestión robusta de redirecciones. 
+* **zsh (Z Shell):** Shell moderno con autocompletado contextual avanzado, corrección ortográfica de comandos y alta capacidad de personalización mediante temas y plugins. 
 
-  * **Arch Linux:** Distribución minimalista enfocada en usuarios avanzados, con modelo de actualización continua (*rolling release*) y gestor pacman. 
-
-  * **Red Hat Enterprise Linux (RHEL) / Fedora:** Enfocadas en estabilidad corporativa y empresarial (RHEL) o innovación continua (Fedora), usando paquetes RPM y gestores dnf/yum. 
-
-  * **Slackware:** Una de las distribuciones más antiguas, enfocada en la simplicidad de diseño Unix tradicional y mínima intervención sobre el software original. 
-
-* **b. Diferencias principales entre distribuciones:**
-
-  * Gestor y formato de paquetes (.deb, .rpm, compilación desde fuentes). 
-
-  * Ciclo de actualizaciones y versiones (estable/congelado vs. *rolling release*).
-
-  * Herramientas de administración y configuración del sistema. 
-
-  * Selección de entornos de escritorio y paquetería preinstalada por defecto. 
-
-* **c. Debian (Objetivos y Cronología):**
-
-  * **Objetivos:** Crear y mantener un sistema operativo universal, estable y 100% libre, sostenido de forma democrática por una comunidad voluntaria sin fines de lucro.
-
-  * **Cronología básica:** Fundado en agosto de 1993 por Ian Murdock. En 1996 se adoptó el Manifiesto de Debian y la versión 1.1; a lo largo de las décadas se consolidó como la base directa de decenas de distribuciones modernas (como Ubuntu, Linux Mint y Kali Linux). 
-
-**3\. Estructura de GNU/Linux**
-
-* **a. Componentes fundamentales:**
-
-  * **Kernel (Núcleo):** Intermediario directo entre el hardware y el software. 
-
-  * **Shell (Intérprete de comandos):** Interfaz para recibir y traducir instrucciones del usuario. 
-
-  * **Sistema de Archivos (Filesystem):** Organización y administración del almacenamiento de datos. 
-
-* **b. Estructura básica del sistema:**
-
-  * **Hardware:** Componentes físicos (CPU, RAM, discos, periféricos). 
-
-  * **Espacio de Kernel (*Kernel Space*):** Controla drivers, administración de memoria, llamadas al sistema y planificación de procesos. 
-
-  * **Espacio de Usuario (*User Space*):** Bibliotecas compartidas de GNU (como glibc), servicios/demonios, el Shell y aplicaciones de usuario. 
-
-**4\. Kernel**
-
-* **a. Funciones principales:**
-
-  * Administración y asignación de la memoria RAM. 
-
-  * Planificación y sincronización de procesos en la CPU. 
-
-  * Gestión de controladores de dispositivos (*drivers*) e interrupciones de hardware. 
-
-  * Control del acceso al sistema de archivos y redes. 
-
-* **b. Múltiples kernels instalados:**
-
-  * Sí, es completamente posible. Las distintas imágenes binarias del kernel coexisten dentro del directorio /boot (bajo nombres como vmlinuz-\<versión\>). Al iniciar la computadora, el gestor de arranque (como GRUB) permite al usuario seleccionar qué versión del kernel ejecutar. 
-
-* **c. Directorio de ubicación:**
-
-  * /boot. 
-
-**5\. Intérprete de comandos (Shell)**
-
-* **a. Definición y funciones:**
-
-  * Programa en espacio de usuario que lee texto de entrada (órdenes), lo interpreta y solicita su ejecución al kernel a través de llamadas al sistema, devolviendo los resultados en pantalla. 
-
-* **b. Intérpretes de comandos comunes:**
-
-  * **sh (*Bourne Shell*):** El estándar histórico de UNIX; sintaxis simple, altamente portable pero con funciones interactivas limitadas. 
-
-  * **bash (*Bourne Again Shell*):** Shell por defecto en la mayoría de distros GNU/Linux; incluye historial persistente, autocompletado avanzado y gestión robusta de redirecciones. 
-
-  * **zsh (*Z Shell*):** Shell moderno con autocompletado contextual avanzado, corrección ortográfica de comandos y alta capacidad de personalización mediante temas y plugins. 
-
-* **c. Ubicación de comandos (Path):**
-
-  * **Internos (*built-in*):** Integrados en el propio binario del Shell en memoria (ej. cd, pwd, exit). 
-
-  * **Externos:** Binarios ejecutables ubicados en rutas del disco especificadas dentro de la variable de entorno $PATH, tales como /bin, /sbin, /usr/bin o /usr/local/bin. 
-
-* **d. ¿Por qué no es parte del Kernel?**
-
-  * Para mantener la seguridad, estabilidad y modularidad del sistema. Si el Shell se ejecuta en espacio de usuario, un fallo o bloqueo del intérprete no compromete la integridad del núcleo. Además, permite que cada usuario elija o reemplace su interfaz sin modificar el núcleo del SO. 
-
-* **e. Shell distinto por usuario:**
-
-  * Sí. Cada cuenta tiene asignado su propio intérprete predeterminado en el último campo del archivo /etc/passwd (modificable con herramientas como chsh o usermod). 
-
-**6\. Sistema de Archivos (File System) en Linux**
-
-* **a. ¿Qué es?**
-
-  * Es la estructura lógica y los métodos que implementa el sistema operativo para organizar, almacenar, consultar, nombrar y proteger los datos en dispositivos de almacenamiento secundario. 
-
-* **b. Estructura básica y estándar FHS:**
-
-  * Todo el árbol jerárquico parte de un único directorio raíz denominado /. 
-
-  * **FHS (*Filesystem Hierarchy Standard*):** Estándar que unifica la nomenclatura y ubicación de carpetas y archivos en sistemas GNU/Linux y Unix. 
-
-  * **Directorios clave:**
-
-    * /bin: Comandos y binarios esenciales para todos los usuarios (ej. ls, cp, mv). 
-
-    * /sbin: Binarios esenciales para la administración del sistema (ej. fdisk, reboot). 
-
-    * /dev: Archivos especiales de representación de dispositivos de hardware (discos, puertos). 
-
-    * /etc: Archivos de configuración del sistema y servicios. 
-
-    * /home: Directorios personales de trabajo de los usuarios estándar. 
-
-    * /root: Directorio personal del superusuario/administrador. 
-
-    * /lib: Bibliotecas esenciales compartidas necesarias para los binarios del sistema. 
-
-    * /proc: Sistema de archivos virtual residente en memoria con información de procesos y estado del kernel. 
-
-    * /tmp: Archivos temporales creados por programas y usuarios. 
-
-    * /usr: Aplicaciones secundarias, código fuente, manuales y utilidades de nivel de usuario. 
-
-    * /var: Datos variables y dinámicos (registros de log en /var/log, colas de impresión, bases de datos). 
-
-* **c. Sistemas de archivos soportados:**
-
-  * **Nativos de Linux:** ext2, ext3, ext4, XFS, Btrfs, ReiserFS. 
-
-  * **Compatibles/Otros:** FAT32 (vfat), NTFS, exFAT, ISO 9660, NFS.
-
-Particiones:  
-
-1. Definición. Tipos de particiones. Ventajas y Desventajas.  
-
-   Forma de dividir el disco físico de manera lógica. 
-
-   Primaria: división básica directa del disco max 4 x disco.
-
-   Extendida: partición primaria especial de contenedor para alojar particiones lógicas
-
-   Logica: Particiones creadas dentro del espacio dela partición extendido para superar el limite de 4\.
-
-   Ventajas: permite aislar el SO de los datos perso, facilidad de respaldo y soporte de arranque multi
-
-   Desventaja: Desperdicio o fragmentación estatica de espacio si se dimensionan mal en la instalación.
-
-   2. ¿Cómo se identifican las particiones en *GNU/Linux*? (Considere discos **IDE**, **SCSI** y **SATA**).  
-
-   **Discos IDE:** Se identifican históricamente con el prefijo /dev/hd. El disco maestro del canal primario es /dev/hda, el esclavo /dev/hdb, y sus particiones se numeran /dev/hda1, /dev/hda2, etc.
-
-   **Discos SCSI / SATA / SSD / USB:** Se identifican con el prefijo /dev/sd. El primer disco físico es /dev/sda, el segundo /dev/sdb, y sus particiones se numeran /dev/sda1, /dev/sda2, etc.
-
-   *Numeración:* Del 1 al 4 se reservan para particiones primarias/extendidas; las particiones lógicas comienzan siempre desde el número 5 en adelante.
-
-   
-
-   3. ¿Cuántas particiones son necesarias como mínimo para instalar *GNU/Linux*? Nómbrelas indicando tipo de partición, identificación, tipo de File System y punto de montaje. 
-
-   Como mínimo se necesita **1 partición**. **Punto de montaje:** / (directorio raíz). **Tipo de partición:** Primaria. **Tipo de File System:** Ext4 (por defecto), ext3 o ext2. **Identificación:** Por ejemplo, /dev/hda3. *Se recomiendan al menos 2 particiones: / y una de SWAP en /dev/hda4)*.
-
-   4. Dar ejemplos de diversos casos de particionamiento dependiendo del tipo de tarea que se deba realizar en su sistema operativo. 
-
-   Separar los datos del usuario de las aplicaciones o del sistema operativo. 
-
-   Crear una partición exclusiva para restauración (restore) del sistema. 
-
-   Ubicar el Kernel en una partición de solo lectura, o en una que no se monta por seguridad. 
-
-   5. ¿Es posible visualizar particiones del tipo FAT y NTFS (que son de Windows) en GNU/Linux? 
-
-   Sí, es posible. Cada partición se puede formatear con sistemas destino como fat o ntfs.  Un sistema GNU/Linux puede tener una partición de Windows conviviendo en el disco (ej. /dev/hda1: DOS con Windows).
-
-   6. ¿Qué tipo de software para particionar existe? Menciónelos y compare.  
-
-   Destructivos: Solo permiten crear y eliminar particiones (ejemplo: fdisk).  
-
-   No destructivos: Permiten crear, eliminar y además modificar particiones existentes (ejemplos: fips, gparted)
-
-2. Arranque (*bootstrap*) de un Sistema Operativo:  
-
-   1. ¿Qué es el **BIOS**? ¿Qué tarea realiza? 
-
-   El BIOS (Basic I/O System) es el ncargado de iniciar la carga de SO a través del MBC, esta grabado en un chip ROM/NVRAM.
-
-   2. ¿Qué es **UEFI**? ¿Cuál es su función?
-
-   UEFI(Extensible Firmware Interface) es un estándar moderno para comunicación entre el SO y el firmware de la pc.  Define la ubi del gestor de arranque, exponer info de HW al bootloader y proveer un bootManager capaz de cargar apps y drivers desde un sist de arch UEFI como fat32.
-
-   3. ¿Qué es el **MBR**? ¿Qué es el **MBC**? 
-
-   MBR (Master Boot Record): Registro en primer sector del disco donde esta el cod de arranque 
-
-   MBC (Master Boot Code): es el cod de arranque ubicad en el MBR, no ocupa mas de 446BY, lanza el prog de boot o gest de arranque.
-
-   4. ¿A qué hacen referencia las siglas **GPT**? ¿Qué sustituye? Indique cuál es su formato.
-
-   Guid Partition Table: es el sistema de particionado que utiliza la interfaz UEFI, sustituye el esquema de particiones del MBR permitiendo mas capacidad y numero ilimtado de particione en un disco.  
-
-   5. ¿Cuál es la funcionalidad de un “Gestor de Arranque”? ¿Qué tipos existen? ¿Dónde se instalan? Cite gestores de arranque conocidos.
-
-   Su función es cargar una imagen del Kernel(SO) desde alguna part a mem para ejecutarlo. Existen 2 modos: Directamente en el MBR o en el csector de arranque de una part especifica. EJ: GRUB, LILO, NTLFR, GAG, YAST.
-
-   
-
-   
-
-   
-
-   6. ¿Cuáles son los pasos que se suceden desde que se prende una computadora hasta que el Sistema Operativo es cargado (proceso de *bootstrap*)? 
+### c. Ubicación de comandos (Path):
+* **Internos (built-in):** Integrados en el propio binario del Shell en memoria (ej. `cd`, `pwd`, `exit`). 
+* **Externos:** Binarios ejecutables ubicados en rutas del disco especificadas dentro de la variable de entorno `$PATH`, tales como `/bin`, `/sbin`, `/usr/bin` o `/usr/local/bin`. 
+
+### d. ¿Por qué no es parte del Kernel?
+Para mantener la **seguridad, estabilidad y modularidad** del sistema. Si el Shell se ejecuta en espacio de usuario, un fallo o bloqueo del intérprete no compromete la integridad del núcleo. Además, permite que cada usuario elija o reemplace su interfaz sin modificar el núcleo del SO. 
+
+### e. Shell distinto por usuario:
+**Sí.** Cada cuenta tiene asignado su propio intérprete predeterminado en el último campo del archivo `/etc/passwd` (modificable con herramientas como `chsh` o `usermod`).
+
+## 6. Sistema de Archivos (File System) en Linux
+
+### a. ¿Qué es?
+Es la **estructura lógica** y los métodos que implementa el sistema operativo para **organizar, almacenar, consultar, nombrar y proteger** los datos en dispositivos de almacenamiento secundario[cite: 1, 2]. 
+
+### b. Estructura básica y estándar FHS:
+Todo el árbol jerárquico parte de un **único directorio raíz** denominado `/`[cite: 1, 2]. 
+
+* **FHS (Filesystem Hierarchy Standard):** Estándar que unifica la nomenclatura y ubicación de carpetas y archivos en sistemas GNU/Linux y Unix[cite: 1, 2]. 
+* **Directorios clave:**
+  * `/bin`: Comandos y binarios esenciales para todos los usuarios (ej. `ls`, `cp`, `mv`)[cite: 1, 2]. 
+  * `/sbin`: Binarios esenciales para la administración del sistema (ej. `fdisk`, `reboot`). 
+  * `/dev`: Archivos especiales de representación de dispositivos de hardware (discos, puertos)[cite: 1, 2]. 
+  * `/etc`: Archivos de configuración del sistema y servicios[cite: 2]. 
+  * `/home`: Directorios personales de trabajo de los usuarios estándar[cite: 2]. 
+  * `/root`: Directorio personal del superusuario/administrador[cite: 1]. 
+  * `/lib`: Bibliotecas esenciales compartidas necesarias para los binarios del sistema. 
+  * `/proc`: Sistema de archivos virtual residente en memoria con información de procesos y estado del kernel[cite: 1]. 
+  * `/tmp`: Archivos temporales creados por programas y usuarios[cite: 1]. 
+  * `/usr`: Aplicaciones secundarias, código fuente, manuales y utilidades de nivel de usuario[cite: 1, 2]. 
+  * `/var`: Datos variables y dinámicos (registros de log en `/var/log`, colas de impresión, bases de datos)[cite: 1, 2]. 
+
+### c. Sistemas de archivos soportados:
+* **Nativos de Linux:** `ext2`, `ext3`, `ext4`, `XFS`, `Btrfs`, `ReiserFS`[cite: 1, 2]. 
+* **Compatibles / Otros:** `FAT32` (`vfat`), `NTFS`, `exFAT`, `ISO 9660`, `NFS`[cite: 2].
+
+---
+
+## 7. Particiones
+
+### a. Definición, tipos, ventajas y desventajas:
+* **Definición:** Forma de dividir el disco físico de manera lógica[cite: 2]. 
+* **Tipos de particiones:**
+  * **Primaria:** División básica directa del disco (máximo **4 por disco**)[cite: 2].
+  * **Extendida:** Partición primaria especial que actúa como contenedor para alojar particiones lógicas[cite: 2].
+  * **Lógica:** Particiones creadas dentro del espacio de la partición extendida para superar el límite de 4[cite: 2].
+* **Ventajas:** Permite aislar el SO de los datos personales, facilita las tareas de respaldo (**backup**) y da soporte de **arranque múltiple**[cite: 2, 3].
+* **Desventajas:** Desperdicio o **fragmentación estática** de espacio si se dimensionan de forma inadecuada durante la instalación[cite: 2].
+
+### b. ¿Cómo se identifican las particiones en GNU/Linux? (Discos IDE, SCSI, SATA):
+* **Discos IDE:** Se identifican históricamente con el prefijo `/dev/hd`[cite: 2]. El disco maestro del canal primario es `/dev/hda`, el esclavo `/dev/hdb`, y sus particiones se numeran `/dev/hda1`, `/dev/hda2`, etc[cite: 2].
+* **Discos SCSI / SATA / SSD / USB:** Se identifican con el prefijo `/dev/sd`[cite: 4, 5]. El primer disco físico es `/dev/sda`, el segundo `/dev/sdb`, y sus particiones se numeran `/dev/sda1`, `/dev/sda2`, etc[cite: 4, 5].
+* **Numeración:** Del **1 al 4** se reservan para particiones primarias o extendidas; las particiones lógicas comienzan obligatoriamente desde el número **5 en adelante**.
+
+### c. Cantidad mínima de particiones para instalar GNU/Linux:
+* Como mínimo se necesita **1 partición**[cite: 2, 3]:
+  * **Punto de montaje:** `/` (directorio raíz)[cite: 2, 3].
+  * **Tipo de partición:** Primaria[cite: 3, 5].
+  * **Tipo de File System:** `ext4` (por defecto), `ext3` o `ext2`[cite: 2, 3, 5].
+  * **Identificación:** Por ejemplo, `/dev/hda3` o `/dev/sda1`[cite: 2, 3, 5].
+* *(Recomendación: Se sugiere crear al menos **2 particiones**: el directorio raíz `/` y una de memoria de intercambio o **SWAP** en `/dev/hda4`)*[cite: 2, 3].
+
+### d. Ejemplos de casos de particionamiento según la tarea:
+* Separar los datos del usuario (`/home`) de las aplicaciones o del sistema operativo[cite: 2, 3]. 
+* Crear una partición exclusiva para **restauración (restore)** de todo el sistema[cite: 2, 3]. 
+* Ubicar el **Kernel** (`/boot`) en una partición de solo lectura, o en una que no se monte por motivos de seguridad[cite: 2, 3]. 
+
+### e. ¿Es posible visualizar particiones FAT y NTFS en GNU/Linux?
+**Sí, es posible.** Cada partición se puede formatear con sistemas destino compatibles como FAT o NTFS[cite: 2, 3]. GNU/Linux puede reconocer y montar particiones de Windows conviviendo en el mismo disco (ej. `/dev/hda1: DOS con Windows`)[cite: 2, 3].
+
+### f. Tipos de software para particionar:
+* **Destructivos:** Solo permiten crear y eliminar particiones (ejemplo: `fdisk`)[cite: 2, 3].  
+* **No destructivos:** Permiten crear, eliminar y además **modificar/redimensionar** particiones existentes sin perder datos (ejemplos: `fips`, `gparted`)[cite: 2, 3].
+
+---
+
+## 8. Arranque (bootstrap) de un Sistema Operativo
+
+### a. ¿Qué es el BIOS? ¿Qué tarea realiza?
+El **BIOS** (*Basic I/O System*) es el software grabado en un chip de memoria no volátil (**ROM/NVRAM**) encargado de iniciar el hardware y la carga del SO a través del **MBC** (su última acción es leer y ejecutar el código del MBC alojado en el MBR)[cite: 2, 3].
+
+### b. ¿Qué es UEFI? ¿Cuál es su función?
+**UEFI** (*Unified Extensible Firmware Interface*) es un estándar moderno de comunicación entre el sistema operativo y el firmware de la máquina[cite: 3]. Define la ubicación del gestor de arranque, expone información de hardware al *bootloader* y provee un **BootManager** capaz de cargar aplicaciones y drivers desde sistemas de archivos directos como FAT32[cite: 3].
+
+### c. ¿Qué es el MBR? ¿Qué es el MBC?
+* **MBR (Master Boot Record):** Primer sector del disco físico (cilindro 0, cabeza 0, sector 1; tamaño de 512 bytes) donde se almacena el código de arranque y la tabla de particiones[cite: 2].
+* **MBC (Master Boot Code):** Pequeño programa de código de booteo ubicado en los primeros **446 bytes** del MBR cuya función es lanzar el gestor de arranque principal[cite: 2, 3].
+
+### d. ¿A qué hacen referencia las siglas GPT? ¿Qué sustituye? Formato:
+* **GPT (GUID Partition Table):** Sistema de particionado vinculado a la interfaz **UEFI**[cite: 2, 3].
+* **Sustitución:** Sustituye al esquema tradicional de particiones del **MBR**, superando el límite de 4 particiones primarias y la restricción de discos de 2 TB[cite: 2, 3].
+* **Formato:** Utiliza direccionamiento por bloques lógicos (**LBA** - *Logical Block Addressing*) en vez del esquema Cilindro-Cabeza-Sector (CHS)[cite: 2]. Mantiene un *protective MBR* en el **LBA 0** por compatibilidad y ubica la cabecera GPT a partir de **LBA 1**[cite: 2].
+
+### e. ¿Cuál es la funcionalidad de un “Gestor de Arranque”? Tipos, instalación y ejemplos:
+* **Funcionalidad:** Cargar la imagen del Kernel del sistema operativo desde el disco a la memoria RAM para cederle el control de la CPU[cite: 3].
+* **Ubicación/Instalación:** Se instala principalmente de dos modos:
+  1. Directamente en el **MBR** (o el espacio contiguo *MBR gap*)[cite: 3].
+  2. En el sector de arranque de una partición específica (**VBR** / *Volume Boot Record*)[cite: 3].
+* **Gestores conocidos:** `GRUB`, `LILO`, `NTLDR`, `GAG`, `YaST`[cite: 3].
+   1. ¿Cuáles son los pasos que se suceden desde que se prende una computadora hasta que el Sistema Operativo es cargado (proceso de *bootstrap*)? 
 
    1\. Se empieza a ejecutar el código del BIOS.
 
@@ -293,21 +225,21 @@ Particiones:
 
    12\. El sistema está listo para ser usado.
 
-   7. Analice el proceso de arranque en *GNU/Linux* y describa sus principales pasos.  
+   2. Analice el proceso de arranque en *GNU/Linux* y describa sus principales pasos.  
 
-   8. ¿Cuáles son los pasos que se suceden en el proceso de parada (*shutdown*) de *GNU/Linux*?  
+   3. ¿Cuáles son los pasos que se suceden en el proceso de parada (*shutdown*) de *GNU/Linux*?  
 
    El sistema envía una señal de terminación a todos los procesos activos, desmonta de forma segura los sistemas de archivos (pasándolos a modo de solo lectura para evitar corrupción) y, finalmente, envía la señal de corte de energía al hardware o detiene la CPU.
 
-   9. ¿Es posible tener en una PC *GNU/Linux* y otro Sistema Operativo instalado?  Justifique.  
+   4. ¿Es posible tener en una PC *GNU/Linux* y otro Sistema Operativo instalado?  Justifique.  
 
    Sí, es totalmente posible. La arquitectura permite que cada sistema operativo sea instalado en una partición separada dentro del mismo disco físico.  Para poder elegir cuál iniciar, se hace uso de gestores de arranque múltiple, como GRUB (GRand Unified Bootloader). No obstante, durante la instalación se debe tener cuidado; si el instalador no detecta el SO previo, sobreescribir el gestor primario puede dejar temporalmente inaccesible al otro sistema.
 
        
 
-3. Archivos y editores:  
+5. Archivos y editores:  
 
-   1. ¿Cómo se identifican los archivos en *GNU/Linux*?  
+   6. ¿Cómo se identifican los archivos en *GNU/Linux*?  
 
    Identificación de archivos: En GNU/Linux, los archivos se identifican internamente por su número de inodo (inode) y su ubicación en el árbol de directorios. A diferencia de Windows, las extensiones (como .txt o .exe) son opcionales y no determinan obligatoriamente el formato ni la función del archivo.
 
@@ -550,8 +482,10 @@ Particiones:
     4. Redirección. ¿Qué tipo de redirecciones existen? ¿Cuál es su finalidad? Cite ejemplos de utilización.
        Permite cambiar el origen de la entrada o el destino de las salidas de un comando, conectándolos directamente con archivos en vez de usar el teclado o la pantalla.
        Tipos: 
-        **Entrada ("< solo el de la izq>"):** Lee datos desde un archivo como entrada estándar (_stdin_).
-
+        Entrada ("< solo el de la izq>"): Lee datos desde un archivo como entrada estándar (_stdin_).
+        Salida estándar sobrescribiendo (`>`): Envía la salida estándar (_stdout_) hacia un archivo, creándolo o sobrescribiéndolo si ya existía.
+        Salida estándar concatenando (`>>`): Anexa la salida estándar al final del archivo sin borrar su contenido previo.
+        Salida de error (`2>` o `2>>`): Desvía los mensajes de error (_stderr_) a un archivo para no mostrarlos por la terminal.
 _Ejemplo:_
 28. Otros comandos de Linux (Indique funcionalidad y parámetros):  
 
