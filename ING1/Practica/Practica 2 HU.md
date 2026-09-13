@@ -447,7 +447,7 @@ Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico d
 > > - **cuando** el empeado/gerente ingresa el codigo del pago electronico, el sistema recupera los datos de la factura,
 > > - **entonces** el sistema verifica que la factura no este vencida y detecta que esta paga.
 
-> [!info] FRENTE - ID: Pagar Impuestos/servicios.
+> [!info] FRENTE - ID: Registrar cobros de los clientes.
 > **Como** gerente
 > **Quiero** registrar en la central de cobros los pagos que hicieron los clientes
 > **Para** que quede registrado los cobros de los clientes.
