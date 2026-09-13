@@ -413,7 +413,7 @@ Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico d
 - gerente.
 
 **Historias de usuario:**
-- Pagar impuestos/servicios.
+- Pagar factura electronica.
 - Registrar cobros de clientes.
 - Ver estadísticas de impuestos y servicios cobrados.
 
@@ -424,17 +424,20 @@ Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico d
 > 
 > > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
-> > - [Regla 1]
-> > - [Regla 2]
+> > - Si 2do vencimiento vencido no se puede cobrar.
+> > - Si 1er vencimiento vencido aplicar recargo al monto original.
+> > - Si no esta vencido cobrar monto original.
 > > 
-> > **Criterios de aceptación ([Nombre de la historia]):**
-> > **Escenario 1: [Nombre del escenario exitoso]**
-> > - **Dado** [Condición inicial]
-> > - **cuando** [Acción que realiza el usuario]
-> > - **entonces** [Resultado esperado del sistema]
+> > **Criterios de aceptación (Pagar factura electronica):**
+> > **Escenario 1:  Pago de factura exitoso sin vencimiento** 
+> > - **Dado** un cliente con una factura electronica
+> > - **cuando** el sistema recupera los datos,
+> > - **entonces** el sistema verifica que la factura no esta vencida y muestra el monto original a pagar por el cliente.
 > > 
-> > **Escenario 2: [Nombre del escenario alternativo/fallido]**
-> > - **Dado** [Condición inicial]
+> > **Escenario 2: Pago de factura exitoso con vencimiento
+> > - **Dado** un cliente con una factura ee
 > > - **cuando** [Acción]
 > > - **entonces** [Resultado]
+
+
 Una vez al día, el <font color="#00b0f0">gerente</font> de la sucursal <font color="#ffff00">debe registrar en la central de cobros los pagos que hicieron los clientes. </font>Para esto el sistema <font color="#c00000">requiere la clave maestra y de ser correcta,</font> <font color="#ffff00">recupera las transacciones de los impuestos y servicios cobrados en el día, se conecta a la central de cobro y se las envía. </font>Cuando la central confirma la recepción exitosa, el sistema las registra como enviadas. Este último paso es importante porque <font color="#c00000">no deben enviarse dos veces las transacciones.</font> <font color="#ff0000">Si el gerente intenta enviar una segunda vez, el sistema no debe permitirlo. </font>Finalmente <font color="#ffff00">el Gerente puede ver las estadísticas de los impuestos y servicios cobrados.</font><font color="#ffff00"> Para esto, se ingresa la clave maestra, un rango de fechas sobre las cuales debe calcularse las estadísticas y el sistema debe mostrar los montos y la cantidad de cobros realizados, agrupando por empresa.</font> Tenga en cuenta que cada vez que el sistema debe conectarse a la central, debe enviarle un token (código que identifica al sistema). Una vez que la central valida el token, el sistema envía el requerimiento para recuperar los datos de la factura o el requerimiento para registrar los pagos del día según corresponda.
