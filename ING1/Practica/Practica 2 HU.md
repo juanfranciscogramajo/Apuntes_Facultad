@@ -407,19 +407,20 @@
 > > - **cuando** selecciona la opcion de consultar una licencia,
 > > - **entonces** el sistema deniega el acceso y solicita el inicie sesion
 # 6- Pago Electrónico
-Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico de impuestos y servicios en efectivo. Cuando un <font color="#00b0f0">cliente</font> llega para realizar un pago, el <font color="#00b0f0">empleado</font> o el <font color="#00b0f0">gerente</font> de la sucursal <font color="#ffff00">ingresa el código de pago electrónico y el sistema se conecta con la central de cobro para recuperar los datos de la factura (empresa, nro de cliente, 1era fecha de vencimiento, 2da fecha de vencimiento, recargo, y monto original).</font> Una vez recuperados los datos, <font color="#ffff00">el sistema debe verificar los vencimientos para determinar el monto a cobrar. </font>Teniendo esto en cuenta, <font color="#c00000">cuando el 2do vencimiento está vencido se debe informar que la factura no se puede cobrar por dicho motivo. </font>Cuando el <font color="#c00000">1er vencimiento</font> está vencido hay que aplicar el <font color="#c00000">recargo al monto original</font>. Si la <font color="#c00000">factura no está vencida, se cobra el monto original.</font> Una vez al día, el <font color="#00b0f0">gerente</font> de la sucursal <font color="#ffff00">debe registrar en la central de cobros los pagos que hicieron los clientes. </font>Para esto el sistema <font color="#c00000">requiere la clave maestra y de ser correcta,</font> <font color="#ffff00">recupera las transacciones de los impuestos y servicios cobrados en el día, se conecta a la central de cobro y se las envía. </font>Cuando la central confirma la recepción exitosa, el sistema las registra como enviadas. Este último paso es importante porque <font color="#c00000">no deben enviarse dos veces las transacciones.</font> <font color="#ff0000">Si el gerente intenta enviar una segunda vez, el sistema no debe permitirlo. </font>Finalmente <font color="#ffff00">el Gerente puede ver las estadísticas de los impuestos y servicios cobrados.</font> Para esto, se ingresa la clave maestra, un rango de fechas sobre las cuales debe calcularse las estadísticas y el sistema debe mostrar los montos y la cantidad de cobros realizados, agrupando por empresa. Tenga en cuenta que cada vez que el sistema debe conectarse a la central, debe enviarle un token (código que identifica al sistema). Una vez que la central valida el token, el sistema envía el requerimiento para recuperar los datos de la factura o el requerimiento para registrar los pagos del día según corresponda.
+Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico de impuestos y servicios en efectivo. Cuando un cliente llega para realizar un pago, el <font color="#00b0f0">empleado</font> o el <font color="#00b0f0">gerente</font> de la sucursal <font color="#ffff00">ingresa el código de pago electrónico y el sistema se conecta con la central de cobro para recuperar los datos de la factura (empresa, nro de cliente, 1era fecha de vencimiento, 2da fecha de vencimiento, recargo, y monto original).</font> Una vez recuperados los datos, <font color="#ffff00">el sistema debe verificar los vencimientos para determinar el monto a cobrar. </font>Teniendo esto en cuenta, <font color="#c00000">cuando el 2do vencimiento está vencido se debe informar que la factura no se puede cobrar por dicho motivo. </font>Cuando el <font color="#c00000">1er vencimiento</font> está vencido hay que aplicar el <font color="#c00000">recargo al monto original</font>. Si la <font color="#c00000">factura no está vencida, se cobra el monto original.</font> 
 **Rol de usuarios:**
-- [Rol 1]
-- [Rol 2]
+- empleado.
+- gerente.
 
 **Historias de usuario:**
-- [Nombre de la historia 1]
-- [Nombre de la historia 2]
+- Pagar impuestos/servicios.
+- Registrar cobros de clientes.
+- Ver estadísticas de impuestos y servicios cobrados.
 
-> [!info] FRENTE - ID: [Nombre o código de la HU]
-> **Como** [Rol del usuario]
-> **Quiero** [Acción u objetivo]
-> **Para** [Beneficio o valor]
+> [!info] FRENTE - ID: Pagar Impuestos/servicios.
+> **Como** gerente/empleado
+> **Quiero** cargar un pago electronico
+> **Para** que el cliente pueda pagarlo.
 > 
 > > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
@@ -436,3 +437,4 @@ Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico d
 > > - **Dado** [Condición inicial]
 > > - **cuando** [Acción]
 > > - **entonces** [Resultado]
+Una vez al día, el <font color="#00b0f0">gerente</font> de la sucursal <font color="#ffff00">debe registrar en la central de cobros los pagos que hicieron los clientes. </font>Para esto el sistema <font color="#c00000">requiere la clave maestra y de ser correcta,</font> <font color="#ffff00">recupera las transacciones de los impuestos y servicios cobrados en el día, se conecta a la central de cobro y se las envía. </font>Cuando la central confirma la recepción exitosa, el sistema las registra como enviadas. Este último paso es importante porque <font color="#c00000">no deben enviarse dos veces las transacciones.</font> <font color="#ff0000">Si el gerente intenta enviar una segunda vez, el sistema no debe permitirlo. </font>Finalmente <font color="#ffff00">el Gerente puede ver las estadísticas de los impuestos y servicios cobrados.</font><font color="#ffff00"> Para esto, se ingresa la clave maestra, un rango de fechas sobre las cuales debe calcularse las estadísticas y el sistema debe mostrar los montos y la cantidad de cobros realizados, agrupando por empresa.</font> Tenga en cuenta que cada vez que el sistema debe conectarse a la central, debe enviarle un token (código que identifica al sistema). Una vez que la central valida el token, el sistema envía el requerimiento para recuperar los datos de la factura o el requerimiento para registrar los pagos del día según corresponda.
