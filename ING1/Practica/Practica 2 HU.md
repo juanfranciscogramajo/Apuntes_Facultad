@@ -434,10 +434,15 @@ Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico d
 > > - **cuando** cuando el empleado/gerente ingresa el codigo de pago electronico, el sistema recupera los datos de la factura,
 > > - **entonces** el sistema verifica que la factura no esta vencida y al detectar que no lo esta, muestra el monto original a pagar por el cliente.
 > > 
-> > **Escenario 2: Pago de factura exitoso con vencimiento
+> > **Escenario 2: Pago de factura exitoso con 1er vencimiento
 > > - **Dado** un cliente con una factura electronica,
 > > - **cuando** el empeado/gerente ingresa el codigo del pago electronico, el sistema recupera los datos de la factura,
-> > - **entonces** el sistema verifica que la factura no este vencida, este detecta que lo esta y aplica un recargo al monto original a pagar por el cliente
+> > - **entonces** el sistema verifica que la factura no este vencida, este detecta que el 1er venciminto lo esta y aplica un recargo al monto original a pagar por el cliente
+> > **Escenario 3: Pago de factura 2do con vencimiento
+> > - **Dado** un cliente con una factura electronica,
+> > - **cuando** el empeado/gerente ingresa el codigo del pago electronico, el sistema recupera los datos de la factura,
+> > - **entonces** el sistema verifica que la factura no este vencida, este detecta que el 2do vencimiento lo esta y informa en pantalla que no es posible cobrar por estar vencida.
+
 
 
 Una vez al día, el <font color="#00b0f0">gerente</font> de la sucursal <font color="#ffff00">debe registrar en la central de cobros los pagos que hicieron los clientes. </font>Para esto el sistema <font color="#c00000">requiere la clave maestra y de ser correcta,</font> <font color="#ffff00">recupera las transacciones de los impuestos y servicios cobrados en el día, se conecta a la central de cobro y se las envía. </font>Cuando la central confirma la recepción exitosa, el sistema las registra como enviadas. Este último paso es importante porque <font color="#c00000">no deben enviarse dos veces las transacciones.</font> <font color="#ff0000">Si el gerente intenta enviar una segunda vez, el sistema no debe permitirlo. </font>Finalmente <font color="#ffff00">el Gerente puede ver las estadísticas de los impuestos y servicios cobrados.</font><font color="#ffff00"> Para esto, se ingresa la clave maestra, un rango de fechas sobre las cuales debe calcularse las estadísticas y el sistema debe mostrar los montos y la cantidad de cobros realizados, agrupando por empresa.</font> Tenga en cuenta que cada vez que el sistema debe conectarse a la central, debe enviarle un token (código que identifica al sistema). Una vez que la central valida el token, el sistema envía el requerimiento para recuperar los datos de la factura o el requerimiento para registrar los pagos del día según corresponda.
