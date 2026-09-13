@@ -421,7 +421,7 @@ Muestra todos los procesos activos organizados en forma de **árbol jerárquico*
 
 ---
 
-## 14. Sistema de Archivos y Permisos
+## 14. Sistema de Archivos y Permisos.
 
 ### a. ¿Cómo son definidos los permisos sobre archivos en un sistema GNU/Linux?
 Permisos de usuarios:
@@ -469,12 +469,12 @@ Con pwd informa el dir actual. Cd para ingresar al dir perso solo sin args.
 ## 15. Procesos
 
 ### a. ¿Qué significa que un proceso se está ejecutando en Background? ¿Y en Foreground?
-Foreground(primer plano): se ejecuta en la terminal directamente tomando el control bloqueando la linea de comandos hasta que el proceso termine.
-Background(segundo plano): el proceso se ejecuta independientemente de la interac del usuario y no bloquea la terminal.
+* **Foreground (primer plano):** se ejecuta en la terminal directamente tomando el control bloqueando la linea de comandos hasta que el proceso termine.
+* **Background (segundo plano):** el proceso se ejecuta independientemente de la interac del usuario y no bloquea la terminal.
 
 ### b. ¿Cómo puedo hacer para ejecutar un proceso en Background? ¿Como puedo hacer para pasar un proceso de background a foreground y viceversa?
-&: background al final ara ejecutar en background.
-Corriendo un proceso en primer plano, Ctrl + z suspende y bg reanuda en background. y si quiero de vueltr foregound fg.
+* **`&`:** background al final ara ejecutar en background.
+* **Suspender/reanudar:** Corriendo un proceso en primer plano, Ctrl + z suspende y bg reanuda en background. y si quiero de vueltr foregound fg.
 
 ### c. Pipe ( **|** ). ¿Cuál es su finalidad? Cite ejemplos de su utilización.
 Lo que hace es unir procesos permitiendo encadenar y procesar datos sin crear arch tmp. 
@@ -493,20 +493,16 @@ _Ejemplo:_
 
 ## 16. Otros comandos de Linux (Indique funcionalidad y parámetros)
 
-### a. ¿A qué hace referencia el concepto de empaquetar archivos en GNU/Linux?
-
-### b. Seleccione 4 archivos dentro de algún directorio al que tenga permiso y sume el tamaño de cada uno de estos archivos. Cree un archivo empaquetado conteniendo estos 4 archivos y compare los tamaños de los mismos. ¿Qué característica nota?
-
-### c. ¿Qué acciones debe llevar a cabo para comprimir 4 archivos en uno solo? Indique la secuencia de comandos ejecutados.
-
-### d. ¿Pueden comprimirse un conjunto de archivos utilizando un único comando?
-
-### e. Investigue la funcionalidad de los siguientes comandos:
-i. tar  
-ii. grep  
-iii. gzip  
-iv. zgrep  
-v. wc
+1. ¿A qué hace referencia el concepto de empaquetar archivos en GNU/Linux?
+2. Seleccione 4 archivos dentro de algún directorio al que tenga permiso y sume el tamaño de cada uno de estos archivos. Cree un archivo empaquetado conteniendo estos 4 archivos y compare los tamaños de los mismos. ¿Qué característica nota?
+3. ¿Qué acciones debe llevar a cabo para comprimir 4 archivos en uno solo? Indique la secuencia de comandos ejecutados.
+4. ¿Pueden comprimirse un conjunto de archivos utilizando un único comando?
+5. Investigue la funcionalidad de los siguientes comandos:
+   1. tar
+   2. grep
+   3. gzip
+   4. zgrep
+   5. wc
 
 ---
 
@@ -514,11 +510,23 @@ v. wc
 
 Suponga que se ejecutan desde un usuario que no es root ni pertenece al grupo de root. (Asuma que se encuentra posicionado en el directorio de trabajo del usuario con el que se logueó). En caso de no poder ejecutarse el comando, indique la razón:
 
-```
-l s −l \> prueba  ps \> PRUEBA  chmod 710 prueba  chown root:root PRUEBA  chmod 777 PRUEBA  chmod 700 /etc/passwd  passwd root  rm PRUEBA  man /etc/shadow  find / −name ∗ .conf
+1. `l s −l \> prueba`
+2. `ps \> PRUEBA`
+3. `chmod 710 prueba`
+4. `chown root:root PRUEBA`
+5. `chmod 777 PRUEBA`
+6. `chmod 700 /etc/passwd`
+7. `passwd root`
+8. `rm PRUEBA`
+9. `man /etc/shadow`
+10. `find / −name ∗ .conf`
 
-usermod root −d /home/ newroot −L  cd / root  rm ∗  cd / etc  cp ∗ /home −R  shutdown
-```
+1. `usermod root −d /home/ newroot −L`
+2. `cd / root`
+3. `rm ∗`
+4. `cd / etc`
+5. `cp ∗ /home −R`
+6. `shutdown`
 
 ---
 
