@@ -185,8 +185,8 @@
             "state": {
               "type": "copilot-agent-chat-view",
               "state": {},
-              "icon": "copilot-agent",
-              "title": "Copilot Agent"
+              "icon": "lucide-ghost",
+              "title": "copilot-agent-chat-view"
             }
           },
           {
@@ -195,8 +195,8 @@
             "state": {
               "type": "copilot-chat-view",
               "state": {},
-              "icon": "message-square",
-              "title": "Copilot (Quick Chat)"
+              "icon": "lucide-ghost",
+              "title": "copilot-chat-view"
             }
           }
         ],
@@ -220,8 +220,7 @@
       "templater-obsidian:Templater": false,
       "omnisearch:Omnisearch": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-excalidraw-plugin:Nuevo Bosquejo": false,
-      "copilot:Open Copilot Agent Chat": false
+      "obsidian-excalidraw-plugin:Nuevo Bosquejo": false
     }
   },
   "active": "9ae4a67ac1f84f17",
