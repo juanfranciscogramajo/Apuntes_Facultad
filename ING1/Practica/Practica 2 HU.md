@@ -481,8 +481,8 @@ Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico d
 > > **REGLAS DE NEGOCIO:**
 > > - Clave maestra.
 > > - Rango de fechas.
-> > - 
-> > **Criterios de aceptación (Registrar cobros de los clientes):**
+> > - Agrupar por empresa montos y cantidad de cobros realizados.
+> > **Criterios de aceptación (Ver estadisticas de cobros):**
 > > **Escenario 1:  Registro de pagos de clientes en la central exitoso** 
 > > - **Dado** que el gerente ingresa la clave maestra al sistema correctamente, el sistema recupera las transacciones de impuestos y servicios del dia,
 > > - **cuando** el sistema se conecta a la central de cobros, detecta que en el día no fueron enviadas las transferencias,
