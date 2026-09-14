@@ -360,7 +360,7 @@
 > > **Criterios de aceptación (Solicitar una licencia):**
 > > **Escenario 1: Empleado solicita licencia exitosamente**
 > > - **Dado** un empleado registrado, autenticado en el sistema, sin tener una licencia vigente y antiguedad de mas de 1 mes,
-> > - **cuando** solicita una licencia con los datos, tipo de licencia presencial, fecha de inicio de reposo 02/10/2026, matricula del medico personal 1250Ml, por operacion de vista, para el titular y confirma el formulario,
+> > - **cuando** solicita una licencia con los datos, tipo de licencia presencial, fecha de inicio de reposo 02/10/2026, matricula del medico personal 1250, por operacion de vista, para el titular y confirma el formulario,
 > > - **entonces** el sistema genera un codigo y lo envia al mail del empleado con la confirmacion de la licencia, los dias otorgados y registra la solicitud.
 > > 
 > > **Escenario 2: Solicitud fallida por antiguedad insuficiente**
@@ -387,11 +387,10 @@
 > > **REGLAS DE NEGOCIO:**
 > > - Solo se podrá imprimir un informe por mes para cada empleado.
 > > - Para consultar una licencia se debe ingresar el cuil del empleado y un rango de fechas
-> > - El sistema imprime un informe de las licencias solicitadas
 > > 
 > > **Criterios de aceptación (Consultar una licencia solicitada):**
 > > **Escenario 1: Consulta e impresión exitosa**
-> > - **Dado** un administrativo autenticado y un empleado con CUIL "20-24521125-2" al cual no se le ha impreso ningún informe durante el mes en curso,
+> > - **Dado** un empleado con CUIL "20-24521125-2" al cual no se le ha impreso ningún informe durante el mes en curso,
 > > - **cuando** llena el campo de cuil del empleado 20-24521125-2, el rango de fecha 20/10/2025 al 02/11/2025 y confirma los datos,
 > > - **entonces** el sistema imprime el informe con el detalle de las licencias solicitadas para dicho período..
 > > 
@@ -409,6 +408,72 @@
 > > - **Dado** un administrador selecciona consultar una licencia,
 > > - **cuando** selecciona la opcion de consultar una licencia,
 > > - **entonces** el sistema deniega el acceso y solicita el inicie sesion
+
+> [!info] FRENTE - ID: Registrarse
+> **Como** persona
+> **Quiero** registrarme
+> **Para** poder iniciar sesion en el sistema.
+> 
+> > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
+> > **REGLAS DE NEGOCIO:**
+> > - El mail debe ser único.
+> > - El Cuil debe ser único.
+> > **Criterios de aceptación (Registrarse en el sistema):**
+> > **Escenario 1: Registro exitoso**
+> > - **Dado** un empleado con CUIL "20-24521125-2" al cual no se le ha impreso ningún informe durante el mes en curso,
+> > - **cuando** llena el campo de cuil del empleado 20-24521125-2, el rango de fecha 20/10/2025 al 02/11/2025 y confirma los datos,
+> > - **entonces** el sistema imprime el informe con el detalle de las licencias solicitadas para dicho período..
+> > 
+> > **Escenario 2: Consulta fallida por límite mensual alcanzado**
+> > - **Dado** un administrativo autenticado y un empleado con CUIL "20-24521125-2" que ya registra un informe impreso dentro del mes en curso,
+> > - **cuando** llena el campo de Cuil del empleado 20-24521125-2, el rango de fecha 20/10/2025 al 02/11/2025 y confirma los datos,
+> > - **entonces** el sistema bloquea la acción e informa que ya se emitió el informe mensual permitido para ese empleado.
+> >
+> > **Escenario 3: Consulta sin licencias registradas para el rango**
+> > - **Dado** un administrativo autenticado y un empleado con CUIL "20-24521125-2" que no registra licencias en el rango de fechas seleccionado y no tiene impresiones este mes,
+> > - **cuando** llena el campo de cuil del empleado 20-24521125-2, el rango de fecha 20/10/2025 al 02/11/2025 y confirma los datos,
+> > - **entonces** el sistema informa que no existen licencias registradas para el empleado en dicho período y no genera la impresión.
+> > 
+> >**Escenario 4: Administrador sin iniciar sesión intenta consultar una licencia**
+> > - **Dado** un administrador selecciona consultar una licencia,
+> > - **cuando** selecciona la opcion de consultar una licencia,
+> > - **entonces** el sistema deniega el acceso y solicita el inicie sesion
+**
+
+
+  
+
+Criterios de aceptación (Registrarse): 
+
+Escenario 1: Registro exitoso.
+
+Dado el mail [redesP@gmail.com](mailto:redesP@gmail.com) que no es encuentra registrado y el cuil 20-9999-7 que no se encuentra registrado
+
+Cuando se ingresa mail [redesP@gmail.com](mailto:redesP@gmail.com), cuil 20-9999-7, contraseña 4321 y presiona “Registrarse”
+
+Entonces el sistema valida el registro e informa “Registro exitoso”.
+
+  
+
+Escenario 2: Registro fallido por mail ya existente
+
+Dado el mail [juanpablo@gmail.com](mailto:juanpablo@gmail.com) que se encuentra registrado.
+
+Cuando se ingresa el mail juan[pablo@gmail.com](mailto:pablo29@gmail.com), cuil 20-8888-1, contraseña 1022 y presiona “Registrarse”
+
+Entonces el sistema informa “El mail ya se encuentra registrado”.
+
+  
+
+Escenario 3: Registro exitoso por cuil ya existente
+
+Dado el cuil 27-4433-1 que se encuentra registrado
+
+Cuando se ingresa el mail [peter@gmail.com](mailto:peter@gmail.com), cuil 27-4433-1, contraseña 0909 y presiona “Registrarse”.
+
+Entonces el sistema informa “El cuil ya se encuentra registrado”.
+
+**
 # 6- Pago Electrónico
 Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico de impuestos y servicios en efectivo. Cuando un cliente llega para realizar un pago, el <font color="#00b0f0">empleado</font> o el <font color="#00b0f0">gerente</font> de la sucursal <font color="#ffff00">ingresa el código de pago electrónico y el sistema se conecta con la central de cobro para recuperar los datos de la factura (empresa, nro de cliente, 1era fecha de vencimiento, 2da fecha de vencimiento, recargo, y monto original).</font> Una vez recuperados los datos, <font color="#ffff00">el sistema debe verificar los vencimientos para determinar el monto a cobrar. </font>Teniendo esto en cuenta, <font color="#c00000">cuando el 2do vencimiento está vencido se debe informar que la factura no se puede cobrar por dicho motivo. </font>Cuando el <font color="#c00000">1er vencimiento</font> está vencido hay que aplicar el <font color="#c00000">recargo al monto original</font>. Si la <font color="#c00000">factura no está vencida, se cobra el monto original.</font> Una vez al día, el <font color="#00b0f0">gerente</font> de la sucursal <font color="#ffff00">debe registrar en la central de cobros los pagos que hicieron los clientes. </font>Para esto el sistema <font color="#c00000">requiere la clave maestra y de ser correcta,</font> <font color="#ffff00">recupera las transacciones de los impuestos y servicios cobrados en el día, se conecta a la central de cobro y se las envía. </font>Cuando la central confirma la recepción exitosa, el sistema las registra como enviadas. Este último paso es importante porque <font color="#c00000">no deben enviarse dos veces las transacciones.</font> <font color="#ff0000">Si el gerente intenta enviar una segunda vez, el sistema no debe permitirlo. </font>Finalmente <font color="#ffff00">el Gerente puede ver las estadísticas de los impuestos y servicios cobrados.</font><font color="#ffff00"> Para esto, se ingresa la clave maestra, un rango de fechas sobre las cuales debe calcularse las estadísticas y el sistema debe mostrar los montos y la cantidad de cobros realizados, agrupando por empresa.</font> Tenga en cuenta que cada vez que el sistema debe conectarse a la central, debe enviarle un token (código que identifica al sistema). Una vez que la central valida el token, el sistema envía el requerimiento para recuperar los datos de la factura o el requerimiento para registrar los pagos del día según corresponda.
 **Rol de usuarios:**
