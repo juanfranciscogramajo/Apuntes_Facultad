@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e1be8951b520709e",
+        "id": "04481daebfef1762",
         "type": "tabs",
         "children": [
           {
-            "id": "c375edbda25cfd56",
+            "id": "9ae4a67ac1f84f17",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -83,8 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 230.5,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "befe0b92c4573c88",
@@ -224,35 +223,34 @@
       "obsidian-excalidraw-plugin:Nuevo Bosquejo": false
     }
   },
-  "active": "c375edbda25cfd56",
+  "active": "f2f6aa1a85234347",
   "lastOpenFiles": [
-    "Pasted image 20260914113900.png",
-    "Pasted image 20260914113539.png",
-    "Pasted image 20260914113255.png",
-    "Pasted image 20260914113015.png",
-    "Pasted image 20260914112240.png",
-    "ING1/Teoria/Teoria 14-09 Casos de uso.md",
-    "ING1/Practica/Practica 2 HU.md",
-    "ING1/Practica/Sin título.md",
-    "ISO/Practica/Practicas resueltas/Trabajo_Practico_1_ordenado (1).md",
-    "ISO/Practica/Practicas resueltas/Trabajo_Practico_1_ordenado.md",
-    "ISO/Practica/Practicas resueltas/Trabajo Práctico - 1.docx.md",
-    "ING1/Material/Link Material.md",
-    "DBD/Teoria/Teoria 11-09-26 Modelo Fisico.md",
-    "Pasted image 20260911210713.png",
-    "ISO/Practica/Explicacion Practica/Explicacion practica 10-09-26.md",
-    "OBJ1/Practica/Cuadernillo de actividades 2026- PUBLICO.md",
-    "image5.md",
+    "zIMG",
+    "ISO/Practica/Explicacion practica 10-09-26.md",
+    "zIMG/image5.md",
+    "zIMG/Pasted image 20260914113900.png",
+    "zIMG/Pasted image 20260914113539.png",
+    "zIMG/Pasted image 20260914113255.png",
+    "zIMG/Pasted image 20260914113015.png",
+    "zIMG/Pasted image 20260914112240.png",
+    "zIMG/Pasted image 20260911210713.png",
     "OBJ1/Practica/Trabajando con proyectos Maven v2.docx.md",
-    "OBJ1/Practica/Practica 1.md",
+    "OBJ1/Practica/Cuadernillo de actividades 2026- PUBLICO.md",
+    "ISO/Practica/Practicas resueltas/Trabajo_Practico_1_ordenado (1).md",
+    "ISO/Practica/Practicas resueltas/Trabajo Práctico - 1.docx.md",
     "ISO/Practica/Practicas resueltas",
+    "ISO/Practica/Explicacion Practica/Explicacion practica 10-09-26.md",
     "ISO/Practica/Explicacion Practica",
+    "ING1/Teoria/Teoria 14-09 Casos de uso.md",
+    "ING1/Practica/Sin título.md",
+    "DBD/Teoria/Teoria 11-09-26 Modelo Fisico.md",
     "ING1/Teoria/Teoria 07-09.md",
     "Practica-2-Limpio.md",
-    "Pasted image 20260909150039.png",
+    "zIMG/Pasted image 20260909150039.png",
     "OBJ1/Teoria/Teoria 10-09-26.md",
     "OBJ1/Teoria/Clase.md",
     "ING1/Practica/PRACTICA 2 HU NICO.md",
+    "ING1/Practica/Practica 2 HU.md",
     "copilot/copilot-conversations/Revisión_de_la_Práctica_1@20260907_185550.md",
     "copilot/copilot-conversations/Revisión_de_texto_de_práctica@20260907_185419.md",
     "copilot/copilot-conversations",
@@ -267,6 +265,8 @@
     "copilot/skills/obsidian-bases/SKILL.md",
     "copilot/skills/obsidian-bases/LICENSE",
     "copilot/skills/obsidian-bases/references/EXAMPLES.md",
-    "copilot/skills/obsidian-bases/references"
+    "copilot/skills/obsidian-bases/references/FUNCTIONS_REFERENCE.md",
+    "copilot/skills/obsidian-bases/references",
+    "copilot/skills/obsidian-markdown/SKILL.md"
   ]
 }
