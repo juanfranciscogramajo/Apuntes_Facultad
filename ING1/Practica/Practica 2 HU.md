@@ -208,15 +208,13 @@
 > > **Criterios de aceptación (Registro de usuario):**
 > > 
 > > **Escenario 1: Registro exitoso**
-> > - **Dado** los datos de una persona mayor a 18 años y con mail unico 
-> > - **cuando** el usuario confirma los datos
-> > - **entonces** el sistema genera una contraseña que es enviada al email ingresado en el registro
-> > - 
+> > - **Dado** el mail [persona1@gmail.com](mailto:persona1@gmai.com) que no se encuentra registrado y la edad es de 21 años.
+> > - **cuando**  la persona ingresa nombre “Riquelme”, apellido “Diaz”, mail [rique123@gmail.com](mailto:rique123@gmail.com) el cual no se encuentra registrado, edad 21 y presiona “Registrarse”.
+> > - **entonces** el sistema valida el registro y genera una contraseña que es enviada al email ingresado en el registro.
 > > **Escenario 2: Fallo en registro por mail de usuario repetido**
-> > - **Dado** el ingreso de datos de una persona mayor a 18 anIos 
-> > - **cuando** el usuario confirma los datos ingresados,
+> > - **Dado** el mail [persona1@gmail.com](mailto:persona1@gmai.com) que se encuentra registrado y la edad es de 21 años
+> > - **cuando** la persona ingresa nombre “Riquelme”, apellido “Diaz”, mail [rique123@gmail.com](mailto:rique123@gmail.com) el cual se encuentra registrado, edad 17 y presiona “Registrarse”.
 > > - **entonces** el sistema informa de un error ya que el mail se encuentra registrado.
-> > - 
 > >**Escenario 3 Fallo en registro por edad ingresada**
 > > - **Dado** el ingreso los datos personales 
 > > - **cuando** el usuario ingresa una edad menor a 19 años,
