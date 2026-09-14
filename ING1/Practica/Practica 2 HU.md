@@ -338,8 +338,11 @@
 - Administrativo
 
 **Historias de usuario:**
-- Solicitar licencia
-- Consultar licencias solicitadas
+- Solicitar licencia.
+- Registrarse.
+- Iniciar sesion.
+- Cerrar sesion.
+- Consultar licencias solicitadas.
 
 > [!info] FRENTE - ID: Solicitar licencia medica
 > **Como** empleado 
@@ -425,9 +428,10 @@ Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico d
 > > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
 > > - Si 2do vencimiento vencido no se puede cobrar.
+> > - Toda conexión con la central de cobro requiere el envío y validación previa del token identificador del sistema.
 > > - Si 1er vencimiento vencido aplicar recargo al monto original.
 > > - Si no esta vencido cobrar monto original.
-> > - Solo en Efectivo
+> > - Solo en Efectivo.
 > > - Los datos provistos por la central para cada factura son: empresa, número de cliente, primera fecha de vencimiento, segunda fecha de vencimiento, recargo y monto original.
 > > 
 > > **Criterios de aceptación (Pagar factura electronica):**
