@@ -458,8 +458,17 @@ Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico d
 > > - No deben enviarse dos veces las transacciones.
 > > - Si el gerente intenta enviar una segunda vez, el sistema no debe permitirlo.
 > > **Criterios de aceptación (Registrar cobros de los clientes):**
-> > **Escenario 1:  Registro de pagos de clientes en la central exitoso 
-> > - **Dado** 
-> > - **cuando** 
-> > - **entonces**
+> > **Escenario 1:  Registro de pagos de clientes en la central exitoso** 
+> > - **Dado** que el gerente ingresa la clave maestra al sistema correctamente, el sistema recupera las transacciones de impuestos y servicios del dia,
+> > - **cuando** el sistema recupera las transacciones de impuestos y servicios del dia,el sistema se conecta a la central de cobros, detecta que en el día no fueron enviadas las transferencias,
+> > - **entonces**  las envía, recibe por la central que la recepcion fue exitosa y registra como enviadas para no poder ser enviadas de nuevo.
+> > **Escenario 2:  Ingreso de clave incorrecta** 
+> > - **Dado** que el gerente quiere registrar las transacciones del dia,
+> > - **cuando** ingresa la clave maestra "1234", 
+> > - **entonces** el sistema informa que es incorrecta y bloquea la accion.
+> > **Escenario 3:  Central no confirma la recepcion**
+> > - **Dado** que el gerente ingresa la clave maestra al sistema correctamente,
+> > - **cuando** el sistema recupera las transacciones de impuestos y servicios del dia,
+> > - **entonces** el sistema se conecta a la central de cobros
+> > 
 
