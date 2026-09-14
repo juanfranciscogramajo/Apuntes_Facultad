@@ -83,7 +83,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "befe0b92c4573c88",
@@ -223,7 +224,7 @@
       "obsidian-excalidraw-plugin:Nuevo Bosquejo": false
     }
   },
-  "active": "f2f6aa1a85234347",
+  "active": "9ae4a67ac1f84f17",
   "lastOpenFiles": [
     "zIMG",
     "ISO/Practica/Explicacion practica 10-09-26.md",
