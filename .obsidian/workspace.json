@@ -83,7 +83,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "befe0b92c4573c88",
@@ -264,9 +265,10 @@
   },
   "active": "9d60bceeefa20ca4",
   "lastOpenFiles": [
+    "ING1/Practica/Sin título.md",
+    "ING1/Practica/Practica 2 HU.md",
     "ING1/Practica/PRACTICA 2 HU NICO.md",
     "ING1/Practica/Explicacion practica Redes de Petri.md",
-    "ING1/Practica/Sin título.md",
     "ISO/Practica/Practicas resueltas/Trabajo Práctico - 1.docx.md",
     "ING1/Teoria/Teoria 07-09 Tipos, ingenieria y RP.md",
     "ING1/Teoria/Teoria 14-09 Casos de uso.md",
@@ -292,7 +294,6 @@
     "zIMG/Pasted image 20260909150039.png",
     "OBJ1/Teoria/Teoria 10-09-26.md",
     "OBJ1/Teoria/Clase.md",
-    "ING1/Practica/Practica 2 HU.md",
     "copilot/copilot-conversations/Revisión_de_la_Práctica_1@20260907_185550.md",
     "copilot/copilot-conversations/Revisión_de_texto_de_práctica@20260907_185419.md",
     "copilot/copilot-conversations",
