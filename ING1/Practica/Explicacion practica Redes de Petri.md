@@ -49,23 +49,3 @@ tags:
 > 4. **Convención de fin (Transición final o sumidero):** Para drenar y eliminar tokens consumidos que finalizan su ciclo, se utiliza una transición sin lugares de salida[cite: 1, 2]. Puede haber más de una[cite: 1, 2].
 
 ---
-
-## 5. Patrones Fundamentales en Redes de Petri
-
-### A. Secuencia Simple
-Un estado conduce linealmente al siguiente mediante una transición: $P_1 \to T_1 \to P_2$.
-
-### B. Paralelismo (Bifurcación / Fork)
-Una transición habilitada genera tokens simultáneos hacia dos o más sitios independientes, bifurcando la ejecución en ramas concurrentes.
-
-### C. Sincronización (Join)
-Una transición demanda tokens procedentes de múltiples sitios previos para habilitarse, actuando como barrera de concurrencia.
-
-### D. Exclusión Mutua (Mutex)
-Mecanismo para compartir un recurso finito (como un dispositivo o empleado)[cite: 1, 3]. Se modela con un sitio de recurso provisto de tokens iniciales; el proceso toma el recurso al iniciar su tarea y lo repone al finalizar, imposibilitando el uso concurrente indebido.
-
-### E. Productor - Consumidor
-El productor ejecuta las acciones de producir y depositar en un sitio intermedio denominado **Buffer**[cite: 1, 3]. El consumidor extrae datos de dicho buffer y los procesa de manera asincrónica.
-
-### F. Condición de Bloqueo (Deadlock)
-Ocurre cuando el sistema alcanza una marcación en la cual ninguna transición puede ser habilitada, deteniendo indefinidamente la red.
