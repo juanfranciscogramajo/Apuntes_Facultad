@@ -331,26 +331,6 @@
 > > - **Dado** un administrador autenticado 
 > > - **cuando** ingresa el numero de serie único 888, el tipo camara, con precio de compra $1.010.000,
 > > - **entonces** el sistema le informa que el precio debe ser menor a 1.000.000
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # 5 - Manejo de licencias
 
 **Rol de usuarios:**
@@ -425,4 +405,75 @@
 > >**Escenario 4: Administrador sin iniciar sesión intenta consultar una licencia**
 > > - **Dado** un administrador selecciona consultar una licencia,
 > > - **cuando** selecciona la opcion de consultar una licencia,
-> > - **entonces** el sistema deniega el acceso y solicita el inicie sesion.
+> > - **entonces** el sistema deniega el acceso y solicita el inicie sesion
+# 6- Pago Electrónico
+Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico de impuestos y servicios en efectivo. Cuando un cliente llega para realizar un pago, el <font color="#00b0f0">empleado</font> o el <font color="#00b0f0">gerente</font> de la sucursal <font color="#ffff00">ingresa el código de pago electrónico y el sistema se conecta con la central de cobro para recuperar los datos de la factura (empresa, nro de cliente, 1era fecha de vencimiento, 2da fecha de vencimiento, recargo, y monto original).</font> Una vez recuperados los datos, <font color="#ffff00">el sistema debe verificar los vencimientos para determinar el monto a cobrar. </font>Teniendo esto en cuenta, <font color="#c00000">cuando el 2do vencimiento está vencido se debe informar que la factura no se puede cobrar por dicho motivo. </font>Cuando el <font color="#c00000">1er vencimiento</font> está vencido hay que aplicar el <font color="#c00000">recargo al monto original</font>. Si la <font color="#c00000">factura no está vencida, se cobra el monto original.</font> Una vez al día, el <font color="#00b0f0">gerente</font> de la sucursal <font color="#ffff00">debe registrar en la central de cobros los pagos que hicieron los clientes. </font>Para esto el sistema <font color="#c00000">requiere la clave maestra y de ser correcta,</font> <font color="#ffff00">recupera las transacciones de los impuestos y servicios cobrados en el día, se conecta a la central de cobro y se las envía. </font>Cuando la central confirma la recepción exitosa, el sistema las registra como enviadas. Este último paso es importante porque <font color="#c00000">no deben enviarse dos veces las transacciones.</font> <font color="#ff0000">Si el gerente intenta enviar una segunda vez, el sistema no debe permitirlo. </font>Finalmente <font color="#ffff00">el Gerente puede ver las estadísticas de los impuestos y servicios cobrados.</font><font color="#ffff00"> Para esto, se ingresa la clave maestra, un rango de fechas sobre las cuales debe calcularse las estadísticas y el sistema debe mostrar los montos y la cantidad de cobros realizados, agrupando por empresa.</font> Tenga en cuenta que cada vez que el sistema debe conectarse a la central, debe enviarle un token (código que identifica al sistema). Una vez que la central valida el token, el sistema envía el requerimiento para recuperar los datos de la factura o el requerimiento para registrar los pagos del día según corresponda.
+**Rol de usuarios:**
+- empleado.
+- gerente.
+
+**Historias de usuario:**
+- Pagar factura electrónica.
+- Registrar cobros de clientes.
+- Ver estadísticas de impuestos y servicios cobrados.
+
+> [!info] FRENTE - ID: Pagar Impuestos/servicios.
+> **Como** gerente/empleado
+> **Quiero** cargar un pago electronico
+> **Para** que el cliente pueda pagarlo.
+> 
+> > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
+> > **REGLAS DE NEGOCIO:**
+> > - Si 2do vencimiento vencido no se puede cobrar.
+> > - Si 1er vencimiento vencido aplicar recargo al monto original.
+> > - Si no esta vencido cobrar monto original.
+> > 
+> > **Criterios de aceptación (Pagar factura electronica):**
+> > **Escenario 1:  Pago de factura exitoso sin vencimiento** 
+> > - **Dado** un cliente con una factura electronica,
+> > - **cuando** cuando el empleado/gerente ingresa el codigo de pago electronico, el sistema recupera los datos de la factura,
+> > - **entonces** el sistema verifica que la factura no esta vencida y al detectar que no lo esta, muestra el monto original a pagar por el cliente.
+> > 
+> > **Escenario 2: Pago de factura exitoso con 1er vencimiento
+> > - **Dado** un cliente con una factura electronica,
+> > - **cuando** el empeado/gerente ingresa el codigo del pago electronico, el sistema recupera los datos de la factura,
+> > - **entonces** el sistema verifica que la factura no este vencida, este detecta que el 1er venciminto lo esta y aplica un recargo al monto original a pagar por el cliente
+> > **Escenario 3: Pago de factura 2do con vencimiento
+> > - **Dado** un cliente con una factura electronica,
+> > - **cuando** el empeado/gerente ingresa el codigo del pago electronico, el sistema recupera los datos de la factura,
+> > - **entonces** el sistema verifica que la factura no este vencida, este detecta que el 2do vencimiento lo esta y informa en pantalla que no es posible cobrar por estar vencida.
+> >  **Escenario 3: Intento de pago de factura paga
+> > - **Dado** un cliente con una factura electronica,
+> > - **cuando** el empeado/gerente ingresa el codigo del pago electronico, el sistema recupera los datos de la factura,
+> > - **entonces** el sistema verifica que la factura no este vencida y detecta que esta paga.
+
+> [!info] FRENTE - ID: Registrar cobros de los clientes.
+> **Como** gerente
+> **Quiero** registrar en la central de cobros los pagos que hicieron los clientes
+> **Para** que quede registrado los cobros de los clientes.
+> 
+> > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
+> > **REGLAS DE NEGOCIO:**
+> > - Requiere la clave maestra.
+> > - No deben enviarse dos veces las transacciones.
+> > - Si el gerente intenta enviar una segunda vez, el sistema no debe permitirlo.
+> > **Criterios de aceptación (Registrar pagos de los clientes):**
+> > **Escenario 1:  Pago de factura exitoso sin vencimiento** 
+> > - **Dado** un cliente con una factura electronica,
+> > - **cuando** cuando el empleado/gerente ingresa el codigo de pago electronico, el sistema recupera los datos de la factura,
+> > - **entonces** el sistema verifica que la factura no esta vencida y al detectar que no lo esta, muestra el monto original a pagar por el cliente.
+> > 
+> > **Escenario 2: Pago de factura exitoso con 1er vencimiento
+> > - **Dado** un cliente con una factura electronica,
+> > - **cuando** el empeado/gerente ingresa el codigo del pago electronico, el sistema recupera los datos de la factura,
+> > - **entonces** el sistema verifica que la factura no este vencida, este detecta que el 1er venciminto lo esta y aplica un recargo al monto original a pagar por el cliente
+> > **Escenario 3: Pago de factura 2do con vencimiento
+> > - **Dado** un cliente con una factura electronica,
+> > - **cuando** el empeado/gerente ingresa el codigo del pago electronico, el sistema recupera los datos de la factura,
+> > - **entonces** el sistema verifica que la factura no este vencida, este detecta que el 2do vencimiento lo esta y informa en pantalla que no es posible cobrar por estar vencida.
+> >  **Escenario 3: Intento de pago de factura paga
+> > - **Dado** un cliente con una factura electronica,
+> > - **cuando** el empeado/gerente ingresa el codigo del pago electronico, el sistema recupera los datos de la factura,
+> > - **entonces** el sistema verifica que la factura no este vencida y detecta que esta paga.
+
+
