@@ -427,6 +427,8 @@ Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico d
 > > - Si 2do vencimiento vencido no se puede cobrar.
 > > - Si 1er vencimiento vencido aplicar recargo al monto original.
 > > - Si no esta vencido cobrar monto original.
+> > - Solo en Efectivo
+> > - Los datos provistos por la central para cada factura son: empresa, número de cliente, primera fecha de vencimiento, segunda fecha de vencimiento, recargo y monto original.
 > > 
 > > **Criterios de aceptación (Pagar factura electronica):**
 > > **Escenario 1:  Pago de factura exitoso sin vencimiento** 
@@ -477,16 +479,16 @@ Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico d
 > **Quiero** ver estadística de los impuestos y servicios cobrados
 > **Para** analizar esos datos.
 > 
-> > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
+>> [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
 > > - Clave maestra.
 > > - Rango de fechas.
 > > - Agrupar por empresa montos y cantidad de cobros realizados.
 > > **Criterios de aceptación (Ver estadisticas de cobros):**
-> > **Escenario 1:  Registro de pagos de clientes en la central exitoso** 
-> > - **Dado** que el gerente ingresa la clave maestra al sistema correctamente, el sistema recupera las transacciones de impuestos y servicios del dia,
-> > - **cuando** el sistema se conecta a la central de cobros, detecta que en el día no fueron enviadas las transferencias,
-> > - **entonces**  las envía, recibe por la central que la recepcion fue exitosa y registra como enviadas para no poder ser enviadas de nuevo.
+> > **Escenario 1:  Vista de estadisticas exitosa** 
+>> - **Dado** que el gerente ingreso la clave maestra correctamente
+> > - **cuando** ingresa un rango de fechas,
+> > - **entonces**  el sistema muestra los montos y cantidad de cobros realizados por empresa.
 > > **Escenario 2:  Ingreso de clave incorrecta** 
 > > - **Dado** que el gerente quiere registrar las transacciones del dia,
 > > - **cuando** ingresa la clave maestra "1234", 
