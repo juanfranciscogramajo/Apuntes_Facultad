@@ -457,23 +457,9 @@ Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico d
 > > - Requiere la clave maestra.
 > > - No deben enviarse dos veces las transacciones.
 > > - Si el gerente intenta enviar una segunda vez, el sistema no debe permitirlo.
-> > **Criterios de aceptación (Registrar pagos de los clientes):**
-> > **Escenario 1:  Pago de factura exitoso sin vencimiento** 
-> > - **Dado** un cliente con una factura electronica,
-> > - **cuando** cuando el empleado/gerente ingresa el codigo de pago electronico, el sistema recupera los datos de la factura,
-> > - **entonces** el sistema verifica que la factura no esta vencida y al detectar que no lo esta, muestra el monto original a pagar por el cliente.
-> > 
-> > **Escenario 2: Pago de factura exitoso con 1er vencimiento
-> > - **Dado** un cliente con una factura electronica,
-> > - **cuando** el empeado/gerente ingresa el codigo del pago electronico, el sistema recupera los datos de la factura,
-> > - **entonces** el sistema verifica que la factura no este vencida, este detecta que el 1er venciminto lo esta y aplica un recargo al monto original a pagar por el cliente
-> > **Escenario 3: Pago de factura 2do con vencimiento
-> > - **Dado** un cliente con una factura electronica,
-> > - **cuando** el empeado/gerente ingresa el codigo del pago electronico, el sistema recupera los datos de la factura,
-> > - **entonces** el sistema verifica que la factura no este vencida, este detecta que el 2do vencimiento lo esta y informa en pantalla que no es posible cobrar por estar vencida.
-> >  **Escenario 3: Intento de pago de factura paga
-> > - **Dado** un cliente con una factura electronica,
-> > - **cuando** el empeado/gerente ingresa el codigo del pago electronico, el sistema recupera los datos de la factura,
-> > - **entonces** el sistema verifica que la factura no este vencida y detecta que esta paga.
-
+> > **Criterios de aceptación (Registrar cobros de los clientes):**
+> > **Escenario 1:  Registro de pagos de clientes en la central exitoso 
+> > - **Dado** 
+> > - **cuando** 
+> > - **entonces**
 
