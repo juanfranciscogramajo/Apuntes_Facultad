@@ -194,7 +194,32 @@
 **Historias de usuario:**
 - Registro Usuario  
 - Compra de productos.
-
+- Inicio de sesion
+- cierre de sesion
+> [!info] HU FRENTE - ID: Registro Usuario
+> **Como** persona
+> **Quiero** Registrar mis datos
+> **Para** poder hacer una compra de bebidas alcoholicas
+> 
+> > [!info]- HU REVERSO - Reglas y Criterios (Desplegable)
+> > **REGLAS DE NEGOCIO:**
+> > - Se registren al sitio personas mayores a 18 años y mostrar en pantalla el texto de la ley que impide la venta de bebidas alcohólicas a menores.
+> > - Si el registro es exitoso el sistema genera una contraseña que es enviada al email ingresado en el registro.
+> >
+> > **Criterios de aceptación (Registro de usuario):**
+> > 
+> > **Escenario 1: Registro exitoso**
+> > - **Dado** el mail [persona1@gmail.com](mailto:persona1@gmai.com) que no se encuentra registrado y la edad es de 21 años.
+> > - **cuando**  la persona ingresa nombre “Riquelme”, apellido “Diaz”, mail [rique123@gmail.com](mailto:rique123@gmail.com) el cual no se encuentra registrado, edad 21 y presiona “Registrarse”.
+> > - **entonces** el sistema valida el registro y genera una contraseña que es enviada al email ingresado en el registro.
+> > **Escenario 2: Fallo en registro por mail de usuario repetido**
+> > - **Dado** el mail [persona1@gmail.com](mailto:persona1@gmai.com) que se encuentra registrado y la edad es de 21 años
+> > - **cuando** la persona ingresa nombre “Riquelme”, apellido “Diaz”, mail [rique123@gmail.com](mailto:rique123@gmail.com) el cual se encuentra registrado, edad 17 y presiona “Registrarse”.
+> > - **entonces** el sistema bloquea la accion y informa:  "El mail se encuentra registrado".
+> >**Escenario 3 Fallo en registro por edad ingresada**
+> > - **Dado** el mail [persona1@gmail.com](mailto:persona1@gmai.com) que se encuentra registrado y la edad es de 17 años
+> > - **cuando** la persona ingresa nombre “Riquelme”, apellido “Diaz”, mail [rique123@gmail.com](mailto:rique123@gmail.com) el cual no se encuentra registrado, edad 17 y presiona “Registrarse”.
+> > - **entonces** el sistema muestra en pantalla el texto de la ley que impide la venta de bebidas alcohólicas a menores.
 > [!info] HU FRENTE - ID: Registro Usuario
 > **Como** persona
 > **Quiero** Registrar mis datos
@@ -234,23 +259,27 @@
 > > **Criterios de aceptación (Compra de productos):**
 > > **Escenario 1: Compra cliente premium con 10% descuento**
 > > - **Dado** el usuario [cristi120@gmail.com](mailto:cristi120@gmail.com) que es premium, la bebida seleccionada es “Smirnoff” con precio de 5000 pesos y se dispone de stock disponible para la bebida seleccionada.
-> > - **cuando** el usuario [cristi120@gmail.com](mailto:cristi120@gmail.com) selecciona la bebida “Smirnoff” con precio de 5000 pesos y presiona “Aceptar”.
+> > - **cuando** selecciona la bebida “Smirnoff” con precio de 5000 pesos y presiona “Aceptar”.
 > > - **entonces**  se le realiza un 10% ademas del 20% por ser premium y informa el monto total de los productos seleccionados.
 > > 
 > > **Escenario 2: Compra cliente premium**
-> > - **Dado** un inicio de sesión de un cliente premium,
-> > - **cuando** el cliente selecciona productos que desea comprar y el monto es menor a $4500,
+> > - **Dado** el usuario [pepe@gmail.com](mailto:pepe@gmail.com) que es premium, las bebidas seleccionadas son “Corona” con precio de 2000 pesos y se dispone de stock disponible para las bebidas seleccionadas.
+> > - **cuando** selecciona “Corona” con precio de 2000 pesos y presiona “Aceptar”,
 > > - **entonces** el sistema le realiza un 20% de descuento por ser cliente premium y informa el monto total de los productos seleccionados.
 > > 
 > > **Escenario 3: Compra cliente con 10%**
-> > - **Dado** un inicio de sesión de un cliente,
-> > - **cuando** el cliente selecciona productos que desea comprar y el monto es mayor a $4500,
-> > - **entonces** el sistema le realiza un 10% de descuento por ser cliente premium y informa el monto total de los productos seleccionados.
+> > - **Dado** el usuario [pepe@gmail.com](mailto:pepe@gmail.com) que no es premium, las bebidas seleccionadas son “Corona” con precio de 2000 pesos, “Stellla Artois” con precio 3000 pesos, y se dispone de stock disponible para las bebidas seleccionadas.
+> > - **cuando** selecciona “Corona” con precio de 2000 pesos, “Stellla Artois” con precio 3000 pesos y presiona “Aceptar”.
+> > - **entonces** el sistema informa el monto final con el 10% de descuento aplicado.
 > > 
 > > **Escenario 4: Compra cliente**
-> > - **Dado** el usuario [kablan@gmail.com](mailto:kablan@gmail.com) que no es premium, la bebida seleccionada “Fernet Branca,
-> > - **cuando** el cliente selecciona productos que desea comprar y el monto es menor a $4500,
-> > - **entonces** el sistema informa el monto total de los productos seleccionados en pantalla.
+> > - **Dado** el usuario [kablan@gmail.com](mailto:kablan@gmail.com) que no es premium, la bebida seleccionada “Fernet Branca, precio 2000 pesos y se dispone de stock disponible para la bebidas seleccionadas.
+> > - **cuando**  selecciona la bebida “Fernet Branca” con precio de 2000 pesos y presiona “Aceptar”.
+> > - **entonces** el sistema informa el monto total(2000 pesos) de los productos seleccionados en pantalla.
+> >**Escenario 5: Seleccion fallida por falta de stock**
+> > - **Dado** el usuario [abtrapto99@gmail.com](mailto:abtrapto99@gmail.com), selecciona la bebida “Jägermeister” el cual no dispone de stock disponible.
+> > - **cuando** selecciona la bebida “Jägermeister” con precio 100000 pesos y presiona “Aceptar”.
+> > - **entonces** el sistema informa que no tiene stock disponible para el producto seleccionado.
 # 4 - Prestamos de Kits
 
 **Rol de usuarios:**
