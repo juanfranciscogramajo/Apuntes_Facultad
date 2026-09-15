@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ING1/Practica/Practica 2 HU.md",
+                "file": "ING1/Practica/Practica 3 RP.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Practica 2 HU"
+              "title": "Practica 3 RP"
             }
           }
         ]
@@ -224,11 +224,50 @@
       "obsidian-excalidraw-plugin:Nuevo Bosquejo": false
     }
   },
+  "floating": {
+    "id": "e620534d5e679efe",
+    "type": "floating",
+    "children": [
+      {
+        "id": "de0674c317e7037a",
+        "type": "window",
+        "children": [
+          {
+            "id": "851192a1564df12d",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "4d8e18f92aa4d4e8",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "ING1/Practica/Explicacion practica Redes de Petri.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Explicacion practica Redes de Petri"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 1,
+        "y": 0,
+        "width": 958,
+        "height": 1031,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
   "active": "6c84a08b177dd7f5",
   "lastOpenFiles": [
-    "ING1/Practica/Sin título.md",
-    "ING1/Practica/Practica 2 HU.md",
     "ING1/Practica/Explicacion practica Redes de Petri.md",
+    "ING1/Practica/Practica 3 RP.md",
+    "ING1/Practica/Practica 2 HU.md",
     "ING1/Practica/Practicas 2 Nico Yoel/PRACTICA 2 HU NICO.md",
     "ING1/Practica/Practicas 2 Nico Yoel/Ingeniería de software 1/HU - 1 1.docx",
     "ING1/Practica/Practicas 2 Nico Yoel/Ingeniería de software 1/HU - 5 1.docx",
