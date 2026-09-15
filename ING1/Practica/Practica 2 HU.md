@@ -214,11 +214,11 @@
 > > **Escenario 2: Fallo en registro por mail de usuario repetido**
 > > - **Dado** el mail [persona1@gmail.com](mailto:persona1@gmai.com) que se encuentra registrado y la edad es de 21 años
 > > - **cuando** la persona ingresa nombre “Riquelme”, apellido “Diaz”, mail [rique123@gmail.com](mailto:rique123@gmail.com) el cual se encuentra registrado, edad 17 y presiona “Registrarse”.
-> > - **entonces** el sistema informa de un error ya que el mail se encuentra registrado.
+> > - **entonces** el sistema bloquea la accion y informa:  "El mail se encuentra registrado".
 > >**Escenario 3 Fallo en registro por edad ingresada**
-> > - **Dado** el ingreso los datos personales 
-> > - **cuando** el usuario ingresa una edad menor a 19 años,
-> > - **entonces** el sistema muestra en pantalla el texto de la ley que impide la venta de bebidas alcohólicas a menores
+> > - **Dado** el mail [persona1@gmail.com](mailto:persona1@gmai.com) que se encuentra registrado y la edad es de 17 años
+> > - **cuando** la persona ingresa nombre “Riquelme”, apellido “Diaz”, mail [rique123@gmail.com](mailto:rique123@gmail.com) el cual no se encuentra registrado, edad 17 y presiona “Registrarse”.
+> > - **entonces** el sistema muestra en pantalla el texto de la ley que impide la venta de bebidas alcohólicas a menores.
 
 > [!info] FRENTE - ID: Compra de productos
 > **Como** usuario
@@ -233,8 +233,8 @@
 > > 
 > > **Criterios de aceptación (Compra de productos):**
 > > **Escenario 1: Compra cliente premium con 10% descuento**
-> > - **Dado** que el cliente inicia sesión como premium,
-> > - **cuando** selecciona los productos que desea comprar y como el monto total supera $4500,
+> > - **Dado** el usuario [cristi120@gmail.com](mailto:cristi120@gmail.com) que es premium, la bebida seleccionada es “Smirnoff” con precio de 5000 pesos y se dispone de stock disponible para la bebida seleccionada.
+> > - **cuando** el usuario [cristi120@gmail.com](mailto:cristi120@gmail.com) selecciona la bebida “Smirnoff” con precio de 5000 pesos y presiona “Aceptar”.
 > > - **entonces**  se le realiza un 10% ademas del 20% por ser premium y informa el monto total de los productos seleccionados.
 > > 
 > > **Escenario 2: Compra cliente premium**
@@ -248,7 +248,7 @@
 > > - **entonces** el sistema le realiza un 10% de descuento por ser cliente premium y informa el monto total de los productos seleccionados.
 > > 
 > > **Escenario 4: Compra cliente**
-> > - **Dado** un inicio de sesión de un cliente,
+> > - **Dado** el usuario [kablan@gmail.com](mailto:kablan@gmail.com) que no es premium, la bebida seleccionada “Fernet Branca,
 > > - **cuando** el cliente selecciona productos que desea comprar y el monto es menor a $4500,
 > > - **entonces** el sistema informa el monto total de los productos seleccionados en pantalla.
 # 4 - Prestamos de Kits
