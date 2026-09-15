@@ -196,30 +196,49 @@
 - Compra de productos.
 - Inicio de sesion
 - cierre de sesion
-> [!info] HU FRENTE - ID: Registro Usuario
+
+> [!info] HU FRENTE - ID: Iniciar Sesion
 > **Como** persona
-> **Quiero** Registrar mis datos
+> **Quiero** iniciar sesion en mi cuenta
 > **Para** poder hacer una compra de bebidas alcoholicas
 > 
 > > [!info]- HU REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
-> > - Se registren al sitio personas mayores a 18 años y mostrar en pantalla el texto de la ley que impide la venta de bebidas alcohólicas a menores.
-> > - Si el registro es exitoso el sistema genera una contraseña que es enviada al email ingresado en el registro.
+> >- El usuario debe encontrarse registrado previamente en el sistema. 
+> >- La contraseña ingresada debe coincidir con la registrada para dicho usuario.
 > >
-> > **Criterios de aceptación (Registro de usuario):**
+> > **Criterios de aceptación (Iniciar sesion):**
 > > 
-> > **Escenario 1: Registro exitoso**
-> > - **Dado** el mail [persona1@gmail.com](mailto:persona1@gmai.com) que no se encuentra registrado y la edad es de 21 años.
-> > - **cuando**  la persona ingresa nombre “Riquelme”, apellido “Diaz”, mail [rique123@gmail.com](mailto:rique123@gmail.com) el cual no se encuentra registrado, edad 21 y presiona “Registrarse”.
-> > - **entonces** el sistema valida el registro y genera una contraseña que es enviada al email ingresado en el registro.
-> > **Escenario 2: Fallo en registro por mail de usuario repetido**
-> > - **Dado** el mail [persona1@gmail.com](mailto:persona1@gmai.com) que se encuentra registrado y la edad es de 21 años
-> > - **cuando** la persona ingresa nombre “Riquelme”, apellido “Diaz”, mail [rique123@gmail.com](mailto:rique123@gmail.com) el cual se encuentra registrado, edad 17 y presiona “Registrarse”.
-> > - **entonces** el sistema bloquea la accion y informa:  "El mail se encuentra registrado".
-> >**Escenario 3 Fallo en registro por edad ingresada**
-> > - **Dado** el mail [persona1@gmail.com](mailto:persona1@gmai.com) que se encuentra registrado y la edad es de 17 años
-> > - **cuando** la persona ingresa nombre “Riquelme”, apellido “Diaz”, mail [rique123@gmail.com](mailto:rique123@gmail.com) el cual no se encuentra registrado, edad 17 y presiona “Registrarse”.
-> > - **entonces** el sistema muestra en pantalla el texto de la ley que impide la venta de bebidas alcohólicas a menores.
+> > **Escenario 1: Inicio de sesión exitoso**
+> >- **Dado** el nombre de usuario pablo29@gmail.com que se encuentra registrado en el sistema y la contraseña 1234 que coincide con el nombre de usuario,
+> >- **cuando** el usuario ingresa pablo29@gmail.com, contraseña 1234 y presiona “Iniciar sesión”,
+> >- **entonces** el sistema abre la sesión del usuario y muestra la lista de bebidas alcohólicas.
+> >**Escenario 2: Inicio de sesión fallido por contraseña incorrecta** 
+> >- **Dado** el nombre de usuario rique23@gmail.com el cual se encuentra registrado y la contraseña 2020 que no coincide con el nombre de usuario,
+> >- **cuando** el usuario ingresa rique23@gmail.com, contraseña 2020 y presiona “Iniciar sesión”,
+> >- **entonces** el sistema informa “Datos incorrectos”.
+> >**Escenario 3: Inicio de sesión fallido por nombre usuario inexistente **
+> >- **Dado** el nombre de usuario fantoche1999@gmail.com el cual no se encuentra registrado,
+> >- **cuando** el usuario ingresa fantoche199@gmail.com, contraseña 2020 y presiona “Iniciar sesión”,
+> >- **entonces** el sistema informa “Datos incorrectos”.
+
+> [!info] HU FRENTE - ID: Cerrar Sesion
+> **Como** persona
+> **Quiero** cerrar sesion en mi cuenta
+> **Para** salir del sistema
+> 
+> > [!info]- HU REVERSO - Reglas y Criterios (Desplegable)
+> > **REGLAS DE NEGOCIO:**
+> >- El usuario debe poseer una sesión activa previamente en el sistema.
+> >
+> > **Criterios de aceptación (Cerrar sesion):**
+> > 
+> > **Escenario 1: Inicio de sesión exitoso**
+> >- **Dado** el nombre de usuario pablo29@gmail.com que se encuentra registrado en el sistema y la contraseña 1234 que coincide con el nombre de usuario,
+> >- **cuando** el usuario ingresa pablo29@gmail.com, contraseña 1234 y presiona “Iniciar sesión”,
+> >- **entonces** el sistema abre la sesión del usuario y muestra la lista de bebidas alcohólicas.”
+> >- Criterios de aceptación (Cerrar sesión): Escenario 1: Cierre de sesión exitoso Dado el usuario lorsrosa@gmail.com con la sesión iniciada. cuando el usuario presiona “Cerrar sesión”. entonces el sistema cierra la sesión del usuario y redirige a la pantalla de iniciar sesión.
+
 > [!info] HU FRENTE - ID: Registro Usuario
 > **Como** persona
 > **Quiero** Registrar mis datos
