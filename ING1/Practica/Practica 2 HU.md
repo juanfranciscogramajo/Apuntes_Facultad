@@ -202,7 +202,7 @@
 > **Quiero** iniciar sesion en mi cuenta
 > **Para** poder hacer una compra de bebidas alcoholicas
 > 
-> > [!info]- HU REVERSO - Reglas y Criterios (Desplegable)
+> > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
 > >- El usuario debe encontrarse registrado previamente en el sistema. 
 > >- La contraseña ingresada debe coincidir con la registrada para dicho usuario.
@@ -227,24 +227,23 @@
 > **Quiero** cerrar sesion en mi cuenta
 > **Para** salir del sistema
 > 
-> > [!info]- HU REVERSO - Reglas y Criterios (Desplegable)
+> > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
 > >- El usuario debe poseer una sesión activa previamente en el sistema.
 > >
 > > **Criterios de aceptación (Cerrar sesion):**
-> > 
-> > **Escenario 1: Inicio de sesión exitoso**
-> >- **Dado** el nombre de usuario pablo29@gmail.com que se encuentra registrado en el sistema y la contraseña 1234 que coincide con el nombre de usuario,
-> >- **cuando** el usuario ingresa pablo29@gmail.com, contraseña 1234 y presiona “Iniciar sesión”,
-> >- **entonces** el sistema abre la sesión del usuario y muestra la lista de bebidas alcohólicas.”
-> >- Criterios de aceptación (Cerrar sesión): Escenario 1: Cierre de sesión exitoso Dado el usuario lorsrosa@gmail.com con la sesión iniciada. cuando el usuario presiona “Cerrar sesión”. entonces el sistema cierra la sesión del usuario y redirige a la pantalla de iniciar sesión.
+> >
+> > **Escenario 1: ciere de sesión exitoso**
+> >- **Dado** el usuario lorsrosa@gmail.com con la sesión iniciada,
+> >- **cuando**  el usuario presiona “Cerrar sesión”,
+> >- **entonces** entonces el sistema cierra la sesión del usuario y redirige a la pantalla de iniciar sesión.
 
 > [!info] HU FRENTE - ID: Registro Usuario
 > **Como** persona
 > **Quiero** Registrar mis datos
 > **Para** poder hacer una compra de bebidas alcoholicas
 > 
-> > [!info]- HU REVERSO - Reglas y Criterios (Desplegable)
+> > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
 > > - Se registren al sitio personas mayores a 18 años y mostrar en pantalla el texto de la ley que impide la venta de bebidas alcohólicas a menores.
 > > - Si el registro es exitoso el sistema genera una contraseña que es enviada al email ingresado en el registro.
