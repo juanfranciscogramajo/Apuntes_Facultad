@@ -7,12 +7,12 @@
 
 ## 2. Componentes Fundamentales
 
-| Componente | Representación Gráfica | Función y Significado |
-| :--- | :---: | :--- |
-| **Sitio (Place)** | Círculo ($\bigcirc$) | Modela un **estado** o una **condición** del sistema (según el punto de vista de interpretación adoptado)[cite: 1]. |
-| **Transición** | Barra o línea ($\vert$) | Modela un **evento** o una **acción**[cite: 1]. |
-| **Arco** | Flecha ($\to$) | Conecta de manera unidireccional un sitio con una transición o una transición con un sitio[cite: 1]. **Regla estricta:** Nunca conecta sitio con sitio ni transición con transición[cite: 1]. |
-| **Marca (Token)** | Punto ($\bullet$) | Elemento dinámico que se aloja dentro de los sitios[cite: 1]. Su función es habilitar o deshabilitar transiciones para gobernar la ejecución de la red[cite: 1]. Un sitio puede contener más de un token[cite: 1]. |
+| Componente        | Representación Gráfica  | Función y Significado                                                                                                                                                                                              |
+| :---------------- | :---------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Sitio (Place)** |  Círculo ($\bigcirc$)   | Modela un **estado** o una **condición** del sistema (según el punto de vista de interpretación adoptado)[cite: 1].                                                                                                |
+| **Transición**    | Barra o línea ($\vert$) | Modela un **evento** o una **acción**[cite: 1].                                                                                                                                                                    |
+| **Arco**          |     Flecha ($\to$)      | Conecta de manera unidireccional un sitio con una transición o una transición con un sitio[cite: 1]. **Regla estricta:** Nunca conecta sitio con sitio ni transición con transición[cite: 1].                      |
+| **Marca (Token)** |    Punto ($\bullet$)    | Elemento dinámico que se aloja dentro de los sitios[cite: 1]. Su función es habilitar o deshabilitar transiciones para gobernar la ejecución de la red[cite: 1]. Un sitio puede contener más de un token[cite: 1]. |
 
 > [!NOTE] Naturaleza Bipartita
 > Al ser un grafo bipartito estricto, el flujo de ejecución siempre debe alternar entre estados y acciones: $\text{Sitio} \to \text{Transición} \to \text{Sitio}$[cite: 1].
