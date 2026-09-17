@@ -1,3 +1,6 @@
+# Ejercicio 3 
+---
+
 - Inversor
   - inversiones
 - inversiones
@@ -43,4 +46,8 @@ Inversion <|-- InversionEnPlazoFijo
 
 ![[Pasted image 20260917195355.png]]
 
-4
+---
+
+# Ejercicio 4 
+---
+
