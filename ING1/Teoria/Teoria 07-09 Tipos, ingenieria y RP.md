@@ -1,13 +1,3 @@
----
-tags:
-  - facultad/ingenieria-de-software-1
-  - requerimientos
-  - redes-de-petri
-materia: Ingeniería de Software I
-facultad: Facultad de Informática - UNLP
-Clase: Teoria 07-09
----
-
 ## 1. Tipos de Requerimientos
 
 ### Requerimientos Funcionales (RF)

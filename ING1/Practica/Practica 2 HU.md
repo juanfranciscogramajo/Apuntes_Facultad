@@ -194,13 +194,56 @@
 **Historias de usuario:**
 - Registro Usuario  
 - Compra de productos.
+- Inicio de sesion
+- cierre de sesion
+
+> [!info] HU FRENTE - ID: Iniciar Sesion
+> **Como** persona
+> **Quiero** iniciar sesion en mi cuenta
+> **Para** poder hacer una compra de bebidas alcoholicas
+> 
+> > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
+> > **REGLAS DE NEGOCIO:**
+> >- El usuario debe encontrarse registrado previamente en el sistema. 
+> >- La contraseña ingresada debe coincidir con la registrada para dicho usuario.
+> >
+> > **Criterios de aceptación (Iniciar sesion):**
+> > 
+> > **Escenario 1: Inicio de sesión exitoso**
+> >- **Dado** el nombre de usuario pablo29@gmail.com que se encuentra registrado en el sistema y la contraseña 1234 que coincide con el nombre de usuario,
+> >- **cuando** el usuario ingresa pablo29@gmail.com, contraseña 1234 y presiona “Iniciar sesión”,
+> >- **entonces** el sistema abre la sesión del usuario y muestra la lista de bebidas alcohólicas.
+> >**Escenario 2: Inicio de sesión fallido por contraseña incorrecta** 
+> >- **Dado** el nombre de usuario rique23@gmail.com el cual se encuentra registrado y la contraseña 2020 que no coincide con el nombre de usuario,
+> >- **cuando** el usuario ingresa rique23@gmail.com, contraseña 2020 y presiona “Iniciar sesión”,
+> >- **entonces** el sistema informa “Datos incorrectos”.
+> >**Escenario 3: Inicio de sesión fallido por nombre usuario inexistente **
+> >- **Dado** el nombre de usuario fantoche1999@gmail.com el cual no se encuentra registrado,
+> >- **cuando** el usuario ingresa fantoche199@gmail.com, contraseña 2020 y presiona “Iniciar sesión”,
+> >- **entonces** el sistema informa “Datos incorrectos”.
+
+> [!info] HU FRENTE - ID: Cerrar Sesion
+> **Como** persona
+> **Quiero** cerrar sesion en mi cuenta
+> **Para** salir del sistema
+> 
+> > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
+> > **REGLAS DE NEGOCIO:**
+> >- El usuario debe poseer una sesión activa previamente en el sistema.
+> >
+> > **Criterios de aceptación (Cerrar sesion):**
+> >
+> > **Escenario 1: ciere de sesión exitoso**
+> >- **Dado** el usuario lorsrosa@gmail.com con la sesión iniciada,
+> >- **cuando**  el usuario presiona “Cerrar sesión”,
+> >- **entonces** entonces el sistema cierra la sesión del usuario y redirige a la pantalla de iniciar sesión.
 
 > [!info] HU FRENTE - ID: Registro Usuario
 > **Como** persona
 > **Quiero** Registrar mis datos
 > **Para** poder hacer una compra de bebidas alcoholicas
 > 
-> > [!info]- HU REVERSO - Reglas y Criterios (Desplegable)
+> > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
 > > - Se registren al sitio personas mayores a 18 años y mostrar en pantalla el texto de la ley que impide la venta de bebidas alcohólicas a menores.
 > > - Si el registro es exitoso el sistema genera una contraseña que es enviada al email ingresado en el registro.
@@ -208,19 +251,17 @@
 > > **Criterios de aceptación (Registro de usuario):**
 > > 
 > > **Escenario 1: Registro exitoso**
-> > - **Dado** los datos de una persona mayor a 18 años y con mail unico 
-> > - **cuando** el usuario confirma los datos
-> > - **entonces** el sistema genera una contraseña que es enviada al email ingresado en el registro
-> > - 
+> > - **Dado** el mail [persona1@gmail.com](mailto:persona1@gmai.com) que no se encuentra registrado y la edad es de 21 años.
+> > - **cuando**  la persona ingresa nombre “Riquelme”, apellido “Diaz”, mail [rique123@gmail.com](mailto:rique123@gmail.com) el cual no se encuentra registrado, edad 21 y presiona “Registrarse”.
+> > - **entonces** el sistema valida el registro y genera una contraseña que es enviada al email ingresado en el registro.
 > > **Escenario 2: Fallo en registro por mail de usuario repetido**
-> > - **Dado** el ingreso de datos de una persona mayor a 18 anIos 
-> > - **cuando** el usuario confirma los datos ingresados,
-> > - **entonces** el sistema informa de un error ya que el mail se encuentra registrado.
-> > - 
+> > - **Dado** el mail [persona1@gmail.com](mailto:persona1@gmai.com) que se encuentra registrado y la edad es de 21 años
+> > - **cuando** la persona ingresa nombre “Riquelme”, apellido “Diaz”, mail [rique123@gmail.com](mailto:rique123@gmail.com) el cual se encuentra registrado, edad 17 y presiona “Registrarse”.
+> > - **entonces** el sistema bloquea la accion y informa:  "El mail se encuentra registrado".
 > >**Escenario 3 Fallo en registro por edad ingresada**
-> > - **Dado** el ingreso los datos personales 
-> > - **cuando** el usuario ingresa una edad menor a 19 años,
-> > - **entonces** el sistema muestra en pantalla el texto de la ley que impide la venta de bebidas alcohólicas a menores
+> > - **Dado** el mail [persona1@gmail.com](mailto:persona1@gmai.com) que se encuentra registrado y la edad es de 17 años
+> > - **cuando** la persona ingresa nombre “Riquelme”, apellido “Diaz”, mail [rique123@gmail.com](mailto:rique123@gmail.com) el cual no se encuentra registrado, edad 17 y presiona “Registrarse”.
+> > - **entonces** el sistema muestra en pantalla el texto de la ley que impide la venta de bebidas alcohólicas a menores.
 
 > [!info] FRENTE - ID: Compra de productos
 > **Como** usuario
@@ -235,24 +276,28 @@
 > > 
 > > **Criterios de aceptación (Compra de productos):**
 > > **Escenario 1: Compra cliente premium con 10% descuento**
-> > - **Dado** que el cliente inicia sesión como premium,
-> > - **cuando** selecciona los productos que desea comprar y como el monto total supera $4500,
+> > - **Dado** el usuario [cristi120@gmail.com](mailto:cristi120@gmail.com) que es premium, la bebida seleccionada es “Smirnoff” con precio de 5000 pesos y se dispone de stock disponible para la bebida seleccionada.
+> > - **cuando** selecciona la bebida “Smirnoff” con precio de 5000 pesos y presiona “Aceptar”.
 > > - **entonces**  se le realiza un 10% ademas del 20% por ser premium y informa el monto total de los productos seleccionados.
 > > 
 > > **Escenario 2: Compra cliente premium**
-> > - **Dado** un inicio de sesión de un cliente premium,
-> > - **cuando** el cliente selecciona productos que desea comprar y el monto es menor a $4500,
+> > - **Dado** el usuario [pepe@gmail.com](mailto:pepe@gmail.com) que es premium, las bebidas seleccionadas son “Corona” con precio de 2000 pesos y se dispone de stock disponible para las bebidas seleccionadas.
+> > - **cuando** selecciona “Corona” con precio de 2000 pesos y presiona “Aceptar”,
 > > - **entonces** el sistema le realiza un 20% de descuento por ser cliente premium y informa el monto total de los productos seleccionados.
 > > 
 > > **Escenario 3: Compra cliente con 10%**
-> > - **Dado** un inicio de sesión de un cliente,
-> > - **cuando** el cliente selecciona productos que desea comprar y el monto es mayor a $4500,
-> > - **entonces** el sistema le realiza un 10% de descuento por ser cliente premium y informa el monto total de los productos seleccionados.
+> > - **Dado** el usuario [pepe@gmail.com](mailto:pepe@gmail.com) que no es premium, las bebidas seleccionadas son “Corona” con precio de 2000 pesos, “Stellla Artois” con precio 3000 pesos, y se dispone de stock disponible para las bebidas seleccionadas.
+> > - **cuando** selecciona “Corona” con precio de 2000 pesos, “Stellla Artois” con precio 3000 pesos y presiona “Aceptar”.
+> > - **entonces** el sistema informa el monto final con el 10% de descuento aplicado.
 > > 
 > > **Escenario 4: Compra cliente**
-> > - **Dado** un inicio de sesión de un cliente,
-> > - **cuando** el cliente selecciona productos que desea comprar y el monto es menor a $4500,
-> > - **entonces** el sistema informa el monto total de los productos seleccionados en pantalla.
+> > - **Dado** el usuario [kablan@gmail.com](mailto:kablan@gmail.com) que no es premium, la bebida seleccionada “Fernet Branca, precio 2000 pesos y se dispone de stock disponible para la bebidas seleccionadas.
+> > - **cuando**  selecciona la bebida “Fernet Branca” con precio de 2000 pesos y presiona “Aceptar”.
+> > - **entonces** el sistema informa el monto total(2000 pesos) de los productos seleccionados en pantalla.
+> >**Escenario 5: Seleccion fallida por falta de stock**
+> > - **Dado** el usuario [abtrapto99@gmail.com](mailto:abtrapto99@gmail.com), selecciona la bebida “Jägermeister” el cual no dispone de stock disponible.
+> > - **cuando** selecciona la bebida “Jägermeister” con precio 100000 pesos y presiona “Aceptar”.
+> > - **entonces** el sistema informa que no tiene stock disponible para el producto seleccionado.
 # 4 - Prestamos de Kits
 
 **Rol de usuarios:**
@@ -338,8 +383,11 @@
 - Administrativo
 
 **Historias de usuario:**
-- Solicitar licencia
-- Consultar licencias solicitadas
+- Solicitar licencia.
+- Registrarse.
+- Iniciar sesion.
+- Cerrar sesion.
+- Consultar licencias solicitadas.
 
 > [!info] FRENTE - ID: Solicitar licencia medica
 > **Como** empleado 
@@ -357,7 +405,7 @@
 > > **Criterios de aceptación (Solicitar una licencia):**
 > > **Escenario 1: Empleado solicita licencia exitosamente**
 > > - **Dado** un empleado registrado, autenticado en el sistema, sin tener una licencia vigente y antiguedad de mas de 1 mes,
-> > - **cuando** solicita una licencia con los datos, tipo de licencia presencial, fecha de inicio de reposo 02/10/2026, matricula del medico personal 1250Ml, por operacion de vista, para el titular y confirma el formulario,
+> > - **cuando** solicita una licencia con los datos, tipo de licencia presencial, fecha de inicio de reposo 02/10/2026, matricula del medico personal 1250, por operacion de vista, para el titular y confirma el formulario,
 > > - **entonces** el sistema genera un codigo y lo envia al mail del empleado con la confirmacion de la licencia, los dias otorgados y registra la solicitud.
 > > 
 > > **Escenario 2: Solicitud fallida por antiguedad insuficiente**
@@ -384,11 +432,10 @@
 > > **REGLAS DE NEGOCIO:**
 > > - Solo se podrá imprimir un informe por mes para cada empleado.
 > > - Para consultar una licencia se debe ingresar el cuil del empleado y un rango de fechas
-> > - El sistema imprime un informe de las licencias solicitadas
 > > 
 > > **Criterios de aceptación (Consultar una licencia solicitada):**
 > > **Escenario 1: Consulta e impresión exitosa**
-> > - **Dado** un administrativo autenticado y un empleado con CUIL "20-24521125-2" al cual no se le ha impreso ningún informe durante el mes en curso,
+> > - **Dado** un empleado con CUIL "20-24521125-2" al cual no se le ha impreso ningún informe durante el mes en curso,
 > > - **cuando** llena el campo de cuil del empleado 20-24521125-2, el rango de fecha 20/10/2025 al 02/11/2025 y confirma los datos,
 > > - **entonces** el sistema imprime el informe con el detalle de las licencias solicitadas para dicho período..
 > > 
@@ -406,6 +453,37 @@
 > > - **Dado** un administrador selecciona consultar una licencia,
 > > - **cuando** selecciona la opcion de consultar una licencia,
 > > - **entonces** el sistema deniega el acceso y solicita el inicie sesion
+
+> [!info] FRENTE - ID: Registrarse
+> **Como** persona
+> **Quiero** registrarme
+> **Para** poder iniciar sesion en el sistema.
+> 
+> > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
+> > **REGLAS DE NEGOCIO:**
+> > - El mail debe ser único.
+> > - El Cuil debe ser único.
+> > **Criterios de aceptación (Registrarse en el sistema):**
+> > **Escenario 1: Registro exitoso**
+> > - **Dado** el mail [redesP@gmail.com](mailto:redesP@gmail.com) que no es encuentra registrado y el cuil 20-9999-7 que no se encuentra registrado
+> > - **cuando**  se ingresa mail [redesP@gmail.com](mailto:redesP@gmail.com), cuil 20-9999-7, contraseña 4321 y presiona “Registrarse”
+> > - **entonces** el sistema valida el registro e informa "Registro exitoso"
+> > 
+> > **Escenario 2: Registro fallido por mail existente**
+> > - **Dado** el mail [juanpablo@gmail.com](mailto:juanpablo@gmail.com) que se encuentra registrado.
+> > - **cuando** se ingresa el mail juan[pablo@gmail.com](mailto:pablo29@gmail.com), cuil 20-8888-1, contraseña 1022 y presiona “Registrarse”
+> > - **entonces** el sistema bloquea la acción e informa que: “El mail ya se encuentra registrado”.
+> >
+> > **Escenario 3: Registro fallido por Cuil existente**
+> > - **Dado** el cuil 27-4433-1 que se encuentra registrado
+> > - **cuando** se ingresa el mail [peter@gmail.com](mailto:peter@gmail.com), cuil 27-4433-1, contraseña 0909 y presiona “Registrarse”.
+> > - **entonces** el sistema bloquea la acción e informa que: “El Cuil ya se encuentra registrado”.
+> > 
+> >**Escenario 4: Administrador sin iniciar sesión intenta consultar una licencia**
+> > - **Dado** un administrador selecciona consultar una licencia,
+> > - **cuando** selecciona la opcion de consultar una licencia,
+> > - **entonces** el sistema deniega el acceso y solicita el inicie sesion
+**
 # 6- Pago Electrónico
 Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico de impuestos y servicios en efectivo. Cuando un cliente llega para realizar un pago, el <font color="#00b0f0">empleado</font> o el <font color="#00b0f0">gerente</font> de la sucursal <font color="#ffff00">ingresa el código de pago electrónico y el sistema se conecta con la central de cobro para recuperar los datos de la factura (empresa, nro de cliente, 1era fecha de vencimiento, 2da fecha de vencimiento, recargo, y monto original).</font> Una vez recuperados los datos, <font color="#ffff00">el sistema debe verificar los vencimientos para determinar el monto a cobrar. </font>Teniendo esto en cuenta, <font color="#c00000">cuando el 2do vencimiento está vencido se debe informar que la factura no se puede cobrar por dicho motivo. </font>Cuando el <font color="#c00000">1er vencimiento</font> está vencido hay que aplicar el <font color="#c00000">recargo al monto original</font>. Si la <font color="#c00000">factura no está vencida, se cobra el monto original.</font> Una vez al día, el <font color="#00b0f0">gerente</font> de la sucursal <font color="#ffff00">debe registrar en la central de cobros los pagos que hicieron los clientes. </font>Para esto el sistema <font color="#c00000">requiere la clave maestra y de ser correcta,</font> <font color="#ffff00">recupera las transacciones de los impuestos y servicios cobrados en el día, se conecta a la central de cobro y se las envía. </font>Cuando la central confirma la recepción exitosa, el sistema las registra como enviadas. Este último paso es importante porque <font color="#c00000">no deben enviarse dos veces las transacciones.</font> <font color="#ff0000">Si el gerente intenta enviar una segunda vez, el sistema no debe permitirlo. </font>Finalmente <font color="#ffff00">el Gerente puede ver las estadísticas de los impuestos y servicios cobrados.</font><font color="#ffff00"> Para esto, se ingresa la clave maestra, un rango de fechas sobre las cuales debe calcularse las estadísticas y el sistema debe mostrar los montos y la cantidad de cobros realizados, agrupando por empresa.</font> Tenga en cuenta que cada vez que el sistema debe conectarse a la central, debe enviarle un token (código que identifica al sistema). Una vez que la central valida el token, el sistema envía el requerimiento para recuperar los datos de la factura o el requerimiento para registrar los pagos del día según corresponda.
 **Rol de usuarios:**
@@ -425,8 +503,11 @@ Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico d
 > > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
 > > **REGLAS DE NEGOCIO:**
 > > - Si 2do vencimiento vencido no se puede cobrar.
+> > - Toda conexión con la central de cobro requiere el envío y validación previa del token identificador del sistema.
 > > - Si 1er vencimiento vencido aplicar recargo al monto original.
 > > - Si no esta vencido cobrar monto original.
+> > - Solo en Efectivo.
+> > - Los datos provistos por la central para cada factura son: empresa, número de cliente, primera fecha de vencimiento, segunda fecha de vencimiento, recargo y monto original.
 > > 
 > > **Criterios de aceptación (Pagar factura electronica):**
 > > **Escenario 1:  Pago de factura exitoso sin vencimiento** 
@@ -457,23 +538,41 @@ Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico d
 > > - Requiere la clave maestra.
 > > - No deben enviarse dos veces las transacciones.
 > > - Si el gerente intenta enviar una segunda vez, el sistema no debe permitirlo.
-> > **Criterios de aceptación (Registrar pagos de los clientes):**
-> > **Escenario 1:  Pago de factura exitoso sin vencimiento** 
-> > - **Dado** un cliente con una factura electronica,
-> > - **cuando** cuando el empleado/gerente ingresa el codigo de pago electronico, el sistema recupera los datos de la factura,
-> > - **entonces** el sistema verifica que la factura no esta vencida y al detectar que no lo esta, muestra el monto original a pagar por el cliente.
+> > **Criterios de aceptación (Registrar cobros de los clientes):**
+> > **Escenario 1:  Registro de pagos de clientes en la central exitoso** 
+> > - **Dado** que el gerente ingresa la clave maestra al sistema correctamente, el sistema recupera las transacciones de impuestos y servicios del dia,
+> > - **cuando** el sistema se conecta a la central de cobros, detecta que en el día no fueron enviadas las transferencias,
+> > - **entonces**  las envía, recibe por la central que la recepcion fue exitosa y registra como enviadas para no poder ser enviadas de nuevo.
+> > **Escenario 2:  Ingreso de clave incorrecta** 
+> > - **Dado** que el gerente quiere registrar las transacciones del dia,
+> > - **cuando** ingresa la clave maestra "1234", 
+> > - **entonces** el sistema informa que es incorrecta y bloquea la accion.
+> > **Escenario 3:  Central no confirma la recepcion**
+> > - **Dado** que el gerente ingresa la clave maestra al sistema correctamente, el sistema recupera las transacciones de impuestos y servicios del dia,
+> > - **cuando** el sistema se conecta a la central de cobros, detecta que en el día no fueron enviadas las transferencias,
+> > - **entonces**  las envía, recibe por la central que la recepcion fue fallida y lo informa en pantalla y pide que se intente nuevamente.
 > > 
-> > **Escenario 2: Pago de factura exitoso con 1er vencimiento
-> > - **Dado** un cliente con una factura electronica,
-> > - **cuando** el empeado/gerente ingresa el codigo del pago electronico, el sistema recupera los datos de la factura,
-> > - **entonces** el sistema verifica que la factura no este vencida, este detecta que el 1er venciminto lo esta y aplica un recargo al monto original a pagar por el cliente
-> > **Escenario 3: Pago de factura 2do con vencimiento
-> > - **Dado** un cliente con una factura electronica,
-> > - **cuando** el empeado/gerente ingresa el codigo del pago electronico, el sistema recupera los datos de la factura,
-> > - **entonces** el sistema verifica que la factura no este vencida, este detecta que el 2do vencimiento lo esta y informa en pantalla que no es posible cobrar por estar vencida.
-> >  **Escenario 3: Intento de pago de factura paga
-> > - **Dado** un cliente con una factura electronica,
-> > - **cuando** el empeado/gerente ingresa el codigo del pago electronico, el sistema recupera los datos de la factura,
-> > - **entonces** el sistema verifica que la factura no este vencida y detecta que esta paga.
 
-
+> [!info] FRENTE - ID: Ver estadisticas de cobros.
+> **Como** gerente
+> **Quiero** ver estadística de los impuestos y servicios cobrados
+> **Para** analizar esos datos.
+> 
+>> [!warning]- REVERSO - Reglas y Criterios (Desplegable)
+> > **REGLAS DE NEGOCIO:**
+> > - Clave maestra.
+> > - Rango de fechas.
+> > - Agrupar por empresa montos y cantidad de cobros realizados.
+> > **Criterios de aceptación (Ver estadisticas de cobros):**
+> > **Escenario 1:  Vista de estadisticas exitosa** 
+>> - **Dado** que el gerente ingreso la clave maestra correctamente
+> > - **cuando** ingresa un rango de fechas,
+> > - **entonces**  el sistema muestra los montos y cantidad de cobros realizados por empresa.
+> > **Escenario 2:  Ingreso de clave incorrecta** 
+> > - **Dado** que el gerente quiere registrar las transacciones del dia,
+> > - **cuando** ingresa la clave maestra "1234", 
+> > - **entonces** el sistema informa que es incorrecta y bloquea la accion.
+> > **Escenario 3:  Central no confirma la recepcion**
+> > - **Dado** que el gerente ingresa la clave maestra al sistema correctamente, el sistema recupera las transacciones de impuestos y servicios del dia,
+> > - **cuando** el sistema se conecta a la central de cobros, detecta que en el día no fueron enviadas las transferencias,
+> > - **entonces**  las envía, recibe por la central que la recepcion fue fallida y lo informa en pantalla y pide que se intente nuevamente.
