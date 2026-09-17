@@ -44,7 +44,7 @@ Inversion <|-- InversionEnPlazoFijo
 @enduml
 ```
 
-![[Pasted image 20260917195355.png]]
+
 
 ---
 
@@ -78,27 +78,33 @@ Class Persona {
 {field} nombre: string	
 {field} direccionDeCorreoElectronico: string
 {field} saldoEnCreditos: real
-{field} videosEnVenta: video
+{field} videosEnVenta: Video
 }
 
-Class video {
+Class Video {
 {field} titulo: String
 {field} comentarios: List<Comentario>
 {field} descripcion: String
 {field} precioEnCreditos: real
 }
 
-Class comentario { 
+Class Comentario { 
 {field} texto: String
-{field} autor: persona
+{field} autor: Persona
 {field} fechaRealizado: date
 } 
 
-Class compra { 
-{field} comprador: persona
-{field} autor: persona
-{field} video: video
+Class Compra { 
+{field} comprador: Persona
+{field} autor: Persona
+{field} video: Video
 {field} fecha: date
 {field} precio: real
 }
+Persona "1" --> "*" Video
+Video "1" -> "*" Comentario
+Compra "1" -> "1" Video
+Compra "1" -> "2" Persona
+
 @enduml
+```

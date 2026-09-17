@@ -6,5 +6,6 @@
   "templater-obsidian",
   "obsidian-excalidraw-plugin",
   "table-editor-obsidian",
-  "editing-toolbar"
+  "editing-toolbar",
+  "obsidian-plantuml"
 ]
