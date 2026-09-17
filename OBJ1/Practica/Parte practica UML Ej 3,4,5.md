@@ -16,7 +16,7 @@
   - fecha inicial
   - porcentaje de interes diario
   - porcentaje de interes 
-```
+```plantuml
 @startuml
 hide circle
 skinparam classAttributeIconSize 0
@@ -71,3 +71,34 @@ Inversion <|-- InversionEnPlazoFijo
   - video
   - fecha
   - precio
+
+```plantuml
+@startuml
+Class Persona {
+{field} nombre: string	
+{field} direccionDeCorreoElectronico: string
+{field} saldoEnCreditos: real
+{field} videosEnVenta: video
+}
+
+Class video {
+{field} titulo: String
+{field} comentarios: List<Comentario>
+{field} descripcion: String
+{field} precioEnCreditos: real
+}
+
+Class comentario { 
+{field} texto: String
+{field} autor: persona
+{field} fechaRealizado: date
+} 
+
+Class compra { 
+{field} comprador: persona
+{field} autor: persona
+{field} video: video
+{field} fecha: date
+{field} precio: real
+}
+@enduml
