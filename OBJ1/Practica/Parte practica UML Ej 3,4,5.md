@@ -55,10 +55,8 @@ Inversion <|-- InversionEnPlazoFijo
 	- Nombre
 	- direccion de correo electronico
 	- saldo en creditos
-	- videos en venta
 - video:
   - titulo
-  - comentarios
   - descripcion
   - precio en creditos
 - comentario: 
@@ -75,33 +73,27 @@ Inversion <|-- InversionEnPlazoFijo
 ```plantuml
 @startuml
 Class Persona {
-{field} nombre: string	
-{field} direccionDeCorreoElectronico: string
-{field} saldoEnCreditos: real
-{field} videosEnVenta: Video
+{field} - nombre: string	
+{field} - direccionDeCorreoElectronico: string
+{field} - saldoEnCreditos: real
 }
 
 Class Video {
-{field} titulo: String
-{field} comentarios: List<Comentario>
-{field} descripcion: String
-{field} precioEnCreditos: real
+{field} - titulo: String
+{field} - descripcion: String
+{field} - precioEnCreditos: real
 }
 
 Class Comentario { 
-{field} texto: String
-{field} autor: Persona
-{field} fechaRealizado: date
+{field} - texto: String
+{field} - fechaRealizado: date
 } 
 
 Class Compra { 
-{field} comprador: Persona
-{field} autor: Persona
-{field} video: Video
-{field} fecha: date
-{field} precio: real
+{field} - fecha: date
+{field} - precio: real
 }
-Persona "1" --> "*" Video
+Persona "1" --> "*" Video : "Compra"
 Video "1" -> "*" Comentario
 Compra "1" -> "1" Video
 Compra "1" -> "2" Persona
