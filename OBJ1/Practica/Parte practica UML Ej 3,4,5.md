@@ -51,3 +51,23 @@ Inversion <|-- InversionEnPlazoFijo
 # Ejercicio 4 
 ---
 
+- Persona:
+	- Nombre
+	- direccion de correo electronico
+	- saldo en creditos
+	- videos en venta
+- video:
+  - titulo
+  - comentarios
+  - descripcion
+  - precio en creditos
+- comentario: 
+  - tectp
+  - autor
+  - fecha realizado
+- compra 
+  - Comprador: persona
+  - Autor
+  - video
+  - fecha
+  - precio
