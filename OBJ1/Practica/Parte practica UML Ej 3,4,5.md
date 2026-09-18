@@ -60,43 +60,44 @@ Inversion <|-- InversionEnPlazoFijo
   - descripcion
   - precio en creditos
 - comentario: 
-  - tectp
-  - autor
+  - texto
   - fecha realizado
 - compra 
-  - Comprador: persona
-  - Autor
-  - video
   - fecha
   - precio
 
 ```plantuml
-@startuml
-Class Persona {
-{field} - nombre: string	
-{field} - direccionDeCorreoElectronico: string
-{field} - saldoEnCreditos: real
+@startuml VideosMusicales
+
+class Persona {
+  -nombre : String
+  -direccionDeCorreoElectronico : String
+  -saldoEnCreditos : real
 }
 
-Class Video {
-{field} - titulo: String
-{field} - descripcion: String
-{field} - precioEnCreditos: real
+class Video {
+  -titulo : String
+  -descripcion : String
+  -precioEnCreditos : real
 }
 
-Class Comentario { 
-{field} - texto: String
-{field} - fechaRealizado: date
-} 
-
-Class Compra { 
-{field} - fecha: date
-{field} - precio: real
+class Comentario {
+  -texto : String
+  -fechaRealizado : date
 }
-Persona "1" --> "*" Video : "Compra"
-Video "1" -> "*" Comentario
-Compra "1" -> "1" Video
-Compra "1" -> "2" Persona
+
+class Compra {
+  -fecha : date
+  -precio : real
+}
+
+Persona "1" --> "0..*" Video : "Publica"
+Persona "1" --> "0..*" Compra : "Historial"
+Video "1" --> "0..*" Comentario : "Tiene"
+Comentario "0..*" --> "1" Persona : "Escrito por"
+
+Compra "0..*" --> "1" Video : "Adquiere"
+Compra "0..*" --> "1" Persona : "Comprador"
 
 @enduml
 ```
