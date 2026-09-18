@@ -101,3 +101,4 @@ Compra "0..*" --> "1" Persona : "Comprador"
 
 @enduml
 ```
+## Ejercicio 5
