@@ -16,7 +16,7 @@ En la transición del diseño conceptual al modelo físico/relacional, la inform
 ---
 
 ## 2. Conversión de Relaciones a Tablas
-El mapeo de las interrelaciones conceptuales depende de su cardinalidad y cobertura[cite: 4]:
+El mapeo de las interrelaciones conceptuales depende de su cardinalidad y cobertura, Toda tabla debe tener una clave primaria o una autoincremental :
 
 ### A. Muchos a Muchos ($N:M$)
 * **Regla:** La relación **siempre** se convierte en una nueva tabla intermedia[cite: 4].
@@ -47,7 +47,7 @@ El mapeo de las interrelaciones conceptuales depende de su cardinalidad y cobert
 
 ## 3. Claves Foráneas e Integridad Referencial
 
-* **Clave Foránea (FK):** Atributo (o conjunto de atributos) en una tabla que referencia a la clave primaria (PK) de otra tabla para interconectar ambas estructuras relacionales[cite: 4].
+* **Clave Foránea (FK):** Atributo (o conjunto de atributos) en una tabla que referencia a la clave primaria (PK) de otra tabla para interconectar ambas estructuras relacionales[cite: 4]. Puede ser de tipo de clave secundaria o univoca
 * **Regla de Integridad Referencial:** Cualquier valor presente en una FK debe existir previamente como PK en la tabla referenciada, o ser nulo (si la relación lo admite)[cite: 4]. Su propósito es prevenir la aparición de registros huérfanos[cite: 4].
 
 ### Políticas ante Borrado o Modificación del Registro Padre
@@ -74,3 +74,9 @@ El mapeo de las interrelaciones conceptuales depende de su cardinalidad y cobert
 > * **Altas (Insert):** Se rechazan si introducen claves primarias duplicadas, valores nulos en la clave primaria, claves foráneas inexistentes o tipos incompatibles con el dominio[cite: 4].
 > * **Bajas (Delete):** Se bloquean o activan políticas si violan la **integridad referencial** por poseer registros dependientes en tablas hijas[cite: 4].
 > * **Modificaciones (Update):** Al combinar inserción y baja, pueden vulnerar cualquiera de las restricciones anteriores (dominio, unicidad, nulidad o referencias cruzadas)[cite: 4].
+
+## Pasos
+- entidades a tablas, id tabla
+- luego macar identificadores de la tabla, que se convierten en claves q puede ser primaria o candidata. Para elegirla si hay mas de una, la q sea mas simple
+- 
+- 
