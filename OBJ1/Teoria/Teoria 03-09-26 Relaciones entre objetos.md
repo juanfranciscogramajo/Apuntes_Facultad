@@ -32,3 +32,34 @@
 - **Polimorfismo:** Ocurre cuando objetos de clases diferentes son capaces de entender el mismo mensaje, aunque cada uno lo implemente (y reaccione) de una manera distinta.
     
 - El polimorfismo bien aplicado reemplaza las sentencias `if` que consultan de qué clase es un objeto. Permite extender el sistema agregando nuevas clases sin modificar el código existente, logrando programar "por protocolo" y no por implementación.
+
+
+- **Clase abstracta:** una clase real, con estado y comportamiento que las subclases heredan tal cual, más algunos métodos `abstract` (sin cuerpo) que cada subclase está obligada a completar. También pueden sobreescribir (`@Override`) métodos ya implementados si necesitan otro comportamiento.
+- **Interfaz:** un contrato puro — declara qué métodos debe tener una clase (mismo nombre, misma firma), sin implementación. Cada clase que la implementa decide cómo cumple ese contrato, de forma totalmente independiente de las demás.
+
+---
+## Clase abstracta vs Interfaz
+**Estado (variables)**
+
+- Clase abstracta: sí, puede tener variables de instancia (estado propio y mutable de cada objeto), y las subclases lo heredan.
+- Interfaz: no. Cualquier campo declarado es automáticamente `public static final` (una constante compartida), nunca estado propio de un objeto.
+
+**Instanciación**
+
+- Ninguna de las dos se puede instanciar directamente (`new` sobre una clase abstracta o una interfaz da error). En ambos casos falta "algo" para ser un objeto completo y funcional.
+
+**Herencia**
+
+- Clase abstracta: una clase solo puede extender **una** (Java no tiene herencia múltiple de clases).
+- Interfaz: una clase puede implementar **varias** a la vez.
+
+**Cuándo usar cada una**
+
+|Preguntate...|Usá...|
+|---|---|
+|¿No comparten código ni atributos, solo la firma de los métodos?|Interfaz|
+|¿Necesita cumplir varios contratos distintos a la vez?|Interfaz|
+|¿Comparten atributos o código concreto real?|Clase abstracta|
+|¿Hay una relación de identidad ("es-un") conceptualmente fuerte?|Clase abstracta|
+
+**Regla mental:** interfaz = "puede hacer esto" (capacidad/contrato). Clase abstracta = "es esto" (identidad + implementación compartida).
