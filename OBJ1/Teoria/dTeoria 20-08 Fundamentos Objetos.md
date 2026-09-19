@@ -44,5 +44,5 @@
     
 - **Inicialización:** Para que un objeto esté listo para recibir mensajes, es obligatorio inicializarlo utilizando **constructores** (asignando valores o instanciando colecciones).
 
-- **Acoplamiento:**  Gradod de dependencia entre clases. (Lo mas bajo posibl)
+- **Acoplamiento:**  Grado de dependencia entre clases. (Lo mas bajo posible)
 - **Cohesion:** Grado en que los elementos estan relacionados entre si (altomejor) 
