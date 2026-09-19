@@ -20,4 +20,4 @@ Se habilita cuando sus sitios de entrada cuentan con los tokens requeridos, pero
 ![[Pasted image 20260915194704.png]]
 
 ## Parte 3:
-Ejercicio 1. Fábrica de papas bastón crudas. Las papas llegan de a una y se depositan en un contenedor común. El primer paso es pasar la papa por una máquina que quita la cáscara. Esta máquina solo puede atender a una papa a la vez. Las papas peladas son depositadas en un contenedor común a la espera de la próxima etapa. La cáscara por su parte, es depositada en un basurero general. Luego, cada papa cruda debe ser cortada. Para esto, la papa pasa por una máquina que corta las papas en 9 bastones. Esta máquina solo puede procesar una papa a la vez. Una vez cortados, los bastones de papas son agrupados de a 10 para ser envasados. Esto lo realiza una máquina que solo procesa una bolsa por vez. Por último, las bolsas son depositadas en un contenedor común para ser distribuidas.
+![[Practica RP resuelta.png]]
