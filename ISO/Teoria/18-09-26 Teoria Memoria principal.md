@@ -19,9 +19,11 @@ Genera fragmentacion externa
 ## Paginacion 
 - Divide la memoria fisica de forma logica en partes pequeñas de igual tamaño llamada marcos. Ese espacio de direcciones se divide == y se llaman Paginas.
 - El SO tiene tabla de paginas por cada proceso, con el marco en el q se coloca la pagina. Nro d pagina y Nro desplazamiento dentro.
+- Fragmentacion interna???
 ## Segmentacion paginada
 Es una mezcla de las 2. 
 - la paginacion transparente al programador, elimina la fragmentacion externa.
 - la segmentacion visible al programador y facilita modularidad de estructuras de datos grandes.
 - Cada segmento es dividido en paginas de tamanio fijo.
 - tabla de segmentos y tabla de paginas, lo que se lleva a ram son paginas.
+- Fragmentacion interna
