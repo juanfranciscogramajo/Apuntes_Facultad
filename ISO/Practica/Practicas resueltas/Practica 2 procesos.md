@@ -4,7 +4,7 @@
    
    ➢ **SJF (Shortest Job First):** politica non preemptive que selecciona el proceso con la rafaga mas corta. Los procesos cortos delante de los largos, los largos pueden starvation. Requiere un parametro de prediccion de tiempo que durara la prox rafaga. Minimiza tiempo de espera, es dificil predecir. Algoritmo orientado a procesos por lotes (Batch).
    
-   ➢ **Round Robin:** algoritmo apropiativo que asigna a cada proceso un tiempo para usar cpu. Su parámetro  es el **Quantum**. Mejor distribucion de tiempos, pero si el tiempo para cada proceso (Quantum) es corto, el sistema debe cambiar constantemente. Usado en procesos interactivos y sistema de tiempo compartido.
+   ➢ **Round Robin:** algoritmo apropiativo que asigna a cada proceso un tiempo para usar cpu. Su parámetro  es el **Quantum**. Mejor distribucion de tiempos, pero si el tiempo para cada proceso (Quantum) es corto, el sistema debe cambiar constantemente. Usado en procesos interactivos y sistema de tiempo compartido. **EL MAS USADO**
    
    ➢ **Prioridades:** cada proceso tiene un valor que representa su prioridad, menor valor = mayor prioridad. Existe ready queue cada nivel de prioridad, procesos en baja prioridad puede starvation. Solucion Agin puede ser preemptive o no. Usado para procesos interactivos.
    
