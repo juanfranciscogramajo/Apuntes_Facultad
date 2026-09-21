@@ -13,7 +13,10 @@
    c. Cual es el más adecuado según los tipos de procesos y/o SO. 
    d. Cite ventajas y desventajas de su uso. 
    e. Defina Tiempo de retorno (TR) y Tiempo de espera (TE) para un proceso. 
-   - **Tiempo de Retorno (TR):** Es el tiempo transcurrido entre el comienzo de un proceso y su finalización.
+   -**Tiempo de Retorno (TR):** Es el tiempo transcurrido entre el comienzo de un proceso y su finalización.
    - **Tiempo de Espera (TE):** Es el tiempo total que un proceso pasa en la cola de procesos listos sin ejecutar instrucciones.+
-   f. Defina Tiempo Promedio de Retorno (TPR) y Tiempo promedio de espera (TPE) para un lote de procesos. 
+   f. Defina Tiempo Promedio de Retorno (TPR) y Tiempo promedio de espera (TPE) para un lote de procesos.
+- **Tiempo Promedio de Retorno (TPR):** Es la sumatoria de todos los TR de un lote, dividida por la cantidad total de procesos. 
+- **Tiempo Promedio de Espera (TPE):** Es la sumatoria de todos los TE, dividida por la cantidad total de procesos.
    g. Defina tiempo de respuesta
+   - **Retorno (TR ):** tiempo que transcurre entre que el proceso llega al sistema hasta que completa su ejecución.
