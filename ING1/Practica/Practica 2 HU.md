@@ -596,10 +596,22 @@ Reglas Del negocio:
 - Solo profesionales de derecho Matriculados habilitados
 - Matriculado en la provincia de bs as
 - Antiguedad superior a 5 años
+Dorso
 Criterios de aceptacion (Registro en el sistema):
 Escenario 1: Registro exitoso.
 Dado un profesional de derecho con matricula 52332 habilitada, matriculado en la provincia de bsas y fecha de matriculacion con antiguedad superior a 5 años,
 Cuando ingresa nombre 'Manuel', apellido 'Perez', Matricula '52332', Provincia de matriculacion 'Buenos aires', fecha de nacimiento '3-10-2000', direccion de correo electronico 'manuperez@gmail.com' y fecha de matriculacion "02/10/2019".
 Entonces el sistema valida la fecha de matriculacion, que es profesional de derecho habilitado, la provincia de matriculacion y envia al mail ingresado una contrasenia 
 Escenario 2: Registro fallido por matriculacion en provincia de chubut
-dado un profesional de derecho con matricula "2424"
+dado un profesional de derecho con matricula habilitada, matriculado en la provincia de chubut, fecha de matriculacion con antiguedad superior a 5 anios,
+cuando ingresa el nombre "daniel", apellido "rodriguez", Matricula "2424", provincia de matriculacion chubut, fecha de nacimiento 3/10/2000, direccion de correo electronico danielrodri@gmail.com y fecha de matriculacion 23/02/2010, cuando aprieta en confirmar datos
+entonces el sistema bloquea la accion por matriculacion fuera de la provincia de buenos aires, informandolo en pantalla 'Registro fallido, Solo los profesionales de derecho matriculados en buenos aires pueden registrarse'
+Escenario 3: Registro fallido por matricula Inhabilitada
+Escenario 4: Registro fallido por antiguedad inferior a 5 anios
+Escenario 5: Registro fallido por email registrado.
+Escenario 6: registros falido por matricula registrada.
+
+Frente
+ID: Inicio de sesion
+Titulo: como profesional de derecho registrado en el sistema quiero iniciar sesion para poder solicitar un turno.
+Reglas del negocio:
