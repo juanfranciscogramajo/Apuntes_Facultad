@@ -589,6 +589,7 @@ Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico d
 - registrarse
 - sacar turno 
 - cancelar turno
+---
 Frente
 ID: Registrarse en sistema
 titulo: como profesional ed derecho quiero registrar mis datos para poder acceder al sistema.
@@ -596,6 +597,8 @@ Reglas Del negocio:
 - Solo profesionales de derecho Matriculados habilitados
 - Matriculado en la provincia de bs as
 - Antiguedad superior a 5 años
+
+---
 Dorso
 Criterios de aceptacion (Registro en el sistema):
 Escenario 1: Registro exitoso.
@@ -611,6 +614,7 @@ Escenario 4: Registro fallido por antiguedad inferior a 5 anios
 Escenario 5: Registro fallido por email registrado.
 Escenario 6: registros falido por matricula registrada.
 
+---
 Frente
 ID: Inicio de sesion
 Titulo: como profesional de derecho registrado en el sistema quiero iniciar sesion para poder solicitar un turno.
@@ -618,6 +622,7 @@ Reglas del negocio:
 - Suspencion por 3 intentos consecutivos de inicio de sesion fallidos
 - Primer inicio debe cambiarse contrasenia
 - Una cuenta suspendida solo se reactiva luego de ser revisada por el área de seguridad del colegio.
+---
 Dorso:
 Criterios de aceptacion (Inicio de sesion):
 Escenario 1: Inicio de sesion exitoso.
@@ -632,9 +637,11 @@ dado un profesional registrado con nombre de usuario "22321" y contrasenia "Lsa1
 cuando ingresa los datos y presiona el boton iniciar sesion,
 Entonces el sistema verifique que el usuario y contrasenia esten registrados, detecta que la contrasenia es incorrecta e informa al usuario que el usuario/contrasenia es incorrecta y cantidad de intentos restantes.
 Escenario 4: Inicio de sesion fallido por usuario incorrecto menor a cantidad maxima
-Escenario 5: Inicio de sesion con Cuenta suspendida por superar la cantidad de intentos maximas.
+Escenario 5: Inicio de sesion fallido y suspendendo cuenta por superar la cantidad de intentos maximas.
 Escenario 6: Inicio de sesion fallido por usuario no registrado.
+Escenario 7: Inicio de sesion fallido por intento de inicio de sesion a cuenta suspendida
 
+---
 frente
 Id: cerrar sesion
 Titulo: Como usuario quiero cerrar sesion para abandonar el sistema.
@@ -643,4 +650,20 @@ dorso
 criterios de aceptacion
 Escenario 1: Cierre de sesion exitoso
 dado un usuario con sesion iniciada, 
-cuando prec
+cuando presiona en el boton de cerrar sesion
+entonces el sistema cierra sesion y pide que inicie sesion.
+
+---
+Frente 
+ID: Solicitar turno
+Titulo: como profesional de derecho quiero solicitar un turno para realizar una mediacion.
+Reglas del negocio:
+- Cada sala posee una capacidad maxima de asistentes.
+- Si supera capacidad base de asistentes requiere contratacion de un seguro adicional
+---
+Dorso
+Criterios de aceptacion(Solicitar turno):
+Escenario 1:  Reserva exitosa
+dado un usuario registrado que indica un numero de sala, con cantidad de asistentes menor a la capacidad maxima, 
+
+
