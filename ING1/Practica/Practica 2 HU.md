@@ -576,3 +576,35 @@ Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico d
 > > - **Dado** que el gerente ingresa la clave maestra al sistema correctamente, el sistema recupera las transacciones de impuestos y servicios del dia,
 > > - **cuando** el sistema se conecta a la central de cobros, detecta que en el día no fueron enviadas las transferencias,
 > > - **entonces**  las envía, recibe por la central que la recepcion fue fallida y lo informa en pantalla y pide que se intente nuevamente.
+**Rol de usuarios:**
+
+# (PLANTILLA)[Número del Ejercicio] - [Título del Sistema/Módulo]
+
+**Rol de usuarios:**
+- [Rol 1]
+- [Rol 2]
+
+**Historias de usuario:**
+- [Nombre de la historia 1]
+- [Nombre de la historia 2]
+
+> [!info] FRENTE - ID: [Nombre o código de la HU]
+> **Como** [Rol del usuario]
+> **Quiero** [Acción u objetivo]
+> **Para** [Beneficio o valor]
+> 
+> > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
+> > **REGLAS DE NEGOCIO:**
+> > - [Regla 1]
+> > - [Regla 2]
+> > 
+> > **Criterios de aceptación ([Nombre de la historia]):**
+> > **Escenario 1: [Nombre del escenario exitoso]**
+> > - **Dado** [Condición inicial]
+> > - **cuando** [Acción que realiza el usuario]
+> > - **entonces** [Resultado esperado del sistema]
+> > 
+> > **Escenario 2: [Nombre del escenario alternativo/fallido]**
+> > - **Dado** [Condición inicial]
+> > - **cuando** [Acción]
+> > - **entonces** [Resultado]
