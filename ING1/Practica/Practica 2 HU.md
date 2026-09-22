@@ -593,8 +593,13 @@ Frente
 ID: Registrarse en sistema
 titulo: como profesional ed derecho quiero registrar mis datos para poder acceder al sistema.
 Reglas Del negocio:
-- Solo profesionales Matriculados de la provincia de bs as
+- Solo profesionales de derecho Matriculados habilitados
+- Matriculado en la provincia de bs as
 - Antiguedad superior a 5 años
 Criterios de aceptacion (Registro en el sistema):
 Escenario 1: Registro exitoso.
-Dado un profesional de derecho con nombre 
+Dado un profesional de derecho con matricula 52332 habilitada, matriculado en la provincia de bsas y fecha de matriculacion con antiguedad superior a 5 años,
+Cuando ingresa nombre 'Manuel', apellido 'Perez', Matricula '52332', Provincia de matriculacion 'Buenos aires', fecha de nacimiento '3-10-2000', direccion de correo electronico 'manuperez@gmail.com' y fecha de matriculacion "02/10/2019".
+Entonces el sistema valida la fecha de matriculacion, que es profesional de derecho habilitado, la provincia de matriculacion y envia al mail ingresado una contrasenia 
+Escenario 2: Registro fallido por matriculacion en provincia de chubut
+dado un profesional de derecho con matricula "2424"
