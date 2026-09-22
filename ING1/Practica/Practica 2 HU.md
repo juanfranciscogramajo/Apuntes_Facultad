@@ -581,8 +581,7 @@ Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico d
 # (PLANTILLA)[Número del Ejercicio] - [Título del Sistema/Módulo]
 
 **Rol de usuarios:**
-- [Rol 1]
-- [Rol 2]
+- Abogado
 
 **Historias de usuario:**
 - Iniciar sesion
@@ -590,24 +589,12 @@ Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico d
 - registrarse
 - sacar turno 
 - cancelar turno
-
-> [!info] FRENTE - ID: [Nombre o código de la HU]
-> **Como** [Rol del usuario]
-> **Quiero** [Acción u objetivo]
-> **Para** [Beneficio o valor]
-> 
-> > [!warning]- REVERSO - Reglas y Criterios (Desplegable)
-> > **REGLAS DE NEGOCIO:**
-> > - [Regla 1]
-> > - [Regla 2]
-> > 
-> > **Criterios de aceptación ([Nombre de la historia]):**
-> > **Escenario 1: [Nombre del escenario exitoso]**
-> > - **Dado** [Condición inicial]
-> > - **cuando** [Acción que realiza el usuario]
-> > - **entonces** [Resultado esperado del sistema]
-> > 
-> > **Escenario 2: [Nombre del escenario alternativo/fallido]**
-> > - **Dado** [Condición inicial]
-> > - **cuando** [Acción]
-> > - **entonces** [Resultado]
+Frente
+ID: Registrarse en sistema
+titulo: como profesional ed derecho quiero registrar mis datos para poder acceder al sistema.
+Reglas Del negocio:
+- Solo profesionales Matriculados de la provincia de bs as
+- Antiguedad superior a 5 años
+Criterios de aceptacion (Registro en el sistema):
+Escenario 1: Registro exitoso.
+Dado un profesional de derecho con nombre 
