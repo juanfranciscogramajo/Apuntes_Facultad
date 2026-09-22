@@ -624,4 +624,15 @@ dado un profesional registrado que no es su primer inicio de sesion,
 cuando ingresa el nombre de usuario que es su matricula "2234" y contrasenia "Lp231" y apreta en el boton "Iniciar sesion".
 Entonces el sistema verifica que el usuario este registrado y que la contrasenia coincida con el nombre de usuario y ingresa a la pagina inicial del sistema.
 Escenario 2: Inicio de sesion exitoso primera vez
-dado un profesional registrado que es su primer inicio de sesion, cuando ingresa el nombre de usuario "21234" y contrasenia brindada por el sistema "Lka1241as" y aprieta en
+dado un profesional registrado que es su primer inicio de sesion, cuando ingresa el nombre de usuario "21234" y contrasenia brindada por el sistema "Lka1241as" y aprieta iniciar sesion
+entonces el sistema valida que el usuario y contrasenia esten registrados y pide al usuario que cambie la contrasenia.
+Escenario 3: Inicio de sesion fallido por contrasenia incorrecta
+dado un profesional registrado con nombre de usuario "22321" y contrasenia "Lsa12",
+cuando ingresa los datos y presiona el boton iniciar sesion,
+Entonces el sistema verifique que el usuario y contrasenia esten registrados, detecta que la contrasenia es incorrecta e informa al usuario que es incorrecta y 2 intentos restantes.
+Escenario 4: Inicio de sesion fallido por usuario incorrecto
+Escenario 5: Cuenta suspendida por superar la cantidad de intentos maximas.
+Escenario 6: Inicio de sesion fallido por usuario no registrado.
+
+Id: cerrar sesion
+Titulo: Como usuario 
