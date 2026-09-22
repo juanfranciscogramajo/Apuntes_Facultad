@@ -617,6 +617,7 @@ Titulo: como profesional de derecho registrado en el sistema quiero iniciar sesi
 Reglas del negocio:
 - Suspencion por 3 intentos consecutivos de inicio de sesion fallidos
 - Primer inicio debe cambiarse contrasenia
+- Una cuenta suspendida solo se reactiva luego de ser revisada por el área de seguridad del colegio.
 Dorso:
 Criterios de aceptacion (Inicio de sesion):
 Escenario 1: Inicio de sesion exitoso.
@@ -626,13 +627,20 @@ Entonces el sistema verifica que el usuario este registrado y que la contrasenia
 Escenario 2: Inicio de sesion exitoso primera vez
 dado un profesional registrado que es su primer inicio de sesion, cuando ingresa el nombre de usuario "21234" y contrasenia brindada por el sistema "Lka1241as" y aprieta iniciar sesion
 entonces el sistema valida que el usuario y contrasenia esten registrados y pide al usuario que cambie la contrasenia.
-Escenario 3: Inicio de sesion fallido por contrasenia incorrecta
+Escenario 3: Inicio de sesion fallido por contrasenia incorrecta menor a cantidad de intentos
 dado un profesional registrado con nombre de usuario "22321" y contrasenia "Lsa12",
 cuando ingresa los datos y presiona el boton iniciar sesion,
-Entonces el sistema verifique que el usuario y contrasenia esten registrados, detecta que la contrasenia es incorrecta e informa al usuario que es incorrecta y 2 intentos restantes.
-Escenario 4: Inicio de sesion fallido por usuario incorrecto
-Escenario 5: Cuenta suspendida por superar la cantidad de intentos maximas.
+Entonces el sistema verifique que el usuario y contrasenia esten registrados, detecta que la contrasenia es incorrecta e informa al usuario que el usuario/contrasenia es incorrecta y cantidad de intentos restantes.
+Escenario 4: Inicio de sesion fallido por usuario incorrecto menor a cantidad maxima
+Escenario 5: Inicio de sesion con Cuenta suspendida por superar la cantidad de intentos maximas.
 Escenario 6: Inicio de sesion fallido por usuario no registrado.
 
+frente
 Id: cerrar sesion
-Titulo: Como usuario 
+Titulo: Como usuario quiero cerrar sesion para abandonar el sistema.
+Reglas del negocio:
+dorso
+criterios de aceptacion
+Escenario 1: Cierre de sesion exitoso
+dado un usuario con sesion iniciada, 
+cuando prec
