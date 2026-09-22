@@ -585,8 +585,11 @@ Problema 6: Pago Electrónico Se desea modelar un sistema de pago electrónico d
 - [Rol 2]
 
 **Historias de usuario:**
-- [Nombre de la historia 1]
-- [Nombre de la historia 2]
+- Iniciar sesion
+- cerrar sesion
+- registrarse
+- sacar turno 
+- cancelar turno
 
 > [!info] FRENTE - ID: [Nombre o código de la HU]
 > **Como** [Rol del usuario]
