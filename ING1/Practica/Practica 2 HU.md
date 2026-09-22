@@ -615,3 +615,13 @@ Frente
 ID: Inicio de sesion
 Titulo: como profesional de derecho registrado en el sistema quiero iniciar sesion para poder solicitar un turno.
 Reglas del negocio:
+- Suspencion por 3 intentos consecutivos de inicio de sesion fallidos
+- Primer inicio debe cambiarse contrasenia
+Dorso:
+Criterios de aceptacion (Inicio de sesion):
+Escenario 1: Inicio de sesion exitoso.
+dado un profesional registrado que no es su primer inicio de sesion,
+cuando ingresa el nombre de usuario que es su matricula "2234" y contrasenia "Lp231" y apreta en el boton "Iniciar sesion".
+Entonces el sistema verifica que el usuario este registrado y que la contrasenia coincida con el nombre de usuario y ingresa a la pagina inicial del sistema.
+Escenario 2: Inicio de sesion exitoso primera vez
+dado un profesional registrado que es su primer inicio de sesion, cuando ingresa el nombre de usuario "21234" y contrasenia brindada por el sistema "Lka1241as" y aprieta en
