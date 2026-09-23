@@ -739,8 +739,7 @@ Dado un medico registrado, autenticado, queriendo ver turnos de la fecha 25/09/2
 cuano el medico ingresa la fecha 25/09/26 y presiona ver turnos.
 entonces el sistema informa en pantalla "No no hay turnos activos para la fecha ingresada"
 
-### Frente
----
+# Parcial 1ra fecha 4/10/2025 Gimnasios 
 #### Roles de usuario:
 - Socios
 - Administradores
@@ -748,3 +747,19 @@ entonces el sistema informa en pantalla "No no hay turnos activos para la fecha 
 - Solicitar un turno
 - Cancelar un Turno
 - Crear clase
+### Frente
+---
+#### ID: 
+Solicitar un turno
+#### Titulo:
+Como socio queiro reservar un turno para una clase de mi gimnasio
+#### Reglas del Negocio:
+- Se le informa al socio cuando no se concreta la reserva.
+- Debe tener la cuota al dia.
+
+### Dorso
+---
+#### Criterios de aceptacion: 
+
+**Escenario 1:** Solicitud de turno exitosa
+Dado un socio autenticado, con la cuota al dia,
