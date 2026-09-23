@@ -763,3 +763,12 @@ Como socio queiro reservar un turno para una clase de mi gimnasio
 
 **Escenario 1:** Solicitud de turno exitosa
 Dado un socio autenticado, con la cuota al dia,
+cuando el socio ingresa el nombre de gimnasio "Irongym", selecciona el tipo de clase "Yoga", dia "02" y hora "15:30",
+entonces el sistema valida que el socio tenga la cuota al dia y hay cupo para los datos ingresados e informa en pantalla "Turno solicitado exitosamente"
+**Escenario 2:** Solicitud invalida por no tener cuota al dia.
+dado un socio autenticado, con cuota impaga,
+cuando el socio ingresa el nombre de gimnasio "Megatlon", selecciona el tipo de clase "Spinning", dia "03" y hora "14:00",
+entonces el sistema bloquea la accion por tener la cuota impaga e informa en pantalla "No fue posible completar la solicitud del turno por cuota impaga. Por favor pague la cuota y solicite nuevamente el turno"
+**Escenario 3:** Solicitud invalida por falta de cupo en clase, dia y hora seleccionada.
+Dado un socio autenticado con la cuota paga,
+Cuando el socio ingresa el nombre de gimnasio "Red Fitness", selecciona el 
