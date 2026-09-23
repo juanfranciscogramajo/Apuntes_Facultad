@@ -763,19 +763,19 @@ Como socio queiro reservar un turno para una clase de mi gimnasio
 
 **Escenario 1:** Solicitud de turno exitosa
 Dado un socio autenticado, con la cuota al dia,
-cuando el socio ingresa el nombre de gimnasio "Irongym", selecciona el tipo de clase "Yoga", dia "02" y hora "15:30",
+cuando el socio ingresa el nombre de gimnasio "Irongym", selecciona el tipo de clase "Yoga", dia "02" y hora "15:30" y presiona confirmar turno,
 entonces el sistema valida que el socio tenga la cuota al dia y hay cupo para los datos ingresados e informa en pantalla "Turno solicitado exitosamente"
 **Escenario 2:** Solicitud invalida por no tener cuota al dia.
 dado un socio autenticado, con cuota impaga,
-cuando el socio ingresa el nombre de gimnasio "Megatlon", selecciona el tipo de clase "Spinning", dia "03" y hora "14:00",
+cuando el socio ingresa el nombre de gimnasio "Megatlon", selecciona el tipo de clase "Spinning", dia "03" y hora "14:00" y presiona confirmar turno, 
 entonces el sistema bloquea la accion por tener la cuota impaga e informa en pantalla "No fue posible completar la solicitud del turno por cuota impaga. Por favor pague la cuota y solicite nuevamente el turno"
 **Escenario 3:** Solicitud invalida por falta de cupo en clase, dia y hora seleccionada.
 Dado un socio autenticado con la cuota paga quiere solicitar turno en clase sin cupo,
-Cuando el socio ingresa el nombre de gimnasio "Red Fitness", selecciona el tipo de clase "Funcional", dia "05", hora "9:00",
+Cuando el socio ingresa el nombre de gimnasio "Red Fitness", selecciona el tipo de clase "Funcional", dia "05", hora "9:00" y presiona confirmar turno, 
 Entonces el sistema detecta que la clase ya completo su cupo maximo e informa en pantalla "No fue posible solicitar el turno, la clase seleccionada para ese dia y hora esta completa. Por favor seleccione otro turno".
 **Escenario 4:** Solicitud fallida por turno ya existente en clase, dia y hora seleccionado
 Dado un socio autenticado con la cuota paga y una clase con un turno activo,
-cuando el socio ingresa el nombre de gimnasio "!Be", selecciona el tipo de clase "Running", para el dia "03" y hora "13"
+cuando el socio ingresa el nombre de gimnasio "!Be", selecciona el tipo de clase "Running", para el dia "03" y hora "13" y presiona confirmar turno
 entonces el sistema detecta que el socio ya tiene un turno reservado para los datos ingresados y bloquea la accion e informa en pantalla "No fue posible completar la solicitud del turno, ya tiene un turno activo".
 
 
@@ -795,14 +795,35 @@ Como usuario Quiero cancelar un turno Para liberar cupo
 
 **Escenario 1:** Cancelacion exitosa
 dado un socio autenticado, con tiempo restante de inicio de la clase mayor a una hora y con un turno activo,
-cuando el socio ingresa dia "03" y hora "12:00" y presiona confirmar turno
+cuando el socio ingresa dia "03" y hora "12:00" y presiona cancelar turno
 entonces el sistema cancela el turno exitosamente e informa en pantalla "Cancelado exitosamente", 
 
 **Escenario 2:** Cancelacion fallida tiempo restante de comienzo de la clase menor a 1 hora
 dado un socio autenticado, con tiempo restante de inicio de la clase menor a una hora y con un turno activo,
-cuando el socio ingresa el dia "02" y hora "15:00" y presiona confirmar turno,
+cuando el socio ingresa el dia "02" y hora "15:00" y presiona cancelar turno,
 entonces el sistmea bloquea la accion e informa en pantalla "No es posible cancelar el turno, por tiempo de inicio de clase menor a una hora".
 
 **Escenario 3:** Cancelacion fallida por no tener un turno.
-dado un socio autenticado, sin ningun turno a
-**Escenario 4:** 
+dado un socio autenticado, sin ninguna solicitud de turno para fecha ingresada.
+cuando el socio ingresa el dia "12" hora "15:30" y presiona cancelar turno,
+entonces el sistema bloquea la accion e informa en pantalla "No fue posible cancelar el turno, no tienes ningun turno para el dia y hora ingresada"
+
+---
+### Frente
+#### ID: 
+Crear clase
+#### Titulo:
+Como administrador quiero crear una clase para que mis alumnos se puedan anotar
+#### Reglas del negocio:
+- En cada sala solo una clase a la vez
+- Cada instructor maximo tres clases por dia
+
+---
+### Dorso
+#### Criterios de aceptacion:
+**Escenario 1:** Creacion de clase exitosa
+dado un administrador autenticado en el sistema, con una sala con disponibilidad y instructor con 2 clases asignadas para ese dia
+Cuando el administrador ingresa el nombre de sede "!BE", tipo de clase "Spinning", numero de sala "4", dni "42521251", 
+**Escenario 2:** Creacion de clase fallida por Instructor asignado con clases asignadas maxima
+Escenario 3: Creacion de clase fallida por clase existente
+Escenario 4: Creacion de clase fallida por sala ocupada
