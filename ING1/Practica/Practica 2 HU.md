@@ -695,5 +695,8 @@ Como Paciente Quiero solicitar un turno Para atenderme con un medico
 Criterios de aceptacion:
 Escenario 1: Solicitar un turno exitosamente
 dado un paciente registrado, autenticado y sin turno de la especialidad (dermatologia) en la semana del dia 25/09 y mayor de edad,
-cuando el paciente selecciona la especialidad (Dermatologia), el medico (jorge burruchaga), dia 25 a las 10 am y confirma los datos del turno.
-entonces el sistema verifica que el paciente esta registrado, autenticado, 
+cuando el paciente selecciona los siguientes datos disponibles en el sistema: la especialidad (Dermatologia), el medico (jorge burruchaga), dia 25 a las 10 am y confirma los datos del turno.
+entonces el sistema verifica que el paciente esta registrado, autenticado, sin turno para la especialidad en esa semana, que es mayor de edad y que el medico tiene el turno disponible, Guarda el turno en el sistema y muestra comprobante del turno.
+Escenario 3: Solicitar turno fallido por menor de 18 años
+Escenario 4: Solicitar turno fallido por tener un turno de esa especialidad esa semana.
+Escenario 5: Solicitar turno fallido por dia y horario seleccionado
