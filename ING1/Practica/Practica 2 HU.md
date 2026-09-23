@@ -671,3 +671,15 @@ Escenario 2: Reserva exitosa capacidad base
 dado un usuario regisdtrado que indica numero de sala "5" valida para fecha "24/10/26"
 
 
+
+Roles
+- Pacientes
+- Profesionales
+Historias de usuario
+- solicitar un turno
+- ver turnos
+
+Frente
+ID: Solicitar un turno
+Titulo: Como Paciente Quiero solicitar un turno Para atenderme con un medico
+Reglas de negocio
