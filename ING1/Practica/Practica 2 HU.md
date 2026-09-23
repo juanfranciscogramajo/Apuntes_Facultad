@@ -823,7 +823,17 @@ Como administrador quiero crear una clase para que mis alumnos se puedan anotar
 #### Criterios de aceptacion:
 **Escenario 1:** Creacion de clase exitosa
 dado un administrador autenticado en el sistema, con una sala con disponibilidad y instructor con 2 clases asignadas para ese dia
-Cuando el administrador ingresa el nombre de sede "!BE", tipo de clase "Spinning", numero de sala "4", dni "42521251", 
-**Escenario 2:** Creacion de clase fallida por Instructor asignado con clases asignadas maxima
-Escenario 3: Creacion de clase fallida por clase existente
-Escenario 4: Creacion de clase fallida por sala ocupada
+Cuando el administrador ingresa el nombre de sede "!BE", tipo de clase "Spinning", numero de sala "4", dni "42521251", capacidad maxima "12", dia "12", hora "12:30" y presiona el boton crear clase,
+entonces el sistema crea la clase e informa en pantalla "Clase creada exitosamente".
+**Escenario 2:** Creacion de clase fallida por Instructor asignado con clases asignadas maxima para un dia
+dado un administrador autenticado, con una sala disponible y instructor con 3 clases asignadas para ese dia
+cuando el administrador ingresa el nombre de sede "Red fitness", tipo de clase "Funcional", numero de sala "12", Dni "24101124", capacidad maxima "21", dia "25", hora "15:00" y presiona el boton crear clase,
+entonces el sistema bloquea la accion y informa en pantalla "No fue posible la creacion de la clase por intructor con cantidad de clases maxima para ese dia"
+**Escenario 3:** Creacion de clase fallida por clase existente
+dado un administrador autenticado, con una sala disponible y instructor disponible para el dia "3",
+cuando el administrador ingresa el nombre de sede "Iron", tipo "musculacion", numero de sala "3", dni "34235234", capacidad maxima "24", dia "1", hora "15:00" y presiona el boton crear clase
+entonces el sistema bloquea la accion e informa "No fue posible la creacion de la clase, la clase ingresada ya existe"
+**Escenario 4:** Creacion de clase fallida por sala ocupada
+dado un administrador autenticado, con sala seleccionada ocupada, instructor "43221555" disponible para el dia "5",
+cuando el administrador ingresa el nombre de sede "Iron", tipo "Spinning", numero de sala "5", dni "45123123", capacidad maxima "11", dia "5", hora "9:00" y presioona el boton crear clase,
+entonces el sistema bloquea la accion e informa en pantalla "l"
