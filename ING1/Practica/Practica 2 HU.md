@@ -734,4 +734,7 @@ entonces el sistema lista en pantalla todos los turnos activos para esa fecha.
 Dado un medico registrado, autenticado queriendo ver turnos de una fecha del año pasado
 cuando el medico ingresa la fecha 25/09/2026 y presiona ver turnos
 el sistema bloquea la accion e informa en pantalla "No es posible mostrar turnos en esa fecha. Por favor ingrese una fecha del año corriente"
-**Escenario 3:** Ver turnos exitoso sin turnos
+**Escenario 3:** Ver turnos exitoso sin turnos activos
+Dado un medico registrado, autenticado, queriendo ver turnos de la fecha 25/09/26
+cuano el medico ingresa la fecha 25/09/26 y presiona ver turnos.
+entonces el sistema informa en pantalla "No no hay turnos activos para la fecha ingresada"
