@@ -693,6 +693,7 @@ Como Paciente Quiero solicitar un turno Para atenderme con un medico
 ### Dorso
 ---
 Criterios de aceptacion:
+
 Escenario 1: Solicitar un turno exitosamente
 dado un paciente registrado, autenticado y sin turno de la especialidad (dermatologia) en la semana del dia 25/09 y mayor de edad,
 cuando el paciente selecciona la especialidad (Dermatologia), el medico (jorge burruchaga), dia 25 a las 10 am y confirma los datos del turno.
@@ -713,3 +714,24 @@ Escenario 4: Solicitar turno fallido por dia y horario seleccionado no disponibl
 dado un paciente registrado, autenticado, sin turno de la especialidad (oftalmologica) en la semana del dia 29 a las 4.
 Cuando el paciente selecciona la especialidad obstetricia, medico laura chiesa, el dia 29 a las 4 y presiona el boton confirmar turno.
 entonces el sistema bloquea la accion e informa en pantalla "No fue posible solicitar el turno, el dia y hora del turno seleccionados no se encuentra disponible"
+
+---
+### Frente
+#### ID: 
+Ver turnos
+#### Titulo: 
+como medico registrado quiero ver los turnos del dia 09 para organizar mi dia.
+#### Reglas del negocio:
+- Solo fechas del corriente año
+
+### Dorso
+#### Criterios de aceptacion:
+**Escenario 1:** Ver turnos exitosamente.
+Dado un medico registrado, autenticado, queriendo ver turnos de una fecha de este año
+cuando el medico selecciona la fecha 24/09/2026 y presiona en ver turnos
+entonces el sistema lista en pantalla todos los turnos activos para esa fecha.
+**Escenario 2:** Ver turnos fallido por ingresar fecha de otro año.
+Dado un medico registrado, autenticado queriendo ver turnos de una fecha del año pasado
+cuando el medico ingresa la fecha 25/09/2026 y presiona ver turnos
+el sistema bloquea la accion e informa en pantalla "No es posible mostrar turnos en esa fecha. Por favor ingrese una fecha del año corriente"
+**Escenario 3:** Ver turnos exitoso sin turnos
