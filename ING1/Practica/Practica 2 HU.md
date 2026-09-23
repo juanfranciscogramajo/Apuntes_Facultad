@@ -679,7 +679,21 @@ Historias de usuario
 - solicitar un turno
 - ver turnos
 
-Frente
-ID: Solicitar un turno
-Titulo: Como Paciente Quiero solicitar un turno Para atenderme con un medico
-Reglas de negocio
+### Frente
+---
+#### ID: 
+Solicitar un turno
+#### Titulo: 
+Como Paciente Quiero solicitar un turno Para atenderme con un medico
+#### Reglas de negocio: 
+- Solo un turno por especialidad por semana
+- Ser mayor a 18 años.
+--- 
+
+### Dorso
+---
+Criterios de aceptacion:
+Escenario 1: Solicitar un turno exitosamente
+dado un paciente registrado, autenticado y sin turno de la especialidad (dermatologia) en la semana del dia 25/09 y mayor de edad,
+cuando el paciente selecciona la especialidad (Dermatologia), el medico (jorge burruchaga), dia 25 a las 10 am y confirma los datos del turno.
+entonces el sistema verifica que el paciente esta registrado, autenticado, 
