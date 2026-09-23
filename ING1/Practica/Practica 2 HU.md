@@ -837,3 +837,6 @@ entonces el sistema bloquea la accion e informa "No fue posible la creacion de l
 dado un administrador autenticado, con sala seleccionada ocupada, instructor "43221555" disponible para el dia "5",
 cuando el administrador ingresa el nombre de sede "Iron", tipo "Spinning", numero de sala "5", dni "45123123", capacidad maxima "11", dia "5", hora "9:00" y presioona el boton crear clase,
 entonces el sistema bloquea la accion e informa en pantalla "No fue posible la creacion de la clase, la sala ingresada se encuentra ocupada para dia y hora seleccionada".
+
+## Parcial 28/11/25 Org coemtofoca
+
