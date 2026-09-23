@@ -838,5 +838,25 @@ dado un administrador autenticado, con sala seleccionada ocupada, instructor "43
 cuando el administrador ingresa el nombre de sede "Iron", tipo "Spinning", numero de sala "5", dni "45123123", capacidad maxima "11", dia "5", hora "9:00" y presioona el boton crear clase,
 entonces el sistema bloquea la accion e informa en pantalla "No fue posible la creacion de la clase, la sala ingresada se encuentra ocupada para dia y hora seleccionada".
 
-## Parcial 28/11/25 Org coemtofoca
+## Parcial 28/11/25 Org científica
 
+#### Roles de usuario:
+- Investigadores
+#### Historias de usuario:
+- Registrarse
+- solicitar turno
+- iniciar sesion
+- cerrar sesion
+
+---
+### Frente
+#### ID: 
+Registrarse
+#### Titulo:
+Como investigador quiero registrarme en el sistema para solicitar un turno.
+#### Reglas de negocio:
+- Solo investigadores mayores a 21 años
+- Solo investigadores con puntaje mayor a 200 puntos
+---
+### Dorso
+#### Criterios de aceptacion:
