@@ -771,4 +771,24 @@ cuando el socio ingresa el nombre de gimnasio "Megatlon", selecciona el tipo de 
 entonces el sistema bloquea la accion por tener la cuota impaga e informa en pantalla "No fue posible completar la solicitud del turno por cuota impaga. Por favor pague la cuota y solicite nuevamente el turno"
 **Escenario 3:** Solicitud invalida por falta de cupo en clase, dia y hora seleccionada.
 Dado un socio autenticado con la cuota paga,
-Cuando el socio ingresa el nombre de gimnasio "Red Fitness", selecciona el 
+Cuando el socio ingresa el nombre de gimnasio "Red Fitness", selecciona el tipo de clase "Funcional", dia "05", hora "9:00",
+Entonces el sistema detecta que la clase ya completo su cupo maximo e informa en pantalla "No fue posible solicitar el turno, la clase seleccionada para ese dia y hora esta completa. Por favor seleccione otro turno".
+**Escenario 4:** Solicitud fallida por turno ya existente en clase, dia y hora seleccionado
+Dado un socio con 
+
+---
+### Frente
+#### ID: 
+Cancelar turno
+#### Titulo:
+Como usuario Quiero cancelar un turno Para liberar cupo
+#### Reglas de negocio:
+- se debe informar el resultado de la cancelacion
+- Se puede cancelar hasta una hora antes del comienzo de la clase
+---
+### Dorso
+#### Criterios de aceptacion:
+**Escenario 1:** Cancelacion exitosa
+**Escenario 2:** Cancelacion fallida tiempo restante de comienzo de la clase menor a 1 hora
+**Escenario 3:** Cancelacion fallida por no tener un turno.
+**Escenario 4:** 
