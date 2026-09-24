@@ -671,3 +671,273 @@ Escenario 2: Reserva exitosa capacidad base
 dado un usuario registrado que indica numero de sala "5" valida para fecha "24/10/26"
 
 
+
+Roles
+- Pacientes
+- Profesionales
+Historias de usuario
+- solicitar un turno
+- ver turnos
+
+### Frente
+---
+#### ID: 
+Solicitar un turno
+#### Titulo: 
+Como Paciente Quiero solicitar un turno Para atenderme con un medico
+#### Reglas de negocio: 
+- Solo un turno por especialidad por semana
+- Ser mayor a 18 años.
+--- 
+
+### Dorso
+---
+Criterios de aceptacion:
+
+Escenario 1: Solicitar un turno exitosamente
+dado un paciente registrado, autenticado y sin turno de la especialidad (dermatologia) en la semana del dia 25/09 y mayor de edad,
+cuando el paciente selecciona la especialidad (Dermatologia), el medico (jorge burruchaga), dia 25 a las 10 am y confirma los datos del turno.
+entonces el sistema verifica que el paciente esta registrado, autenticado, sin turno para la especialidad en esa semana, que es mayor de edad y que el medico tiene el turno disponible, Guarda el turno en el sistema y muestra comprobante del turno.
+
+Escenario 2: Solicitar turno fallido por menor de 18 años
+dado un paciente registrado, autenticado, sin turno de la especialidad (oftalmologia) en la semana del dia 4 a las 10 y Menor de edad
+Cuando el paciente selecciona la especialidad oftalmologia, medico nora lopez, dia 4 a las 
+10, y presiona en confirmar turno.
+entonces el sistema bloquea la accion e informa en pantalla "No fue posible solicitar el turno, los turnos deben ser solicitados por personas mayores a 18 años".
+
+Escenario 3: Solicitar turno fallido por tener un turno de esa especialidad esa semana.
+dado un paciente registrado, autenticado y con un turno para la especialidad dermatologia en la semana del dia 3 a las 14 horas. 
+cuando el paciente selecciona la especialidad dermatologia, medico raul perez y el dia 3 a las 14 horas.
+entonces el sistema bloquea la accion y informa en pantalla "No fue posible solicitar el turno, solo se permite un turno por especialidad por semana."
+
+Escenario 4: Solicitar turno fallido por dia y horario seleccionado no disponible
+dado un paciente registrado, autenticado, sin turno de la especialidad (oftalmologica) en la semana del dia 29 a las 4.
+Cuando el paciente selecciona la especialidad obstetricia, medico laura chiesa, el dia 29 a las 4 y presiona el boton confirmar turno.
+entonces el sistema bloquea la accion e informa en pantalla "No fue posible solicitar el turno, el dia y hora del turno seleccionados no se encuentra disponible"
+
+---
+### Frente
+#### ID: 
+Ver turnos
+#### Titulo: 
+como medico registrado quiero ver los turnos del dia 09 para organizar mi dia.
+#### Reglas del negocio:
+- Solo fechas del corriente año
+
+### Dorso
+#### Criterios de aceptacion:
+**Escenario 1:** Ver turnos exitosamente.
+Dado un medico registrado, autenticado, queriendo ver turnos de una fecha de este año
+cuando el medico selecciona la fecha 24/09/2026 y presiona en ver turnos
+entonces el sistema lista en pantalla todos los turnos activos para esa fecha.
+**Escenario 2:** Ver turnos fallido por ingresar fecha de otro año.
+Dado un medico registrado, autenticado queriendo ver turnos de una fecha del año pasado
+cuando el medico ingresa la fecha 25/09/2025 y presiona ver turnos
+el sistema bloquea la accion e informa en pantalla "No es posible mostrar turnos en esa fecha. Por favor ingrese una fecha del año corriente"
+**Escenario 3:** Ver turnos exitoso sin turnos activos
+Dado un medico registrado, autenticado, queriendo ver turnos de la fecha 25/09/26
+cuano el medico ingresa la fecha 25/09/26 y presiona ver turnos.
+entonces el sistema informa en pantalla "No no hay turnos activos para la fecha ingresada"
+
+# Parcial 1ra fecha 4/10/2025 Gimnasios 
+#### Roles de usuario:
+- Socios
+- Administradores
+#### Historias de usuarios:
+- Solicitar un turno
+- Cancelar un Turno
+- Crear clase
+### Frente
+---
+#### ID: 
+Solicitar un turno
+#### Titulo:
+Como socio queiro reservar un turno para una clase de mi gimnasio
+#### Reglas del Negocio:
+- Se le informa al socio cuando no se concreta la reserva.
+- Debe tener la cuota al dia.
+
+### Dorso
+---
+#### Criterios de aceptacion: 
+
+**Escenario 1:** Solicitud de turno exitosa
+Dado un socio autenticado, con la cuota al dia,
+cuando el socio ingresa el nombre de gimnasio "Irongym", selecciona el tipo de clase "Yoga", dia "02" y hora "15:30" y presiona confirmar turno,
+entonces el sistema valida que el socio tenga la cuota al dia y hay cupo para los datos ingresados e informa en pantalla "Turno solicitado exitosamente"
+**Escenario 2:** Solicitud invalida por no tener cuota al dia.
+dado un socio autenticado, con cuota impaga,
+cuando el socio ingresa el nombre de gimnasio "Megatlon", selecciona el tipo de clase "Spinning", dia "03" y hora "14:00" y presiona confirmar turno, 
+entonces el sistema bloquea la accion por tener la cuota impaga e informa en pantalla "No fue posible completar la solicitud del turno por cuota impaga. Por favor pague la cuota y solicite nuevamente el turno"
+**Escenario 3:** Solicitud invalida por falta de cupo en clase, dia y hora seleccionada.
+Dado un socio autenticado con la cuota paga quiere solicitar turno en clase sin cupo,
+Cuando el socio ingresa el nombre de gimnasio "Red Fitness", selecciona el tipo de clase "Funcional", dia "05", hora "9:00" y presiona confirmar turno, 
+Entonces el sistema detecta que la clase ya completo su cupo maximo e informa en pantalla "No fue posible solicitar el turno, la clase seleccionada para ese dia y hora esta completa. Por favor seleccione otro turno".
+**Escenario 4:** Solicitud fallida por turno ya existente en clase, dia y hora seleccionado
+Dado un socio autenticado con la cuota paga y una clase con un turno activo,
+cuando el socio ingresa el nombre de gimnasio "!Be", selecciona el tipo de clase "Running", para el dia "03" y hora "13" y presiona confirmar turno
+entonces el sistema detecta que el socio ya tiene un turno reservado para los datos ingresados y bloquea la accion e informa en pantalla "No fue posible completar la solicitud del turno, ya tiene un turno activo".
+
+
+
+---
+### Frente
+#### ID: 
+Cancelar turno
+#### Titulo:
+Como usuario Quiero cancelar un turno Para liberar cupo
+#### Reglas de negocio:
+- se debe informar el resultado de la cancelacion
+- Se puede cancelar hasta una hora antes del comienzo de la clase
+---
+### Dorso
+#### Criterios de aceptacion:
+
+**Escenario 1:** Cancelacion exitosa
+dado un socio autenticado, con tiempo restante de inicio de la clase mayor a una hora y con un turno activo,
+cuando el socio ingresa dia "03" y hora "12:00" y presiona cancelar turno
+entonces el sistema cancela el turno exitosamente e informa en pantalla "Cancelado exitosamente", 
+
+**Escenario 2:** Cancelacion fallida tiempo restante de comienzo de la clase menor a 1 hora
+dado un socio autenticado, con tiempo restante de inicio de la clase menor a una hora y con un turno activo,
+cuando el socio ingresa el dia "02" y hora "15:00" y presiona cancelar turno,
+entonces el sistmea bloquea la accion e informa en pantalla "No es posible cancelar el turno, por tiempo de inicio de clase menor a una hora".
+
+**Escenario 3:** Cancelacion fallida por no tener un turno.
+dado un socio autenticado, sin ninguna solicitud de turno para fecha ingresada.
+cuando el socio ingresa el dia "12" hora "15:30" y presiona cancelar turno,
+entonces el sistema bloquea la accion e informa en pantalla "No fue posible cancelar el turno, no tienes ningun turno para el dia y hora ingresada"
+
+---
+### Frente
+#### ID: 
+Crear clase
+#### Titulo:
+Como administrador quiero crear una clase para que mis alumnos se puedan anotar
+#### Reglas del negocio:
+- En cada sala solo una clase a la vez
+- Cada instructor maximo tres clases por dia
+
+---
+### Dorso
+#### Criterios de aceptacion:
+**Escenario 1:** Creacion de clase exitosa
+dado un administrador autenticado en el sistema, con una sala con disponibilidad y instructor con 2 clases asignadas para ese dia
+Cuando el administrador ingresa el nombre de sede "!BE", tipo de clase "Spinning", numero de sala "4", dni "42521251", capacidad maxima "12", dia "12", hora "12:30" y presiona el boton crear clase,
+entonces el sistema crea la clase e informa en pantalla "Clase creada exitosamente".
+**Escenario 2:** Creacion de clase fallida por Instructor asignado con clases asignadas maxima para un dia
+dado un administrador autenticado, con una sala disponible y instructor con 3 clases asignadas para ese dia
+cuando el administrador ingresa el nombre de sede "Red fitness", tipo de clase "Funcional", numero de sala "12", Dni "24101124", capacidad maxima "21", dia "25", hora "15:00" y presiona el boton crear clase,
+entonces el sistema bloquea la accion y informa en pantalla "No fue posible la creacion de la clase por intructor con cantidad de clases maxima para ese dia"
+**Escenario 3:** Creacion de clase fallida por clase existente
+dado un administrador autenticado, con una sala disponible y instructor disponible para el dia "3",
+cuando el administrador ingresa el nombre de sede "Iron", tipo "musculacion", numero de sala "3", dni "34235234", capacidad maxima "24", dia "1", hora "15:00" y presiona el boton crear clase
+entonces el sistema bloquea la accion e informa "No fue posible la creacion de la clase, la clase ingresada ya existe"
+**Escenario 4:** Creacion de clase fallida por sala ocupada
+dado un administrador autenticado, con sala seleccionada ocupada, instructor "43221555" disponible para el dia "5",
+cuando el administrador ingresa el nombre de sede "Iron", tipo "Spinning", numero de sala "5", dni "45123123", capacidad maxima "11", dia "5", hora "9:00" y presioona el boton crear clase,
+entonces el sistema bloquea la accion e informa en pantalla "No fue posible la creacion de la clase, la sala ingresada se encuentra ocupada para dia y hora seleccionada".
+
+## Parcial 28/11/25 Org científica
+
+#### Roles de usuario:
+- Investigadores
+#### Historias de usuario:
+- Registrarse
+- solicitar turno
+- iniciar sesion
+- cerrar sesion
+
+---
+### Frente
+#### ID: 
+Registrarse
+#### Titulo:
+Como investigador quiero registrarme en el sistema para solicitar un turno.
+#### Reglas de negocio:
+- Solo investigadores mayores a 21 años
+- Solo investigadores con puntaje mayor a 200 puntos
+---
+### Dorso
+#### Criterios de aceptacion:
+**Escenario 1:** Registro exitoso
+Dado un investigador mayor a 21 años, con puntaje mayor a 200 puntos y no registrado aun
+cuando el investigador ingresa el nombre "Pedro", apellido "Lopez", correo institucional "plop@gmail.com", año de nacimiento "03/10/2003", puntaje "1000" y aprieta el boton confirmar datos
+Entonces el sistema registra los datos y genera clave de un solo acceso al correo "plop@gmail.com" e informa en pantalla "Registro exitoso!"
+
+**Escenario 2:** Registro fallido por menor de 21 años
+Dado un investigador con 20 años, con puntaje mayor a 200 puntos y no registrado,
+Cuando el investigador ingresa el nombre "Pepe", apellido "Gonzales", correo institucional "pgonza@gmail.com", año de nacimiento "02/09/2006", puntaje "210" y aprieta el boton confirmar datos,
+Entonces el sistema bloquea la accion e informa en pantalla "No fue posible el registro, se requiere ser mayor de 21 años para registrarse"
+
+**Escenario 3:** Registro fallido por puntaje menor a 200
+Dado un investigador con 25 años, puntaje 100 y no registrado
+Cuando el investigador ingresa el nombre "alvaro", apellido "Vega", correo institucional "alvaroveg@gmail.com ", año de nacimiento "02/10/2000", puntaje "100" y aprieta el boton confirmar datos,
+Entonces el sistema bloquea la accion e informa en pantalla "No fue posible el registro, se requiere un puntaje superior a 200 para registrarse"
+
+**Escenario 4:** Registro fallido por correo ya registrado
+Dado un investigador con 25 años, puntaje 560 y registrado con mail "pabloberenguer@gmail.com"
+Cuando el investigador ingresa el nombre "Pablo", apellido "berenguer", correo institucional "pabloberenguer@gmail.com", año de nacimiento "02/10/2000", puntaje 560, y aprieta el boton confirmar datos
+
+---
+### Frente
+#### Id: 
+Iniciar Sesion
+#### Titulo:
+Como investigador quiero iniciar sesion para solicitar turnos
+#### Reglas de negocio:
+- Suspender cuenta tras 3 intentos
+---
+### Dorso
+#### Criterios de aceptacion:
+
+**Escenario 1:** Inicio de sesion exitoso
+dado un investigador ya registrado en el sistema y con 0 intentos,
+Cuando ingresa el mail "dalelobo22@gmail.com", contraseña "lobito123" y presiona el boton iniciar sesion, 
+Entonces el sistema concede el inicio de sesion y envia al investigador al inicio.
+
+**Escenario 2:** Inicio de sesion fallido por cantidad de intentos
+Dado un investigador ya registrado en el sistema con 2 intentos realizados,
+cuando ingresa el mail "pep@gmail.com" y contra "223", 
+Entonces el sistema bloquea el acceso ya que detecta que la contraseña o el mail es incorrecto y suspende la cuenta e informa en pantalla "Cuenta suspendida, alcanzaste los intentos permitidos de inicio de sesion."
+**Escenario 3:** Inicio de sesion fallido por mail y/o contraseña incorrecta 
+**Escenario 4:** Inicio de sesion fallido por cuenta suspendida
+
+---
+### Frente
+#### ID: 
+Cerrar sesion
+#### Titulo:
+Como usuario quiero cerrar sesion para abandonar el sitio web.
+
+---
+### Dorso
+#### Criterios de aceptacion:
+
+**Escenario 1:** Cierre de sesion exitoso
+Dado un investigador con sesion activa en el sistema, 
+cuando el investigador presiona el boton cerrar sesion,
+Entonces el sistema envia al investigador a la pagina para iniciar sesion.
+
+---
+### Frente
+#### ID:
+Solicitar un salto temporal
+#### Titulo:
+Como investigador quiero solicitar un salto temporal para realizar una investigacion
+#### Reglas del negocio:
+- No se puede un periodo historicamente de alto riesgo
+- Solo capsulas disponibles.
+---
+### Dorso
+#### Criterios de aceptacion:
+**Escenario 1:** Solicitud exitosa
+Dado un investigador autenticado con un periodo que no es de alto riesgo,
+cuando el investigador selecciona la capsula "9123", fecha de salto "12/10/2026", año de viaje exacto "10/01/1900" y aprieta el boton confirmar solicitud,
+Entonces el sistema envia al mail del investigador la fecha de salto "12/10/2026", año al que viaja "10/01/1900", codigo de reserva generado por el sistema "102431" y informa en pantalla "Solicitud exitosa, Revise su mail para obtener mas informacion."
+**Escenario 2:** Solicitud fallida por capsula no disponible.
+Dado un investigador autenticado con un periodo que no es de alto riesgo y ingresa capsula "10" no disponible,
+Cuando el investigador seleciona capsula "10", fecha de salto "10/10/2026", año de viaje exacto "10/01/1600" y aprieta el boton confirmar solicitud, 
+Entonces el sistema bloquea la accion por capsula no disponible y informa en pantalla "No fue posible completar la solicitud, capsula seleccionada no disponible".
+**Escenario 3:** Solicitud fallida por periodo de alto riesgo
+**Escenario 4:** Solicitud fallida por falta de autenticacion
