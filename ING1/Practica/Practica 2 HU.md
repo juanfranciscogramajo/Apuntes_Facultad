@@ -668,6 +668,6 @@ dado un usuario registrado que indica un numero de sala "4" valida para la fecha
 cuando ingresa numero de sala "4", cantidad de asistentes "4", fecha del turno 25/09/26 y tipo de actividad "mediacion". Cuando presiona le boton solicitar,
 entonces el sistema valida que la capacidad de asistentes es menor o igual a la base sala y que tiene disponibilidad para esa fecha. Registra la reserva y genera un codigo de reserva y envia la correo electronico del profesional conla confirmacion del registro.
 Escenario 2: Reserva exitosa capacidad base
-dado un usuario regisdtrado que indica numero de sala "5" valida para fecha "24/10/26"
+dado un usuario registrado que indica numero de sala "5" valida para fecha "24/10/26"
 
 
