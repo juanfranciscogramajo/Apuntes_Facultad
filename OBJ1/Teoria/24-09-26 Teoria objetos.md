@@ -8,5 +8,7 @@ private final String calle = constante por el final.
 ## Heuristicas para asignacion de responsabilidades (HAR)
 
 - Polimorfistmo: permite tener programas que segun el tipo que varien su comportamiento.
-- Evitar diseñar objetos que recorren o vneivan mensajes a objetos distantes o indirectos
-- Self/This: 
+- Evitar diseñar objetos que recorren o vneivan mensajes a objetos distantes o indirectos.
+  - Self/this, parametro del metodo, obj que esta asociado con self/this, un miembro de una coleccion atributo de self/this, un obj creado dentro del metodo. Los demas <font color="#ff0000">Extraños</font>
+- Herencia vs composicion:
+  - Herencia Total: debo conocer todo el codigo que 
