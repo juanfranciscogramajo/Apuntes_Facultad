@@ -860,3 +860,16 @@ Como investigador quiero registrarme en el sistema para solicitar un turno.
 ---
 ### Dorso
 #### Criterios de aceptacion:
+**Escenario 1:** Registro exitoso
+Dado un investigador mayor a 21 años, con puntaje mayor a 200 puntos y no registrado aun
+cuando el investigador ingresa el nombre "Pedro", apellido "Lopez", correo institucional "plop@gmail.com", año de nacimiento "03/10/2005", puntaje "1000" y aprieta el boton confirmar datos
+Entonces el sistema registra los datos y genera clave de un solo acceso al correo "plop@gmail.com" e informa en pantalla "Registro exitoso!"
+
+**Escenario 2:** Registro fallido por menor de 21 años
+Dado un investigador con 20 años, con puntaje mayor a 200 puntos y no registrado,
+Cuando el investigador ingresa el nombre "Pepe", apellido "Gonzales", correo institucional "pgonza@gmail.com", año de nacimiento "02/09/2006", puntaje "210" y aprieta el boton confirmar datos,
+Entonces el sistema bloquea la accion e informa en pantalla "No fue posible el registro, solo se aceptan mayores de 21 años para registrarse"
+
+**Escenario 3:** Registro fallido por puntaje menor a 200
+Dado un investigador con 25 años, puntaje 100
+**Escenario 4:** Registro fallido por correo ya registrado
