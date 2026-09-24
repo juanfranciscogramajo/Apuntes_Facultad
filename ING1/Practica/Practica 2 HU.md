@@ -892,3 +892,19 @@ Como investigador quiero iniciar sesion para solicitar turnos
 #### Criterios de aceptacion:
 
 **Escenario 1:** Inicio de sesion exitoso
+dado un investigador ya registrado en el sistema y con 0 intentos,
+Cuando ingresa el mail "dalelobo22@gmail.com", contraseña "lobito123" y presiona el boton iniciar sesion, 
+Entonces el sistema concede el inicio de sesion y envia al investigador al inicio.
+
+**Escenario 2:** Inicio de sesion fallido por cantidad de intentos
+Dado un investigador ya registrado en el sistema con 2 intentos realizados,
+cuando ingresa el mail "pep@gmail.com" y contra "223", 
+Entonces el sistema bloquea el acceso ya que detecta que la contraseña o el mail es incorrecto y suspende la cuenta e informa en pantalla "Cuenta suspendida, alcanzaste los intentos permitidos de inicio de sesion."
+**Escenario 3:** Inicio de sesion fallido por mail y/o contraseña incorrecta 
+
+---
+### Frente
+#### ID: 
+Cerrar sesion
+#### Titulo:
+Como usuario quiero cerrar sesion para 
