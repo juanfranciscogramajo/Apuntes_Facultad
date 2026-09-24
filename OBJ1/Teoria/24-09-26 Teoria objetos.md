@@ -1,0 +1,4 @@
+- Entidades o clases del dominio: tienen identificador, son modificables y comparables por identidad.
+- Value object: 
+  - son comparables por contenido, no tienen identificador
+  - 
