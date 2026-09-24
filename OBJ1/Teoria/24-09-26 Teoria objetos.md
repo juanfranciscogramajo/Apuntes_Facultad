@@ -10,5 +10,13 @@ private final String calle = constante por el final.
 - Polimorfistmo: permite tener programas que segun el tipo que varien su comportamiento.
 - Evitar diseñar objetos que recorren o vneivan mensajes a objetos distantes o indirectos.
   - Self/this, parametro del metodo, obj que esta asociado con self/this, un miembro de una coleccion atributo de self/this, un obj creado dentro del metodo. Los demas <font color="#ff0000">Extraños</font>
-- Herencia vs composicion:
-  - Herencia Total: debo conocer todo el codigo que 
+### Herencia vs composicion:
+  - Herencia
+    - Herencia es Total: debo conocer todo el codigo que se hereda.
+    - Los cambios en super afectan a subclases.
+    - 2 tipos, Herencia de estructura y Herencia comportamiento
+    - + acoplacion
+  - Composicion
+    - Los objetos pueden reutilizarse a traves de su interfaz
+    - Los obj se componen en forma dinamica
+    - - Acoplacion
