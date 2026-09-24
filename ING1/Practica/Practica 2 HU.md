@@ -862,14 +862,33 @@ Como investigador quiero registrarme en el sistema para solicitar un turno.
 #### Criterios de aceptacion:
 **Escenario 1:** Registro exitoso
 Dado un investigador mayor a 21 años, con puntaje mayor a 200 puntos y no registrado aun
-cuando el investigador ingresa el nombre "Pedro", apellido "Lopez", correo institucional "plop@gmail.com", año de nacimiento "03/10/2005", puntaje "1000" y aprieta el boton confirmar datos
+cuando el investigador ingresa el nombre "Pedro", apellido "Lopez", correo institucional "plop@gmail.com", año de nacimiento "03/10/2003", puntaje "1000" y aprieta el boton confirmar datos
 Entonces el sistema registra los datos y genera clave de un solo acceso al correo "plop@gmail.com" e informa en pantalla "Registro exitoso!"
 
 **Escenario 2:** Registro fallido por menor de 21 años
 Dado un investigador con 20 años, con puntaje mayor a 200 puntos y no registrado,
 Cuando el investigador ingresa el nombre "Pepe", apellido "Gonzales", correo institucional "pgonza@gmail.com", año de nacimiento "02/09/2006", puntaje "210" y aprieta el boton confirmar datos,
-Entonces el sistema bloquea la accion e informa en pantalla "No fue posible el registro, solo se aceptan mayores de 21 años para registrarse"
+Entonces el sistema bloquea la accion e informa en pantalla "No fue posible el registro, se requiere ser mayor de 21 años para registrarse"
 
 **Escenario 3:** Registro fallido por puntaje menor a 200
-Dado un investigador con 25 años, puntaje 100
+Dado un investigador con 25 años, puntaje 100 y no registrado
+Cuando el investigador ingresa el nombre "alvaro", apellido "Vega", correo institucional "alvaroveg@gmail.com ", año de nacimiento "02/10/2000", puntaje "100" y aprieta el boton confirmar datos,
+Entonces el sistema bloquea la accion e informa en pantalla "No fue posible el registro, se requiere un puntaje superior a 200 para registrarse"
+
 **Escenario 4:** Registro fallido por correo ya registrado
+Dado un investigador con 25 años, puntaje 560 y registrado con mail "pabloberenguer@gmail.com"
+Cuando el investigador ingresa el nombre "Pablo", apellido "berenguer", correo institucional "pabloberenguer@gmail.com", año de nacimiento "02/10/2000", puntaje 560, y aprieta el boton confirmar datos
+
+---
+### Frente
+#### Id: 
+Iniciar Sesion
+#### Titulo:
+Como investigador quiero iniciar sesion para solicitar turnos
+#### Reglas de negocio:
+- Suspender cuenta tras 3 intentos
+---
+### Dorso
+#### Criterios de aceptacion:
+
+**Escenario 1:** Inicio de sesion exitoso
