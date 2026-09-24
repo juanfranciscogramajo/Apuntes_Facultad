@@ -20,3 +20,10 @@ private final String calle = constante por el final.
     - Los objetos pueden reutilizarse a traves de su interfaz
     - Los obj se componen en forma dinamica
     - - Acoplacion
+## Principios S O L I D
+Relacionados a las HAR para buen diseño orientado a obj, con alta cohesion y bajo acomplamiento.
+### S(SRP The single-Responsability principie):
+una clase deberia ser responsable de una tarea y mod por una sola razon.
+### O (OCP The open-Closed principie):
+Entiddes deben ser abiertas (capaz de añadir funcionalidades), cerrado (al añadir una nueva funcionalidad no cambia diseño)
+### L (LSP The liskov subtitution principie):
