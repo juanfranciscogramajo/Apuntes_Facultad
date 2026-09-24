@@ -901,10 +901,27 @@ Dado un investigador ya registrado en el sistema con 2 intentos realizados,
 cuando ingresa el mail "pep@gmail.com" y contra "223", 
 Entonces el sistema bloquea el acceso ya que detecta que la contraseña o el mail es incorrecto y suspende la cuenta e informa en pantalla "Cuenta suspendida, alcanzaste los intentos permitidos de inicio de sesion."
 **Escenario 3:** Inicio de sesion fallido por mail y/o contraseña incorrecta 
+**Escenario 4:** Inicio de sesion fallido por cuenta suspendida
 
 ---
 ### Frente
 #### ID: 
 Cerrar sesion
 #### Titulo:
-Como usuario quiero cerrar sesion para 
+Como usuario quiero cerrar sesion para abandonar el sitio web.
+
+---
+### Dorso
+#### Criterios de aceptacion:
+
+**Escenario 1:** Cierre de sesion exitoso
+Dado un investigador con sesion activa en el sistema, 
+cuando el investigador presiona el boton cerrar sesion,
+Entonces el sistema envia al investigador a la pagina para iniciar sesion.
+
+---
+### Frente
+#### ID:
+Solicitar un salto temporal
+#### Titulo:
+Como inve
