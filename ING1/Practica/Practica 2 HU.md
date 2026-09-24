@@ -927,7 +927,7 @@ Solicitar un salto temporal
 Como investigador quiero solicitar un salto temporal para realizar una investigacion
 #### Reglas del negocio:
 - No se puede un periodo historicamente de alto riesgo
-- 
+- Solo capsulas disponibles.
 ---
 ### Dorso
 #### Criterios de aceptacion:
@@ -936,4 +936,8 @@ Dado un investigador autenticado con un periodo que no es de alto riesgo,
 cuando el investigador selecciona la capsula "9123", fecha de salto "12/10/2026", año de viaje exacto "10/01/1900" y aprieta el boton confirmar solicitud,
 Entonces el sistema envia al mail del investigador la fecha de salto "12/10/2026", año al que viaja "10/01/1900", codigo de reserva generado por el sistema "102431" y informa en pantalla "Solicitud exitosa, Revise su mail para obtener mas informacion."
 **Escenario 2:** Solicitud fallida por capsula no disponible.
-Dado un investigador autenticado con un periodo que no 
+Dado un investigador autenticado con un periodo que no es de alto riesgo y ingresa capsula "10" no disponible,
+Cuando el investigador seleciona capsula "10", fecha de salto "10/10/2026", año de viaje exacto "10/01/1600" y aprieta el boton confirmar solicitud, 
+Entonces el sistema bloquea la accion por capsula no disponible y informa en pantalla "No fue posible completar la solicitud, capsula seleccionada no disponible".
+**Escenario 3:** Solicitud fallida por periodo de alto riesgo
+**Escenario 4:** Solicitud fallida por falta de autenticacion
