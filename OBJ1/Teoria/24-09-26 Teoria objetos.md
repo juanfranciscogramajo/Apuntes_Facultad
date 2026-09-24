@@ -15,7 +15,7 @@ private final String calle = constante por el final.
     - Herencia es Total: debo conocer todo el codigo que se hereda.
     - Los cambios en super afectan a subclases.
     - 2 tipos, Herencia de estructura y Herencia comportamiento
-    - + acoplacion
+    - + Acoplacion
   - Composicion
     - Los objetos pueden reutilizarse a traves de su interfaz
     - Los obj se componen en forma dinamica
