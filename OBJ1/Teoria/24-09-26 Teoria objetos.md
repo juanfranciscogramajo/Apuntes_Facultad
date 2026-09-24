@@ -26,4 +26,11 @@ Relacionados a las HAR para buen diseño orientado a obj, con alta cohesion y ba
 una clase deberia ser responsable de una tarea y mod por una sola razon.
 ### O (OCP The open-Closed principie):
 Entiddes deben ser abiertas (capaz de añadir funcionalidades), cerrado (al añadir una nueva funcionalidad no cambia diseño)
+- las var instancias deben ser privadas
+- evitar var globales
+- usar id de tipos
 ### L (LSP The liskov subtitution principie):
+Si se utiliza una clase a que tiene subclases, se debe poder usar cualquiera de sus sub y seguir siendo valido
+### I (ISP The INterface-Segregation Principie):
+Las clases no deberian depender de interfaces que no utilizan
+### D(DIP The Dependency-Inversion Principie)
