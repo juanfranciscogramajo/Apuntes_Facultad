@@ -924,4 +924,16 @@ Entonces el sistema envia al investigador a la pagina para iniciar sesion.
 #### ID:
 Solicitar un salto temporal
 #### Titulo:
-Como inve
+Como investigador quiero solicitar un salto temporal para realizar una investigacion
+#### Reglas del negocio:
+- No se puede un periodo historicamente de alto riesgo
+- 
+---
+### Dorso
+#### Criterios de aceptacion:
+**Escenario 1:** Solicitud exitosa
+Dado un investigador autenticado con un periodo que no es de alto riesgo,
+cuando el investigador selecciona la capsula "9123", fecha de salto "12/10/2026", año de viaje exacto "10/01/1900" y aprieta el boton confirmar solicitud,
+Entonces el sistema envia al mail del investigador la fecha de salto "12/10/2026", año al que viaja "10/01/1900", codigo de reserva generado por el sistema "102431" y informa en pantalla "Solicitud exitosa, Revise su mail para obtener mas informacion."
+**Escenario 2:** Solicitud fallida por capsula no disponible.
+Dado un investigador autenticado con un periodo que no 
