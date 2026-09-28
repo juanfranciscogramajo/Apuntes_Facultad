@@ -26,4 +26,4 @@
    b. ¿Cuál/es de los algoritmos vistos puede provocarla? 
 	   SJF, Prioridades, Colas multinivel, SRTF.
    c. ¿Existe alguna técnica que evite la inanición para el/los algoritmos mencionados en el inciso b?
-	   Agin es una tecnica que consiste en aumentar la prioridad a medida que pasa el tiempo de espera
+	   Agin es una tecnica que consiste en aumentar la prioridad a medida que pasa el tiempo de espera, En prioridades es directamente asi, en sjf/srtf reduce tiempo de cpu artificialmente.
