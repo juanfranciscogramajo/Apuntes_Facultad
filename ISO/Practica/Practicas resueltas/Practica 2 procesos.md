@@ -20,3 +20,10 @@
 - **Tiempo Promedio de Espera (TPE):** Es la sumatoria de todos los TE, dividida por la cantidad total de procesos.
    g. Defina tiempo de respuesta
    - **Retorno (TR ):** tiempo que transcurre entre que el proceso llega al sistema hasta que completa su ejecución.
+1. Inanición (Starvation) 
+   a. ¿Qué significa? 
+		Cuando un proceso espera indefinidamente por cpu ya que el planificador elige procesos antes q el.
+   b. ¿Cuál/es de los algoritmos vistos puede provocarla? 
+	   SJF, Prioridades, Colas multinivel, SRTF.
+   c. ¿Existe alguna técnica que evite la inanición para el/los algoritmos mencionados en el inciso b?
+	   Agin es una tecnica que consiste en aumentar la prioridad a medida que pasa el tiempo de espera
