@@ -27,3 +27,4 @@
 	   SJF, Prioridades, Colas multinivel, SRTF.
    c. ¿Existe alguna técnica que evite la inanición para el/los algoritmos mencionados en el inciso b?
 	   Agin es una tecnica que consiste en aumentar la prioridad a medida que pasa el tiempo de espera, En prioridades es directamente asi, en sjf/srtf reduce tiempo de cpu artificialmente.
+10- si el proceso es "I/O-bound" y abandona constantemente la CPU para irse a dormir mucho antes de que pasen los "ticks" necesarios, su contador nunca llegará a cero. Esto significa que nunca sufrirá el caso especial de la transición _Running-Ready_, la cual ocurre exclusivamente cuando un proceso termina su quantum de tiempo (llega a cero) sin haber solicitado I/O y es expulsado de la CPU contra su voluntad.
