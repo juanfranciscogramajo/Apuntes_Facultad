@@ -29,23 +29,27 @@
 	   Agin es una tecnica que consiste en aumentar la prioridad a medida que pasa el tiempo de espera, En prioridades es directamente asi, en sjf/srtf reduce tiempo de cpu artificialmente.
 10- si el proceso es "I/O-bound" y abandona constantemente la CPU para irse a dormir mucho antes de que pasen los "ticks" necesarios, su contador nunca llegará a cero. Esto significa que nunca sufrirá el caso especial de la transición _Running-Ready_, la cual ocurre exclusivamente cuando un proceso termina su quantum de tiempo (llega a cero) sin haber solicitado I/O y es expulsado de la CPU contra su voluntad.
 11-
-11 Formula 1= Sn+1 = (1/n)Tn + (n-1/n)Sn
-6, 4, 6, 4, 13, 13, 13
-n=1 t=6
-S(1)+1 = (1/(1))6 + (1-1/1)10
-s2= 6 + 0 = 6
-n=2 T =4  
-S(2)+1 = (1/(2))4 + ((2)-1/2)6
-S3 = 2+ 3 = 5
-n=3 t=6
-S(3)+1 = (1/(3))6 + ((3)-1/3)5
-S4 = (1/(3))6 + ((3)-1/2)5
-S4 = 2 + 3,33 = 5,33
-n=4 t=4
-S(4)+1 = (1/(4))4 + ((4)-1/4)5,33
-S5 = 1 + 4 = 5
-n=5 t=13
-S(5)+1 = (1/(5))13 + ((5)-1/5)5
-S6 = (1/(5))13 + ((5)-1/5)5
-n=6
-n=7
+Formula 1= Sn+1 = (1/n)Tn + (n-1/n)Sn      | Formula 2 Sn+1 = aTn + (1-a)Sn
+6, 4, 6, 4, 13, 13, 13                                       | a = 0,2| 0,5 | 0,8
+n=1 t=6                                                        | n=1 t=6
+S(1)+1 = (1/(1))6 + (1-1/1)10                       |
+s2= 6 + 0 = 6                                               |
+n=2 T =4                                                      |
+S(2)+1 = (1/(2))4 + ((2)-1/2)6                      |
+S3 = 2+ 3 = 5                                               |
+n=3 t=6                                                       |
+S(3)+1 = (1/(3))6 + ((3)-1/3)5                      |
+S4 = (1/(3))6 + ((3)-1/2)5                             |
+S4 = 2 + 3,33 = 5,33                                    |
+n=4 t=4                                                       |
+S(4)+1 = (1/(4))4 + ((4)-1/4)5,33                 |
+S5 = 1 + 4 = 5                                             |
+n=5 t=13                                                     | 
+S(5)+1 = (1/(5))13 + ((5)-1/5)5                    |
+S6 = 2,6 + 4 = 6,6                                       |
+n=6 t=13                                                     |
+S(6)+1 = (1/(6))13 + ((6)-1/6)6,6                 |
+S7 = 2,16 + 5,5 = 7,66                                 |
+n=7 t = 13                                                   |
+S(7)+1 = (1/(7))13 + ((7)-1/7)7,66               |
+S8= 1,85 + 6,56 = 8,42                               |
