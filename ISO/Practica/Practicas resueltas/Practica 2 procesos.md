@@ -90,3 +90,4 @@ S5 = 3,2 +1,142 = 4,342
 Para **Interactivos:** RR, Prioridades, Colas multinivel, SRTF, 
 para **Batch**: SJF, FCFS
 b. Para el caso de las dos colas vistas en a: ¿Qué algoritmo utilizaría para planificarlas?
+el método adecuado es una **Planificación por Prioridades Estrictas (Expulsiva)**, apoyándose en los servicios de manejo de prioridades del sistema operativo.
