@@ -85,3 +85,8 @@ S(4)+1= 0,5(4) + (1-0,5)6
 S5 = 2 + 3 = 5 
 S(4)+1= 0,8(4) + (1-0,8)5,71
 S5 = 3,2 +1,142 = 4,342
+
+12 Colas Multinivel Actualmente los algoritmos de planificación vistos se han ido combinando para formar algoritmos más eficientes. Así surge el algoritmo de Colas Multinivel, donde la cola de procesos listos es dividida en varias colas, teniendo cada una su propio algoritmo de planificación. a. Suponga que se tiene dos tipos de procesos: Interactivos y Batch. Cada uno de estos procesos se coloca en una cola según su tipo. ¿Qué algoritmo de los vistos utilizará para administrar cada una de estas colas?. 
+Para **Interactivos:** RR, Prioridades, Colas multinivel, SRTF, 
+para **Batch**: SJF, FCFS
+b. Para el caso de las dos colas vistas en a: ¿Qué algoritmo utilizaría para planificarlas?
