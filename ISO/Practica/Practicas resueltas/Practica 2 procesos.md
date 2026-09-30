@@ -177,8 +177,8 @@ Página Marco
 3 2 
 4 0 
 traduzca las direcciones lógicas indicadas a direcciones físicas:
-i. 5120 5120 / 2048 = marco 2, desplazamiento 5120 mod 2048 = 1024
-ii. 3242 
+i. 5120 5120 / 2048 = pagina 2, desplazamiento 5120 mod 2048 = 1024. dir fis = (9x2048)+1024 = 19456 
+ii. 3242 3242  
 iii. 1578 
 iv. 2048 
 v. 8191
