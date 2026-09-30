@@ -141,13 +141,14 @@ i. 35, como 35 < 2000 vale para num pagina 35/512 = 0, pagina 0, desplazamiento 
 
 ii. 512 pagina 1, desplazamiento 0, dir fisica 5x512 = 2560
 
-iii. 2051 INVALIDO SUPERA EL TAMANIO DEL PROCESO
+iii. 2051 INVALIDO SUPERA EL TAMANIO DEL PROCESO no corresponde al espacio logico del proce
 
-iv. 0 pagina 0, desplazamiento 0, direccion fisica, 1546
+iv. 0 pagina 0, desplazamiento 0, direccion fisica= 1536
 
-v. 1325 
+v. 1325 valid, 1325/512 = 2 pagina, desplazamiento 301, (2x512)+301 = 1325 dir fisica
 
-vi. 602 
+vi. 602 valid, 602/512 = 1 pagina, desplazamiento 45, dir fiscia = (5x512) + 90 = 2650
+
 c. Indicar, en caso de ser posible, las direcciones lógicas del proceso P1 que se corresponden a las siguientes direcciones físicas: 
 i. 509
 ii. 1500
