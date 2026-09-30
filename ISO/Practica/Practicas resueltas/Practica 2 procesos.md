@@ -92,6 +92,7 @@ para **Batch**: SJF, FCFS
 b. Para el caso de las dos colas vistas en a: ¿Qué algoritmo utilizaría para planificarlas?
 el método adecuado es una **Planificación por Prioridades Estrictas (Expulsiva)**, apoyándose en los servicios de manejo de prioridades del sistema operativo.
 
+---
 18-  
 a = hola, 
 b = hola
@@ -99,6 +100,23 @@ c = anda a ...., como te fue...
 19)
 a= 2^3 
 b= si
+
+---
 20)
 a=  se imprime 8 veces 1
 b= todas las lineas tienen mismo valor, excepto el pID que tendra 
+
+---
+21)
+Dado un esquema de segmentación donde cada dirección hace referencia a 1 byte y la siguiente tabla de segmentos de un proceso, traduzca, de corresponder, las direcciones lógicas indicadas a direcciones físicas. La Dirección lógica está representada por: segmento:desplazamiento 
+Segmento Dir. Base Tamaño 
+0 102 12500 
+1 28699 24300 
+2 68010 15855 
+3 80001 400 
+
+i. 0000:9001, segmento 0, 102 dir base + 9
+ii. 0001:24301 
+iii. 0002:5678 
+iv. 0001:18976 
+v. 0003:0
