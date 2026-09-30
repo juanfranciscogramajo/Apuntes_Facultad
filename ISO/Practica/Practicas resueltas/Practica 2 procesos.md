@@ -165,4 +165,20 @@ ii. 1500 1500/512 = marco 2, desplazamiento 1500mod512= desplazamiento 476, Dir 
 iii. 0  marco 0 no corresponde a ninguna pagina del proceso
 iv. 3215 3215/512 = marco 6, 3215mod512 = desplaza 143, dir log =(3x512)+143 =1679 es menor a 2000 corresponde
 v. 1024 marco 2, desplaza 0. dir log = 2x512 = 1024
-vi. 2000 
+vi. 2000 2000/512 = marco 3, desplaza 2000 mod 512 = 464, dir Log (0x512)+464 = 464
+
+23)
+Dado un esquema donde cada dirección hace referencia a 1 byte, con páginas de 2 KiB (KibiBytes), donde el frame 0 se encuentra en la dirección física 0. Con las siguientes siguientes primeras entradas de la tabla de páginas de un proceso, 
+
+Página Marco 
+0 16 
+1 13 
+2 9 
+3 2 
+4 0 
+traduzca las direcciones lógicas indicadas a direcciones físicas:
+i. 5120 5120 / 2048 = marco 2, desplazamiento 5120 mod 2048 = 1024
+ii. 3242 
+iii. 1578 
+iv. 2048 
+v. 8191
