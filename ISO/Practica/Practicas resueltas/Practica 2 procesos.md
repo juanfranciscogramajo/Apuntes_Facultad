@@ -128,6 +128,7 @@ v. 0003:0 segmento 3, dir base 80001, tamaño 400, desplazamiento 0, 80001 dir f
 
 ---
 22)Segmentacion paginas, marcos etc
+LOGICAS A FISICAS
 1. **Número de página (p):** Dirección Lógica $\div$ Tamaño de Página. (Tomas solo la parte entera).
     
 2. **Desplazamiento (d):** Dirección Lógica $MOD$ Tamaño de Página. (Es el resto de la división).
@@ -149,10 +150,19 @@ v. 1325 valid, 1325/512 = 2 pagina, desplazamiento 301, (2x512)+301 = 1325 dir f
 
 vi. 602 valid, 602/512 = 1 pagina, desplazamiento 45, dir fiscia = (5x512) + 90 = 2650
 
+---
+FISICAS A LOGICAS
+- **Marco (m):** Dirección Física $\div$ Tamaño de Página.
+    
+- **Desplazamiento (d):** Dirección Física $MOD$ Tamaño de Página.
+    
+- **Dirección Lógica:** Buscas el `m` en la tabla para ver a qué `Página` corresponde. Luego calculas: $(Página \times Tamaño \ de \ Página) + d$.
+    
+    - _Nota:_ Si el Marco no está en la tabla de P1, esa memoria no es de este proceso.
 c. Indicar, en caso de ser posible, las direcciones lógicas del proceso P1 que se corresponden a las siguientes direcciones físicas: 
-i. 509
-ii. 1500
-iii. 0 
-iv. 3215 
-v. 1024
-vi. 2000
+i. 509 para saber marco 509/512 =  0, en la tabla no existe x lo tando no corresponde a una direccion logica del proceso 
+ii. 1500 1500/512 = marco 2, desplazamiento 1500mod512= desplazamiento 476, Dir log = (2 (porque corresponde al marco 2) x 512) + 476 = dir logica 1500 
+iii. 0  marco 0 no corresponde a ninguna pagina del proceso
+iv. 3215 3215/512 = marco 6, 3215mod512 = desplaza 143, dir log =(3x512)+143 =1679 es menor a 2000 corresponde
+v. 1024 marco 2, desplaza 0. dir log = 2x512 = 1024
+vi. 2000 
