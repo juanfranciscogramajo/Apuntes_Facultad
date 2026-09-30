@@ -115,8 +115,13 @@ Segmento Dir. Base Tamaño
 2 68010 15855 
 3 80001 400 
 
-i. 0000:9001, segmento 0, 102 dir base + 9
-ii. 0001:24301 
-iii. 0002:5678 
-iv. 0001:18976 
-v. 0003:0
+i. 0000:9001, segmento 0, 102 dir base + 9001 = 9103 dir fisica
+
+ii. 0001:24301, segmento 1, 28699 + 24301 XXX invalido ya que supera el desplazamiento al tamaño del segmento
+
+iii. 0002:5678, segmento 2, 68010 dir base, tamaño 15855, 5678 el desplazamiento OK,            68010 + 5678 = 73688 dir fisica 
+
+iv. 0001:18976. segmento 1, que tiene dir base 28699, tamaño 24300, desplazamiento 18976 OK
+28699 + 18976 = 47675 dir fisica
+
+v. 0003:0 segmento 3, dir base 80001, tamaño 400, desplazamiento 0, 80001 dir fisica.
