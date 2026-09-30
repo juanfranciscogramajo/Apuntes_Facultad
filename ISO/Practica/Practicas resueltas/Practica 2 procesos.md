@@ -125,3 +125,33 @@ iv. 0001:18976. segmento 1, que tiene dir base 28699, tamaño 24300, desplazamie
 28699 + 18976 = 47675 dir fisica
 
 v. 0003:0 segmento 3, dir base 80001, tamaño 400, desplazamiento 0, 80001 dir fisica.
+
+---
+22)Segmentacion paginas, marcos etc
+1. **Número de página (p):** Dirección Lógica $\div$ Tamaño de Página. (Tomas solo la parte entera).
+    
+2. **Desplazamiento (d):** Dirección Lógica $MOD$ Tamaño de Página. (Es el resto de la división).
+    
+3. **Dirección Física:** Una vez que tienes `p`, buscas en la tabla en qué `Marco` está. Luego multiplicas: $(Marco \times Tamaño \ de \ Página) + d$.
+4. **Límite de seguridad:** Recuerda que el proceso mide **2000 bytes**. Cualquier dirección lógica que sea 2000 o mayor no pertenece al proceso (Error).
+
+b. Indicar si las siguientes direcciones lógicas corresponden al espacio lógico del proceso P1 y en caso afirmativo indicar la dirección física a la que corresponden: 
+
+i. 35, como 35 < 2000 vale para num pagina 35/512 = 0, pagina 0, desplazamiento 35/512 = 35,     direccion fisica = (3x512) + 35 = 1571.
+
+ii. 512 pagina 1, desplazamiento 0, dir fisica 5x512 = 2560
+
+iii. 2051 INVALIDO SUPERA EL TAMANIO DEL PROCESO
+
+iv. 0 pagina 0, desplazamiento 0, direccion fisica, 1546
+
+v. 1325 
+
+vi. 602 
+c. Indicar, en caso de ser posible, las direcciones lógicas del proceso P1 que se corresponden a las siguientes direcciones físicas: 
+i. 509
+ii. 1500
+iii. 0 
+iv. 3215 
+v. 1024
+vi. 2000
