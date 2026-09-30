@@ -91,3 +91,14 @@ Para **Interactivos:** RR, Prioridades, Colas multinivel, SRTF,
 para **Batch**: SJF, FCFS
 b. Para el caso de las dos colas vistas en a: ¿Qué algoritmo utilizaría para planificarlas?
 el método adecuado es una **Planificación por Prioridades Estrictas (Expulsiva)**, apoyándose en los servicios de manejo de prioridades del sistema operativo.
+
+18-  
+a = hola, 
+b = hola
+c = anda a ...., como te fue...
+19)
+a= 2^3 
+b= si
+20)
+a=  se imprime 8 veces 1
+b= todas las lineas tienen mismo valor, excepto el pID que tendra 
