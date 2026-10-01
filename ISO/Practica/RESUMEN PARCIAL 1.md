@@ -265,4 +265,13 @@ archivos son utilizados en GNU/Linux para guardar la información de usuarios:
   - Accounting 
   - Entrada salida (estado, pendientes, etc)
 - **Espacio de direcciones de un proceso:** conjunto de direcciones de memoria que ocupa el proceso(strack, text y datos), no incluye su pcb, depende el modo tiene acceso a disitnas direcciones.
-- Contexto de un proceso: incluye info que el so necesita para admin proceso y la cpu necesita para ejecutarlo, sonm 
+- **Contexto de un proceso:** incluye info que el so necesita para admin proceso y la cpu necesita para ejecutarlo, incluye reg cpu, pc, prioridad  etc.
+- **cambio de contexto:** cuando la CPU deja de ejecutar un proceso para comenzar a ejecutar otro. El sistema operativo resguarda el contexto del proceso saliente (guardándolo en su PCB) y carga el contexto del proceso entrante para reanudarlo, lo cual representa tiempo de procesamiento no productivo.
+- Kernel Enfoques: 
+  - **Enfoque 1: El Kernel como entidad independiente**
+    El Kernel se ejecuta completamente fuera de los procesos de usuario, operando como una entidad autónoma. Tiene asignada su propia región de memoria exclusiva y cuenta con su propio _stack_ (pila). Cuando un proceso sufre una interrupción o invoca una llamada al sistema, el sistema operativo debe resguardar el contexto de ese proceso y transferirle el control de la CPU al Kernel. Una vez que el Kernel finaliza su intervención administrativa, le devuelve el control al mismo proceso o planifica la ejecución de uno diferente. En esta arquitectura (común en los primeros sistemas operativos), el Kernel **no es un proceso**; el concepto de proceso aplica únicamente a los programas de usuario.
+  - **Enfoque 2: El Kernel "dentro" del Proceso**
+    El código, los módulos y las rutinas del Kernel residen integrados directamente dentro del espacio de direcciones de cada proceso de usuario en el sistema.
+    El Kernel no actúa de forma aislada, sino que se ejecuta en el mismo contexto del proceso que está activo en ese momento.
+    Para mantener la seguridad y la separación lógica, cada proceso posee dos _stacks_ independientes: uno para operar de manera estándar (modo usuario) y otro reservado para ejecutar rutinas privilegiadas (modo kernel).
+    Las llamadas al sistema o interrupciones se gestionan realizando un "cambio de modo" en lugar de un cambio de contexto completo. El procesador eleva sus privilegios para ejecutar la porción del Kernel compartida dentro de ese mismo proceso, lo cual consume menos recursos y mejora notablemente la performance general del sistema.
