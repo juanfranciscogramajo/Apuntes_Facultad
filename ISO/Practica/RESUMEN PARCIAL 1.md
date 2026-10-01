@@ -347,9 +347,20 @@ archivos son utilizados en GNU/Linux para guardar la información de usuarios:
 - **En UNIX:** El proceso se realiza en dos etapas utilizando dos llamadas distintas:
     1. **`fork()`:** Crea el nuevo proceso como una copia idéntica del llamador. El sistema operativo devuelve el valor `0` dentro del proceso hijo, un valor mayor a `0` (el PID del hijo) en el proceso padre, y un número negativo si falla la creación.
     2. **`execve()`:** Usualmente invocada por el hijo justo después del `fork()`, sirve para reemplazar la imagen de memoria clonada con el código del nuevo programa que realmente se quiere ejecutar.
-### Terminacion de procesos: 
+### Terminación de procesos: 
 - Un proceso finaliza su ejecución normalmente realizando la llamada `exit`, devolviendo así el control al sistema operativo.
     
 - El proceso padre puede utilizar la llamada `wait` (o `waitpid`) para quedarse a la espera de sus hijos y recibir su código de estado o retorno una vez que finalizan.
     
 - También es posible la terminación forzada de un hijo (mediante `kill`), o la **terminación en cascada**, que ocurre cuando un proceso padre termina y el sistema no le permite a los hijos continuar huérfanos, forzando la muerte de toda la descendencia.
+### Ejemplo de Integración: ¿Cómo funciona un Shell (Terminal)?
+
+El documento ilustra estos conceptos con el funcionamiento clásico de una consola de comandos (Shell):
+
+- El shell ejecuta un ciclo infinito donde lee el comando escrito por el usuario.
+    
+- Llama a `fork()` para crear un proceso hijo.
+    
+- El proceso padre (el shell) se queda esperando mediante `waitpid()`.
+    
+- El proceso hijo ejecuta `execve()` para cargar e iniciar el comando solicitado por el usuario.
