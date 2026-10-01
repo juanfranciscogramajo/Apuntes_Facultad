@@ -110,7 +110,7 @@ Sistemas de archivos
 - BIOS: inicia el HW y ejecuta MBC (Master Boot Code) que es codigo.
 - **MBR (Master Boot Record)** es el primer sector físico del disco duro (Cilindro 0, Cabeza 0, Sector 1) y ocupa 512 bytes. Contiene el MBC (446 bytes), la **Tabla de Particiones** (64 bytes) y una firma de 2 bytes.
 - **Gestor de Arranque (Bootloader):** El MBC lanza el bootloader (como **GRUB**), cuya función es cargar en memoria la imagen del Kernel del sistema operativo para ejecutarlo. Debido a la limitación de 446 bytes en el MBR, gestores como Grub Legacy debían instalarse en múltiples etapas (fase 1 en el MBR, fase 1.5 en el espacio vacío adyacente o _MBR gap_, y fase 2 para la interfaz y carga final). Grub 2, la versión moderna, simplifica estas etapas y soporta más configuraciones.
-- **SysV init:**
+- **SysV init:** Su función es cargar todos los subprocesos necesarios para el correcto funcionamiento del Sistema Operativo. El proceso init (ejecutado desde /sbin/init) posee el PID 1. En SysV init se lo configura a través del archivo /etc/inittab. 4. No tiene padre y es el padre de todos los procesos (pstree). Es el encargado de montar los filesystems y de hacer disponible los demás dispositivos.
   1. Se empieza a ejecutar el código del BIOS/UEFI.
   2. El BIOS ejecuta el POST para verificar componentes de hardware.
   3. El BIOS lee el sector de arranque primario (MBR).
@@ -123,6 +123,22 @@ Sistemas de archivos
   10. La finalización del runlevel 1 indica el pasaje al runlevel por defecto.
   11. Se ejecutan los scripts del runlevel por defecto.
   12. El sistema queda listo para operar y presenta el prompt de login.
+- **Runlevels:** son modos/estados de operacion preconfig en el SO, inicia o detiene servicios segun las necesidades.Se encuentran definidos en el archivo /etc/inittab: id:runlevels:acción:proceso
+  - id: identifica la entrada en inittab (1 a 4 caracteres). 
+  - runlevels: el/los runlevels en los que se realiza la acción 
+  - acción: indica cómo se ejecutará proceso 
+  - wait, initdefault, ctrlaltdel, off, respawn, once, sysinit, boot, bootwait, powerwait, etc. 
+  - proceso: el comando exacto que será ejecutado.
+  Niveles: 
+  * `0`: *Halt* (parada o apagado total).
+  * `1` / `S`: *Single-user mode* (modo monousuario de mantenimiento).
+  * `2`: Modo multiusuario sin soporte de red.
+  * `3`: Modo multiusuario en consola con red.
+  * `4`: No utilizado / reservado para personalizaciones.
+  * `5`: Modo multiusuario con entorno gráfico (*X11*).
+  * `6`: *Reboot* (reinicio).
+- **SystemD:**
+  
 - **EFI (Extensible Firmware Interface):** Es un estándar propiedad de Intel diseñado para la comunicación entre el sistema operativo y el firmware. Su objetivo es sustituir al viejo MBR utilizando el esquema GPT, solucionando así limitaciones históricas como la restricción en la cantidad máxima de particiones.
 - **GPT (GUID Partition Table):** Es el formato de tabla de particiones que forma parte de EFI, caracterizado por:
     
