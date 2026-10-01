@@ -247,3 +247,9 @@ archivos son utilizados en GNU/Linux para guardar la información de usuarios:
 ## Procesos 1
 - **Proceso:** programa en ejecucion, es dinamico, tiene PC, existe desde que se solicita hasta que termina ejecutar
 - **Programa:** es estatico 
+- Componentes de un proceso:
+  - Sección de Código (texto) 
+  - Sección de Datos (variables globales) 
+  - Stack(s) (datos temporarios: parámetros , variables temporales y direcciones de retorno)
+- **Stacks:** se crean automaticamente y se ajusta en run-time, esta formado por *stack frames* pushed al llamar rutina y popped cuando retorna. El *Stack frame* tiene parametros de la rutina, datos para recuperar el stack frame anterior.
+- **Atributos**: 
