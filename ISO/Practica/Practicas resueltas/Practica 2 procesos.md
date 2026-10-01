@@ -182,3 +182,12 @@ ii. 3242 3242/ 2048 = pagina 1, desplazamient 3242mod2048 = 1194, dir fis (13x20
 iii. 1578 1578 /2048 = pagina 0, desplazamiento 1578mod2048 = 1578, dir fisica (16x2048)+1578= 34346
 iv. 2048 pagina 1, desplazamiento 0, dir fisica (13x2048)= 26624 
 v. 8191 8191/2048= 3, desplazamiento=2047, dir fisica= (2x2048)+2047= 6143 
+
+25
+El proceso de traducción real de hardware funciona en dos saltos:
+
+1. El número de **segmento** se busca en la Tabla de Segmentos. La "Dir. base" que figura allí no es la memoria física final, sino un puntero que indica en qué lugar de la memoria está guardada la Tabla de Páginas exclusiva de ese segmento.
+    
+2. Una vez ubicada la tabla correcta, se busca el número de **página**. Esto entrega la "Direc. Base" del marco (frame) físico en la memoria RAM.
+    
+3. Finalmente, la dirección física se calcula sumando la dirección base del marco y el **desplazamiento** (offset).
