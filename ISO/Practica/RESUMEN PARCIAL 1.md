@@ -364,3 +364,20 @@ El documento ilustra estos conceptos con el funcionamiento clásico de una conso
 - El proceso padre (el shell) se queda esperando mediante `waitpid()`.
     
 - El proceso hijo ejecuta `execve()` para cargar e iniciar el comando solicitado por el usuario.
+## Explicacion practica 3
+### Tiempos de los procesos: 
+  - CPU (TCPU): tiempo que efectivamente usa la CPU el proceso. 
+  - Retorno (TR ): tiempo que transcurre entre que el proceso llega al sistema hasta que completa su ejecución. 
+  - Espera (TE ): tiempo que el proceso se encuentra en el sistema esperando, es decir el tiempo que pasa sin ejecutarse (TR - TCPU) 
+  - Promedios (TPR y TPE): tiempos promedio de Retorno y Espera. Promedio calculado de los tiempos individuales de cada proceso del lote.
+### Algoritmos de Planificación de CPU
+
+- **FIFO (First Come, First Served):** Es una política no apropiativa que selecciona siempre el proceso más antiguo de la cola. Aunque no prioriza a ningún tipo, en la práctica los procesos ligados a CPU (_CPU Bound_) suelen terminar en su primera ráfaga, mientras que los ligados a Entrada/Salida (_I/O Bound_) necesitan formarse múltiples veces.
+    
+- **SJF (Shortest Job First):** Política no apropiativa que selecciona el proceso con la ráfaga de CPU más corta, ordenando así la cola de listos. Su desventaja es que los procesos largos pueden sufrir inanición (_starvation_) si llegan constantemente procesos cortos.
+    
+- **SRTF (Shortest Remaining Time First):** Es la variante apropiativa (_preemptive_) de SJF. Evalúa y selecciona el proceso al que le resta menos tiempo para terminar su siguiente ráfaga, favoreciendo directamente a los procesos _I/O Bound_.
+    
+- **Round Robin (RR):** Es un algoritmo apropiativo basado en un reloj que asigna un bloque de tiempo fijo o _Quantum_ (Q) a cada proceso. Si el proceso no finaliza en ese tiempo, es expulsado de la CPU y reubicado al final de la cola. Si el _Quantum_ es muy pequeño, genera una alta sobrecarga por cambios de contexto. La variante más utilizada es el "Timer Variable", donde el contador se reinicia a Q cada vez que el proceso asume el control del procesador.
+    
+- **Prioridades:** Cada proceso recibe un valor de prioridad (donde el número menor indica mayor prioridad) y se despacha al proceso con la máxima prioridad. Existe una cola de listos por cada nivel. Para evitar la inanición de los procesos de baja prioridad, se aplica una técnica de envejecimiento (_Aging_) o penalización que modifica dinámicamente la prioridad durante el ciclo de vida del proceso
