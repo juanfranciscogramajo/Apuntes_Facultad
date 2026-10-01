@@ -284,7 +284,7 @@ archivos son utilizados en GNU/Linux para guardar la información de usuarios:
 - **En ejecución:** El proceso posee el control del procesador hasta que agota su _quantum_ de tiempo, finaliza sus tareas o requiere realizar una operación de Entrada/Salida (E/S).
     
 - **En espera:** El proceso se suspende y libera la CPU porque aguarda la ocurrencia de un evento externo, como la finalización de una E/S o la recepción de una señal. Una vez cumplido el evento, retorna inmediatamente al estado "listo".
-- **Terminado**().
+- **Terminado**
 ### Estructuras de Colas
 
 - El Sistema Operativo organiza la planificación enlazando los Bloques de Control de Proceso (PCB) dentro de diferentes colas lógicas.
@@ -294,3 +294,23 @@ archivos son utilizados en GNU/Linux para guardar la información de usuarios:
 - **Cola de procesos listos (_Ready queue_):** Contiene a los procesos que ya residen en la memoria principal y están en condiciones inmediatas de competir por el uso de la CPU.
     
 - **Colas de dispositivos:** Agrupan a los procesos que han pasado al estado de espera y aguardan la disponibilidad de un periférico específico de Entrada/Salida.
+### Módulos de Planificación (Schedulers)
+
+- Son componentes de software del Kernel que se activan ante eventos de creación, terminación, sincronización o interrupciones de reloj. Se clasifican según su frecuencia de ejecución:
+    
+- **Long Term Scheduler (Largo Plazo):** Administra el grado de multiprogramación dictando la cantidad total de procesos que ingresan a la memoria. Interactúa con el módulo **Loader**, encargado de cargar físicamente el programa desde el disco a la memoria.
+    
+- **Short Term Scheduler (Corto Plazo):** Determina sistemáticamente qué proceso de la cola de listos será el siguiente en ocupar la CPU. Se complementa con el módulo **Dispatcher**, el cual efectúa el cambio de contexto, conmuta el modo de ejecución y salta a la instrucción correspondiente para ceder el control al proceso elegido.
+    
+- **Medium Term Scheduler (Mediano Plazo):** Regula dinámicamente el equilibrio del sistema mediante la técnica de _swapping_. Si es necesario reducir la congestión, traslada temporalmente procesos desde la memoria hacia el disco (_swap out_) y posteriormente los reincorpora (_swap in_) cuando se normalizan los recursos.
+### Comportamiento y Algoritmos de Planificación
+
+- Durante su ciclo de vida, los procesos alternan entre
+  - CPU (_CPU-bound_) y ráfagas de espera por operaciones de E/S (_I/O-bound_). 
+  - Los procesos _I/O-bound_ requieren ser despachados velozmente para mantener los periféricos ocupados y maximizar la eficiencia general.
+    
+- **Algoritmos No Apropiativos (_Nonpreemptive_):** El proceso mantiene el control ininterrumpido de la CPU hasta que la libera de manera voluntaria, ya sea finalizando o bloqueándose por E/S. Son idóneos para **sistemas por lotes (_batch_)** donde no hay usuarios interactivos, y se prioriza el volumen de trabajos por hora (ejemplos: FCFS, SJF).
+    
+- **Algoritmos Apropiativos (_Preemptive_):** El sistema operativo tiene la facultad de interrumpir y expulsar a un proceso de la CPU en contra de su voluntad. Son indispensables en **sistemas interactivos** para garantizar equidad, evitar acaparamientos y mantener un tiempo de respuesta rápido ante las peticiones del usuario (ejemplos: _Round Robin_, Prioridades, SRTF, Colas Multinivel).
+    
+- **Política Versus Mecanismo:** El desarrollo del sistema operativo separa las responsabilidades. El Kernel provee el mecanismo inalterable (cómo se realiza el cambio de contexto o se evalúa la cola), mientras que el usuario o administrador define la política (qué proceso es más importante) alterando los parámetros del algoritmo, como al modificar la prioridad de ejecución mediante comandos específicos.
