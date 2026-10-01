@@ -334,11 +334,11 @@ En GNU/Linux los archivos se identifican internamente por su **número de inodo*
 5. El *bootloader* transfiere a la memoria RAM el Kernel y el *initrd*[cite: 1].
 6. Se monta el *initrd* como sistema de archivos raíz temporal y se inicializan componentes esenciales[cite: 1].
 7. El Kernel ejecuta el proceso `init` (PID 1) y desmonta el *initrd*[cite: 1].
-8. El proceso `init` lee el archivo de configuración `/etc/inittab`[cite: 1].
-9. Se ejecutan los scripts apuntados por el runlevel 1[cite: 1].
-10. La finalización del runlevel 1 indica el pasaje al runlevel por defecto[cite: 1].
-11. Se ejecutan los scripts del runlevel por defecto[cite: 1].
-12. El sistema queda listo para operar y presenta el prompt de login[cite: 1].
+8. El proceso `init` lee el archivo de configuración `/etc/inittab`.
+9. Se ejecutan los scripts apuntados por el runlevel 1.
+10. La finalización del runlevel 1 indica el pasaje al runlevel por defecto.
+11. Se ejecutan los scripts del runlevel por defecto.
+12. El sistema queda listo para operar y presenta el prompt de login.
 
 ---
 

@@ -199,3 +199,5 @@ archivos son utilizados en GNU/Linux para guardar la información de usuarios:
 * **`cp`:** Copia archivos o directorios[cite: 1, 3]. Admite `-r` para realizar copias recursivas de carpetas completas[cite: 1, 3].
 * **`mv`:** Mueve o renombra ficheros y directorios[cite: 1, 3].
 * **`find`:** Busca archivos en tiempo real recorriendo el árbol de directorios según criterios como `-name` (nombre) o `-type` (tipo)[cite: 1, 3].
+### Bootloader:
+Programa que cara e inicia el SO,
