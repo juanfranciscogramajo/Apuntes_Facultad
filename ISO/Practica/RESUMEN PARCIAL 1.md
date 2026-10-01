@@ -129,9 +129,41 @@ Sistemas de archivos
     - Por **UUID** (identificador único universal) en `/dev/disk/by-uuid/`.
         
     - Por **Labels** (etiquetas de volumen) en `/dev/disk/by-label/`.
-Particionado
-Destructivo
-no destructivo
+### 7. Particiones
+
+### a. Definición, tipos, ventajas y desventajas:
+* **Definición:** Forma de dividir el disco físico de manera lógica[cite: 2]. 
+* **Tipos de particiones:**
+  * **Primaria:** División básica directa del disco (máximo **4 por disco**)[cite: 2].
+  * **Extendida:** Partición primaria especial que actúa como contenedor para alojar particiones lógicas[cite: 2].
+  * **Lógica:** Particiones creadas dentro del espacio de la partición extendida para superar el límite de 4[cite: 2].
+* **Ventajas:** Permite aislar el SO de los datos personales, facilita las tareas de respaldo (**backup**) y da soporte de **arranque múltiple**[cite: 2, 3].
+* **Desventajas:** Desperdicio o **fragmentación estática** de espacio si se dimensionan de forma inadecuada durante la instalación[cite: 2].
+
+### b. ¿Cómo se identifican las particiones en GNU/Linux? (Discos IDE, SCSI, SATA):
+* **Discos IDE:** Se identifican históricamente con el prefijo `/dev/hd`[cite: 2]. El disco maestro del canal primario es `/dev/hda`, el esclavo `/dev/hdb`, y sus particiones se numeran `/dev/hda1`, `/dev/hda2`, etc[cite: 2].
+* **Discos SCSI / SATA / SSD / USB:** Se identifican con el prefijo `/dev/sd`[cite: 4, 5]. El primer disco físico es `/dev/sda`, el segundo `/dev/sdb`, y sus particiones se numeran `/dev/sda1`, `/dev/sda2`, etc[cite: 4, 5].
+* **Numeración:** Del **1 al 4** se reservan para particiones primarias o extendidas; las particiones lógicas comienzan obligatoriamente desde el número **5 en adelante**.
+
+### c. Cantidad mínima de particiones para instalar GNU/Linux:
+* Como mínimo se necesita **1 partición**[cite: 2, 3]:
+  * **Punto de montaje:** `/` (directorio raíz)[cite: 2, 3].
+  * **Tipo de partición:** Primaria[cite: 3, 5].
+  * **Tipo de File System:** `ext4` (por defecto), `ext3` o `ext2`[cite: 2, 3, 5].
+  * **Identificación:** Por ejemplo, `/dev/hda3` o `/dev/sda1`[cite: 2, 3, 5].
+* *(Recomendación: Se sugiere crear al menos **2 particiones**: el directorio raíz `/` y una de memoria de intercambio o **SWAP** en `/dev/hda4`)*[cite: 2, 3].
+
+### d. Ejemplos de casos de particionamiento según la tarea:
+* Separar los datos del usuario (`/home`) de las aplicaciones o del sistema operativo[cite: 2, 3]. 
+* Crear una partición exclusiva para **restauración (restore)** de todo el sistema[cite: 2, 3]. 
+* Ubicar el **Kernel** (`/boot`) en una partición de solo lectura, o en una que no se monte por motivos de seguridad[cite: 2, 3]. 
+
+### e. ¿Es posible visualizar particiones FAT y NTFS en GNU/Linux?
+**Sí, es posible.** Cada partición se puede formatear con sistemas destino compatibles como FAT o NTFS[cite: 2, 3]. GNU/Linux puede reconocer y montar particiones de Windows conviviendo en el mismo disco (ej. `/dev/hda1: DOS con Windows`)[cite: 2, 3].
+
+### f. Tipos de software para particionar:
+* **Destructivos:** Solo permiten crear y eliminar particiones (ejemplo: `fdisk`)[cite: 2, 3].  
+* **No destructivos:** Permiten crear, eliminar y además **modificar/redimensionar** particiones existentes sin perder datos (ejemplos: `fips`, `gparted`)[cite: 2, 3].
 
 **a. ¿Qué archivos son utilizados en GNU/Linux para guardar la información de usuarios?**
 * **`/etc/passwd`:** Almacena los datos principales de las cuentas (nombre de usuario, UID, GID primario, comentario, ruta del directorio home y shell predeterminada)[cite: 1].
@@ -154,18 +186,4 @@ no destructivo
 
 ---
 
-**d. Ejercicio práctico (creación, asignación, archivo y eliminación):**
-1. Crear el grupo `informatica`:
-   {```bash
-   sudo groupadd informatica
-2. Agregue un nuevo usuario llamado *isocso* a su instalación de GNU/Linux, especifique que su home sea creada en /home/*isocso*, y hágalo miembro del grupo *informatica* (si no existe, deberá crearlo). Luego, sin iniciar sesión como este usuario cree un archivo en su home personal que le pertenezca. Luego de todo esto, borre el usuario y verifique que no queden registros de él en los archivos de información de los usuarios y grupos.
-3. Investigue la funcionalidad y parámetros de los siguientes comandos:
-      useradd: añadir un usuario, modifica $cat/etc/passwd
-       adduser: crear cuentas de usuario. -m direc home, -d <ruta> def home, -g <grupo> asigna gp primario, -s <shell> def shell x defecto
-       groupadd: crea nuevo grupo en el sistema. -g <GID> asigna id, -r crea gp del sist.
-       usermod: mod prop de una cuenta de usuario existente
-       who: muestra info sobre users con sesion activa en sist.
-       userdel: elimina cuenta de usuario del sist. -r ademas borra home y correo, -f elimina hasta con sesion iniciada
-       groupdel: elimina gp existente.
-       su: permite alternal la sesion hacia otro usuario o super
-       passwd: permite cambiar la contra de un usuario.
+
