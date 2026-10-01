@@ -4,8 +4,22 @@
     
 - **Desde la perspectiva del sistema (Administración de recursos):** El SO es un administrador implacable que maneja los recursos de hardware para uno o más procesos. Maneja dispositivos de entrada/salida y memoria secundaria, y permite la ejecución simultánea de procesos mediante la **multiplexación**, tanto en tiempo (turnando el uso de la CPU) como en espacio (dividiendo la memoria).
 ## Componentes
-- **El Kernel (Núcleo):** Se encuentra permanentemente cargado en la memoria principal y es el encargado absoluto de administrar los recursos del hardware. Implementa servicios críticos como la gestión de memoria, de CPU, de procesos, de la concurrencia y de la entrada/salida.
-- Shell: GUI (Graphical User Interface) – CUI (Command User Interface) – CLI (Command Line Interface)
+ - Kernel
+   a. Funciones principales:
+   - Administración y asignación de la **memoria RAM**. 
+   - Planificación y sincronización de **procesos en la CPU**. 
+   - Gestión de **controladores de dispositivos (drivers)** e **interrupciones de hardware**. 
+   - Control del acceso al **sistema de archivos y redes**. 
+   - Las distintas imágenes binarias del kernel coexisten dentro del directorio `/boot` (bajo nombres como `vmlinuz-<versión>`). Al iniciar la computadora, el gestor de arranque (como **GRUB**) permite al usuario seleccionar qué versión del kernel ejecutar. 
+- Shell:
+  - Programa en **espacio de usuario** que lee texto de entrada (órdenes), lo interpreta y solicita su ejecución al kernel a través de **llamadas al sistema**, devolviendo los resultados en pantalla.  Intérpretes de comandos comunes:
+  - **sh (Bourne Shell):** El estándar histórico de UNIX; sintaxis simple, altamente portable pero con funciones interactivas limitadas.
+  - **bash (Bourne Again Shell):** Shell por defecto en la mayoría de distros GNU/Linux; incluye historial persistente, autocompletado avanzado y gestión robusta de redirecciones.
+  - **zsh (Z Shell):** Shell moderno con autocompletado contextual avanzado, corrección ortográfica de comandos y alta capacidad de personalización mediante temas y plugins. 
+  - Ubicación de comandos (Path):
+  - **Internos (built-in):** Integrados en el propio binario del Shell en memoria (ej. `cd`, `pwd`, `exit`). 
+  - **Externos:** Binarios ejecutables ubicados en rutas del disco especificadas dentro de la variable de entorno `$PATH`, tales como `/bin`, `/sbin`, `/usr/bin` o `/usr/local/bin`. 
+  - el Shell se ejecuta en espacio de usuario, un fallo o bloqueo del intérprete no compromete la integridad del núcleo. Además, permite que cada usuario elija o reemplace su interfaz sin modificar el núcleo del SO. 
 - Herramientas: editores, compi, libr.
 ## Servicios Provistos por el SO
 
@@ -130,8 +144,6 @@ Sistemas de archivos
         
     - Por **Labels** (etiquetas de volumen) en `/dev/disk/by-label/`.
 ### 7. Particiones
-
-### a. Definición, tipos, ventajas y desventajas:
 * **Definición:** Forma de dividir el disco físico de manera lógica[cite: 2]. 
 * **Tipos de particiones:**
   * **Primaria:** División básica directa del disco (máximo **4 por disco**)[cite: 2].
@@ -139,12 +151,9 @@ Sistemas de archivos
   * **Lógica:** Particiones creadas dentro del espacio de la partición extendida para superar el límite de 4[cite: 2].
 * **Ventajas:** Permite aislar el SO de los datos personales, facilita las tareas de respaldo (**backup**) y da soporte de **arranque múltiple**[cite: 2, 3].
 * **Desventajas:** Desperdicio o **fragmentación estática** de espacio si se dimensionan de forma inadecuada durante la instalación[cite: 2].
-
-### b. ¿Cómo se identifican las particiones en GNU/Linux? (Discos IDE, SCSI, SATA):
 * **Discos IDE:** Se identifican históricamente con el prefijo `/dev/hd`[cite: 2]. El disco maestro del canal primario es `/dev/hda`, el esclavo `/dev/hdb`, y sus particiones se numeran `/dev/hda1`, `/dev/hda2`, etc[cite: 2].
 * **Discos SCSI / SATA / SSD / USB:** Se identifican con el prefijo `/dev/sd`[cite: 4, 5]. El primer disco físico es `/dev/sda`, el segundo `/dev/sdb`, y sus particiones se numeran `/dev/sda1`, `/dev/sda2`, etc[cite: 4, 5].
 * **Numeración:** Del **1 al 4** se reservan para particiones primarias o extendidas; las particiones lógicas comienzan obligatoriamente desde el número **5 en adelante**.
-
 ### c. Cantidad mínima de particiones para instalar GNU/Linux:
 * Como mínimo se necesita **1 partición**[cite: 2, 3]:
   * **Punto de montaje:** `/` (directorio raíz)[cite: 2, 3].
@@ -152,35 +161,22 @@ Sistemas de archivos
   * **Tipo de File System:** `ext4` (por defecto), `ext3` o `ext2`[cite: 2, 3, 5].
   * **Identificación:** Por ejemplo, `/dev/hda3` o `/dev/sda1`[cite: 2, 3, 5].
 * *(Recomendación: Se sugiere crear al menos **2 particiones**: el directorio raíz `/` y una de memoria de intercambio o **SWAP** en `/dev/hda4`)*[cite: 2, 3].
-
 ### d. Ejemplos de casos de particionamiento según la tarea:
 * Separar los datos del usuario (`/home`) de las aplicaciones o del sistema operativo[cite: 2, 3]. 
 * Crear una partición exclusiva para **restauración (restore)** de todo el sistema[cite: 2, 3]. 
 * Ubicar el **Kernel** (`/boot`) en una partición de solo lectura, o en una que no se monte por motivos de seguridad[cite: 2, 3]. 
-
-### e. ¿Es posible visualizar particiones FAT y NTFS en GNU/Linux?
-**Sí, es posible.** Cada partición se puede formatear con sistemas destino compatibles como FAT o NTFS[cite: 2, 3]. GNU/Linux puede reconocer y montar particiones de Windows conviviendo en el mismo disco (ej. `/dev/hda1: DOS con Windows`)[cite: 2, 3].
-
 ### f. Tipos de software para particionar:
 * **Destructivos:** Solo permiten crear y eliminar particiones (ejemplo: `fdisk`)[cite: 2, 3].  
 * **No destructivos:** Permiten crear, eliminar y además **modificar/redimensionar** particiones existentes sin perder datos (ejemplos: `fips`, `gparted`)[cite: 2, 3].
-
-**a. ¿Qué archivos son utilizados en GNU/Linux para guardar la información de usuarios?**
-* **`/etc/passwd`:** Almacena los datos principales de las cuentas (nombre de usuario, UID, GID primario, comentario, ruta del directorio home y shell predeterminada)[cite: 1].
-* **`/etc/shadow`:** Almacena de forma segura y cifrada las contraseñas de los usuarios y las políticas de expiración[cite: 1].
+### Usuarios:
+archivos son utilizados en GNU/Linux para guardar la información de usuarios:
+* **`/etc/passwd`:** Almacena los datos principales de las cuentas (nombre de usuario, UID, GID primario, comentario, ruta del directorio home y shell predeterminada)
+* **`/etc/shadow`:** Almacena de forma segura y cifrada las contraseñas de los usuarios y las políticas de expiración
 * **`/etc/group`:** Almacena la definición de los grupos del sistema y sus miembros asociados[cite: 1].
-
----
-
-**b. ¿A qué hacen referencia las siglas UID y GID? ¿Pueden coexistir UIDs iguales?**
-* **UID (*User Identifier*):** Identificador numérico único asignado a cada usuario para gestionar permisos y accesos[cite: 1].
-* **GID (*Group Identifier*):** Identificador numérico asignado a cada grupo para la gestión colectiva de privilegios[cite: 1].
-* **Coexistencia de UIDs:** Sí, técnicamente pueden coexistir si se configuran de forma manual en `/etc/passwd`[cite: 1]. Sin embargo, representa una mala práctica de seguridad porque para el Kernel ambos nombres compartirán exactamente los mismos permisos y privilegios sobre los recursos[cite: 1].
-
----
-
-**c. ¿Qué es el usuario root? ¿Puede existir más de un usuario con este perfil? ¿Cuál es su UID?**
-* **Definición:** Es el superusuario y administrador global con privilegios absolutos sobre el sistema operativo[cite: 1].
+* **UID (*User Identifier*):** Identificador numérico único asignado a cada usuario para gestionar permisos y accesos
+* **GID (*Group Identifier*):** Identificador numérico asignado a cada grupo para la gestión colectiva de privilegios
+* **Coexistencia de UIDs:** Sí, técnicamente pueden coexistir si se configuran de forma manual en `/etc/passwd`[cite: 1]. Sin embargo, representa una mala práctica de seguridad porque para el Kernel ambos nombres compartirán exactamente los mismos permisos y privilegios sobre los recursos
+* usuario root: Es el superusuario y administrador global con privilegios absolutos sobre el sistema operativo[cite: 1].
 * **UID:** Su identificador numérico siempre es **`0`**[cite: 1].
 * **Múltiples perfiles:** Sí, es posible crear otra cuenta con facultades totales asignándole manualmente el **UID 0** en el archivo `/etc/passwd`[cite: 1].
 
