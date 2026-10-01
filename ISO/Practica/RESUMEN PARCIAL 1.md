@@ -39,13 +39,41 @@ Las instrucciones de E/S están catalogadas como privilegiadas y solo pueden eje
 **Definición:** Son la interfaz y el mecanismo por el cual los programas en Modo Usuario acceden a los servicios del SO.
 **Ejecución:** Los parámetros de la llamada se pasan mediante registros, bloques de memoria o la pila (stack). Al invocar la llamada (ej. `read()`), se genera un _trap_ hacia el kernel. El sistema pasa a Modo Supervisor, invoca al manejador de la System Call (_Sys call handler_), ejecuta la función privilegiada y luego retorna el control al programa de usuario.
 **Categorías:** Se dividen en llamadas de control de procesos, manejo de archivos, manejo de dispositivos, mantenimiento de información y comunicaciones.
-**Control de Procesos**
-Se encargan de administrar el ciclo de vida, la ejecución y las prioridades de los procesos y sus hilos.
+	**Control de Procesos**
+	Se encargan de administrar el ciclo de vida, la ejecución y las prioridades de los procesos y sus hilos.
     
-    - `fork()`: Crea un nuevo proceso hijo que es una copia idéntica del proceso padre.
+    - fork(): Crea un nuevo proceso hijo que es una copia idéntica del proceso padre.
         
-    - `execve()`: Reemplaza la imagen central del proceso por un nuevo programa ejecutable.
+    - execve(): Reemplaza la imagen central del proceso por un nuevo programa ejecutable.
         
-    - `waitpid()`: Pausa la ejecución del programa a la espera de que un proceso hijo termine.
+    - waitpid(): Pausa la ejecución del programa a la espera de que un proceso hijo termine.
         
-    - `exit()`: Termina la ejecución del proceso y devuelve un código de estado.
+    - exit(): Termina la ejecución del proceso y devuelve un código de estado.
+
+**Manejo de Archivos**
+	Permiten leer, escribir, crear y modificar los atributos de los archivos en el almacenamiento.
+
+-  `read(file, buffer, nbytes)` lee una cantidad definida de bytes de un archivo y los deposita en un buffer de memoria temporal.
+- `open()` (abrir un archivo), 
+- `write()` (escribir datos) y 
+- `close()` (cerrar el archivo).
+- `touch` (cambia fechas de acceso y modificación) 
+- `chmod` (modifica los permisos de lectura, escritura o ejecución) 
+- `chown` o `chgrp` (cambian el propietario o el grupo del archivo).
+
+**Mantenimiento de Información del Sistema**
+Permiten consultar y alterar parámetros de la configuración operativa, gestionar tiempos o manipular señales de interrupción del sistema.
+    
+- `alarm()`: Configura el reloj de alarma del sistema para que envíe una notificación en una cantidad de segundos.
+- `pause()`: Suspende al proceso llamador hasta que el sistema intercepte la próxima señal.
+- `sigaction()`: Define la acción específica que debe ejecutar el sistema al recibir una señal determinada.
+- `kill()`: Envía una señal a un proceso objetivo, usualmente para forzar su terminación.
+ 
+**Comunicaciones (y Sincronización)**
+Coordinan el intercambio de información, los mensajes y el orden de ejecución entre múltiples procesos que funcionan al mismo tiempo (concurrencia).
+Comunicaciones puras: Llamadas como `pipe()` (crea una tubería de comunicación en memoria) o `socket()` (abre una conexión de red).
+
+**Manejo de Dispositivos**
+Gestionan el hardware periférico y solicitan acceso exclusivo o de lectura/escritura a recursos físicos como impresoras, discos extraíbles o pantallas.
+
+- `ioctl()` (input/output control en UNIX), que permite manipular parámetros muy específicos del hardware que no se ajustan a una simple lectura o escritura, como expulsar una bandeja de CD o configurar la velocidad de un puerto serie.
