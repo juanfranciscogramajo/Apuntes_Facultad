@@ -120,3 +120,12 @@ Sistemas de archivos
 - Identificación de dispositivos según bus: `/dev/sda`, `/dev/sdb`, `/dev/sdc`, etc.
 - Especifica que las particiones primarias van de la 1 a la 4 (únicas que pueden marcarse como activas/booteables) y las particiones extendidas alojan lógicas a partir del número 5.
 - Los discos sata usan misma nomenclatura
+**Mecanismos modernos de identificación persistente**
+
+- Explica que desde Debian/Squeeze los discos `hdX` pasaron a denominarse `sdX`.
+    
+- Muestra dos mecanismos persistentes principales:
+    
+    - Por **UUID** (identificador único universal) en `/dev/disk/by-uuid/`.
+        
+    - Por **Labels** (etiquetas de volumen) en `/dev/disk/by-label/`.
