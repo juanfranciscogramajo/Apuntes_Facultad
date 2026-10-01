@@ -95,4 +95,4 @@ Sistemas de archivos
 **Proceso de arranque:**
 - BIOS: inicia el HW y ejecuta MBC (Master Boot Code) que es codigo.
 - **MBR (Master Boot Record)** es el primer sector físico del disco duro (Cilindro 0, Cabeza 0, Sector 1) y ocupa 512 bytes. Contiene el MBC (446 bytes), la **Tabla de Particiones** (64 bytes) y una firma de 2 bytes.
-- 
+- **Gestor de Arranque (Bootloader):** El MBC lanza el bootloader (como **GRUB**), cuya función es cargar en memoria la imagen del Kernel del sistema operativo para ejecutarlo. Debido a la limitación de 446 bytes en el MBR, gestores como Grub Legacy debían instalarse en múltiples etapas (fase 1 en el MBR, fase 1.5 en el espacio vacío adyacente o _MBR gap_, y fase 2 para la interfaz y carga final). Grub 2, la versión moderna, simplifica estas etapas y soporta más configuraciones.
