@@ -83,7 +83,7 @@ Comunicaciones puras: Llamadas como `pipe()` (crea una tubería de comunicación
 Gestionan el hardware periférico y solicitan acceso exclusivo o de lectura/escritura a recursos físicos como impresoras, discos extraíbles o pantallas.
 
 - `ioctl()` (input/output control en UNIX), que permite manipular parámetros muy específicos del hardware que no se ajustan a una simple lectura o escritura, como expulsar una bandeja de CD o configurar la velocidad de un puerto serie.
-## Explicación practica 1 
+## Explicación practica 1.1
 Sistemas de archivos  
 - Directorios más importantes según FHS (Filesystem Hierarchy Standard) 
 - / Tope de la estructura de directorios. Es como el C:\ • /home Se almacenan archivos de usuarios (Mis documentos) 
@@ -106,4 +106,14 @@ Sistemas de archivos
     - Ubicar su cabecera principal en el LBA 1, seguida de la tabla de particiones.
         
     - Ofrecer redundancia y mayor seguridad al guardar copias exactas de la cabecera y la tabla tanto al principio como al final del disco.
-## Explicacion practica 2
+## Explicacion practica 1.2
+**Configuración de discos IDE**
+
+- los roles _Master_ y _Slave_.
+    
+-  `/dev/hda` (Master 1° bus), 
+- `/dev/hdb` (Slave 1° bus
+-  `/dev/hdc` (Master 2° bus) 
+- `/dev/hdd` (Slave 2° bus).
+    
+- Introduce la numeración de particiones: del 1 al 4 para particiones primarias y del 5 en adelante para lógicas
