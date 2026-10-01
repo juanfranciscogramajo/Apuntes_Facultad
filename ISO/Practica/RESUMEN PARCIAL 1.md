@@ -312,5 +312,24 @@ archivos son utilizados en GNU/Linux para guardar la información de usuarios:
 - **Algoritmos No Apropiativos (_Nonpreemptive_):** El proceso mantiene el control ininterrumpido de la CPU hasta que la libera de manera voluntaria, ya sea finalizando o bloqueándose por E/S. Son idóneos para **sistemas por lotes (_batch_)** donde no hay usuarios interactivos, y se prioriza el volumen de trabajos por hora (ejemplos: FCFS, SJF).
     
 - **Algoritmos Apropiativos (_Preemptive_):** El sistema operativo tiene la facultad de interrumpir y expulsar a un proceso de la CPU en contra de su voluntad. Son indispensables en **sistemas interactivos** para garantizar equidad, evitar acaparamientos y mantener un tiempo de respuesta rápido ante las peticiones del usuario (ejemplos: _Round Robin_, Prioridades, SRTF, Colas Multinivel).
-    
+
+ - **Procesos por lotes (Batch):** Este tipo de entorno se caracteriza por la **ausencia de interacción directa con usuarios** esperando una respuesta en una terminal. Dado que no hay urgencia interactiva, se suelen emplear **algoritmos no apropiativos** (donde el proceso retiene la CPU hasta que finaliza voluntariamente). Sus metas principales son:
+   **Rendimiento:** Maximizar la cantidad de trabajos procesados por hora.
+   **Uso de la CPU:** Mantener el procesador ocupado la mayor cantidad de tiempo posible.
+   **Tiempo de retorno:** Minimizar el lapso transcurrido desde que un trabajo comienza hasta que finaliza (aunque esto implique sacrificar el tiempo de espera inicial en la cola).
+   **Ejemplos de algoritmos:** FCFS (_First Come First Served_) y SJF (_Shortest Job First_).
+- **Procesos Interactivos:** Estos procesos requieren interactuar fluidamente, ya sea directamente con un usuario final (ej. un reproductor de música) o atendiendo múltiples requerimientos simultáneos (ej. un servidor). En estos entornos es estrictamente necesario el uso de **algoritmos apropiativos** para evitar que un solo proceso acapare la CPU y bloquee el sistema. Sus metas principales son:
+  **Tiempo de respuesta:** Garantizar que el sistema responda a las peticiones con la mayor rapidez posible.
+  **Proporcionalidad:** Cumplir con las expectativas del usuario (por ejemplo, si el usuario presiona "Stop" en un reproductor multimedia, el sonido debe detenerse en un lapso de tiempo considerablemente corto y perceptible).
+- **Procesos en Tiempo Real:** Aunque no se detalla extensamente en el fragmento provisto, los sistemas en tiempo real se caracterizan por manejar procesos que están sujetos a **restricciones temporales críticas y plazos estrictos** (_deadlines_). El objetivo principal de su planificación no es la equidad ni el rendimiento masivo, sino garantizar que cada proceso crítico se ejecute y entregue su resultado dentro de una ventana de tiempo predefinida y absoluta, ya que un retraso podría causar una falla sistémica grave.
 - **Política Versus Mecanismo:** El desarrollo del sistema operativo separa las responsabilidades. El Kernel provee el mecanismo inalterable (cómo se realiza el cambio de contexto o se evalúa la cola), mientras que el usuario o administrador define la política (qué proceso es más importante) alterando los parámetros del algoritmo, como al modificar la prioridad de ejecución mediante comandos específicos.
+
+1. Ejecución en modo usuario 
+2. Ejecución en modo kernel  
+3. El proceso está listo para ser ejecutado cuando sea elegido. 
+4. Proceso en espera en memoria principal. 
+5. Proceso listo, pero el swapper debe llevar al proceso a memoria ppal antes que el kernel lo pueda elegir para ejecutar. Explicación por estado (cont.) 
+6. Proceso en espera en memoria secundaria. 
+7. Proceso retornando desde el modo kernel al user. Pero el kernel se apropia, hace un context switch para darle la CPU a otro proceso. 
+8. Proceso recientemente creado y en transición: existe, pero aun no está listo para ejecutar, ni está dormido. 
+9. El proceso ejecutó la system call exit y está en estado zombie. Ya no existe más, pero se registran datos sobre su uso, codigo resultante del exit. Es el estado final.
