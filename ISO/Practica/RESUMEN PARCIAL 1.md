@@ -93,4 +93,6 @@ Sistemas de archivos
 - /dev Enlace a dispositivos 
 - /usr Aplicaciones de usuarios
 **Proceso de arranque:**
--BIOS: inicia el hw y ejecuta MBC 
+- BIOS: inicia el HW y ejecuta MBC (Master Boot Code) que es codigo.
+- **MBR (Master Boot Record)** es el primer sector físico del disco duro (Cilindro 0, Cabeza 0, Sector 1) y ocupa 512 bytes. Contiene el MBC (446 bytes), la **Tabla de Particiones** (64 bytes) y una firma de 2 bytes.
+- 
