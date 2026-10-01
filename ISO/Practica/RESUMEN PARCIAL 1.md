@@ -92,3 +92,5 @@ Sistemas de archivos
 - /bin Archivos binarios y ejecutables 
 - /dev Enlace a dispositivos 
 - /usr Aplicaciones de usuarios
+**Proceso de arranque:**
+-BIOS: inicia el hw y ejecuta MBC 
