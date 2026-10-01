@@ -339,9 +339,17 @@ archivos son utilizados en GNU/Linux para guardar la información de usuarios:
 - Las actividades internas del Sistema Operativo al crear un proceso incluyen: crear su Bloque de Control de Proceso (PCB), asignarle un identificador único (PID), alojar la memoria necesaria para sus regiones (Stack, Text y Datos) y preparar las estructuras de datos.
 
 - Relación entre Padre e Hijo: **Ejecución:** Una vez creado el hijo, el proceso padre puede optar por seguir ejecutándose de manera simultánea (concurrente) al hijo, o puede pausar su ejecución para esperar a que el hijo termine su tarea.
+  **Espacio de direcciones:**
+  - En **UNIX**, el proceso hijo nace como un **duplicado exacto** del proceso padre, copiando su espacio de direcciones de memoria.
+  - En **Windows**, se crea un espacio de direcciones completamente vacío y directamente se le carga el programa que debe ejecutar.
+### Llamadas al Sistema (System Calls) para Creación
+
+- **En UNIX:** El proceso se realiza en dos etapas utilizando dos llamadas distintas:
+    1. **`fork()`:** Crea el nuevo proceso como una copia idéntica del llamador. El sistema operativo devuelve el valor `0` dentro del proceso hijo, un valor mayor a `0` (el PID del hijo) en el proceso padre, y un número negativo si falla la creación.
+    2. **`execve()`:** Usualmente invocada por el hijo justo después del `fork()`, sirve para reemplazar la imagen de memoria clonada con el código del nuevo programa que realmente se quiere ejecutar.
+### Terminacion de procesos: 
+- Un proceso finaliza su ejecución normalmente realizando la llamada `exit`, devolviendo así el control al sistema operativo.
     
-- **Espacio de direcciones:**
+- El proceso padre puede utilizar la llamada `wait` (o `waitpid`) para quedarse a la espera de sus hijos y recibir su código de estado o retorno una vez que finalizan.
     
-    - En **UNIX**, el proceso hijo nace como un **duplicado exacto** del proceso padre, copiando su espacio de direcciones de memoria.
-        
-    - En **Windows**, se crea un espacio de direcciones completamente vacío y directamente se le carga el programa que debe ejecutar.
+- También es posible la terminación forzada de un hijo (mediante `kill`), o la **terminación en cascada**, que ocurre cuando un proceso padre termina y el sistema no le permite a los hijos continuar huérfanos, forzando la muerte de toda la descendencia.
