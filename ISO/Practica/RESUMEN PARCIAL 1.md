@@ -132,3 +132,40 @@ Sistemas de archivos
 Particionado
 Destructivo
 no destructivo
+
+**a. ¿Qué archivos son utilizados en GNU/Linux para guardar la información de usuarios?**
+* **`/etc/passwd`:** Almacena los datos principales de las cuentas (nombre de usuario, UID, GID primario, comentario, ruta del directorio home y shell predeterminada)[cite: 1].
+* **`/etc/shadow`:** Almacena de forma segura y cifrada las contraseñas de los usuarios y las políticas de expiración[cite: 1].
+* **`/etc/group`:** Almacena la definición de los grupos del sistema y sus miembros asociados[cite: 1].
+
+---
+
+**b. ¿A qué hacen referencia las siglas UID y GID? ¿Pueden coexistir UIDs iguales?**
+* **UID (*User Identifier*):** Identificador numérico único asignado a cada usuario para gestionar permisos y accesos[cite: 1].
+* **GID (*Group Identifier*):** Identificador numérico asignado a cada grupo para la gestión colectiva de privilegios[cite: 1].
+* **Coexistencia de UIDs:** Sí, técnicamente pueden coexistir si se configuran de forma manual en `/etc/passwd`[cite: 1]. Sin embargo, representa una mala práctica de seguridad porque para el Kernel ambos nombres compartirán exactamente los mismos permisos y privilegios sobre los recursos[cite: 1].
+
+---
+
+**c. ¿Qué es el usuario root? ¿Puede existir más de un usuario con este perfil? ¿Cuál es su UID?**
+* **Definición:** Es el superusuario y administrador global con privilegios absolutos sobre el sistema operativo[cite: 1].
+* **UID:** Su identificador numérico siempre es **`0`**[cite: 1].
+* **Múltiples perfiles:** Sí, es posible crear otra cuenta con facultades totales asignándole manualmente el **UID 0** en el archivo `/etc/passwd`[cite: 1].
+
+---
+
+**d. Ejercicio práctico (creación, asignación, archivo y eliminación):**
+1. Crear el grupo `informatica`:
+   {```bash
+   sudo groupadd informatica
+2. Agregue un nuevo usuario llamado *isocso* a su instalación de GNU/Linux, especifique que su home sea creada en /home/*isocso*, y hágalo miembro del grupo *informatica* (si no existe, deberá crearlo). Luego, sin iniciar sesión como este usuario cree un archivo en su home personal que le pertenezca. Luego de todo esto, borre el usuario y verifique que no queden registros de él en los archivos de información de los usuarios y grupos.
+3. Investigue la funcionalidad y parámetros de los siguientes comandos:
+      useradd: añadir un usuario, modifica $cat/etc/passwd
+       adduser: crear cuentas de usuario. -m direc home, -d <ruta> def home, -g <grupo> asigna gp primario, -s <shell> def shell x defecto
+       groupadd: crea nuevo grupo en el sistema. -g <GID> asigna id, -r crea gp del sist.
+       usermod: mod prop de una cuenta de usuario existente
+       who: muestra info sobre users con sesion activa en sist.
+       userdel: elimina cuenta de usuario del sist. -r ademas borra home y correo, -f elimina hasta con sesion iniciada
+       groupdel: elimina gp existente.
+       su: permite alternal la sesion hacia otro usuario o super
+       passwd: permite cambiar la contra de un usuario.

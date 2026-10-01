@@ -196,7 +196,7 @@ El **BIOS** (*Basic I/O System*) es el software grabado en un chip de memoria no
   1. Directamente en el **MBR** (o el espacio contiguo *MBR gap*)[cite: 3].
   2. En el sector de arranque de una partición específica (**VBR** / *Volume Boot Record*)[cite: 3].
 * **Gestores conocidos:** `GRUB`, `LILO`, `NTLDR`, `GAG`, `YaST`[cite: 3].
-## <font color="#00b0f0"> f. ¿Cuáles son los pasos que se suceden desde que se prende una computadora hasta que el Sistema Operativo es cargado (proceso de bootstrap)?</font>
+### f. ¿Cuáles son los pasos que se suceden desde que se prende una computadora hasta que el Sistema Operativo es cargado (proceso de bootstrap)?
 1. Se empieza a ejecutar el código del **BIOS**.
 2. El BIOS ejecuta el **POST** (*Power-On Self-Test*).
 3. El BIOS lee el sector de arranque (**MBR**).
@@ -212,22 +212,22 @@ El **BIOS** (*Basic I/O System*) es el software grabado en un chip de memoria no
 
 ---
 
-## <font color="#00b0f0">g. Analice el proceso de arranque en GNU/Linux y describa sus principales pasos.</font>
+### g. Analice el proceso de arranque en GNU/Linux y describa sus principales pasos.
 * **Arranque por BIOS clásico:** El gestor de arranque (comúnmente **GRUB**) opera por fases encadenadas; la **Fase 1** en el MBR invoca a la **Fase 1.5** (en el *MBR gap*), y esta carga la **Fase 2**, encargada de presentar la interfaz de selección y cargar la imagen del Kernel en memoria.
 * **Arranque por UEFI:** **GRUB** se ejecuta de manera directa como una aplicación UEFI almacenada en una partición con formato FAT32, prescindiendo del esquema por etapas intermedias.
 * **Inicialización del Kernel:** El Kernel toma el control, analiza el hardware, monta el entorno temporal para cargar controladores críticos y cede el mando al primer proceso del espacio de usuario (**init** o **systemd**).
 
 ---
 
-**h. ¿Cuáles son los pasos que se suceden en el proceso de parada (shutdown) de GNU/Linux?**
+### h. ¿Cuáles son los pasos que se suceden en el proceso de parada (shutdown) de GNU/Linux?
 1. El sistema envía una **señal de terminación** (`SIGTERM` / `SIGKILL`) a todos los procesos activos para cerrarlos ordenadamente.
 2. Se sincronizan los búferes de disco y se **desmontan de forma segura los sistemas de archivos** (remontándolos en modo de solo lectura para evitar daños o corrupción).
 3. Se envía la **señal de corte de energía** (*poweroff*) al hardware o se detiene la CPU de manera definitiva.
 
 ---
 
-**i. ¿Es posible tener en una PC GNU/Linux y otro Sistema Operativo instalado? Justifique.**  
-**Sí, es totalmente posible.**  
+### i. ¿Es posible tener en una PC GNU/Linux y otro Sistema Operativo instalado? Justifique.  
+Sí, es totalmente posible. 
 * **Particionado independiente:** La arquitectura permite alojar cada sistema operativo en particiones lógicas o primarias separadas dentro del mismo disco físico.
 * **Gestor de arranque múltiple:** Se utiliza un gestor como **GRUB** (*GRand Unified Bootloader*) para seleccionar dinámicamente qué sistema operativo iniciar en cada arranque[cite: 1, 8].
 * **Consideración de instalación:** Si el instalador de un sistema operativo no detecta el SO previo y sobrescribe el sector de arranque primario, puede dejarlo temporalmente inaccesible hasta que se reconfigure el gestor de booteo[cite: 1, 8].
@@ -419,35 +419,33 @@ Muestra todos los procesos activos organizados en forma de **árbol jerárquico*
 ---
 
 ## 13. Usuarios
-
-**a. ¿Qué archivos son utilizados en GNU/Linux para guardar la información de usuarios?**
-* **`/etc/passwd`:** Almacena los datos principales de las cuentas (nombre de usuario, UID, GID primario, comentario, ruta del directorio home y shell predeterminada)[cite: 1].
-* **`/etc/shadow`:** Almacena de forma segura y cifrada las contraseñas de los usuarios y las políticas de expiración[cite: 1].
-* **`/etc/group`:** Almacena la definición de los grupos del sistema y sus miembros asociados[cite: 1].
-
----
-
-**b. ¿A qué hacen referencia las siglas UID y GID? ¿Pueden coexistir UIDs iguales?**
-* **UID (*User Identifier*):** Identificador numérico único asignado a cada usuario para gestionar permisos y accesos[cite: 1].
-* **GID (*Group Identifier*):** Identificador numérico asignado a cada grupo para la gestión colectiva de privilegios[cite: 1].
-* **Coexistencia de UIDs:** Sí, técnicamente pueden coexistir si se configuran de forma manual en `/etc/passwd`[cite: 1]. Sin embargo, representa una mala práctica de seguridad porque para el Kernel ambos nombres compartirán exactamente los mismos permisos y privilegios sobre los recursos[cite: 1].
+*a. ¿Qué archivos son utilizados en GNU/Linux para guardar la información de usuarios?*
+* */etc/passwd:* Almacena los datos principales de las cuentas (nombre de usuario, UID, GID primario, comentario, ruta del directorio home y shell predeterminada)[cite: 1].
+* */etc/shadow:* Almacena de forma segura y cifrada las contraseñas de los usuarios y las políticas de expiración[cite: 1].
+* */etc/group:* Almacena la definición de los grupos del sistema y sus miembros asociados[cite: 1].
 
 ---
 
-**c. ¿Qué es el usuario root? ¿Puede existir más de un usuario con este perfil? ¿Cuál es su UID?**
-* **Definición:** Es el superusuario y administrador global con privilegios absolutos sobre el sistema operativo[cite: 1].
-* **UID:** Su identificador numérico siempre es **`0`**[cite: 1].
-* **Múltiples perfiles:** Sí, es posible crear otra cuenta con facultades totales asignándole manualmente el **UID 0** en el archivo `/etc/passwd`[cite: 1].
+*b. ¿A qué hacen referencia las siglas UID y GID? ¿Pueden coexistir UIDs iguales?*
+* *UID (*User Identifier):** Identificador numérico único asignado a cada usuario para gestionar permisos y accesos[cite: 1].
+* *GID (*Group Identifier):** Identificador numérico asignado a cada grupo para la gestión colectiva de privilegios[cite: 1].
+* *Coexistencia de UIDs:* Sí, técnicamente pueden coexistir si se configuran de forma manual en /etc/passwd[cite: 1]. Sin embargo, representa una mala práctica de seguridad porque para el Kernel ambos nombres compartirán exactamente los mismos permisos y privilegios sobre los recursos[cite: 1].
 
 ---
 
-**d. Ejercicio práctico (creación, asignación, archivo y eliminación):**
-1. Crear el grupo `informatica`:
-   {```bash
-   sudo groupadd informatica}
-   2. Agregue un nuevo usuario llamado *isocso* a su instalación de GNU/Linux, especifique que su home sea creada en /home/*isocso*, y hágalo miembro del grupo *informatica* (si no existe, deberá crearlo). Luego, sin iniciar sesión como este usuario cree un archivo en su home personal que le pertenezca. Luego de todo esto, borre el usuario y verifique que no queden registros de él en los archivos de información de los usuarios y grupos.  
+*c. ¿Qué es el usuario root? ¿Puede existir más de un usuario con este perfil? ¿Cuál es su UID?*
+* *Definición:* Es el superusuario y administrador global con privilegios absolutos sobre el sistema operativo[cite: 1].
+* *UID:* Su identificador numérico siempre es *0*[cite: 1].
+* *Múltiples perfiles:* Sí, es posible crear otra cuenta con facultades totales asignándole manualmente el *UID 0* en el archivo /etc/passwd[cite: 1].
 
-   3. Investigue la funcionalidad y parámetros de los siguientes comandos:
+---
+
+*d. Ejercicio práctico (creación, asignación, archivo y eliminación):*
+1. Crear el grupo informatica:
+   {bash
+   sudo groupadd informatica
+2. Agregue un nuevo usuario llamado isocso a su instalación de GNU/Linux, especifique que su home sea creada en /home/isocso, y hágalo miembro del grupo informatica (si no existe, deberá crearlo). Luego, sin iniciar sesión como este usuario cree un archivo en su home personal que le pertenezca. Luego de todo esto, borre el usuario y verifique que no queden registros de él en los archivos de información de los usuarios y grupos.
+3. Investigue la funcionalidad y parámetros de los siguientes comandos:
       useradd: añadir un usuario, modifica $cat/etc/passwd
        adduser: crear cuentas de usuario. -m direc home, -d <ruta> def home, -g <grupo> asigna gp primario, -s <shell> def shell x defecto
        groupadd: crea nuevo grupo en el sistema. -g <GID> asigna id, -r crea gp del sist.
@@ -457,10 +455,8 @@ Muestra todos los procesos activos organizados en forma de **árbol jerárquico*
        groupdel: elimina gp existente.
        su: permite alternal la sesion hacia otro usuario o super
        passwd: permite cambiar la contra de un usuario.
-       
-## FileSystem y permisos:  
-
-   5. ¿Cómo son definidos los permisos sobre archivos en un sistema GNU/Linux?  
+## 14. FileSystem
+   14. ¿Cómo son definidos los permisos sobre archivos en un sistema GNU/Linux?  
        Permisos de usuarios:
        u: El usuario duenio del archivo.
        g: El grupo asignado al archivo.
@@ -469,24 +465,24 @@ Muestra todos los procesos activos organizados en forma de **árbol jerárquico*
        r: read permite ver contenido archivo. Valor 4 octal.
        w: write permite mod o eliminar archivo. Valor 2 octal.
        x: permite ejecutar archivo si es un script/programa. Valor 1 octal.
-   6. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con los permisos en GNU/Linux:
+   15. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con los permisos en GNU/Linux:
        chmod: cambia permisos de acceso de un directorio.
        chown: cambia el uuario propietario de un directorio.
        chgrp: cambia el grupo asignado a un directorio.
 
-   7. Al utilizar el comando chmod generalmente se utiliza una notación octal asociada para definir permisos. ¿Qué significa esto? ¿A qué hace referencia cada valor?
+   16. Al utilizar el comando chmod generalmente se utiliza una notación octal asociada para definir permisos. ¿Qué significa esto? ¿A qué hace referencia cada valor?
        el modo octal sirve para definir proceso numericamente de 3 digitos, cada valor tiene asignado una accion y se puede sumar para obtener un digito del 0 al 7 que def combinacion de accesos.
 
-   8. ¿Existe la posibilidad de que algún usuario del sistema pueda acceder a determinado archivo para el cual no posee permisos? Indiquelo y realice las pruebas correspondientes. 
+   17. ¿Existe la posibilidad de que algún usuario del sistema pueda acceder a determinado archivo para el cual no posee permisos? Indiquelo y realice las pruebas correspondientes. 
        el superusuario puede acceder a cualquier archivo del sistema. Los demas solo a los que posean permisos.
 
-   9. Explique los conceptos de “full path name” (path absoluto) y “relative path name” (path relativo). De ejemplos claros de cada uno de ellos.  
+   18. Explique los conceptos de “full path name” (path absoluto) y “relative path name” (path relativo). De ejemplos claros de cada uno de ellos.  
        Full path name = ubicacion exacta de un archivo o directorio desde la raiz. es unica e invariable.
        relative path name = ruta especifica de un elemento partiendo de la ubi actual de trabajo. 
-   10. ¿Con qué comando puede determinar en qué directorio se encuentra actualmente? ¿Existe alguna forma de ingresar a su directorio personal sin necesidad de escribir todo el path completo? ¿Podría utilizar la misma idea para acceder a otros directorios? ¿Cómo? Explique con un ejemplo.
+   19. ¿Con qué comando puede determinar en qué directorio se encuentra actualmente? ¿Existe alguna forma de ingresar a su directorio personal sin necesidad de escribir todo el path completo? ¿Podría utilizar la misma idea para acceder a otros directorios? ¿Cómo? Explique con un ejemplo.
        Con pwd informa el dir actual. Cd para ingresar al dir perso solo sin args.
        `~` (para subdirectorios del home), `.` (directorio actual) o `..` (directorio superior/padre) sin necesidad de escribir la ruta absoluta completa desde `/`.
-   11. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con el uso del FileSystem:
+   20. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con el uso del FileSystem:
        umount: desmonta sistema de archivos o disp montado en arbol de dir
        du: muestra espacio ocupado en disco por arch y dir
        df: muestra info del espacio libre y ocupado en particiones y sist mont
@@ -498,7 +494,7 @@ Muestra todos los procesos activos organizados en forma de **árbol jerárquico*
        stat: muestra el estado y metadatos de un filesystem.
  
 
-12. Procesos:  
+21. Procesos:  
 
     1. ¿Qué significa que un proceso se está ejecutando en Background? ¿Y en Foreground?
        Foreground(primer plano): se ejecuta en la terminal directamente tomando el control bloqueando la linea de comandos hasta que el proceso termine.
