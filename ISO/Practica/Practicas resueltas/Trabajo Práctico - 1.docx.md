@@ -327,13 +327,13 @@ En GNU/Linux los archivos se identifican internamente por su **número de inodo*
 ## 11. Proceso de Arranque SystemV
 
 **a. Pasos del proceso de inicio desde el encendido hasta el login:**
-1. Se empieza a ejecutar el código del BIOS/UEFI[cite: 1].
-2. El BIOS ejecuta el POST para verificar componentes de hardware[cite: 1].
-3. El BIOS lee el sector de arranque primario (MBR)[cite: 1].
-4. Se carga el gestor de arranque mediante el MBC (*Master Boot Code*)[cite: 1].
-5. El *bootloader* transfiere a la memoria RAM el Kernel y el *initrd*[cite: 1].
-6. Se monta el *initrd* como sistema de archivos raíz temporal y se inicializan componentes esenciales[cite: 1].
-7. El Kernel ejecuta el proceso `init` (PID 1) y desmonta el *initrd*[cite: 1].
+1. Se empieza a ejecutar el código del BIOS/UEFI.
+2. El BIOS ejecuta el POST para verificar componentes de hardware.
+3. El BIOS lee el sector de arranque primario (MBR).
+4. Se carga el gestor de arranque mediante el MBC (*Master Boot Code*).
+5. El *bootloader* transfiere a la memoria RAM el Kernel y el *initrd*.
+6. Se monta el *initrd* como sistema de archivos raíz temporal y se inicializan componentes esenciales.
+7. El Kernel ejecuta el proceso `init` (PID 1) y desmonta el *initrd*.
 8. El proceso `init` lee el archivo de configuración `/etc/inittab`.
 9. Se ejecutan los scripts apuntados por el runlevel 1.
 10. La finalización del runlevel 1 indica el pasaje al runlevel por defecto.
