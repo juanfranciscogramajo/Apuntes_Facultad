@@ -79,7 +79,6 @@ Una **distribución (o distro)** es un conjunto empaquetado que integra el kerne
 * Planificación y sincronización de **procesos en la CPU**. 
 * Gestión de **controladores de dispositivos (drivers)** e **interrupciones de hardware**. 
 * Control del acceso al **sistema de archivos y redes**. 
-
 ### b. Múltiples kernels instalados:
 **Sí, es completamente posible.** Las distintas imágenes binarias del kernel coexisten dentro del directorio `/boot` (bajo nombres como `vmlinuz-<versión>`). Al iniciar la computadora, el gestor de arranque (como **GRUB**) permite al usuario seleccionar qué versión del kernel ejecutar. 
 

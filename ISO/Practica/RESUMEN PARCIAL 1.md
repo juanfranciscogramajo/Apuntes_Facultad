@@ -129,3 +129,6 @@ Sistemas de archivos
     - Por **UUID** (identificador único universal) en `/dev/disk/by-uuid/`.
         
     - Por **Labels** (etiquetas de volumen) en `/dev/disk/by-label/`.
+Particionado
+Destructivo
+no destructivo
