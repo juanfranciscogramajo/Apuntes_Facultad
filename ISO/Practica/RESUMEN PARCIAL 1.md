@@ -253,3 +253,16 @@ archivos son utilizados en GNU/Linux para guardar la información de usuarios:
   - Stack(s) (datos temporarios: parámetros , variables temporales y direcciones de retorno)
 - **Stacks:** se crean automaticamente y se ajusta en run-time, esta formado por *stack frames* pushed al llamar rutina y popped cuando retorna. El *Stack frame* tiene parametros de la rutina, datos para recuperar el stack frame anterior.
 - **Atributos**: 
+  - id proceso y id proceso padre
+  - id del usuario que disparo
+  - gp que lo disparo
+  - en multiusuario desde que terminal y quien lo ejecuto 
+- **Process Control Block(PCB):** Estructura de datos asociada al proceso, una por proceso, primero que se crea cuando se crea un proceso y ultimo que se borra cuando termina. Contiene la información asociada con cada proceso: 
+  - PID, PPID, etc 
+  - Valores de los registros de la CPU (PC, AC, etc) 
+  - Planificación (estado, prioridad, tiempo consumido, etc) 
+  - Ubicación (representación) en memoria 
+  - Accounting 
+  - Entrada salida (estado, pendientes, etc)
+- **Espacio de direcciones de un proceso:** conjunto de direcciones de memoria que ocupa el proceso(strack, text y datos), no incluye su pcb, depende el modo tiene acceso a disitnas direcciones.
+- 
