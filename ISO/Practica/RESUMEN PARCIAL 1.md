@@ -333,3 +333,4 @@ archivos son utilizados en GNU/Linux para guardar la información de usuarios:
 7. Proceso retornando desde el modo kernel al user. Pero el kernel se apropia, hace un context switch para darle la CPU a otro proceso. 
 8. Proceso recientemente creado y en transición: existe, pero aun no está listo para ejecutar, ni está dormido. 
 9. El proceso ejecutó la system call exit y está en estado zombie. Ya no existe más, pero se registran datos sobre su uso, codigo resultante del exit. Es el estado final.
+## Proceso 3 
