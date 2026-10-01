@@ -419,45 +419,46 @@ Muestra todos los procesos activos organizados en forma de **árbol jerárquico*
 ---
 
 ## 13. Usuarios
-*a. ¿Qué archivos son utilizados en GNU/Linux para guardar la información de usuarios?*
-* */etc/passwd:* Almacena los datos principales de las cuentas (nombre de usuario, UID, GID primario, comentario, ruta del directorio home y shell predeterminada)[cite: 1].
-* */etc/shadow:* Almacena de forma segura y cifrada las contraseñas de los usuarios y las políticas de expiración[cite: 1].
-* */etc/group:* Almacena la definición de los grupos del sistema y sus miembros asociados[cite: 1].
+a. ¿Qué archivos son utilizados en GNU/Linux para guardar la información de usuarios?
 
----
+* `/etc/passwd`: Almacena los datos principales de las cuentas (nombre de usuario, UID, GID primario, comentario, ruta del directorio home y shell predeterminada).
+* `/etc/shadow`: Almacena de forma segura y cifrada las contraseñas de los usuarios y las políticas de expiración.
+* `/etc/group`: Almacena la definición de los grupos del sistema y sus miembros asociados.
 
-*b. ¿A qué hacen referencia las siglas UID y GID? ¿Pueden coexistir UIDs iguales?*
-* *UID (*User Identifier):** Identificador numérico único asignado a cada usuario para gestionar permisos y accesos[cite: 1].
-* *GID (*Group Identifier):** Identificador numérico asignado a cada grupo para la gestión colectiva de privilegios[cite: 1].
-* *Coexistencia de UIDs:* Sí, técnicamente pueden coexistir si se configuran de forma manual en /etc/passwd[cite: 1]. Sin embargo, representa una mala práctica de seguridad porque para el Kernel ambos nombres compartirán exactamente los mismos permisos y privilegios sobre los recursos[cite: 1].
+b. ¿A qué hacen referencia las siglas UID y GID? ¿Pueden coexistir UIDs iguales?
 
----
+* **UID (User Identifier):** Identificador numérico único asignado a cada usuario para gestionar permisos y accesos.
+* **GID (Group Identifier):** Identificador numérico asignado a cada grupo para la gestión colectiva de privilegios.
+* **Coexistencia de UIDs:** Sí, técnicamente pueden coexistir si se configuran de forma manual en `/etc/passwd`. Sin embargo, representa una mala práctica de seguridad porque para el Kernel ambos nombres compartirán exactamente los mismos permisos y privilegios sobre los recursos.
 
-*c. ¿Qué es el usuario root? ¿Puede existir más de un usuario con este perfil? ¿Cuál es su UID?*
-* *Definición:* Es el superusuario y administrador global con privilegios absolutos sobre el sistema operativo[cite: 1].
-* *UID:* Su identificador numérico siempre es *0*[cite: 1].
-* *Múltiples perfiles:* Sí, es posible crear otra cuenta con facultades totales asignándole manualmente el *UID 0* en el archivo /etc/passwd[cite: 1].
+c. ¿Qué es el usuario root? ¿Puede existir más de un usuario con este perfil? ¿Cuál es su UID?
 
----
+* **Definición:** Es el superusuario y administrador global con privilegios absolutos sobre el sistema operativo.
+* **UID:** Su identificador numérico siempre es 0.
+* **Múltiples perfiles:** Sí, es posible crear otra cuenta con facultades totales asignándole manualmente el UID 0 en el archivo `/etc/passwd`.
 
+d. Ejercicio práctico (creación, asignación, archivo y eliminación):
+Crear el grupo informatica:
+bash
+sudo groupadd informatica
 *d. Ejercicio práctico (creación, asignación, archivo y eliminación):*
-1. Crear el grupo informatica:
+Crear el grupo informatica:
    bash
    sudo groupadd informatica
-2. Agregue un nuevo usuario llamado isocso a su instalación de GNU/Linux, especifique que su home sea creada en /home/isocso, y hágalo miembro del grupo informatica (si no existe, deberá crearlo). Luego, sin iniciar sesión como este usuario cree un archivo en su home personal que le pertenezca. Luego de todo esto, borre el usuario y verifique que no queden registros de él en los archivos de información de los usuarios y grupos.
-3. Investigue la funcionalidad y parámetros de los siguientes comandos:
-      useradd: añadir un usuario, modifica $cat/etc/passwd
-       adduser: crear cuentas de usuario. -m direc home, -d <ruta> def home, -g <grupo> asigna gp primario, -s <shell> def shell x defecto
-       groupadd: crea nuevo grupo en el sistema. -g <GID> asigna id, -r crea gp del sist.
-       usermod: mod prop de una cuenta de usuario existente
-       who: muestra info sobre users con sesion activa en sist.
-       userdel: elimina cuenta de usuario del sist. -r ademas borra home y correo, -f elimina hasta con sesion iniciada
-       groupdel: elimina gp existente.
-       su: permite alternal la sesion hacia otro usuario o super
-       passwd: permite cambiar la contra de un usuario.
+Agregue un nuevo usuario llamado isocso a su instalación de GNU/Linux, especifique que su home sea creada en /home/isocso, y hágalo miembro del grupo informatica (si no existe, deberá crearlo). Luego, sin iniciar sesión como este usuario cree un archivo en su home personal que le pertenezca. Luego de todo esto, borre el usuario y verifique que no queden registros de él en los archivos de información de los usuarios y grupos.
+Investigue la funcionalidad y parámetros de los siguientes comandos:
+useradd: añadir un usuario, modifica $cat/etc/passwd
+adduser: crear cuentas de usuario. -m direc home, -d <ruta> def home, -g <grupo> asigna gp primario, -s <shell> def shell x defecto
+groupadd: crea nuevo grupo en el sistema. -g <GID> asigna id, -r crea gp del sist.
+usermod: mod prop de una cuenta de usuario existente
+who: muestra info sobre users con sesion activa en sist.
+userdel: elimina cuenta de usuario del sist. -r ademas borra home y correo, -f elimina hasta con sesion iniciada
+groupdel: elimina gp existente.
+su: permite alternal la sesion hacia otro usuario o super
+passwd: permite cambiar la contra de un usuario.
 
 ## 14. FileSystem
-   14. ¿Cómo son definidos los permisos sobre archivos en un sistema GNU/Linux?  
+   1. ¿Cómo son definidos los permisos sobre archivos en un sistema GNU/Linux?  
        Permisos de usuarios:
        u: El usuario duenio del archivo.
        g: El grupo asignado al archivo.
@@ -466,24 +467,24 @@ Muestra todos los procesos activos organizados en forma de **árbol jerárquico*
        r: read permite ver contenido archivo. Valor 4 octal.
        w: write permite mod o eliminar archivo. Valor 2 octal.
        x: permite ejecutar archivo si es un script/programa. Valor 1 octal.
-   15. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con los permisos en GNU/Linux:
+   2. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con los permisos en GNU/Linux:
        chmod: cambia permisos de acceso de un directorio.
        chown: cambia el uuario propietario de un directorio.
        chgrp: cambia el grupo asignado a un directorio.
 
-   16. Al utilizar el comando chmod generalmente se utiliza una notación octal asociada para definir permisos. ¿Qué significa esto? ¿A qué hace referencia cada valor?
+   3. Al utilizar el comando chmod generalmente se utiliza una notación octal asociada para definir permisos. ¿Qué significa esto? ¿A qué hace referencia cada valor?
        el modo octal sirve para definir proceso numericamente de 3 digitos, cada valor tiene asignado una accion y se puede sumar para obtener un digito del 0 al 7 que def combinacion de accesos.
 
-   17. ¿Existe la posibilidad de que algún usuario del sistema pueda acceder a determinado archivo para el cual no posee permisos? Indiquelo y realice las pruebas correspondientes. 
+   4. ¿Existe la posibilidad de que algún usuario del sistema pueda acceder a determinado archivo para el cual no posee permisos? Indiquelo y realice las pruebas correspondientes. 
        el superusuario puede acceder a cualquier archivo del sistema. Los demas solo a los que posean permisos.
 
-   18. Explique los conceptos de “full path name” (path absoluto) y “relative path name” (path relativo). De ejemplos claros de cada uno de ellos.  
+   5. Explique los conceptos de “full path name” (path absoluto) y “relative path name” (path relativo). De ejemplos claros de cada uno de ellos.  
        Full path name = ubicacion exacta de un archivo o directorio desde la raiz. es unica e invariable.
        relative path name = ruta especifica de un elemento partiendo de la ubi actual de trabajo. 
-   19. ¿Con qué comando puede determinar en qué directorio se encuentra actualmente? ¿Existe alguna forma de ingresar a su directorio personal sin necesidad de escribir todo el path completo? ¿Podría utilizar la misma idea para acceder a otros directorios? ¿Cómo? Explique con un ejemplo.
+   6. ¿Con qué comando puede determinar en qué directorio se encuentra actualmente? ¿Existe alguna forma de ingresar a su directorio personal sin necesidad de escribir todo el path completo? ¿Podría utilizar la misma idea para acceder a otros directorios? ¿Cómo? Explique con un ejemplo.
        Con pwd informa el dir actual. Cd para ingresar al dir perso solo sin args.
        `~` (para subdirectorios del home), `.` (directorio actual) o `..` (directorio superior/padre) sin necesidad de escribir la ruta absoluta completa desde `/`.
-   20. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con el uso del FileSystem:
+   7. Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con el uso del FileSystem:
        umount: desmonta sistema de archivos o disp montado en arbol de dir
        du: muestra espacio ocupado en disco por arch y dir
        df: muestra info del espacio libre y ocupado en particiones y sist mont
@@ -495,7 +496,7 @@ Muestra todos los procesos activos organizados en forma de **árbol jerárquico*
        stat: muestra el estado y metadatos de un filesystem.
  
 
-21. Procesos:  
+8. Procesos:  
 
     1. ¿Qué significa que un proceso se está ejecutando en Background? ¿Y en Foreground?
        Foreground(primer plano): se ejecuta en la terminal directamente tomando el control bloqueando la linea de comandos hasta que el proceso termine.
@@ -679,8 +680,6 @@ iii. 	gzip  	v. 	wc  iv. 	zgrep
 
 17. Cree una estructura desde el directorio /home que incluya varios directorios, subdirectorios y archivos, según el esquema siguiente.  
 
-![][image1] 
-
 Asuma que “usuario” indica cuál es su nombre de usuario. Además deberá tener en cuenta que dirX hace referencia a directorios y fX hace referencia a archivos. Utilizando la estructura de directorios anteriormente creada, indique qué comandos son necesarios para realizar las siguientes acciones:  
 
 1. Mueva el archivo "f3” al  directorio de trabajo /home/usuario.  
@@ -730,11 +729,3 @@ Asuma que “usuario” indica cuál es su nombre de usuario. Además deberá te
     6. Elimine el directorio creado en a), *logs*.  
 
     7. Desempaquete los archivos creados en c y d en 2 directorios diferentes. 
-
- 
-
- 
-
- de 10 
-
-[image1]: <data:image/png;base64,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>
