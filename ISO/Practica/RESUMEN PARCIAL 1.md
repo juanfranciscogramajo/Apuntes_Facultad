@@ -148,7 +148,12 @@ Sistemas de archivos
     - **Snapshot**: almacena el estado de un conjunto de unidades para que pueda ser restablecido más tarde (.snapshot). 
     - Las **units** pueden tener dos estados → active o inactive.
     - **systemctl** comando para consultar y administrar el estado del sistema y sus *units*. Permite iniciar (`start`), detener (`stop`), reiniciar (`restart`), habilitar en el arranque (`enable`), deshabilitar (`disable`) y comprobar el estado (`status`) de los servicios.
-    - **cgroups:** permite organizar un gp de rp
+    - **cgroups:** permite organizar un gp de procesos en forma jerarquica, procesos que esten relacionados. 
+    - **fstab:** define particiones se montan al arranque.
+      - user: cualquier usuario puede montar la partición. 
+      - auto: monta la partición al inicio. 
+      - ro: read only
+      - rw: read and write.
     ![[Pasted image 20261001144807.png]]
 - **EFI (Extensible Firmware Interface):** Es un estándar propiedad de Intel diseñado para la comunicación entre el sistema operativo y el firmware. Su objetivo es sustituir al viejo MBR utilizando el esquema GPT, solucionando así limitaciones históricas como la restricción en la cantidad máxima de particiones.
 - **GPT (GUID Partition Table):** Es el formato de tabla de particiones que forma parte de EFI, caracterizado por:
@@ -239,3 +244,6 @@ archivos son utilizados en GNU/Linux para guardar la información de usuarios:
 * **`cp`:** Copia archivos o directorios[cite: 1, 3]. Admite `-r` para realizar copias recursivas de carpetas completas[cite: 1, 3].
 * **`mv`:** Mueve o renombra ficheros y directorios[cite: 1, 3].
 * **`find`:** Busca archivos en tiempo real recorriendo el árbol de directorios según criterios como `-name` (nombre) o `-type` (tipo)[cite: 1, 3].
+## Procesos 1
+- **Proceso:** programa en ejecucion, es dinamico, tiene PC, existe desde que se solicita hasta que termina ejecutar
+- **Programa:** es estatico 
