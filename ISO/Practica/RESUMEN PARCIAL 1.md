@@ -110,6 +110,19 @@ Sistemas de archivos
 - BIOS: inicia el HW y ejecuta MBC (Master Boot Code) que es codigo.
 - **MBR (Master Boot Record)** es el primer sector físico del disco duro (Cilindro 0, Cabeza 0, Sector 1) y ocupa 512 bytes. Contiene el MBC (446 bytes), la **Tabla de Particiones** (64 bytes) y una firma de 2 bytes.
 - **Gestor de Arranque (Bootloader):** El MBC lanza el bootloader (como **GRUB**), cuya función es cargar en memoria la imagen del Kernel del sistema operativo para ejecutarlo. Debido a la limitación de 446 bytes en el MBR, gestores como Grub Legacy debían instalarse en múltiples etapas (fase 1 en el MBR, fase 1.5 en el espacio vacío adyacente o _MBR gap_, y fase 2 para la interfaz y carga final). Grub 2, la versión moderna, simplifica estas etapas y soporta más configuraciones.
+- **SysV init:**
+  1. Se empieza a ejecutar el código del BIOS/UEFI.
+  2. El BIOS ejecuta el POST para verificar componentes de hardware.
+  3. El BIOS lee el sector de arranque primario (MBR).
+  4. Se carga el gestor de arranque mediante el MBC (*Master Boot Code*).
+  5. El *bootloader* transfiere a la memoria RAM el Kernel y el *initrd*.
+  6. Se monta el *initrd* como sistema de archivos raíz temporal y se inicializan componentes esenciales.
+  7. El Kernel ejecuta el proceso `init` (PID 1) y desmonta el *initrd*.
+  8. El proceso `init` lee el archivo de configuración `/etc/inittab`.
+  9. Se ejecutan los scripts apuntados por el runlevel 1.
+  10. La finalización del runlevel 1 indica el pasaje al runlevel por defecto.
+  11. Se ejecutan los scripts del runlevel por defecto.
+  12. El sistema queda listo para operar y presenta el prompt de login.
 - **EFI (Extensible Firmware Interface):** Es un estándar propiedad de Intel diseñado para la comunicación entre el sistema operativo y el firmware. Su objetivo es sustituir al viejo MBR utilizando el esquema GPT, solucionando así limitaciones históricas como la restricción en la cantidad máxima de particiones.
 - **GPT (GUID Partition Table):** Es el formato de tabla de particiones que forma parte de EFI, caracterizado por:
     
@@ -199,5 +212,3 @@ archivos son utilizados en GNU/Linux para guardar la información de usuarios:
 * **`cp`:** Copia archivos o directorios[cite: 1, 3]. Admite `-r` para realizar copias recursivas de carpetas completas[cite: 1, 3].
 * **`mv`:** Mueve o renombra ficheros y directorios[cite: 1, 3].
 * **`find`:** Busca archivos en tiempo real recorriendo el árbol de directorios según criterios como `-name` (nombre) o `-type` (tipo)[cite: 1, 3].
-### Bootloader:
-Programa que cara e inicia el SO,
