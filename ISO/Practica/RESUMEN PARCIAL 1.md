@@ -275,3 +275,4 @@ archivos son utilizados en GNU/Linux para guardar la información de usuarios:
     El Kernel no actúa de forma aislada, sino que se ejecuta en el mismo contexto del proceso que está activo en ese momento.
     Para mantener la seguridad y la separación lógica, cada proceso posee dos _stacks_ independientes: uno para operar de manera estándar (modo usuario) y otro reservado para ejecutar rutinas privilegiadas (modo kernel).
     Las llamadas al sistema o interrupciones se gestionan realizando un "cambio de modo" en lugar de un cambio de contexto completo. El procesador eleva sus privilegios para ejecutar la porción del Kernel compartida dentro de ese mismo proceso, lo cual consume menos recursos y mejora notablemente la performance general del sistema.
+## Procesos 2
