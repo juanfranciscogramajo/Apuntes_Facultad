@@ -60,6 +60,12 @@ Las instrucciones de E/S están catalogadas como privilegiadas y solo pueden eje
 - `touch` (cambia fechas de acceso y modificación) 
 - `chmod` (modifica los permisos de lectura, escritura o ejecución) 
 - `chown` o `chgrp` (cambian el propietario o el grupo del archivo).
+- `ls` (listar) 
+- `cd` (cambiar directorio)
+- `cp` (copiar)
+- `rm` (borrar)
+- `chmod` (cambiar permisos de lectura, escritura y ejecución)
+- `chown` (cambiar propietario).
 
 **Mantenimiento de Información del Sistema**
 Permiten consultar y alterar parámetros de la configuración operativa, gestionar tiempos o manipular señales de interrupción del sistema.
@@ -77,3 +83,12 @@ Comunicaciones puras: Llamadas como `pipe()` (crea una tubería de comunicación
 Gestionan el hardware periférico y solicitan acceso exclusivo o de lectura/escritura a recursos físicos como impresoras, discos extraíbles o pantallas.
 
 - `ioctl()` (input/output control en UNIX), que permite manipular parámetros muy específicos del hardware que no se ajustan a una simple lectura o escritura, como expulsar una bandeja de CD o configurar la velocidad de un puerto serie.
+## Explicación practica 1 
+Sistemas de archivos  
+- Directorios más importantes según FHS (Filesystem Hierarchy Standard) 
+- / Tope de la estructura de directorios. Es como el C:\ • /home Se almacenan archivos de usuarios (Mis documentos) 
+- /var Información que varía de tamaño (logs, BD, spools) 
+- /etc Archivos de configuración 
+- /bin Archivos binarios y ejecutables 
+- /dev Enlace a dispositivos 
+- /usr Aplicaciones de usuarios
