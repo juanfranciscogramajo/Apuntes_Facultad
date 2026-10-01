@@ -265,4 +265,4 @@ archivos son utilizados en GNU/Linux para guardar la información de usuarios:
   - Accounting 
   - Entrada salida (estado, pendientes, etc)
 - **Espacio de direcciones de un proceso:** conjunto de direcciones de memoria que ocupa el proceso(strack, text y datos), no incluye su pcb, depende el modo tiene acceso a disitnas direcciones.
-- 
+- Contexto de un proceso: incluye info que el so necesita para admin proceso y la cpu necesita para ejecutarlo, sonm 
