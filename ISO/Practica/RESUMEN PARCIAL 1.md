@@ -381,3 +381,11 @@ El documento ilustra estos conceptos con el funcionamiento clásico de una conso
 - **Round Robin (RR):** Es un algoritmo apropiativo basado en un reloj que asigna un bloque de tiempo fijo o _Quantum_ (Q) a cada proceso. Si el proceso no finaliza en ese tiempo, es expulsado de la CPU y reubicado al final de la cola. Si el _Quantum_ es muy pequeño, genera una alta sobrecarga por cambios de contexto. La variante más utilizada es el "Timer Variable", donde el contador se reinicia a Q cada vez que el proceso asume el control del procesador.
     
 - **Prioridades:** Cada proceso recibe un valor de prioridad (donde el número menor indica mayor prioridad) y se despacha al proceso con la máxima prioridad. Existe una cola de listos por cada nivel. Para evitar la inanición de los procesos de baja prioridad, se aplica una técnica de envejecimiento (_Aging_) o penalización que modifica dinámicamente la prioridad durante el ciclo de vida del proceso
+### Colas Multinivel 
+- Los planificadores modernos combinan los algoritmos anteriores dividiendo la cola de listos en múltiples sub-colas según el tipo de proceso (procesos de sistema, interactivos, batch, etc.).
+
+- Cuentan con un **planificador horizontal** (cada cola corre su propio algoritmo, como RR o FIFO) y un **planificador vertical** (decide a qué cola darle prioridad).
+    
+- Poseen **retroalimentación**, permitiendo que un proceso baje o suba de cola según su comportamiento.
+    
+- El documento expone un ejemplo con tres colas (Q0 con RR q=8, Q1 con RR q=16, y Q2 con FCFS) diseñado para que los procesos largos vayan cayendo hacia las colas de mayor _quantum_, beneficiando a los _CPU Bound_. En este escenario específico, se advierte que puede existir inanición para los procesos _I/O Bound_ si al sistema ingresan constantemente procesos ligados a la CPU.
