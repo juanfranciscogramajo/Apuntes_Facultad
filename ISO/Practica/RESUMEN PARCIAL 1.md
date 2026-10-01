@@ -276,3 +276,21 @@ archivos son utilizados en GNU/Linux para guardar la información de usuarios:
     Para mantener la seguridad y la separación lógica, cada proceso posee dos _stacks_ independientes: uno para operar de manera estándar (modo usuario) y otro reservado para ejecutar rutinas privilegiadas (modo kernel).
     Las llamadas al sistema o interrupciones se gestionan realizando un "cambio de modo" en lugar de un cambio de contexto completo. El procesador eleva sus privilegios para ejecutar la porción del Kernel compartida dentro de ese mismo proceso, lo cual consume menos recursos y mejora notablemente la performance general del sistema.
 ## Procesos 2
+### Estados de un proceso 
+- **Nuevo:** El proceso es creado por un proceso padre, se instancian sus estructuras internas y aguarda en la cola para ser cargado en la memoria.
+    
+- **Listo:** El proceso se encuentra cargado en la memoria principal y únicamente espera que el planificador le asigne la CPU.
+    
+- **En ejecución:** El proceso posee el control del procesador hasta que agota su _quantum_ de tiempo, finaliza sus tareas o requiere realizar una operación de Entrada/Salida (E/S).
+    
+- **En espera:** El proceso se suspende y libera la CPU porque aguarda la ocurrencia de un evento externo, como la finalización de una E/S o la recepción de una señal. Una vez cumplido el evento, retorna inmediatamente al estado "listo".
+- **Terminado**().
+### Estructuras de Colas
+
+- El Sistema Operativo organiza la planificación enlazando los Bloques de Control de Proceso (PCB) dentro de diferentes colas lógicas.
+    
+- **Cola de trabajos:** Agrupa a todas las PCB de los procesos que existen en el sistema.
+    
+- **Cola de procesos listos (_Ready queue_):** Contiene a los procesos que ya residen en la memoria principal y están en condiciones inmediatas de competir por el uso de la CPU.
+    
+- **Colas de dispositivos:** Agrupan a los procesos que han pasado al estado de espera y aguardan la disponibilidad de un periférico específico de Entrada/Salida.
