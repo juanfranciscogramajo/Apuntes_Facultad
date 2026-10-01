@@ -108,12 +108,15 @@ Sistemas de archivos
     - Ofrecer redundancia y mayor seguridad al guardar copias exactas de la cabecera y la tabla tanto al principio como al final del disco.
 ## Explicacion practica 1.2
 **Configuración de discos IDE**
-
 - los roles _Master_ y _Slave_.
-    
 -  `/dev/hda` (Master 1° bus), 
 - `/dev/hdb` (Slave 1° bus
 -  `/dev/hdc` (Master 2° bus) 
 - `/dev/hdd` (Slave 2° bus).
     
-- Introduce la numeración de particiones: del 1 al 4 para particiones primarias y del 5 en adelante para lógicas
+- Introduce la numeración de particiones: del 1 al 4 para particiones primarias y del 5 en adelante para lógicas.
+**Configuración de discos SCSI**
+- Describe la interfaz SCSI basada en LUN.
+- Identificación de dispositivos según bus: `/dev/sda`, `/dev/sdb`, `/dev/sdc`, etc.
+- Especifica que las particiones primarias van de la 1 a la 4 (únicas que pueden marcarse como activas/booteables) y las particiones extendidas alojan lógicas a partir del número 5.
+- Los discos sata usan misma nomenclatura
