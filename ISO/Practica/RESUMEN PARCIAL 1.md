@@ -137,8 +137,19 @@ Sistemas de archivos
   * `4`: No utilizado / reservado para personalizaciones.
   * `5`: Modo multiusuario con entorno gráfico (*X11*).
   * `6`: *Reboot* (reinicio).
-- **SystemD:**
-  
+- **SystemD:** administrador de sistema y gestor de servicios Mejora el paralelismo de arranque.
+  - El demonio systemd reemplaza al proceso init y es el que tiene PID 1.
+  - Los runlevels son reemplazados por targets. 
+  - No utiliza el archivo de configuración /etc/inittab.
+  - Las unidades de trabajo son denominadas units y tienen distintos tipos: 
+    - **Service**: controla un servicio particular (.service). 
+    - **Socket**: encapsula IPC, un socket del sistema o file system FIFO (.socket) → socket-based activation. 
+    - **Target**: agrupa units o establece puntos de sincronización durante el arranque (.target) → dependencia de unidades. 
+    - **Snapshot**: almacena el estado de un conjunto de unidades para que pueda ser restablecido más tarde (.snapshot). 
+    - Las **units** pueden tener dos estados → active o inactive.
+    - **systemctl** comando para consultar y administrar el estado del sistema y sus *units*. Permite iniciar (`start`), detener (`stop`), reiniciar (`restart`), habilitar en el arranque (`enable`), deshabilitar (`disable`) y comprobar el estado (`status`) de los servicios.
+    - **cgroups:** permite organizar un gp de rp
+    ![[Pasted image 20261001144807.png]]
 - **EFI (Extensible Firmware Interface):** Es un estándar propiedad de Intel diseñado para la comunicación entre el sistema operativo y el firmware. Su objetivo es sustituir al viejo MBR utilizando el esquema GPT, solucionando así limitaciones históricas como la restricción en la cantidad máxima de particiones.
 - **GPT (GUID Partition Table):** Es el formato de tabla de particiones que forma parte de EFI, caracterizado por:
     
