@@ -442,7 +442,7 @@ Muestra todos los procesos activos organizados en forma de **árbol jerárquico*
 
 *d. Ejercicio práctico (creación, asignación, archivo y eliminación):*
 1. Crear el grupo informatica:
-   {bash
+   bash
    sudo groupadd informatica
 2. Agregue un nuevo usuario llamado isocso a su instalación de GNU/Linux, especifique que su home sea creada en /home/isocso, y hágalo miembro del grupo informatica (si no existe, deberá crearlo). Luego, sin iniciar sesión como este usuario cree un archivo en su home personal que le pertenezca. Luego de todo esto, borre el usuario y verifique que no queden registros de él en los archivos de información de los usuarios y grupos.
 3. Investigue la funcionalidad y parámetros de los siguientes comandos:
@@ -455,6 +455,7 @@ Muestra todos los procesos activos organizados en forma de **árbol jerárquico*
        groupdel: elimina gp existente.
        su: permite alternal la sesion hacia otro usuario o super
        passwd: permite cambiar la contra de un usuario.
+
 ## 14. FileSystem
    14. ¿Cómo son definidos los permisos sobre archivos en un sistema GNU/Linux?  
        Permisos de usuarios:
