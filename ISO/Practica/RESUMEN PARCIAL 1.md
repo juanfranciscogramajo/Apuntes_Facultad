@@ -176,10 +176,26 @@ archivos son utilizados en GNU/Linux para guardar la información de usuarios:
 * **UID (*User Identifier*):** Identificador numérico único asignado a cada usuario para gestionar permisos y accesos
 * **GID (*Group Identifier*):** Identificador numérico asignado a cada grupo para la gestión colectiva de privilegios
 * **Coexistencia de UIDs:** Sí, técnicamente pueden coexistir si se configuran de forma manual en `/etc/passwd`[cite: 1]. Sin embargo, representa una mala práctica de seguridad porque para el Kernel ambos nombres compartirán exactamente los mismos permisos y privilegios sobre los recursos
-* usuario root: Es el superusuario y administrador global con privilegios absolutos sobre el sistema operativo[cite: 1].
+* **usuario root**: Es el superusuario y administrador global con privilegios absolutos sobre el sistema operativo[cite: 1].
 * **UID:** Su identificador numérico siempre es **`0`**[cite: 1].
 * **Múltiples perfiles:** Sí, es posible crear otra cuenta con facultades totales asignándole manualmente el **UID 0** en el archivo `/etc/passwd`[cite: 1].
-
----
-
-
+### Permisos:
+- u: El usuario dueño del archivo.
+- g: El grupo asignado al archivo.
+- o: El resto de los usuarios del sistema.
+- Permisos básicos:
+- r: read permite ver contenido archivo. Valor 4 octal.
+- w: write permite mod o eliminar archivo. Valor 2 octal.
+- x: permite ejecutar archivo si es un script/programa. Valor 1 octal.
+### Comandos del entorno:
+- **`cd`:** Cambia el directorio de trabajo actual.
+* **`mkdir`:** Crea nuevos directorios dentro del sistema de archivos.
+* **`rmdir`:** Elimina directorios exclusivamente cuando se encuentran vacíos.
+* **`ln`:** Crea enlaces hacia archivos; por defecto genera enlaces duros y con el parámetro `-s` crea enlaces simbólicos.
+* **`tail`:** Muestra las últimas líneas de un archivo (10 por defecto)[cite: 1, 3]. Admite `-n` para especificar la cantidad y `-f` para monitorizarlo en tiempo real[cite: 1, 3].
+* **`locate`:** Realiza búsquedas rápidas de archivos a través de una base de datos indexada[cite: 1].
+* **`ls`:** Lista los ficheros y carpetas de un directorio[cite: 1, 3]. Parámetros comunes: `-l` (detallado) y `-a` (incluye ocultos)[cite: 1, 3].
+* **`pwd`:** Imprime en pantalla la ruta absoluta del directorio donde se encuentra posicionado el usuario[cite: 1, 3].
+* **`cp`:** Copia archivos o directorios[cite: 1, 3]. Admite `-r` para realizar copias recursivas de carpetas completas[cite: 1, 3].
+* **`mv`:** Mueve o renombra ficheros y directorios[cite: 1, 3].
+* **`find`:** Busca archivos en tiempo real recorriendo el árbol de directorios según criterios como `-name` (nombre) o `-type` (tipo)[cite: 1, 3].
