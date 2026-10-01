@@ -34,3 +34,18 @@ El hardware permite definir los límites del espacio de direcciones de un proces
     
 ### Protección de E/S: 
 Las instrucciones de E/S están catalogadas como privilegiadas y solo pueden ejecutarse en Modo Kernel.
+
+### System Calls : 
+**Definición:** Son la interfaz y el mecanismo por el cual los programas en Modo Usuario acceden a los servicios del SO.
+**Ejecución:** Los parámetros de la llamada se pasan mediante registros, bloques de memoria o la pila (stack). Al invocar la llamada (ej. `read()`), se genera un _trap_ hacia el kernel. El sistema pasa a Modo Supervisor, invoca al manejador de la System Call (_Sys call handler_), ejecuta la función privilegiada y luego retorna el control al programa de usuario.
+**Categorías:** Se dividen en llamadas de control de procesos, manejo de archivos, manejo de dispositivos, mantenimiento de información y comunicaciones.
+**Control de Procesos**
+Se encargan de administrar el ciclo de vida, la ejecución y las prioridades de los procesos y sus hilos.
+    
+    - `fork()`: Crea un nuevo proceso hijo que es una copia idéntica del proceso padre.
+        
+    - `execve()`: Reemplaza la imagen central del proceso por un nuevo programa ejecutable.
+        
+    - `waitpid()`: Pausa la ejecución del programa a la espera de que un proceso hijo termine.
+        
+    - `exit()`: Termina la ejecución del proceso y devuelve un código de estado.
