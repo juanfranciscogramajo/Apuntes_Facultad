@@ -334,3 +334,14 @@ archivos son utilizados en GNU/Linux para guardar la información de usuarios:
 8. Proceso recientemente creado y en transición: existe, pero aun no está listo para ejecutar, ni está dormido. 
 9. El proceso ejecutó la system call exit y está en estado zombie. Ya no existe más, pero se registran datos sobre su uso, codigo resultante del exit. Es el estado final.
 ## Proceso 3 
+- **Creacion de procesos:** un proceso es creado por otro proceso, un proceso padre tiene uno o mas hijos.
+  ![[Pasted image 20261001194758.png]]
+- Las actividades internas del Sistema Operativo al crear un proceso incluyen: crear su Bloque de Control de Proceso (PCB), asignarle un identificador único (PID), alojar la memoria necesaria para sus regiones (Stack, Text y Datos) y preparar las estructuras de datos.
+
+- Relación entre Padre e Hijo: **Ejecución:** Una vez creado el hijo, el proceso padre puede optar por seguir ejecutándose de manera simultánea (concurrente) al hijo, o puede pausar su ejecución para esperar a que el hijo termine su tarea.
+    
+- **Espacio de direcciones:**
+    
+    - En **UNIX**, el proceso hijo nace como un **duplicado exacto** del proceso padre, copiando su espacio de direcciones de memoria.
+        
+    - En **Windows**, se crea un espacio de direcciones completamente vacío y directamente se le carga el programa que debe ejecutar.
