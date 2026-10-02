@@ -429,6 +429,7 @@ Dispositivo de Hardware que mapea direcciones virtuales a físicas, es parte del
 - **Paginación:**
     - Divide la memoria física en bloques de tamaño fijo llamados **marcos** (_frames_) y la memoria lógica del proceso en bloques del mismo tamaño llamados **páginas**.
     - El SO utiliza una **Tabla de Páginas** para mapear qué página lógica está cargada en qué marco físico.
+    - Tamaño página = tamaño marco = 512 bytes (generalmente).
     - Es completamente transparente al programador y **elimina la fragmentación externa**, aunque puede presentar una leve fragmentación interna en la última página del proceso.
 - **Segmentación Paginada:**
     - Combina las ventajas de ambos métodos. El programa se divide de forma visible y modular en segmentos (para protección y compartición), pero internamente, el SO divide cada segmento en páginas de tamaño fijo (para evitar la fragmentación externa en la RAM).
