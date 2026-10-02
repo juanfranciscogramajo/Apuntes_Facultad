@@ -417,5 +417,19 @@ El SO debe:
 Dispositivo de Hardware que mapea direcciones virtuales a físicas, es parte del Procesador,         Re-programar el MMU es una operación privilegiada, solo puede ser realizada en Kernel Mode.    El valor en el “registro de realocación” es sumado a cada dirección generada por el proceso de usuario al momento de acceder a la memoria. Los procesos nunca usan direcciones físicas
 ### Mecanismos de asignación de memoria
 - **Particiones Fijas:** Dividían la memoria en bloques de tamaño predefinido. Generaban **fragmentación interna**, desperdiciado dentro de la partición cuando el proceso asignado era más pequeño que el bloque. Cada proceso se coloca segun un criterio (First fit, Best fit, Worst fit, next fit)
-    
 - **Particiones Dinámicas:** Creaban bloques del tamaño exacto requerido por el proceso. Generaban **fragmentación externa**, dejando múltiples "huecos" libres intercalados en la memoria a medida que los procesos terminaban, lo cual requería costosas rutinas de compactación para unirlos.
+- **Segmentacion:**
+  Divide lógicamente el programa según la **visión del usuario/programador** en "segmentos" de tamaños variables (programa principal, subrutinas, pila, tablas de símbolos).La dirección lógica se compone de un _selector de segmento_ y un _desplazamiento_ (offset).
+  Tabla de Segmentos 
+  Permite mapear la dirección lógica en física. Cada entrada contiene:  
+  - Base: Dirección física de comienzo del segmento 
+  - Limit: Longitud del Segmento 
+  - Segment-table base register (STBR): apunta a la ubicación de la tabla de segmentos. 
+  - Segment-table length register (STLR) : cantidad de segmentos de un programa
+- **Paginación:**
+    - Divide la memoria física en bloques de tamaño fijo llamados **marcos** (_frames_) y la memoria lógica del proceso en bloques del mismo tamaño llamados **páginas**.
+    - El SO utiliza una **Tabla de Páginas** para mapear qué página lógica está cargada en qué marco físico.
+    - Es completamente transparente al programador y **elimina la fragmentación externa**, aunque puede presentar una leve fragmentación interna en la última página del proceso.
+- **Segmentación Paginada:**
+    - Combina las ventajas de ambos métodos. El programa se divide de forma visible y modular en segmentos (para protección y compartición), pero internamente, el SO divide cada segmento en páginas de tamaño fijo (para evitar la fragmentación externa en la RAM).
+    - Es el modelo implementado en arquitecturas reales, como la familia Intel x386, utilizando complejas tablas de directorios y páginas.
