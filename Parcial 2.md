@@ -37,4 +37,6 @@ No corresponde a ninguna pagina, por lo tanto no se puede calcular la dir fisica
 ## 4 
 a) 2^18
 b) 2^14 = 16384 bytes
-c)
+c)2^18 x 2^2 = 2^20 byes
+d)13961 / 2^14 = 0,8~ 1 pagina
+e) 62541 / 16384 = 3,81 ~ 4 paginas, (4x 16384)- 62541 = 2995 bytes.
