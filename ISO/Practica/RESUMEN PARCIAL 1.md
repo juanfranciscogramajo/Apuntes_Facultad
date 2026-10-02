@@ -399,4 +399,15 @@ El SO debe:
 - Brindar seguridad entre los procesos para que unos no accedan a secciones privadas de otros 
 - Brindar la posibilidad de acceso compartido a determinadas secciones de la memoria (librerías, código en común, etc.) 
 - Garantizar la performance del sistema
-### Administracion de memoria:
+### Reubicación 
+- El programador no debe ocuparse de conocer donde será colocado en la Memoria RAM
+- Mientras un proceso se ejecuta, puede ser sacado y traído a la memoria (swap) y, posiblemente, colocarse en diferentes direcciones. 
+- Las referencias a la memoria se deben “traducir” según ubicación actual del proceso.
+### Protección
+- Los procesos NO deben referenciar – acceder - a direcciones de memoria de otros procesos 
+  - Salvo que tengan permiso 
+- El chequeo se debe realizar durante la ejecución:  
+  - NO es posible anticipar todas las referencias a memoria que un proceso puede realizar.
+### Compartición  
+- Permitir que varios procesos accedan a la misma porción de memoria. 
+- Permite un mejor uso – aprovechamiento - de la memoria RAM, evitando copias innecesarias (repetidas) de instrucciones
