@@ -434,3 +434,29 @@ Dispositivo de Hardware que mapea direcciones virtuales a físicas, es parte del
 - **Segmentación Paginada:**
     - Combina las ventajas de ambos métodos. El programa se divide de forma visible y modular en segmentos (para protección y compartición), pero internamente, el SO divide cada segmento en páginas de tamaño fijo (para evitar la fragmentación externa en la RAM).
     - Es el modelo implementado en arquitecturas reales, como la familia Intel x386, utilizando complejas tablas de directorios y páginas.
+- Si tenemos una dirección **virtual**, por ejemplo 580: 
+  para averiguar el número de página hacemos 580 div 512 = 1. Luego esta dirección corresponde a la página 1 que se encuentra en el marco 2.
+  Para averiguar el desplazamiento hacemos 580 mod 512 = 68.
+  La dirección física es 1024 + 68 = 1092
+
+- Si tenemos una dirección **física**, por ejemplo 1092: 
+  Para averiguar el número de marco hacemos 1092 div 512 = 2. En el marco número 2 tenemos la página número 1 
+  Para averiguar el desplazamiento hacemos 1092 mod 512 = 68 
+  La dirección virtual es 512 + 68 = 580
+
+LOGICAS A FISICAS
+1. **Número de página (p):** Dirección Lógica $\div$ Tamaño de Página. (Tomas solo la parte entera).
+    
+2. **Desplazamiento (d):** Dirección Lógica $MOD$ Tamaño de Página. (Es el resto de la división).
+    
+3. **Dirección Física:** Una vez que tienes `p`, buscas en la tabla en qué `Marco` está. Luego multiplicas: $(Marco \times Tamaño \ de \ Página) + d$.
+4. **Límite de seguridad:** Recuerda que el proceso mide **2000 bytes**. Cualquier dirección lógica que sea 2000 o mayor no pertenece al proceso (Error).
+
+FISICAS A LOGICAS
+- **Marco (m):** Dirección Física $\div$ Tamaño de Página.
+    
+- **Desplazamiento (d):** Dirección Física $MOD$ Tamaño de Página.
+    
+- **Dirección Lógica:** Buscas el `m` en la tabla para ver a qué `Página` corresponde. Luego calculas: $(Página \times Tamaño \ de \ Página) + d$.
+    
+    - _Nota:_ Si el Marco no está en la tabla de P1, esa memoria no es de este proceso.
