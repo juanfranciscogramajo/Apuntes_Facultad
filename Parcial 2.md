@@ -32,4 +32,9 @@ Marco = 0,
 Desplaza = 0
 Dir log = (4x2048) =8192
 5000:
-Marco 
+Marco = 5000/2048 = 2 
+No corresponde a ninguna pagina, por lo tanto no se puede calcular la dir fisica
+## 4 
+a) 2^18
+b) 2^14 = 16384 bytes
+c)
