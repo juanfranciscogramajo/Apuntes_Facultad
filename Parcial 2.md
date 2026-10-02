@@ -1,0 +1,15 @@
+
+![[553a8e98-f309-4843-acc5-e71ea760c82d.jpg]]
+## 1
+![[Pasted image 20261002175923.png]]
+## Ejercicio 2: Planificación de Procesos (Colas Multinivel)
+
+**a) ¿A qué tipo de procesos beneficia el Algoritmo?** Beneficia a los procesos ligados a Entrada/Salida (**I/O Bound**). Como estos procesos se bloquean antes de agotar su _quantum_, el algoritmo los premia reincorporándolos siempre a la cola de máxima prioridad (Q0), asegurando una respuesta rápida.
+
+**b) ¿Puede ocurrir inanición? Justifique su respuesta.** Sí, puede ocurrir **inanición** para los procesos ligados a CPU. Si existe un flujo constante de procesos nuevos o procesos cortos que ingresan y se mantienen en Q0, la cola Q1 (donde caen los procesos pesados) podría no ser atendida nunca.
+
+**c) Proponga una mejora para el algoritmo de modo tal que el mismo sea más performante.** Implementar un mecanismo de **envejecimiento (aging)**, donde los procesos que lleven mucho tiempo esperando en Q1 sean promovidos a Q0 para garantizar que reciban tiempo de CPU. Alternativamente, se podría aumentar el tamaño del _quantum_ en Q1 para reducir el _overhead_ de los cambios de contexto en los procesos pesados.
+## 3
+Pagina = 2 KIB = 2048 bytes
+13850:
+Marco = 13850/2048
