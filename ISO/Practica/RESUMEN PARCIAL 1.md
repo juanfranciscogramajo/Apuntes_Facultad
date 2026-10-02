@@ -411,3 +411,5 @@ El SO debe:
 ### Compartición  
 - Permitir que varios procesos accedan a la misma porción de memoria. 
 - Permite un mejor uso – aprovechamiento - de la memoria RAM, evitando copias innecesarias (repetidas) de instrucciones
+### Direcciones: 
+**Direcciones Lógicas vs. Físicas:** Las direcciones lógicas son las que maneja el proceso independientemente de su ubicación en la RAM, mientras que las físicas refieren a la posición real en el hardware.
