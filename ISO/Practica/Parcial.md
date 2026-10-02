@@ -1,6 +1,8 @@
 ![[WhatsApp Image 2026-10-01 at 23.43.41.jpeg]]
 
-## Punto 2?
+## Punto 1 
+![[Pasted image 20261002164703.png]]
+## Punto 2
 
 Tenés que imaginarte a los dos competidores entrando al sistema:
 
