@@ -389,3 +389,14 @@ El documento ilustra estos conceptos con el funcionamiento clásico de una conso
 - Poseen **retroalimentación**, permitiendo que un proceso baje o suba de cola según su comportamiento.
     
 - El documento expone un ejemplo con tres colas (Q0 con RR q=8, Q1 con RR q=16, y Q2 con FCFS) diseñado para que los procesos largos vayan cayendo hacia las colas de mayor _quantum_, beneficiando a los _CPU Bound_. En este escenario específico, se advierte que puede existir inanición para los procesos _I/O Bound_ si al sistema ingresan constantemente procesos ligados a la CPU.
+## Memoria
+El SO debe: 
+- Llevar un registro de las partes de memoria que se están utilizando y de aquellas que no. 
+- Asignar espacio en memoria principal a los procesos cuando estos la necesitan.  
+- Libera espacio de memoria asignada a procesos que han terminado. 
+- Se espera de un S.O. un uso eficiente de la memoria con el fin de alojar el mayor número de procesos
+- Lograr que el programador se abstraiga de la alocación de los programas
+- Brindar seguridad entre los procesos para que unos no accedan a secciones privadas de otros 
+- Brindar la posibilidad de acceso compartido a determinadas secciones de la memoria (librerías, código en común, etc.) 
+- Garantizar la performance del sistema
+### Administracion de memoria:
