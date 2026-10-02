@@ -25,4 +25,6 @@ Dir fisica = (10x2048) = 21384
 ## 4 
 a) 2^18 = 262144 paginas
 b) 2^14 = 16384 bytes
-c) 2^16
+c) 2^18 x 2^1 = 2^19
+d) 13798 / 16384 = 1 pagina y sobra espacio (frag interna)
+e) 84542 / 16384 = 5, algo ~ 6 paginas. 6x16384 = 98304-84542 = 13762 bytes de fragmentacion. 
