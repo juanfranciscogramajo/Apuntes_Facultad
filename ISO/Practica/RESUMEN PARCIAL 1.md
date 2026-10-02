@@ -413,3 +413,9 @@ El SO debe:
 - Permite un mejor uso – aprovechamiento - de la memoria RAM, evitando copias innecesarias (repetidas) de instrucciones
 ### Direcciones: 
 **Direcciones Lógicas vs. Físicas:** Las direcciones lógicas son las que maneja el proceso independientemente de su ubicación en la RAM, mientras que las físicas refieren a la posición real en el hardware.
+### Memory Management Unit (MMU) 
+Dispositivo de Hardware que mapea direcciones virtuales a físicas, es parte del Procesador,         Re-programar el MMU es una operación privilegiada, solo puede ser realizada en Kernel Mode.    El valor en el “registro de realocación” es sumado a cada dirección generada por el proceso de usuario al momento de acceder a la memoria. Los procesos nunca usan direcciones físicas
+### Mecanismos de asignación de memoria
+- **Particiones Fijas:** Dividían la memoria en bloques de tamaño predefinido. Generaban **fragmentación interna**, desperdiciado dentro de la partición cuando el proceso asignado era más pequeño que el bloque. Cada proceso se coloca segun un criterio (First fit, Best fit, Worst fit, next fit)
+    
+- **Particiones Dinámicas:** Creaban bloques del tamaño exacto requerido por el proceso. Generaban **fragmentación externa**, dejando múltiples "huecos" libres intercalados en la memoria a medida que los procesos terminaban, lo cual requería costosas rutinas de compactación para unirlos.
