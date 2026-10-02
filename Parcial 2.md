@@ -18,4 +18,18 @@ Direccion logica = 1562 (Pagina x Tam pagina)+ desplaza.
 9554:
 Marco = 9554 / 2048 = 4
 Desplazamiento = 9554 mod 2048=1362
-Dir logica = (2x2048)+1362 = 
+Dir logica = (2x2048)+1362 = 5458
+9303:
+Marco = 9303/2048 = 4
+Desplaza = 9303 mod 2048 = 1111
+Dir log = (2x2048)+1111 = 5207 
+12346:
+Marco = 12346/ 2048 = 6 
+Desplaza 12346 / 2048= 58
+Dir log = 58
+0:
+Marco = 0,
+Desplaza = 0
+Dir log = (4x2048) =8192
+5000:
+Marco 
