@@ -19,4 +19,15 @@ Tenés que imaginarte a los dos competidores entrando al sistema:
 
 
 ## Punto 3 
-0: 0 / 4096 
+0: 
+pagina = 0 / 4096 = 0, 
+Desplazamiento = 0 mod 4096 = 0, 
+dir fisica = 5x4096 = 20480
+5000:
+pagina = 5000 / 4096 = 1
+desplazamiento 5000 mod 4096 = 904
+direccion fisica = (3x 4096) + 904= 13192
+7500: 
+Pagina = 7500 / 4096 = 1
+Desplazamiento = 7500 mod 4096 = 3404
+direccion fisica = (3x4096) + 3404
