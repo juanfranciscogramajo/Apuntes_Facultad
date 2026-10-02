@@ -460,3 +460,7 @@ FISICAS A LOGICAS
 - **Dirección Lógica:** Buscas el `m` en la tabla para ver a qué `Página` corresponde. Luego calculas: $(Página \times Tamaño \ de \ Página) + d$.
     
     - _Nota:_ Si el Marco no está en la tabla de P1, esa memoria no es de este proceso.
+Entrada ("<"): Lee datos desde un archivo como entrada estándar (_stdin_).
+        Salida estándar sobrescribiendo (`>`): Envía la salida estándar (_stdout_) hacia un archivo, creándolo o sobrescribiéndolo si ya existía.
+        Salida estándar concatenando (`>>`): Anexa la salida estándar al final del archivo sin borrar su contenido previo.
+        Salida de error (`2>` o `2>>`): Desvía los mensajes de error (_stderr_) a un archivo para no mostrarlos por la terminal.
