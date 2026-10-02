@@ -12,4 +12,10 @@
 ## 3
 Pagina = 2 KIB = 2048 bytes
 13850:
-Marco = 13850/2048
+Marco = 13850/2048 = 6
+Desplazamiento = 13850 mod 2048 = 1562
+Direccion logica = 1562 (Pagina x Tam pagina)+ desplaza.
+9554:
+Marco = 9554 / 2048 = 4
+Desplazamiento = 9554 mod 2048=1362
+Dir logica = (2x2048)+1362 = 
