@@ -10,7 +10,7 @@
   - 1ra forma normal: una tabla esta en primer formato formal si no hay atributos polivalentes
   - 2da forma normal: una tabla si esta en primera y no hay dependencias parciales.
   - 3ra forma normal: es si una tabla esta en 2da forma y no exista dependencias transitivas.
-  - 4ta forma normal: es si esta en BCNF y para toda relatcion r 
+  - 4ta forma normal: es si esta en BCNF y para toda relatcion r solo existen dependencia multivaluadas triviales. A ->-> B/C y puede A,B ->-> C/B 
   - Boyce Codd forma normal: una tabla esta en bcnf si esta en 3nf y no existen dependencias, si solo si esta en tercera forma y para toda tabla el determinante es una clave candidata. Siempre clave candidata o primaria.
   - Para saber si es mejor 3nf o bcnf depende de redundancia que haga BCNF y si se puede perder una CC y control sobre datos.
   - Dependencia multivaluada: a -> b  que a -> c, A multidetermina b y a Multidetermina c, multidetermine no es malo.
