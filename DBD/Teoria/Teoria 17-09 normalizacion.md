@@ -9,5 +9,6 @@
   - 2 
   - 1ra forma normal: una tabla esta en primer formato formal si no hay atributos polivalentes
   - 2da forma normal: una tabla si esta en primera y no hay dependencias parciales.
-  - 3ra forma normal: es si una tabla esta en 2da forma y no exista dependencias transitivas/
-  - Boyce Codd forma normal: una tabla esta en bcnf si esta en 3nf y no existen dependencias Boyce Codd
+  - 3ra forma normal: es si una tabla esta en 2da forma y no exista dependencias transitivas.
+  - Boyce Codd forma normal: una tabla esta en bcnf si esta en 3nf y no existen dependencias, si solo si esta en tercera forma y para toda tabla el determinante es una clave candidata. Siempre clave candidata o primaria.
+  - 4ta dependencia funcional.
