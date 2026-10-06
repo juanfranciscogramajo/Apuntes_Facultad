@@ -1,10 +1,10 @@
-- dependencia funcional: restriccion entre 2 atributos. EJ con dos subconjuntos x, y todos los atributos (R)  de una tabla (r)
-- dependencia funcional completa: si a y b son atributos e una relacion r, si b depende de a pero de ningun subconjunto de A.
-- dependencia funcional parcial: a -> b es parcial si se puede eliminar algun atributo de a y sigue la dependencia. Esta mal esta. 
+- **dependencia funcional:** restriccion entre 2 atributos. EJ con dos subconjuntos x, y todos los atributos (R)  de una tabla (r)
+- **dependencia funcional completa:** si a y b son atributos e una relacion r, si b depende de a pero de ningun subconjunto de A.
+- **dependencia funcional parcial:** a -> b es parcial si se puede eliminar algun atributo de a y sigue la dependencia. Esta mal esta. 
   Parte_clave -> no clave
-- dependencia funcional transitiva: condicion en q a b y c son atributos de una relacon que a a -> b y b -> c entonces c -> a. 
-- boyce codd: a -> b dependencia funcional a no es clave y b es parte de una clave. Es una mierda
-- Normalizacion: proceso que identifica el agrupamiento optimo de atributos, consta de 6 pasos: 
+- **dependencia funcional transitiva:** condicion en q a b y c son atributos de una relacon que a a -> b y b -> c entonces c -> a. 
+- **boyce codd:** a -> b dependencia funcional a no es clave y b es parte de una clave. Es una mierda
+- **Normalizacion:** proceso que identifica el agrupamiento optimo de atributos, consta de 6 pasos: 
   - 1 paso identificar las claves univocas
   - 2 
   - 1ra forma normal: una tabla esta en primer formato formal si no hay atributos polivalentes
