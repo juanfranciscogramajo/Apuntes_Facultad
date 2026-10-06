@@ -11,5 +11,5 @@
   - 2da forma normal: una tabla si esta en primera y no hay dependencias parciales.
   - 3ra forma normal: es si una tabla esta en 2da forma y no exista dependencias transitivas.
   - Boyce Codd forma normal: una tabla esta en bcnf si esta en 3nf y no existen dependencias, si solo si esta en tercera forma y para toda tabla el determinante es una clave candidata. Siempre clave candidata o primaria.
-  - 4ta dependencia funcional.
   - Para saber si es mejor 3nf o bcnf depende de redundancia que haga BCNF y si se puede perder una CC y control sobre datos.
+  - 4ta dependencia funcional Dependencia multivaluada: a -> b  que a -> 
