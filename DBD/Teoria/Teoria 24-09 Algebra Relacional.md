@@ -5,3 +5,6 @@
  Algebra Relacional: lenguaje de consultas procedimental, operaciones de uno o dos relaciones(Tablas), generan una tabla intermedia resultado.
 - Operaciones unitarias: solo una relacion, seleccion, proyeccion, renombre
 - Operaciones binarias: sobre 2 relaciones, producto cartesiano, union, diferencia
+Operaciones : 
+- Seleccion: dada una relacion, aplica en la relacion y devuelve toda las tuplas que cumplen con la condicion dada. Ej: ![[Pasted image 20261007175106.png]]
+- Proyeccion 
