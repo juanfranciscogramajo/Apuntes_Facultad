@@ -10,4 +10,6 @@ Operaciones :
 - Proyeccion: aplicarse sobre una tabla y solo muestra los atributos que declaremos, los demas los ignora. ![[Pasted image 20261007175728.png]]
 - Producto cartesiano: junta cada elemento de un conjunto con los elementos de otro conjunto, 
   ![[Pasted image 20261007184640.png]]
-- Renombre: 
+- Renombre: sirve para cambiar de nombre una relacion para permitir que una tabla se compare consigo mismo.
+  ![[Pasted image 20261007191200.png]]
+- Union: 
