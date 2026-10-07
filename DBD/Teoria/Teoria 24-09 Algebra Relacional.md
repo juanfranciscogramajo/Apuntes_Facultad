@@ -18,3 +18,7 @@ Operaciones :
 - Interseccion: mismo q interseccion matematica, u dada vuelta
 - Asignacion: expresion asigna a una var temporal, para ahorrar espacio y mas facil
 - Producto Tita: combinacion de 2 prod cartesiano y seleccion,
+- Updates:
+  - Agregar Tuplas: ej Relacion T, tupla S. T U S
+  - Eliminar Tuplas: T - S, T - ("bochas",500,1)
+  - Actualizar Datos:  ![[Pasted image 20261007205229.png]]
