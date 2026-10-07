@@ -12,4 +12,5 @@ Operaciones :
   ![[Pasted image 20261007184640.png]]
 - Renombre: sirve para cambiar de nombre una relacion para permitir que una tabla se compare consigo mismo.
   ![[Pasted image 20261007191200.png]]
-- Union: 
+- Union: une 2 conjuntos todas las tuplas + tuplas de la otra, pero debe ser con sentido, alguna equivalencia. U
+- Diferencia: 
