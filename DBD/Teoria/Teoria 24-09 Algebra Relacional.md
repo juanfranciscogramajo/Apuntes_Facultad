@@ -14,4 +14,4 @@ Operaciones :
   ![[Pasted image 20261007191200.png]]
 - Union: une 2 conjuntos todas las tuplas + tuplas de la otra, pero debe ser con sentido, alguna equivalencia. U
 - Diferencia: lo que no esta en ambos, deben tener mismo orden, estructura y cantidad de atributos. -
-- 
+- Producto Natural: junta las filas de dos conjuntos que tengan sentido, deben tener un atributo en comun, clave primaria en una tabla y clave foranea, o puede CF en ambas. Solo si tienen atributo en comun, nombre y representa lo mismo. Uno y solo Uno. | x |
