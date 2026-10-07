@@ -15,4 +15,4 @@
   - **Boyce Codd forma normal:** una tabla esta en bcnf si esta en 3nf y no existen dependencias, si solo si esta en tercera forma y para toda tabla el determinante es una clave candidata. Siempre clave candidata o primaria.
   - Para saber si es mejor 3nf o bcnf depende de redundancia que haga BCNF y si se puede perder una CC y control sobre datos.
   - **Dependencia multivaluada:** a -> b  que a -> c, A multidetermina b y a Multidetermina c, multidetermine no es malo.
-  - **Dependencia de combinacion:** propiedad de la descomposicion garantiza que no se generen tuplas espurias al combinar 
+  - **Dependencia de combinacion:** propiedad de la descomposicion garantiza que no se generen tuplas espurias al combinar relaciones con una op de algebra relacional.
