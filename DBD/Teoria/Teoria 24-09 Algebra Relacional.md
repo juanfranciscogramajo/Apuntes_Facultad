@@ -7,4 +7,5 @@
 - Operaciones binarias: sobre 2 relaciones, producto cartesiano, union, diferencia
 Operaciones : 
 - Seleccion: dada una relacion, aplica en la relacion y devuelve toda las tuplas que cumplen con la condicion dada. Ej: ![[Pasted image 20261007175106.png]]
-- Proyeccion 
+- Proyeccion: aplicarse sobre una tabla y solo muestra los atributos que declaremos, los demas los ignora. ![[Pasted image 20261007175728.png]]
+- Producto cartesiano: junta cada elemento de un conjunto con los elementos de otro conjunto, 
