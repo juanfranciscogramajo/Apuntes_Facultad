@@ -17,6 +17,7 @@ Pasos para resolverlo:
   Excursion c
   presupuesto c
   cliente C
+  Equipo C
   alquiler de equipos C
   costo de translado ida y vuelta A
   costo del guia A
