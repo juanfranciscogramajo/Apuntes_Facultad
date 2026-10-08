@@ -13,4 +13,17 @@ El objetivo específico es determinar el costo de un presupuesto para un cliente
 
 Pasos para resolverlo: 
 - 1- Marcar conceptos que pueden ser atributos/comportamiento/clases etc.
-- 2-
+- 2-Definir lo marcado a que corresponde cada concepto, si es clase atributo etc.
+  Excursion c
+  presupuesto c
+  cliente C
+  alquiler de equipos C
+  costo de translado ida y vuelta A
+  costo del guia A
+  valor del seguro A
+  liista de lugares A
+  costo por dia A 
+  Cantidad de dias A 
+  Nombre A
+  Presupuestoscontratados A???
+- 3- Diagrama uml Draw.io 
