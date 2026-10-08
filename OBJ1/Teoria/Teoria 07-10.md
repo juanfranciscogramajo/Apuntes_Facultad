@@ -28,3 +28,4 @@ Pasos para resolverlo:
   Nombre A
   Presupuestoscontratados A???
 - 3- Diagrama uml Draw.io 
+  Asociar conceptos, declararlos como privados -, publicos +, marcar relaciones, cardinalidad de las relaciones.
