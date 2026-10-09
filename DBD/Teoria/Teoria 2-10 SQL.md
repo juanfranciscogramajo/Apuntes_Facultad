@@ -35,3 +35,5 @@ UNIQUE INDEX () clave univoca.
   ![[Pasted image 20261009011309.png]] Renombra count para usar en select.
 - HAVING: permite condicionar un grupo para ser mostrado o no. puede tener consultas de agregacion. ![[Pasted image 20261009183222.png]]
 - Subconsultas anidadas: 
+  - in: si un elemento pertenece a un conjunto, dev boolean.
+  - 
