@@ -3,8 +3,9 @@ DDL: lenguaje de estructura estatica que no se usa, se usa para crear o modifica
 - Drop Database: borra BD deja de existir.
   Una vez creada la BD:
 - CREATE TABLE nombre: crea una tabla
-- Alter Table: modifica una tabla
-- Drop Table: borra una tabla}
+- ALTER TABLE nombre: modifica una tabla
+- DROP TABLE: borra una tabla}
+- ADD/DROP/ALTER COLUMN nombre: agrega columna
 VARCHAR [] string con limite
 TEXT texto sin limite de espacio 
 NULL puede ser nulo
