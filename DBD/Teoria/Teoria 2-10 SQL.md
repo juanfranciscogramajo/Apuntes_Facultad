@@ -31,5 +31,5 @@ UNIQUE INDEX () clave univoca.
   Esta bien xq usa una subfuncion x decir x eso esta en el where
 - GROUP BY: agrupar conjunto de tuplas por algun criterio ej: 
   ![[Pasted image 20261009010604.png]] ESTA ES EXCEPCION DEL SELECT
-- 
-  
+- CREATE VIEW: es como una rutina, es una vista que es como si fuese el nombre de una tabla/proceso.
+  ![[Pasted image 20261009011309.png]] Renombra count para usar en select.
