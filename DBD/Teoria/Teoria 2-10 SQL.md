@@ -11,3 +11,7 @@ TEXT texto sin limite de espacio
 NULL puede ser nulo
 PRIMARY KEY () asigna clave primaria
 UNIQUE INDEX () clave univoca.
+### CONSULTAS: 
+- SELECT lista de atributos: lo que se va a mostrar. * muestra todos los atributos del from, distinct elimina tuplas duplicadas, All aparece todas las tuplas
+- FROM lista de tablas: tablas donde se obtiene la informacion. Tablas que tienen datos q me interesan. la coma separa como producto cartesiano/join. 
+- WHERE condicion: 
