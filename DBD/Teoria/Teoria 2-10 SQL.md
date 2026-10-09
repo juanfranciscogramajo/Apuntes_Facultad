@@ -36,4 +36,6 @@ UNIQUE INDEX () clave univoca.
 - HAVING: permite condicionar un grupo para ser mostrado o no. puede tener consultas de agregacion. ![[Pasted image 20261009183222.png]]
 - Subconsultas anidadas: 
   - in: si un elemento pertenece a un conjunto, dev boolean.
-  - 
+  - some: permite medir valor de una tupla frente resultados de la subconsulta, con que alguno cumpla es verdadero. > < >= etc.
+  - all: compara y si TODOS cumplen se vuelve true. 
+  - EXIST: evalua si la subconsulta devuelve o no algo, si no es vacia true.
