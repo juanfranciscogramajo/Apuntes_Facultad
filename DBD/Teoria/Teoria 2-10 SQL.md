@@ -33,3 +33,4 @@ UNIQUE INDEX () clave univoca.
   ![[Pasted image 20261009010604.png]] ESTA ES EXCEPCION DEL SELECT
 - CREATE VIEW: es como una rutina, es una vista que es como si fuese el nombre de una tabla/proceso.
   ![[Pasted image 20261009011309.png]] Renombra count para usar en select.
+- HAVING: permite condicionar un grupo para ser mostrado o no. puede tener consultas de agregacion.
