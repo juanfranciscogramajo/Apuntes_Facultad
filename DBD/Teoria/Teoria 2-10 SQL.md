@@ -26,5 +26,10 @@ UNIQUE INDEX () clave univoca.
 - ORDER BY atributo: ordena DESC ASC, siempre ascendente default, en where o from ![[Pasted image 20261009004815.png]]
 - Union/Union all: union no pone repetidos, union all muestra todos, une las tuplas resultantes de dos subconjuntos
 - Intersect = interseccion y Except/Minus = diferencia - 
-- funciones de agregacion<![[Pasted image 20261009005552.png]]
+- funciones de agregacion: van en el select(x ahora), no where, devuelve un solo valor, una sola funcion de agregacion en el select.![[Pasted image 20261009005552.png]]
+  EJ:![[Pasted image 20261009010113.png]]
+  Esta bien xq usa una subfuncion x decir x eso esta en el where
+- GROUP BY: agrupar conjunto de tuplas por algun criterio ej: 
+  ![[Pasted image 20261009010604.png]] ESTA ES EXCEPCION DEL SELECT
 - 
+  
