@@ -16,6 +16,7 @@ UNIQUE INDEX () clave univoca.
   EJ: 
   ![[Pasted image 20261008235826.png]]
 - FROM lista de tablas: tablas donde se obtiene la informacion. Tablas que tienen datos q me interesan. la coma separa como producto cartesiano/join. 
+  - Producto Natural: mostrar 
 - WHERE condicion: muestra segun una condicion 
   EJ: 
   ![[Pasted image 20261009000304.png]]
