@@ -18,6 +18,8 @@ UNIQUE INDEX () clave univoca.
 - FROM lista de tablas: tablas donde se obtiene la informacion. Tablas que tienen datos q me interesan. la coma separa como producto cartesiano/join. 
   - Producto Natural: se escribe como INNER JOIN .... ON (Condicion), es lo mismo es mas eficiente pero no importa.
     ![[Pasted image 20261009001742.png]]
+    - variantes: 
+      - Left outer join: 
 - WHERE condicion: muestra segun una condicion 
   EJ: 
   ![[Pasted image 20261009000304.png]]
