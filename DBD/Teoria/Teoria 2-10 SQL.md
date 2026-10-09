@@ -23,4 +23,8 @@ UNIQUE INDEX () clave univoca.
   ![[Pasted image 20261009000304.png]]
   
 - Like , sirve para buscar cadenas ![[Pasted image 20261009003802.png]]
-- ORDER BY atributo: ordena DESC ASC, siempre ascendente default, en 
+- ORDER BY atributo: ordena DESC ASC, siempre ascendente default, en where o from ![[Pasted image 20261009004815.png]]
+- Union/Union all: union no pone repetidos, union all muestra todos, une las tuplas resultantes de dos subconjuntos
+- Intersect = interseccion y Except/Minus = diferencia - 
+- funciones de agregacion<![[Pasted image 20261009005552.png]]
+- 
