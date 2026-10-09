@@ -43,3 +43,10 @@ UNIQUE INDEX () clave univoca.
   - some: permite medir valor de una tupla frente resultados de la subconsulta, con que alguno cumpla es verdadero. > < >= etc.
   - all: compara y si TODOS cumplen se vuelve true. 
   - EXIST: evalua si la subconsulta devuelve o no algo, si no es vacia true.
+### ABM:
+- INSERT TO: agrega una tupla a la tabla.
+  ![[Pasted image 20261009192821.png]]
+- DELETE FROM: borra tupla de la tabla.
+  ![[Pasted image 20261009192840.png]]
+- UPDATE: actualiza una tupla de la tabla
+  ![[Pasted image 20261009192856.png]]
