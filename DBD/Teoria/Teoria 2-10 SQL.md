@@ -8,7 +8,7 @@ DDL: lenguaje de estructura estatica que no se usa, se usa para crear o modifica
 - ADD/DROP/ALTER COLUMN nombre: agrega columna
 VARCHAR [] string con limite
 TEXT texto sin limite de espacio 
-NULL puede ser nulo
+NULL puede ser nulo, nunca tuvo valor != 0 not null es decir alguna vez tuvo valor, puede 0 
 PRIMARY KEY () asigna clave primaria
 UNIQUE INDEX () clave univoca.
 ### CONSULTAS: 
@@ -33,4 +33,5 @@ UNIQUE INDEX () clave univoca.
   ![[Pasted image 20261009010604.png]] ESTA ES EXCEPCION DEL SELECT
 - CREATE VIEW: es como una rutina, es una vista que es como si fuese el nombre de una tabla/proceso.
   ![[Pasted image 20261009011309.png]] Renombra count para usar en select.
-- HAVING: permite condicionar un grupo para ser mostrado o no. puede tener consultas de agregacion.
+- HAVING: permite condicionar un grupo para ser mostrado o no. puede tener consultas de agregacion. ![[Pasted image 20261009183222.png]]
+- Subconsultas anidadas: 
