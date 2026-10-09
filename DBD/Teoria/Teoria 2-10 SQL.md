@@ -22,4 +22,5 @@ UNIQUE INDEX () clave univoca.
   EJ: 
   ![[Pasted image 20261009000304.png]]
   
-- Like
+- Like , sirve para buscar cadenas ![[Pasted image 20261009003802.png]]
+- ORDER BY atributo: ordena DESC ASC, siempre ascendente default, en 
