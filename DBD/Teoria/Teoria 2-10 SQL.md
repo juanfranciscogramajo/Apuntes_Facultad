@@ -16,10 +16,12 @@ UNIQUE INDEX () clave univoca.
   EJ: 
   ![[Pasted image 20261008235826.png]]
 - FROM lista de tablas: tablas donde se obtiene la informacion. Tablas que tienen datos q me interesan. la coma separa como producto cartesiano/join. 
-  - Producto Natural: se escribe como INNER JOIN .... ON (Condicion), es lo mismo es mas eficiente pero no importa.
+  - Producto Natural: se escribe como INNER JOIN .... ON (Condicion), es lo mismo es mas eficiente pero no importa. Solo si hay coincidencias.
     ![[Pasted image 20261009001742.png]]
     - variantes: 
-      - Left outer join: 
+      - Left outer join: retorna todas las tuplas de la izquierda pero si no coincide con la de la derecha completa con null la derecha.
+      - Right outer join: mismo pero la derecha.
+      - Full Outer Join: retorna todas las tuplas de ambas tablas, donde coinciden, donde la izq tiene y der null y viceversa.
 - WHERE condicion: muestra segun una condicion 
   EJ: 
   ![[Pasted image 20261009000304.png]]
