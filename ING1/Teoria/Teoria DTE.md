@@ -15,6 +15,8 @@
 - En cada estado el sist responde a todas las condiciones.
 ![[Pasted image 20261010002844.png]]
 Ver ejemplos Clase.
-### Ventajas
----
-mejora compren
+- **Ventajas:** Utilizar un DTE mejora la comprensión general gracias a su mapa visual, previene errores lógicos desde la etapa de diseño, valida que se consideren todos los requisitos y facilita la planificación de pruebas de software.
+    
+- **Desventajas:** Como contrapartida, los diagramas pueden volverse excesivamente complejos y difíciles de manejar ante una gran cantidad de estados. Además, se enfocan típicamente en un solo objeto por diagrama y no son ideales para modelar la concurrencia.
+    
+- **Casos de Uso Ideales:** Se recomienda aplicar los DTE en sistemas de tiempo real, en el modelado de interfaces de usuario complejas, en el diseño de algoritmos de control y en aquellos sistemas que operen con un número finito y bien definido de estados.
