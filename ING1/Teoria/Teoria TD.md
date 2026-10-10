@@ -11,5 +11,11 @@ se contruyen con condiciones simples(V/F) y acciones simples. 2N reglas, n=cant 
 - Reduccion de complejidad: combinar reglas donde una alternativa no afecta el resultado, el guion es q no importa si v o f 
   ![[Pasted image 20261010203859.png]]
   ![[Pasted image 20261010204049.png]]
-- Especificaciones completas: determinan accion/es para las reglas posibles
-- Especificaciones redud
+- Especificaciones completas: determinan accion/es para las reglas posibles. se debe. No dejar reglas sin accion para hacer, sino se crea una.
+- Especificaciones redundantes: mismas condiciones, mismas acciones. Evitar
+- Contradictorias: mismas condiciones distintas acciones. Evitar
+  ![[Pasted image 20261010204806.png]]
+  ![[Pasted image 20261010205017.png]]
+## Analisis Estructurado:
+- **Definicion:** Es una técnica de representación gráfica que hace énfasis en cómo se mueven, procesan y transforman los datos dentro de un sistema, sin especificar aspectos físicos de su implementación.
+- **Diagrama de flujo de datos:** herramienta ppal que visualiza al sistema como una red funcional.
