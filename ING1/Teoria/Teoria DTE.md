@@ -13,3 +13,8 @@
 - se pueden alcanzar todos los estados
 - se puede salir de tds los esados
 - En cada estado el sist responde a todas las condiciones.
+![[Pasted image 20261010002844.png]]
+Ver ejemplos Clase.
+### Ventajas
+---
+mejora compren
