@@ -1,0 +1,1 @@
+Tablas de decision: permite presentar de forma concisa y lógica las reglas que se deben utilizar para decidir qué acciones ejecutar frente a un problema específico.
