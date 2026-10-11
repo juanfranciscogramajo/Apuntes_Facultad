@@ -10,4 +10,10 @@ Cuando el proceso intenta usar una direccion que esta en una pagina pero no esta
 **Pagina Victima:** si hay un fallo y no quedan marcos libres en mem, se selecciona una pag victima para sacarla y hacer espacio.
 Algoritmos de reemplazo: 
 - FIFO: simple de implementar, la mas antigua es remplazada.
-- LRU: 
+- Optimo: reemplaza la que no se usara por mas tiempo.
+- LRU: favorece a las paginas usadas recientemente.
+  NRU: se basa en bits de uso y modificacion.
+**Effective Acces Time(EAT):** EAT = (1 – p) x memory access + 
+p x (page_fault_overhead + [swap_page_out] + swap_page_in + restart_overhead).
+## Formas de organizar tablas
+**Tabla de 1 nivel:**
