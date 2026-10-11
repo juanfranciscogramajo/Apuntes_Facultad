@@ -25,6 +25,16 @@ se contruyen con condiciones simples(V/F) y acciones simples. 2N reglas, n=cant 
   - Flecha: flujo para uno o mas elementos de datos.
   - Rectangulo abierto(lado iz y der) almacen de datos
     ![[Pasted image 20261010210143.png]]
+  - Pasos: 
+    1- Redactar eventos y id Entidades eternas, flujo de datos, procesos, almacenes de datos
+    2- Crear diagrama que muestre lo identificado en 1
+    3- dibujar el diagrama 0, con procesos grales y almacenes.
+    4- dibujar diagrama hijo por cada uno de los procesos del diagrama 0.
   - Ej:
     ![[Pasted image 20261010210318.png]]
-- Diccionario de datos: listado organizado de tod
+- Diccionario de datos: Es un listado organizado que define sin ambigüedad todos los elementos de datos, especificando el tipo, nombre y descripción del contenido de la información del sistema.
+- Diagrama de contexto: Es el nivel más alto que muestra al sistema completo como un único proceso interaccionando con las entidades externas y los flujos globales. (DC)
+- Nivel 0: Amplia el DC, incluye hasta 9 procesos y mostrar los almacenes de datos y nuevos flujos.
+- Nivelacion de un DFD: cada proceso puede ampliarse para crear un diagrama hijo mas detallado, Las E/S del proceso padre permanecen y pueden aparecer nuevos almacenes y nuevos flujos.
+  - Ascendentes: agrupa las burbukas con algun criterio
+  - Descendentes: descompone las burbujas funcionalmente.
