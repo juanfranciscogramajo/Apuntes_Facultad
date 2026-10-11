@@ -15,8 +15,8 @@ Cuando el proceso intenta usar una direccion que esta en una pagina pero no esta
 - LRU: favorece a las paginas accedidas recientemente.
   NRU: se basa en bits de uso y modificacion, favorece a las paginas que fueron usadas recientemente.
 **Alcance del remplazo:**
-- **Global**: le puede sacar marcos a cualquier otro proceso.
-- **Local**: solo reemplaza páginas del mismo proceso que causó el fallo, no cambia cantidad de frames asignados, el SO det la tasa de 
+- **Global**: le puede sacar marcos a cualquier otro proceso. El SO no conrola la tasa de fallo de paginas de cada proceso.
+- **Local**: solo reemplaza páginas del mismo proceso que causó el fallo, no cambia cantidad de frames asignados, el SO det la tasa de fallo de paginas de cada proceso, puede tener frames no usados.
 **Effective Acces Time(EAT):** EAT = (1 – p) x memory access + 
 p x (page_fault_overhead + [swap_page_out] + swap_page_in + restart_overhead).
 ## Formas de organizar tablas
