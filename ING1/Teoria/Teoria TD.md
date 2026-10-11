@@ -19,3 +19,12 @@ se contruyen con condiciones simples(V/F) y acciones simples. 2N reglas, n=cant 
 ## Analisis Estructurado:
 - **Definicion:** Es una técnica de representación gráfica que hace énfasis en cómo se mueven, procesan y transforman los datos dentro de un sistema, sin especificar aspectos físicos de su implementación.
 - **Diagrama de flujo de datos:** herramienta ppal que visualiza al sistema como una red funcional.
+  **Elementos:**
+  - Rectangulo: una entidad externa, elem del sist o otro sist.
+  - Circulo/Burbuja: un proceso o tranformacion a datos y los mod.
+  - Flecha: flujo para uno o mas elementos de datos.
+  - Rectangulo abierto(lado iz y der) almacen de datos
+    ![[Pasted image 20261010210143.png]]
+  - Ej:
+    ![[Pasted image 20261010210318.png]]
+- Diccionario de datos: listado organizado de tod
