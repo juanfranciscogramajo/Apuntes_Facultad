@@ -58,6 +58,11 @@
   `echo $NOMBREesto_no_es_parte_de_la_variable 
   **/# Esto sí** 
   `echo ${NOMBRE}esto_no_es_parte_de_la_variable
+- Por defecto:
+  - inicializan en null o 0.
+  - variables son globales
+- Var locales:
+  `local variable`
 ### Arreglos:
   - `arreglo_a=() # Se crea vacío 
   - `arreglo_b=(1 2 3 5 8 13 21) # Inicializado
@@ -145,5 +150,28 @@ done
   while [ condicion ] # Mientras se cumpla la condición 
   do
     bloque 
-done
+  done
   ```
+- Until: 
+  ```
+  until [ condition ] # Mientras NO se cumpla la condición 
+  do 
+    bloque 
+  done
+  ```
+### Operadores para condicion:
+![[Pasted image 20261012132553.png]]
+**Break [n]:** corta ejecucion de n niveles de loops.
+**continue [n]:** salta a la siguiente iteracion del enesimo loop que contiene la instruccion.
+## Argumentos y valor de retorno
+- Los scripts pueden recibir argumentos en su invocación.  
+- Para accederlos, se utilizan variables especiales: 
+  - $0 contiene la invocación al script. 
+  - $1, $2, $3, ... contienen cada uno de los argumentos. 
+  - $# contiene la cantidad de argumentos recibidos. 
+  - $* contiene la lista de todos los argumentos.  
+  - $? contiene en todo momento el valor de retorno del último comando ejecutado.![[Pasted image 20261012133006.png]]
+  - Declaracion de funciones:
+    - function nombre { bloque } 
+    - nombre() { bloque }
+ - `return` devuelve val entre 0 y 255
