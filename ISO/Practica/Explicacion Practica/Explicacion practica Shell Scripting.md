@@ -15,7 +15,7 @@
   - Strings 
   - Arreglos () 
 - Funciones
---- 
+## Comandos:
 - Imprimir el contenido de un archivo cat archivo 
 - Imprimir texto echo "Hola mundo" 
 - Leer una línea desde entrada estándar en la variable var read var 
@@ -33,3 +33,28 @@
 - El comando tar puede invocar a gzip por nosotros (argumento z): 
   tar -cvzf archivo.tar.gz arch1 arch2 arch3 
   tar -xvzf archivo.tar.gz
+## Redirecciones:
+- stdin: Entrada estándar, normalmente el teclado. File descriptor 0
+- stdout: Salida estándar, normalmente el monitor. File descriptor 1
+- stderr: Salida de error estándar, normalmente la salida estándar. File descriptor 2
+- Redirección destructiva (>): 
+  - Si archivo no existe, se crea. 
+  - Si archivo existe, lo sobreescribe. 
+- Redirección no destructiva (>>): 
+  - Si archivo no existe, se crea. 
+  - Si archivo existe, se le agrega al final.
+- 2> y 2>> Redirigen la salida de error estándar. comando 2> arch
+- < Hace que archivo sea la entrada de comando. En otras palabras cuando comando intente leer entrada del teclado, en realidad, va a leer el contenido de archivo. comando < arch.
+- Pipes "|": Sintaxis básica: comando | comando2 | comando3 
+  - Conectan la salida de un comando con la entrada de otro. 
+  - Indispensables para hacer programas potentes en shell script. 
+## Variables 
+- Tipos: Strings, arrays.
+- Case Sensitive.
+- Para crear una variable: NOMBRE="pepe" # SIN espacios alrededor del = 
+- Para accederla se usa $: echo $NOMBRE 
+- Para evitar ambigüedades se pueden usar llaves: 
+  **/# Esto no accede a $NOMBRE** 
+  echo $NOMBREesto_no_es_parte_de_la_variable 
+  /# Esto sí 
+  echo ${NOMBRE}esto_no_es_parte_de_la_variable
