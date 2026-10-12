@@ -61,8 +61,8 @@
 - Por defecto:
   - inicializan en null o 0.
   - variables son globales
-- Var locales:
-  `local variable`
+- Var locales: `local variable`
+- Exponer var global a procesos hijos: `export variable`
 ### Arreglos:
   - `arreglo_a=() # Se crea vacío 
   - `arreglo_b=(1 2 3 5 8 13 21) # Inicializado
