@@ -97,20 +97,53 @@ o
 `bash -x mi script.sh
 ### Estructuras de control
 - Decision: 
-  **if** [ condition ] **then** 
+  ```
+  if [ condition ] then 
     bloque 
-  **elif** [ condition ] **then**
+  elif [ condition ] then
     bloque else bloque 
-  **fi**
+  fi
+  ```
+  
 - Seleccion:
-  **case** $variable **in** 
+  ```
+   case $variable in 
   "valor 1") 
-  bloque ;; 
+    bloque ;; 
   "valor 2") 
-  bloque ;; 
-  bloque ;;
-   **esac**
+    bloque ;; 
+    bloque ;;
+   esac
+  ```
+- Menú de opciones
 
-![[Pasted image 20261012130831.png]]
-![[Pasted image 20261012130944.png]]
-![[Pasted image 20261012130959.png]]
+```
+select variable in opcion1 opcion2 opcion3
+do
+  # en $variable está el valor elegido
+  bloque
+done
+```
+
+- Iteraciones - For:
+  - C-style: 
+    ```
+    for ((i=0; i < 10; i++)) 
+    do 
+      bloque 
+    done
+    ```
+- Foreach:
+  ```
+  for i in valor1 valor2 valor3 valorN 
+  do 
+    bloque 
+  done
+  ```
+- While: 
+  ```
+  while [ condicion ] # Mientras se cumpla la condición 
+  do
+    bloque 
+done
+  ```
