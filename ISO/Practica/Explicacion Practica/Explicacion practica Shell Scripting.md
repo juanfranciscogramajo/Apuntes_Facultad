@@ -25,14 +25,14 @@
 - Buscar todos los archivos dentro del home del usuario, cuyo nombre termine en .doc find $HOME -name "*.doc" 
 - Buscar todos los archivos dentro del directorio actual que sean enlaces simbólicos find . -type l
 - Empaquetado: Se unen varios archivos en uno solo (tar) 
-  tar -cvf archivo.tar archivo1 archivo2 archivo3
-  tar -xvf archivo.tar 
+  `tar -cvf archivo.tar archivo1 archivo2 archivo3
+  `tar -xvf archivo.tar 
 - Compresión: Se reduce el tamaño de un archivo (gzip/bzip2/etc.) 
-  gzip archivo.tar # Genera archivo.tar.gz comprimido 
-  gzip -d archivo.tar.gz # Descomprime archivo.tar 
+  `gzip archivo.tar # Genera archivo.tar.gz comprimido 
+  `gzip -d archivo.tar.gz # Descomprime archivo.tar 
 - El comando tar puede invocar a gzip por nosotros (argumento z): 
-  tar -cvzf archivo.tar.gz arch1 arch2 arch3 
-  tar -xvzf archivo.tar.gz
+  `tar -cvzf archivo.tar.gz arch1 arch2 arch3 
+  `tar -xvzf archivo.tar.gz
 ## Redirecciones:
 - stdin: Entrada estándar, normalmente el teclado. File descriptor 0
 - stdout: Salida estándar, normalmente el monitor. File descriptor 1
@@ -55,17 +55,17 @@
 - Para accederla se usa $: echo $NOMBRE 
 - Para evitar ambigüedades se pueden usar llaves: 
   **/# Esto no accede a $NOMBRE** 
-  echo $NOMBREesto_no_es_parte_de_la_variable 
+  `echo $NOMBREesto_no_es_parte_de_la_variable 
   **/# Esto sí** 
-  echo ${NOMBRE}esto_no_es_parte_de_la_variable
+  `echo ${NOMBRE}esto_no_es_parte_de_la_variable
 - Arreglos:
-  - arreglo_a=() # Se crea vacío 
-  - arreglo_b=(1 2 3 5 8 13 21) # Inicializado
+  - `arreglo_a=() # Se crea vacío 
+  - `arreglo_b=(1 2 3 5 8 13 21) # Inicializado
   - Asignación de un valor en una posición concreta: 
-    arreglo_b[2]=spam 
+    `arreglo_b[2]=spam 
   - Acceso a un valor del arreglo (en este caso las llaves no son opcionales):
-    echo ${arreglo_b[2]}
-    copia=${arreglo_b[2]} 
+    `echo ${arreglo_b[2]}
+    `copia=${arreglo_b[2]} 
   - Acceso a todos los valores del arreglo: 
     echo ${arreglo[@]} # o bien ${arreglo[*]}
   - Tamaño del arreglo: ${#arreglo[@]} ${#arreglo[*]}  
@@ -74,8 +74,14 @@
   - Los índices en los arreglos comienzan en 0
   - Tipos de comillas 
     - Comillas dobles (“): var=”variables” 
-      - echo "Permiten usar $var" 
-      - echo "Y resultados de comandos $(ls)" 
+      - `echo "Permiten usar $var" 
+      - `echo "Y resultados de comandos $(ls)" 
     - Comillas simples (‘): 
-      - echo 'No permiten usar $var' 
-      - echo 'Tampoco resultados de comandos $(ls)'
+      - `echo 'No permiten usar $var' 
+      - `echo 'Tampoco resultados de comandos $(ls)'
+- Reemplazo de comandos: técnica que te permite ejecutar un comando y capturar su salida.
+  `$(comando_valido)
+## Programacion Scripts
+Creacion: 
+- Crear un archivo con cualquier editor de texto
+- Indicar el intérprete (opcional) en la primer línea con: #!/bin/bash, si no especifica usara el x defecto del usuario, problemas de compatibilidad
