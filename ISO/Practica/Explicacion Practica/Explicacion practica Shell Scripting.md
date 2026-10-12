@@ -58,7 +58,7 @@
   `echo $NOMBREesto_no_es_parte_de_la_variable 
   **/# Esto sí** 
   `echo ${NOMBRE}esto_no_es_parte_de_la_variable
-- Arreglos:
+### Arreglos:
   - `arreglo_a=() # Se crea vacío 
   - `arreglo_b=(1 2 3 5 8 13 21) # Inicializado
   - Asignación de un valor en una posición concreta: 
@@ -79,9 +79,38 @@
     - Comillas simples (‘): 
       - `echo 'No permiten usar $var' 
       - `echo 'Tampoco resultados de comandos $(ls)'
-- Reemplazo de comandos: técnica que te permite ejecutar un comando y capturar su salida.
+### Reemplazo de comandos: 
+técnica que te permite ejecutar un comando y capturar su salida.
   `$(comando_valido)
 ## Programacion Scripts
-Creacion: 
+**Creacion:** 
 - Crear un archivo con cualquier editor de texto
 - Indicar el intérprete (opcional) en la primer línea con: #!/bin/bash, si no especifica usara el x defecto del usuario, problemas de compatibilidad
+- Terminacion en .sh para identificar que es un script(No necesario)
+- Dar permisos para la ejecucion.
+**Path absoluto:** Empieza desde el directorio raíz / 
+**Path relativo:** Empieza desde donde estamos posicionados ● . y .. son el directorio actual y el directorio padre
+**Ejecucion:** 
+`./mi_script.sh 
+`bash mi_script.sh
+o
+`bash -x mi script.sh
+### Estructuras de control
+- Decision: 
+  **if** [ condition ] **then** 
+    bloque 
+  **elif** [ condition ] **then**
+    bloque else bloque 
+  **fi**
+- Seleccion:
+  **case** $variable **in** 
+  "valor 1") 
+  bloque ;; 
+  "valor 2") 
+  bloque ;; 
+  bloque ;;
+   **esac**
+
+![[Pasted image 20261012130831.png]]
+![[Pasted image 20261012130944.png]]
+![[Pasted image 20261012130959.png]]
