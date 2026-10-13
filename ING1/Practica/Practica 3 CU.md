@@ -1,4 +1,4 @@
-Parte I: Definiciones generales 
+### Parte I: Definiciones generales 
 a) Describa qué es el desarrollo centrado en el usuario. 
 Es un enfoque o filosofía de desarrollo de software en el que el usuario final ocupa el centro de todas las decisiones de diseño, a lo largo de todo el proceso de desarrollo, no solo al principio (relevamiento de requerimientos) ni al final (pruebas de aceptación).
 
@@ -42,19 +42,5 @@ e) Enumere los beneficios de modelar requerimientos del sistema con casos de uso
 6. Facilitan la reutilización y organización de funcionalidad común (mediante Uses y Extends).
     
 7. Proveen trazabilidad entre requerimientos y funcionalidad implementada.
-   
---- 
 
-|   |   |   |
-|---|---|---|
-|Nombre del caso de uso:||   |
-|Descripción:||   |
-|Actores:||   |
-|Precondiciones:||   |
-|Curso Normal:|Acciones del Actor|Acciones del sistema|
-|||
-|||
-|||
-|||
-|Curso Alterno:||   |
-|Postcondición:||   |
+### Parte 2: ejercicios
