@@ -5,21 +5,19 @@ Es un enfoque o filosofía de desarrollo de software en el que el usuario final 
 b) Defina qué son los casos de uso y describa cómo se utilizan.
 Casos de uso: Descripción de cómo los distintos actores (personas, sistemas externos o eventos como el tiempo) interactúan con el sistema para lograr un objetivo específico. 
 Representan los escenarios de interacción que permiten entender los requerimientos funcionales desde la perspectiva del usuario o actor.
-
 Proceso de modelado:
-
 1. Identificar los actores: determinar quiénes o qué interactúa con el sistema desde afuera, pueden ser personas (con distintos roles), otros sistemas externos con los que el sistema se comunica, o eventos (como el paso del tiempo, disparando una tarea programada).
     
 2. Identificar los casos de uso: para cada actor, determinar qué objetivos quiere lograr al interactuar con el sistema. Cada objetivo concreto se convierte en un caso de uso (verbo + sustantivo: "Solicitar turno", "Consultar estado").
     
-3. Construir el diagrama: representar gráficamente actores y casos de uso, y las relaciones entre ellos (asociación, inclusión <<include>>, extensión <<extend>>, generalización), da una vista general de qué puede hacer el sistema y quién lo puede hacer, sin entrar en el detalle de cada interacción.
+3. Construir el diagrama: representar gráficamente actores y casos de uso, y las relaciones entre ellos (asociación, inclusión <<include>>, extensión <extend>> generalización), da una vista general de qué puede hacer el sistema y quién lo puede hacer, sin entrar en el detalle de cada interacción.
     
 4. Realizar los escenarios: para cada caso de uso, describir el flujo de pasos concreto que ocurre entre el actor y el sistema: incluyendo un escenario principal (éxito) y escenarios alternativos/de excepción (los casos donde algo falla o se desvía del camino esperado)
     
 c) Defina qué es un actor y un escenario. 
-**Actor:** Un actor es toda entidad externa al sistema que interactúa directamente con él para lograr un objetivo. Puede ser una persona (desempeñando un rol específico), un sistema externo, o un evento (como el transcurso del tiempo, disparando una tarea programada). No representa a una persona en particular, sino a un rol que cualquier persona u otro sistema puede cumplir.
+Actor: Un actor es toda entidad externa al sistema que interactúa directamente con él para lograr un objetivo. Puede ser una persona (desempeñando un rol específico), un sistema externo, o un evento (como el transcurso del tiempo, disparando una tarea programada). No representa a una persona en particular, sino a un rol que cualquier persona u otro sistema puede cumplir.
 
-**Escenario:** Un escenario es una secuencia específica y concreta de pasos que describe una posible ejecución de un caso de uso, detallando la interacción paso a paso entre el actor y el sistema. Un mismo caso de uso puede tener varios escenarios: uno principal (de éxito, el camino esperado sin inconvenientes) y varios alternativos o de excepción (que cubren desvíos, errores o condiciones especiales)
+Escenario: Un escenario es una secuencia específica y concreta de pasos que describe una posible ejecución de un caso de uso, detallando la interacción paso a paso entre el actor y el sistema. Un mismo caso de uso puede tener varios escenarios: uno principal (de éxito, el camino esperado sin inconvenientes) y varios alternativos o de excepción (que cubren desvíos, errores o condiciones especiales)
 
 d) Defina las relaciones que pueden presentarse en el diagrama de casos de uso. Describa cuándo se utiliza cada una. 
 Asociaciones: es la relación entre un actor y un caso de uso, e indica que ese actor participa directamente en la ejecución de dicho caso de uso. Es la relación básica del diagrama, la que conecta "quién" con "qué puede hacer".
@@ -45,3 +43,18 @@ e) Enumere los beneficios de modelar requerimientos del sistema con casos de uso
     
 7. Proveen trazabilidad entre requerimientos y funcionalidad implementada.
    
+--- 
+
+|   |   |   |
+|---|---|---|
+|Nombre del caso de uso:||   |
+|Descripción:||   |
+|Actores:||   |
+|Precondiciones:||   |
+|Curso Normal:|Acciones del Actor|Acciones del sistema|
+|||
+|||
+|||
+|||
+|Curso Alterno:||   |
+|Postcondición:||   |
