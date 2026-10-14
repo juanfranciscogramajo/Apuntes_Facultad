@@ -1,0 +1,2 @@
+   Es necesario <font color="#ffff00">cargar las carreras</font> a un sistema. En esta primera versión del sistema sólo se nos pidió esta funcionalidad, sin la modificación ni eliminación. De cada carrera se conoce: <font color="#00b0f0">nombre de la carrera (no puede repetirse), duración en años (a partir de la consulta del estatuto de posgrado se obtuvo que como máximo son 5 años), costo y cantidad máxima de cuotas para el pago.</font> La carga de las carreras no la realiza el secretario académico sino un <font color="#ff0000">empleado administrativo. </font>
+   
