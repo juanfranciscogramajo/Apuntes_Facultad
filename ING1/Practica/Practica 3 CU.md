@@ -230,18 +230,18 @@ e) Enumere los beneficios de modelar requerimientos del sistema con casos de uso
 | **Curso Alterno:**          | **Paso Alternativo 2:** No hay minutas aprobadas el sistema notifica y fin CU  |                                                  |
 | **Postcondición:**          | Se imprime el listado de minutas aprobadas                                     |                                                  |
 
-| **Nombre del caso de uso:** | Aprobar minuta                                                                |                                                 |
-| --------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------- |
-| **Descripción:**            | Describe como el Empleado de rendiciones aprueba una minuta.                  |                                                 |
-| **Actores:**                | Empleado de rendiciones                                                       |                                                 |
-| **Precondiciones:**         | ---                                                                           |                                                 |
-| **Curso Normal:**           | **Acciones del Actor**                                                        | **Acciones del sistema**                        |
-|                             | Paso 1: El empleado de rendiciones selecciona la opcion de "Aprobar minuta".  | Paso 2: el sistema solicita el numero de minuta |
-|                             |                                                                               |                                                 |
-|                             |                                                                               |                                                 |
-|                             |                                                                               |                                                 |
-|                             |                                                                               |                                                 |
-|                             |                                                                               |                                                 |
-| **Curso Alterno:**          | **Paso Alternativo 2:** No hay minutas aprobadas el sistema notifica y fin CU |                                                 |
-| **Postcondición:**          | Se imprime el listado de minutas aprobadas                                    |                                                 |
+| **Nombre del caso de uso:** | Aprobar minuta                                                                |                                                                                          |
+| --------------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| **Descripción:**            | Describe como el Empleado de rendiciones aprueba una minuta.                  |                                                                                          |
+| **Actores:**                | Empleado de rendiciones                                                       |                                                                                          |
+| **Precondiciones:**         | ---                                                                           |                                                                                          |
+| **Curso Normal:**           | **Acciones del Actor**                                                        | **Acciones del sistema**                                                                 |
+|                             | Paso 1: El empleado de rendiciones selecciona la opcion de "Aprobar minuta".  | Paso 2: el sistema solicita el numero de minuta                                          |
+|                             | Paso 3: El empleado de rendiciones ingresa el numero de minuta                | Paso 4: el sistema muestra los datos de la misma.                                        |
+|                             | paso 5: El empleado de rendiciones confirma la aprobacion de la minuta        | Paso 6: El sistema verifica que el empleado a contratar tiene 3 o mas contratos vigentes |
+|                             |                                                                               | Paso 7: El sistema ejecuta el CU "Verificar CUIT"                                        |
+|                             |                                                                               | Paso 8: El sistema registra la minuta como aprobada y informa "Minuta aprobada"          |
+|                             |                                                                               |                                                                                          |
+| **Curso Alterno:**          | **Paso Alternativo 2:** No hay minutas aprobadas el sistema notifica y fin CU |                                                                                          |
+| **Postcondición:**          | Se imprime el listado de minutas aprobadas                                    |                                                                                          |
 
