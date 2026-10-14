@@ -228,4 +228,20 @@ e) Enumere los beneficios de modelar requerimientos del sistema con casos de uso
 | **Curso Normal:**           | **Acciones del Actor**                                                         | **Acciones del sistema**                         |
 |                             | Paso 1: El empleado de rendiciones selecciona la opcion de "Imprimir Listado". | Paso 2: El sistema imprime las minutas aprobadas |
 | **Curso Alterno:**          | **Paso Alternativo 2:** No hay minutas aprobadas el sistema notifica y fin CU  |                                                  |
-| **Postcondición:**          | Se imprimen el listado las minutas aprobadas                                   |                                                  |
+| **Postcondición:**          | Se imprime el listado de minutas aprobadas                                     |                                                  |
+
+| **Nombre del caso de uso:** | Aprobar minuta                                                                |                                                 |
+| --------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------- |
+| **Descripción:**            | Describe como el Empleado de rendiciones aprueba una minuta.                  |                                                 |
+| **Actores:**                | Empleado de rendiciones                                                       |                                                 |
+| **Precondiciones:**         | ---                                                                           |                                                 |
+| **Curso Normal:**           | **Acciones del Actor**                                                        | **Acciones del sistema**                        |
+|                             | Paso 1: El empleado de rendiciones selecciona la opcion de "Aprobar minuta".  | Paso 2: el sistema solicita el numero de minuta |
+|                             |                                                                               |                                                 |
+|                             |                                                                               |                                                 |
+|                             |                                                                               |                                                 |
+|                             |                                                                               |                                                 |
+|                             |                                                                               |                                                 |
+| **Curso Alterno:**          | **Paso Alternativo 2:** No hay minutas aprobadas el sistema notifica y fin CU |                                                 |
+| **Postcondición:**          | Se imprime el listado de minutas aprobadas                                    |                                                 |
+
