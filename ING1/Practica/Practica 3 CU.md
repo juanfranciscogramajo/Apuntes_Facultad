@@ -11,6 +11,8 @@ Proceso de modelado:
 - 2- Identificar los casos de uso: para cada actor, determinar qué objetivos quiere lograr al interactuar con el sistema. Cada objetivo concreto se convierte en un caso de uso (verbo + sustantivo: "Solicitar turno", "Consultar estado").
     
 - 3- Construir el diagrama: representar gráficamente actores y casos de uso, y las relaciones entre ellos (asociación, inclusión `<<include>>`, extensión `<<extend>>` generalización), da una vista general de qué puede hacer el sistema y quién lo puede hacer, sin entrar en el detalle de cada interacción.
+  -  `<<extend>>` : Cuando un Caso de Uso se ejecuta **SOLO EN ALGUNOS CASOS**, únicamente si se cumple una condición específica.
+  - `<<include>>`: Cuando un Caso de Uso **SIEMPRE** ejecuta a otro de forma obligatoria para poder completarse.
 - 4- Realizar los escenarios: para cada caso de uso, describir el flujo de pasos concreto que ocurre entre el actor y el sistema: incluyendo un escenario principal (éxito) y escenarios alternativos/de excepción (los casos donde algo falla o se desvía del camino esperado)
 c) Defina qué es un actor y un escenario. 
 Actor: Un actor es toda entidad externa al sistema que interactúa directamente con él para lograr un objetivo. Puede ser una persona (desempeñando un rol específico), un sistema externo, o un evento (como el transcurso del tiempo, disparando una tarea programada). No representa a una persona en particular, sino a un rol que cualquier persona u otro sistema puede cumplir.
