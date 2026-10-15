@@ -344,3 +344,24 @@ e) Enumere los beneficios de modelar requerimientos del sistema con casos de uso
 | **Curso Alterno:**          | <br>**Paso Alternativo 4:** El codigo es incorrecto, se informa y vuelve paso 2. |                                                                  |
 | **Postcondición:**          | La alarma queda desarmada                                                        |                                                                  |
 
+| **Nombre del caso de uso:** | Actualizar configuracion                                                       |                                                                                  |
+| --------------------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| **Descripción:**            | Describe como un administrador actualiza la configuracion.                     |                                                                                  |
+| **Actores:**                | Administrador                                                                  |                                                                                  |
+| **Precondiciones:**         | ---                                                                            |                                                                                  |
+| **Curso Normal:**           | **Acciones del Actor**                                                         | **Acciones del sistema**                                                         |
+|                             | Paso 1: El administrador selecciona la opcion "Actualizar configuracion".      | Paso 2: El sistema muestra los parametros configurables                          |
+|                             | Paso 3: El Administrador modifica los valores deseados y confirma la operacion | Paso 4: El sistema guarda los nuevos valores y notifica "Actualizacion exitosa". |
+| **Curso Alterno:**          | <br>**Paso Alternativo 3:** El administrador cancela la operacion, fin CU.     |                                                                                  |
+| **Postcondición:**          | La alarma queda con nuevos valores configurados                                |                                                                                  |
+
+| **Nombre del caso de uso:** | Modificar codigos de acceso                                                    |                                                                                  |
+| --------------------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| **Descripción:**            | Describe como un administrador modifica los codigos de acceso                  |                                                                                  |
+| **Actores:**                | Administrador                                                                  |                                                                                  |
+| **Precondiciones:**         | ---                                                                            |                                                                                  |
+| **Curso Normal:**           | **Acciones del Actor**                                                         | **Acciones del sistema**                                                         |
+|                             | Paso 1: El administrador selecciona la opcion "Modificar codigos de acceso".   | Paso 2: El sistema muestra los parametros configurables                          |
+|                             | Paso 3: El Administrador modifica los valores deseados y confirma la operacion | Paso 4: El sistema guarda los nuevos valores y notifica "Actualizacion exitosa". |
+| **Curso Alterno:**          | <br>**Paso Alternativo 3:** El administrador cancela la operacion, fin CU.     |                                                                                  |
+| **Postcondición:**          | La alarma queda con nuevos valores configurados                                |                                                                                  |
