@@ -301,3 +301,4 @@ e) Enumere los beneficios de modelar requerimientos del sistema con casos de uso
 |                             |                                                                                                                           | Paso 4: El sistema imprime recibo con el monto total a pagar por el material reciclado.                   |
 | **Curso Alterno:**          | **Paso alternativo 2:** El sistema no detecta el tipo de material, cancela la operacion y retorna el producto. Fin CU<br> |                                                                                                           |
 | **Postcondición:**          | El material ingresado se ha reciclado y se ha impreso un recibo con el monto total a pagar a la persona por lo reciclado  |                                                                                                           |
+5. 
