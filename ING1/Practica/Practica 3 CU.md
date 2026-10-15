@@ -353,15 +353,26 @@ e) Enumere los beneficios de modelar requerimientos del sistema con casos de uso
 |                             | Paso 1: El administrador selecciona la opcion "Actualizar configuracion".      | Paso 2: El sistema muestra los parametros configurables                          |
 |                             | Paso 3: El Administrador modifica los valores deseados y confirma la operacion | Paso 4: El sistema guarda los nuevos valores y notifica "Actualizacion exitosa". |
 | **Curso Alterno:**          | <br>**Paso Alternativo 3:** El administrador cancela la operacion, fin CU.     |                                                                                  |
-| **Postcondición:**          | La alarma queda con nuevos valores configurados                                |                                                                                  |
+| **Postcondición:**          | La alarma queda configurada con nuevos valores.                                |                                                                                  |
 
-| **Nombre del caso de uso:** | Modificar codigos de acceso                                                    |                                                                                  |
-| --------------------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
-| **Descripción:**            | Describe como un administrador modifica los codigos de acceso                  |                                                                                  |
-| **Actores:**                | Administrador                                                                  |                                                                                  |
-| **Precondiciones:**         | ---                                                                            |                                                                                  |
-| **Curso Normal:**           | **Acciones del Actor**                                                         | **Acciones del sistema**                                                         |
-|                             | Paso 1: El administrador selecciona la opcion "Modificar codigos de acceso".   | Paso 2: El sistema muestra los parametros configurables                          |
-|                             | Paso 3: El Administrador modifica los valores deseados y confirma la operacion | Paso 4: El sistema guarda los nuevos valores y notifica "Actualizacion exitosa". |
-| **Curso Alterno:**          | <br>**Paso Alternativo 3:** El administrador cancela la operacion, fin CU.     |                                                                                  |
-| **Postcondición:**          | La alarma queda con nuevos valores configurados                                |                                                                                  |
+| **Nombre del caso de uso:** | Modificar codigos de acceso                                                              |                                                                                            |
+| --------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **Descripción:**            | Describe como un administrador modifica los codigos de acceso                            |                                                                                            |
+| **Actores:**                | Administrador                                                                            |                                                                                            |
+| **Precondiciones:**         | ---                                                                                      |                                                                                            |
+| **Curso Normal:**           | **Acciones del Actor**                                                                   | **Acciones del sistema**                                                                   |
+|                             | Paso 1: El administrador selecciona la opcion "Modificar codigos de acceso".             | Paso 2: El sistema muestra los codigos de acceso configurables                             |
+|                             | Paso 3: El Administrador modifica los codigos de acceso deseados y confirma la operacion | Paso 4: El sistema guarda los nuevos codigos de acceso y notifica "Actualizacion exitosa". |
+| **Curso Alterno:**          | <br>**Paso Alternativo 3:** El administrador cancela la operacion, fin CU.               |                                                                                            |
+| **Postcondición:**          | La alarma queda con nuevos codigos de acceso configurados                                |                                                                                            |
+
+| **Nombre del caso de uso:** | Verificar sensores                                                                       |                                                                                            |
+| --------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **Descripción:**            | Describe como cada 15 segundos el sistema verifica los sensores.                         |                                                                                            |
+| **Actores:**                | Tiempo                                                                                   |                                                                                            |
+| **Precondiciones:**         | ---                                                                                      |                                                                                            |
+| **Curso Normal:**           | **Acciones del Actor**                                                                   | **Acciones del sistema**                                                                   |
+|                             | Paso 1: Transcurren 15 segundas                                                          | Paso 2: El sistema                                                                         |
+|                             | Paso 3: El Administrador modifica los codigos de acceso deseados y confirma la operacion | Paso 4: El sistema guarda los nuevos codigos de acceso y notifica "Actualizacion exitosa". |
+| **Curso Alterno:**          | <br>**Paso Alternativo 3:** El administrador cancela la operacion, fin CU.               |                                                                                            |
+| **Postcondición:**          | La alarma queda con nuevos codigos de acceso configurados                                |                                                                                            |
