@@ -331,15 +331,16 @@ e) Enumere los beneficios de modelar requerimientos del sistema con casos de uso
 | **Curso Alterno:**          | **Paso Alternativo 2:** La alarma no esta armada, informa y fin CU<br>**Paso Alternativo 4:** El codigo es incorrecto, se informa y vuelve paso 2. |                                                                |
 | **Postcondición:**          | La alarma queda desarmada                                                                                                                          |                                                                |
 
-| **Nombre del caso de uso:** | Activar alarma silenciosa                                                                                                                          |                                                                       |
-| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| **Descripción:**            | Describe como un usuario estandar activa la alarma silenciosa.                                                                                     |                                                                       |
-| **Actores:**                | Usuario estandar                                                                                                                                   |                                                                       |
-| **Precondiciones:**         | ---                                                                                                                                                |                                                                       |
-| **Curso Normal:**           | **Acciones del Actor**                                                                                                                             | **Acciones del sistema**                                              |
-|                             |                                                                                                                                                    | Paso 1: El sistema solicita el codigo para activar alarma silenciosa. |
-|                             | Paso 3: El Usuario estandar ingresa el codigo de seguridad especial                                                                                | Paso 4: El sistema valida si el codigo de seguridad es valido         |
-|                             |                                                                                                                                                    | Paso 5: El sistema registra el evento y ejecuta el CU ""              |
-| **Curso Alterno:**          | **Paso Alternativo 2:** La alarma no esta armada, informa y fin CU<br>**Paso Alternativo 4:** El codigo es incorrecto, se informa y vuelve paso 2. |                                                                       |
-| **Postcondición:**          | La alarma queda desarmada                                                                                                                          |                                                                       |
+| **Nombre del caso de uso:** | Activar alarma silenciosa                                                        |                                                                  |
+| --------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| **Descripción:**            | Describe como un usuario estandar activa la alarma silenciosa.                   |                                                                  |
+| **Actores:**                | Usuario estandar                                                                 |                                                                  |
+| **Precondiciones:**         | ---                                                                              |                                                                  |
+| **Curso Normal:**           | **Acciones del Actor**                                                           | **Acciones del sistema**                                         |
+|                             | Paso 1: El Usuario estandar selecciona la opcion "Activar alarma especial".      | Paso 2: El sistema solicita el codigo especial.                  |
+|                             | Paso 3: El Usuario estandar ingresa el codigo especial.                          | Paso 4: El sistema valida si el codigo especial es valido.       |
+|                             |                                                                                  | Paso 5: El sistema ejecuta el caso de uso "Notificar incidente". |
+|                             |                                                                                  | Paso 6: El sistema registra el evento.                           |
+| **Curso Alterno:**          | <br>**Paso Alternativo 4:** El codigo es incorrecto, se informa y vuelve paso 2. |                                                                  |
+| **Postcondición:**          | La alarma queda desarmada                                                        |                                                                  |
 
