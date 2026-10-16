@@ -32,7 +32,7 @@ UNIQUE INDEX () clave univoca.
 - Intersect = interseccion y Except/Minus = diferencia - 
 - funciones de agregacion: van en el select(x ahora), no where, devuelve un solo valor, una sola funcion de agregacion en el select.![[Pasted image 20261009005552.png]]
   EJ:![[Pasted image 20261009010113.png]]
-  Esta bien xq usa una subfuncion x decir x eso esta en el where
+  Esta bien xq usa una subfuncion x decir x eso esta en el where(verde)
 - GROUP BY: agrupar conjunto de tuplas por algun criterio ej: 
   ![[Pasted image 20261009010604.png]] ESTA ES EXCEPCION DEL SELECT
 - CREATE VIEW: es como una rutina, es una vista que es como si fuese el nombre de una tabla/proceso.
