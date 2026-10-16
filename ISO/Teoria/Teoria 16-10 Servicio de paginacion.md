@@ -1,0 +1,1 @@
+Mapeo de archivo en memoria: permite a un proceso asociar el contenido de un archivo a un espacio de direcciones virtuales.
