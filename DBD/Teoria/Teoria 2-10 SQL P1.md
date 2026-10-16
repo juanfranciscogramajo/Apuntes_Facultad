@@ -1,3 +1,4 @@
+SQL ansi 
 DDL: lenguaje de estructura estatica que no se usa, se usa para crear o modificar una BD
 - Create Database: crea una BD con el nombre que ponga a continuacion.
 - Drop Database: borra BD deja de existir.
