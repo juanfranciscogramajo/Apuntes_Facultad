@@ -28,3 +28,4 @@ Cuando <font color="#0070c0">se selecciona el escenario, se muestra un listado d
 <font color="#0070c0">Una vez seleccionado el marco, la cabina comienza la sesión fotográfica.</font> Mientras la <font color="#ff0000">sesión se encuentra en curso,</font> se puede <font color="#0070c0">pausar mediante un botón habilitado para tal fin</font>. Si <font color="#0070c0">se selecciona pausar, la sesión se detiene y se habilita un botón para reanudarla. </font>
 Se dispone de <font color="#0070c0">30 segundos para reanudar la sesión. Transcurrido ese tiempo sin reanudarla, se aborta la sesión. </font>
 Cuando la sesión finaliza, se imprime la foto, quedando la cabina en estado consistente para una próxima sesión.
+![[Pasted image 20261020203444.png]]
