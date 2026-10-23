@@ -1,3 +1,4 @@
+## Practica
 Ejercicio 1. Dado el siguiente diagrama que representa el funcionamiento de una Licuadora, corrija los errores existentes. La licuadora tiene 2 velocidades y sólo dos botones: uno para aumentar la velocidad y otro para disminuirla. La licuadora se apaga con el botón disminuir estando en la primera velocidad.![[Pasted image 20261015234031.png]]
 
 Ejercicio 2. Complete el siguiente diagrama DTE que ilustra el comportamiento de una máquina de gaseosas, en base al siguiente enunciado: La máquina se activa cuando el usuario ingresa una moneda. Todos los productos tienen el mismo valor. Las monedas son ingresadas de a una y cada una es validada en ese mismo momento, en base a su tamaño, peso y espesor mediante un dispositivo específico. Al mismo tiempo se valida el monto ingresado. Si alguna moneda no es válida, se retorna al usuario, y continúa el proceso normalmente. Como siguiente paso, el usuario debe seleccionar un producto. Si no hay stock de dicho producto entonces debe retornar las monedas y mostrar un mensaje informando tal situación. Si hay stock, se entrega el producto, y en caso de que se haya ingresado un monto superior, la máquina retorna el vuelto correspondiente. El usuario puede cancelar en cualquier momento, dando por finalizado todo el proceso.
@@ -29,3 +30,13 @@ Cuando <font color="#0070c0">se selecciona el escenario, se muestra un listado d
 Se dispone de <font color="#0070c0">30 segundos para reanudar la sesión. Transcurrido ese tiempo sin reanudarla, se aborta la sesión. </font>
 Cuando la sesión finaliza, se imprime la foto, quedando la cabina en estado consistente para una próxima sesión.
 ![[Pasted image 20261020203444.png]]
+## Parciales
+
+ 3. Empresa de emergencias médicas | Seguimiento del estado de ambulancias
+
+Ingeniería de software I 2024 — Parcial Segunda Fecha 09/11/24
+Una empresa de servicios de emergencias médicas requiere un sistema de seguimiento para gestionar el estado de sus ambulancias durante la atención de incidentes. Este sistema debe registrar y monitorear el flujo de cada incidente en tiempo real, desde la notificación inicial hasta la finalización del servicio.
+El flujo comienza cuando el centro de control recibe una notificación de un incidente, incluyendo la dirección del lugar. En este punto, el sistema registra el incidente y queda a la espera de asignar una ambulancia disponible. Una vez asignada una ambulancia, se le envía la dirección y comienza su trayecto hacia el lugar del incidente. Durante el trayecto, puede ocurrir una cancelación, en cuyo caso el sistema debe actualizar el estado de la ambulancia para dejarla nuevamente disponible.
+Cuando la ambulancia llega al lugar del incidente, el médico evalúa la gravedad del paciente. Si el caso no se considera grave, la ambulancia vuelve a estar disponible para otro servicio. En caso de tratarse de un caso grave, se inicia el traslado al hospital más cercano, notificando al centro de control sobre la ubicación de destino. Una vez que la ambulancia llega al hospital y entrega el paciente, queda disponible para atender nuevos incidentes.
+Cuando la ambulancia está yendo al lugar del incidente o volviendo hospital, puede sufrir un desperfecto. En ambos casos ésta debe marcarse como fuera de servicio y el sistema queda a la espera de la asignación de una nueva ambulancia. Si el desperfecto ocurre camino al hospital, además, debe notificarse la dirección del desperfecto.
+Es fundamental que el sistema registre y actualice continuamente el estado de disponibilidad de cada ambulancia, indicando claramente si está libre, ocupada, o fuera de servicio.
