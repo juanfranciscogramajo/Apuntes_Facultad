@@ -40,3 +40,5 @@ El flujo comienza cuando el centro de control recibe una notificación de un inc
 Cuando la ambulancia llega al lugar del incidente, el médico evalúa la gravedad del paciente. Si el caso no se considera grave, la ambulancia vuelve a estar disponible para otro servicio. En caso de tratarse de un caso grave, se inicia el traslado al hospital más cercano, notificando al centro de control sobre la ubicación de destino. Una vez que la ambulancia llega al hospital y entrega el paciente, queda disponible para atender nuevos incidentes.
 Cuando la ambulancia está yendo al lugar del incidente o volviendo hospital, puede sufrir un desperfecto. En ambos casos ésta debe marcarse como fuera de servicio y el sistema queda a la espera de la asignación de una nueva ambulancia. Si el desperfecto ocurre camino al hospital, además, debe notificarse la dirección del desperfecto.
 Es fundamental que el sistema registre y actualice continuamente el estado de disponibilidad de cada ambulancia, indicando claramente si está libre, ocupada, o fuera de servicio.
+
+![[Pasted image 20261023031620.png]]
