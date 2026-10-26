@@ -78,5 +78,3 @@ El mapeo de las interrelaciones conceptuales depende de su cardinalidad y cobert
 ## Pasos
 - entidades a tablas, id tabla
 - luego macar identificadores de la tabla, que se convierten en claves q puede ser primaria o candidata. Para elegirla si hay mas de una, la q sea mas simple
-- 
-- 
