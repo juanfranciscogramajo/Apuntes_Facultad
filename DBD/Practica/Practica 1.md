@@ -18,3 +18,4 @@
    Desventajas:
    - Duplica información: el área actual del empleado termina registrada dos veces (una en la relación "actual" y otra, eventualmente, en el historial cuando ese período se cierre), hay riesgo de inconsistencia si no se sincronizan bien ambas relaciones.
    - Es más complejo de mantener: cada vez que un empleado cambia de área, hay que "cerrar" el registro histórico Y actualizar la relación de área actual (dos operaciones en vez de una)
+6. ![[modelo_sin_t_tulo__1__conceptual.jpg]]
