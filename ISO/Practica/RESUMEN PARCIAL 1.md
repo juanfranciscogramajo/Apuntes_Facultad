@@ -100,7 +100,8 @@ Gestionan el hardware periférico y solicitan acceso exclusivo o de lectura/escr
 ## Explicación practica 1.1
 Sistemas de archivos  
 - Directorios más importantes según FHS (Filesystem Hierarchy Standard) 
-- / Tope de la estructura de directorios. Es como el C:\ • /home Se almacenan archivos de usuarios (Mis documentos) 
+- / Tope de la estructura de directorios. Es como el C:\ 
+- /home Se almacenan archivos de usuarios (Mis documentos) 
 - /var Información que varía de tamaño (logs, BD, spools) 
 - /etc Archivos de configuración 
 - /bin Archivos binarios y ejecutables 
