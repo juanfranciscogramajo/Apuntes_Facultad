@@ -78,3 +78,63 @@ El mapeo de las interrelaciones conceptuales depende de su cardinalidad y cobert
 ## Pasos
 - entidades a tablas, id tabla
 - luego macar identificadores de la tabla, que se convierten en claves q puede ser primaria o candidata. Para elegirla si hay mas de una, la q sea mas simple
+## Del modelo lógico (DER) al físico (relacional)
+
+La idea es que el DER (entidades, relaciones, atributos) se convierte en **tablas**. Cada tabla tiene columnas (atributos), filas (tuplas), una **clave primaria (PK)** y, si hace falta, **claves foráneas (FK)**.
+
+### 1. Cada entidad pasa a ser una tabla
+
+- Los atributos de la entidad pasan a ser las columnas.
+- Subrayás la **PK**. Si la entidad tiene más de un identificador posible, elegís uno solo y no armás una clave compuesta con los dos.
+- Los atributos opcionales (0,1) se marcan con `?`.
+
+Ejemplo: `Alumno = (dni, nombre, calle, nro, piso?, dpto?)`
+
+### 2. Las relaciones: depende de la cardinalidad
+
+Una relación puede ser una tabla propia o puede quedar absorbida como una FK en otra tabla. Esta es la tabla de decisión que sale de las diapositivas:
+
+|Cardinalidades|Qué hacés|
+|---|---|
+|**(1,1) – (1,1)**|No hay tabla R. Ponés la FK en cualquiera de las dos tablas (a elección).|
+|**(0,1) – (1,1)**|No hay tabla R. La FK va en la tabla del lado **(1,1)**. Ejemplo: `B = (idB, idA(fk), atB)`. Si la pusieras del lado (0,1) te quedarían nulos.|
+|**(1,1) – (0,n) o (1,n)**|No hay tabla R. La FK va en la tabla del lado **(1,1)**, apuntando a la otra. Ejemplo: `A = (idA, idB(fk), atA)`.|
+|**(0,1) – (0,1)**|Tabla R con `R = (idA(fk), idB(fk))`.|
+|**(0,1) – (0,n) o (1,n)**|Tabla R con las dos FK.|
+|**(0,n) o (1,n) – (0,n) o (1,n)**|Tabla R con las dos FK. La PK es la combinación de ambas.|
+
+**Regla práctica:** si un lado es (1,1), la FK va ahí. Si hay un lado opcional (0,1) y no podés poner la FK sin generar nulos, o si es muchos a muchos, hacés una tabla aparte.
+
+### 3. Casos especiales
+
+- **Atributos de la relación (atR):** van en la tabla R. Entran en la PK solo si el dominio lo exige. Por ejemplo, un empleado puede trabajar en la misma área en dos períodos distintos. Entonces la PK es `(empleado, área, fecha_inicio)`.
+- **Relaciones reflexivas** (por ejemplo, correlativas entre materias): la tabla R tiene dos FK a la misma tabla, así que tenés que **renombrar** una. Ejemplo: `R = (Código_Materia(fk), Código_Materia_Correlativa(fk))`.
+- **Atributos multivaluados** (como teléfono): pasan a tabla propia. Se crea una tabla del atributo y una tabla de la relación con las dos FK. En el ejemplo: `Telefono` y `posee`.
+- **Jerarquías ya resueltas** (por ejemplo, Empleado → Docente / NoDocente): la tabla hija lleva **solo la PK del padre como FK**, más sus atributos propios. No copies todos los atributos del padre. Ejemplo: `Docente = (dni(fk))`.
+
+### 4. Notación
+
+- **PK**: subrayada. Si es compuesta, una sola línea continua debajo de todos los campos.
+- **FK**: se marca con `(fk)`.
+- **Opcional**: `?`.
+
+### 5. Errores típicos (los que suelen restar puntos)
+
+1. No marcar las PK.
+2. Armar una PK compuesta porque había dos identificadores posibles, en vez de elegir uno.
+3. Agregar un campo `id` innecesario.
+4. Resolver mal las relaciones con cardinalidad opcional.
+5. Usar PK no mínimas.
+6. No subrayar la PK compuesta con una línea continua.
+7. No marcar las FK, ni las de entidades ni las de relaciones.
+8. Olvidarse de convertir alguna entidad o relación.
+9. En jerarquías, copiar todos los atributos del padre en las hijas en vez de solo su clave.
+
+### Checklist para resolver un ejercicio
+
+1. Convertí cada entidad en una tabla y marcá la PK.
+2. Recorré cada relación y mirá sus cardinalidades.
+3. Decidí si la relación va como FK o como tabla.
+4. Pasá los atributos multivaluados a tabla propia.
+5. Resolvé las jerarquías: PK del padre como FK en las hijas.
+6. Revisá que estén marcadas todas las PK y FK, y que no sobren campos `id`.
