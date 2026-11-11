@@ -176,4 +176,3 @@ done
     - function nombre { bloque } 
     - nombre() { bloque }
  - `return` devuelve val entre 0 y 255
-## variables
