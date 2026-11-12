@@ -36,4 +36,5 @@ echo, pwd, mkdir, chmod, ls, who, mv, rm, touch, grep, wc
    Se indican utilizando el carácter **`#`**. Todo lo que se escriba a la derecha del `#` hasta el final de esa línea será ignorado por el intérprete _(la única excepción es `#!` en la primera línea, que define el shebang)_.
    b. ¿Cómo se declaran y se hace referencia a variables dentro de un script?
    Se escribe el nombre de la variable (sensible a mayúsculas/minúsculas; puede contener letras, números y `_`, pero **no** empezar con número) seguido de **`=`** y su valor, **sin espacios alrededor del `=`**. EJ facultad=Informatica o carrera_1="Licenciatura en Sistemas" # Se usan comillas si hay espacios.
-   Se antepone el símbolo **`$`** al nombre de la variable y se usan llaves **`${variable}`** para delimitar el nombre y evitar ambigüedades al concatenar texto
+   Se antepone el símbolo **`$`** al nombre de la variable y se usan llaves **`${variable}`** para delimitar el nombre y evitar ambigüedades al concatenar 
+   Significa que la _shell_ ejecuta el comando que está entre comillas invertidas (o dentro de `$(...)`) y reemplaza esa expresión por la salida de texto que produjo el comando. En este caso, ejecuta `whoami` y pega tu nombre de usuario dentro del `echo`.
