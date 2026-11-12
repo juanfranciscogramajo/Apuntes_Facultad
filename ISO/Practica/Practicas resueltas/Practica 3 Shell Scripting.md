@@ -38,3 +38,137 @@ echo, pwd, mkdir, chmod, ls, who, mv, rm, touch, grep, wc
    Se escribe el nombre de la variable (sensible a mayúsculas/minúsculas; puede contener letras, números y `_`, pero **no** empezar con número) seguido de **`=`** y su valor, **sin espacios alrededor del `=`**. EJ facultad=Informatica o carrera_1="Licenciatura en Sistemas" # Se usan comillas si hay espacios.
    Se antepone el símbolo **`$`** al nombre de la variable y se usan llaves **`${variable}`** para delimitar el nombre y evitar ambigüedades al concatenar 
    Significa que la _shell_ ejecuta el comando que está entre comillas invertidas (o dentro de `$(...)`) y reemplaza esa expresión por la salida de texto que produjo el comando. En este caso, ejecuta `whoami` y pega tu nombre de usuario dentro del `echo`.
+**4. Parametrización**
+- **Acceso:** Se accede mediante el símbolo `$` y el número de posición (ejemplo: `$1` es el primer parámetro, `$2` el segundo).
+- **`$#`:** Almacena la cantidad total de argumentos que recibió el script.
+- **`$*` (o `$@`):** Representa una lista con todos los argumentos pasados.
+- **`$?`:** Contiene el valor de retorno (código de estado) del último comando ejecutado (0 es éxito).
+- **`$HOME`:** Contiene la ruta absoluta del directorio personal del usuario actual.
+- _Ejemplo práctico:_
+- ```echo "Recibiste $# parámetros. Todos son: $*"```
+**5. Comando `exit`**
+- **Funcionalidad:** Finaliza la ejecución del script.
+- **Parámetros:** Recibe un número entre `0` y `255`.
+    
+- **Significado:** `0` significa que terminó exitosamente. Cualquier otro número (`1` a `255`) indica un código de error.
+    
+- _Ejemplo práctico:_ `exit 1 # Finaliza informando un error`.
+    
+
+**6. Comando `expr`**
+
+- **Funcionalidad:** Evalúa expresiones matemáticas, lógicas o de manipulación de cadenas. _(Nota: en scripts modernos se prefiere usar la sintaxis `$((...))` para matemáticas)_.
+    
+- **Operaciones:**
+    
+    - Aritméticas: `+` (suma), `-` (resta), `\*` (multiplicación), `/` (división), `%` (módulo o resto).
+        
+    - Relacionales: `=` (igual), `!=` (distinto), `>` (mayor), `<` (menor).
+        
+- _Ejemplo práctico:_ `resultado=$(expr 5 + 3)`
+    
+
+**7. Comando `test` o `[ ]`**
+
+- **Evaluaciones numéricas:** Utiliza los operadores `-eq` (igual), `-ne` (distinto), `-gt` (mayor), `-ge` (mayor o igual), `-lt` (menor), `-le` (menor o igual).
+    
+- **Evaluaciones de cadenas:** Utiliza `=` (igual) y `!=` (desigual).
+    
+- **Evaluación de archivos:** Utiliza operadores como `-e` (existe), `-d` (es un directorio), `-f` (es un archivo normal), `-r` (tiene permiso de lectura), `-x` (es ejecutable).
+    
+- _Ejemplo práctico numérico:_ `if [ $edad -eq 20 ]; then`.
+    
+
+**8. Estructuras de control (Sintaxis)**
+
+- **`if`:**
+    
+    Bash
+    
+    ```
+    if [ condicion ]; then
+      bloque
+    elif [ condicion ]; then
+      bloque
+    else
+      bloque
+    fi
+    ```
+    
+- **`case`:**
+    
+    Bash
+    
+    ```
+    case $variable in
+      "valor 1") bloque ;;
+      *) bloque ;; # Opción por defecto
+    esac
+    ```
+    
+- **`while`:**
+    
+    Bash
+    
+    ```
+    while [ condicion ]; do
+      bloque
+    done
+    ```
+    
+- **`for` (por lista de valores):**
+    
+    Bash
+    
+    ```
+    for var in valor1 valor2 valor3; do
+      bloque
+    done
+    ```
+    
+- **`select` (genera un menú interactivo):**
+    
+    Bash
+    
+    ```
+    select var in opcion1 opcion2; do
+      bloque
+    done
+    ```
+    
+
+**9. Sentencias `break` y `continue`**
+
+- **`break`:** Corta por completo la ejecución del bucle (sale de la estructura).
+    
+- **`continue`:** Salta la iteración actual y pasa inmediatamente a la siguiente vuelta del bucle.
+    
+- **Parámetros:** Ambas pueden recibir opcionalmente un número `[n]` (ej: `break 2`). Ese `n` indica cuántos niveles de bucles anidados se deben cortar o saltar.
+    
+
+**10. Variables y Tipado**
+
+- **Tipos de variables:** Shell script soporta principalmente cadenas (_strings_) y arreglos (_arrays_).
+    
+- **Tipado:** No es fuertemente tipado. Todo se almacena como texto de forma predeterminada, y los comandos interpretan ese texto como números o rutas según el contexto.
+    
+- **Arreglos:** Se pueden definir utilizando paréntesis `()`.
+    
+    - _Ejemplo práctico:_ `mi_arreglo=(uno dos tres)`
+        
+
+**11. Funciones**
+
+- Sí, se pueden definir funciones para modularizar un script.
+    
+- **Cómo se declaran:** Hay dos sintaxis:
+    
+    Bash
+    
+    ```
+    function mi_funcion { bloque; }
+    # o bien
+    mi_funcion() { bloque; }
+    ```
+    
+- **Pasaje de parámetros:** Al invocar la función se le pasan los argumentos al lado (`mi_funcion param1 param2`). Dentro de la función, esos parámetros se leen con `$1`, `$2`, `$3`, exactamente igual que como un script lee sus propios argumentos.
