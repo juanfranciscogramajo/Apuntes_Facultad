@@ -13,4 +13,13 @@
     
 - **OPT (Óptimo):** Garantiza la menor tasa posible de fallos de página (es el límite teórico ideal), aunque es imposible de implementar en la práctica.
 - c) el kernel lo detecta por el bit de modificacion. El kernel si el bit m=0 pisa directamente, si es 1 realiza una op extra de E/S, carga la pag en marco reservado.
-4. 1, 2, 15, 4, 6, 2, 1, 5, 6, 10, 4, 6, 7, 9, 1, 6, 12, 11, 12, 2, 3, 1, 8, 1, 13, 14, 15, 3, 8
+1. 1, 2, 15, 4, 6, 2, 1, 5, 6, 10, 4, 6, 7, 9, 1, 6, 12, 11, 12, 2, 3, 1, 8, 1, 13, 14, 15, 3, 8
+   
+
+|     | 1   | 2   | 15  | 4   | 6   | 2   | 1   | 5   | 6   | 10  | 4   | 6   | 7   | 9   | 1   | 6   | 12  | 11  | 12  | 2   | 3   | 1   | 8   | 1   | 13  | 14  | 15  | 3   | 8   |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| f1  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
+| f2  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
+| f3  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
+| f4  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
+| f5  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
