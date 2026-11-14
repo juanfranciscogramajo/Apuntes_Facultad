@@ -11,4 +11,11 @@
   ![[Pasted image 20261114163136.png]]
 ## Asignacion de marco:
 - Asignacion fija: cada proceso se asigna cant fija de marcos.
-- Asignacion dinamica: cada proceso se asigna 
+- Asignacion dinamica: los procesos se cargan dinamicamente de acuerdo a la cant de marcos que necesiten.
+- Reparto:
+  - Reparto equitativo: misma cantidad de marcos a cada proceso.
+  - Reparto proporcional: se asignan marcos segun la necesidad de C/U.
+## Reemplazo:
+- Reemplazo global: fallo de pagina puede remplazar la pag de cualq proceso
+- Reemplazo local: fallo de pag puede remplazar solo de su proceso.
+- 
