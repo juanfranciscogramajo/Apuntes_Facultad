@@ -1,0 +1,3 @@
+- Page fault: hard page fault es un fallo de pagina y se produce cada vez que hay que alocar una pagina en un marco.
+- Cuando se aloca una pagina y no hay espacio se selecciona pagina victima con un algorito. El mejor algoritmo es el que selecciona una pagina que no va a ser referenciada en un futuro.
+- Algoritmo optimo: Selecciona la paina cuya proxima referencia se encuentra mas lejana a la actual. Es imposible de implementar ya que no se conoce futuros eventos
