@@ -18,4 +18,6 @@
 ## Reemplazo:
 - Reemplazo global: fallo de pagina puede remplazar la pag de cualq proceso
 - Reemplazo local: fallo de pag puede remplazar solo de su proceso.
-- 
+## Descarga asincronica de paginas:
+- El SO reserva uno o más marcos exclusivos para descarga asincrónica.
+- Si la víctima fue modificada, la nueva página se carga inmediatamente en uno de esos marcos reservados mientras la víctima se escribe en disco en segundo plano (sin frenar la ejecución de otros procesos). Una vez descargada, el marco que ocupaba la víctima pasa a ser el nuevo marco reservado.
