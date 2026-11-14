@@ -15,6 +15,10 @@
 - Reparto:
   - Reparto equitativo: misma cantidad de marcos a cada proceso.
   - Reparto proporcional: se asignan marcos segun la necesidad de C/U.
+    Vp * m / Vt. 
+    Vp= paginas req proceso
+    m= marcos disponibles
+    Vt= paginas req total
 ## Reemplazo:
 - Reemplazo global: fallo de pagina puede remplazar la pag de cualq proceso
 - Reemplazo local: fallo de pag puede remplazar solo de su proceso.
