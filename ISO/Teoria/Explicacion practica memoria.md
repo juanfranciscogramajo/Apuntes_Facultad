@@ -7,4 +7,8 @@
   Ej: ![[Pasted image 20261114162005.png]]
 - FIFO: La pag mas vieja se remplaza, sin importar si se va a usar.
   ![[Pasted image 20261114162202.png]]
-- FIFO 2da chance: se usa un bit de referencia. Cuando se carga la pag en mem el bit R=0, cuando es referenciada R=1. Se selecciona la primer pag q bit R=0, mientras se busca cada uno q tiene R=1 se cambia a 0.
+- FIFO 2da chance: se usa un bit de referencia. Cuando se carga la pag en mem el bit R=0, cuando es referenciada R=1. Se selecciona la primer pag q bit R=0, mientras se busca cada uno q tiene R=1 se cambia a 0. Se arranca a buscar desde donde quedo el puntero.
+  ![[Pasted image 20261114163136.png]]
+## Asignacion de marco:
+- Asignacion fija: cada proceso se asigna cant fija de marcos.
+- Asignacion dinamica: cada proceso se asigna 
