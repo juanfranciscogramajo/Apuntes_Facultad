@@ -951,6 +951,9 @@ Registrarse
 Profesional medico
 #### Frente
 **ID**: Iniciar Sesion
-**Titulo**: Como Profesional Medico quiero iniciar sesion en mi cuenta para emitir recetas.
+**Titulo**: Como Profesional Medico quiero iniciar sesion en el sistema para poder operar.
 **Reglas de negocio:**
-- Bloquear luego de 3 intentos continuos sin exito
+- Bloquear luego de 3 intentos continuos sin éxito
+- Si ingresa con la contraseña recibida por mail debe cambiarla.
+#### Dorso
+Escenario 1: 
