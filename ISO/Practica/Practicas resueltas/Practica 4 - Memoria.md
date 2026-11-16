@@ -167,3 +167,10 @@ a) Capacidad = Cantidad de caras X Cilindros (pistas) X Sectores por pista X Tam
 b)
 ![[Pasted image 20261116012206.png]]
 3x 1024 x 1024 = 3.145.728 / 512 = 6144
+15)
+A) 1020 cilindros, 16 cabezas, 63 sectores, cant tota sectores = 16x1020x63 = 1028160
+![[Pasted image 20261116013614.png]]
+i. (3, 2, 1) A = ((3x16+2)x63+(1-1)) = 3150
+ii. (0, 0, 1) A = ((0x16+0)x63+(1-1)) = 0
+iii. (1019, 15, 63) A = ((1019x16+15)x63+(63-1)) = 1028159
+iv. (500, 8, 44)A = ((500x16+2)x63+(1-1)) = 3150
