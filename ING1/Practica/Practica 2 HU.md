@@ -956,4 +956,5 @@ Profesional medico
 - Bloquear luego de 3 intentos continuos sin éxito
 - Si ingresa con la contraseña recibida por mail debe cambiarla.
 #### Dorso
-Escenario 1: 
+Escenario 1: Inicio de sesion Exitoso
+Dado un profesional medico que presiona el boton 
