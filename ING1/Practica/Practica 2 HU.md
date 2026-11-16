@@ -941,3 +941,16 @@ Cuando el investigador seleciona capsula "10", fecha de salto "10/10/2026", año
 Entonces el sistema bloquea la accion por capsula no disponible y informa en pantalla "No fue posible completar la solicitud, capsula seleccionada no disponible".
 **Escenario 3:** Solicitud fallida por periodo de alto riesgo
 **Escenario 4:** Solicitud fallida por falta de autenticacion
+## Parcial 26/09/2026
+### Historias de usuario:
+Emitir Receta
+Iniciar Sesion
+Cerrar Sesion
+Registrarse
+### Roles de usuario:
+Profesional medico
+#### Frente
+**ID**: Iniciar Sesion
+**Titulo**: Como Profesional Medico quiero iniciar sesion en mi cuenta para emitir recetas.
+**Reglas de negocio:**
+- Bloquear luego de 3 intentos continuos sin exito
