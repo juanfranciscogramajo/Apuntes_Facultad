@@ -1012,8 +1012,14 @@ Profesional medico
 #### Dorso
 **Criterios de aceptacion:**
 - Escenario 1: Receta simple emitida exitosamente
-  Dado e
+  Dado una receta tipo simple y el medicamento de categoria "analgesico"
+  cuando ingresa tipo de receta "simple", cantidad de unidades "3", dni paciente "3333333", categoria del medicamento "analgesico" y presiona "Emitir receta"
+  Entonces el sistema emite la receta, la imprime e informa la cantidad de recetas que prescribio a el paciente en el mes.
 - Escenario 2: Receta duplicada emitida exitosamente
+  Dado una receta tipo duplicado, medicamento de categoria "Psicofarmaco" y no se emitio ninguna receta al paciente en el mes de ese tipo
+  Cuando ingresa tipo de receta "Duplicado", cantidad de unidades "1", dni del paciente "33221332", categoria del medicamento "Psicofarmaco" y presiona "Emitir receta".
+  entonces el sistema emite la receta, registra la receta tipo duplicado para el mes del paciente y informa la cantidad de recetas que prescribio a el paciente en el mes.
 - Escenario 3: Emision fallida Receta tipo duplicado por superar limite mensual
+  Dado una receta de tipo duplicado, medicamento de categoria "Psicofarmaco" y ya emitida una receta al paciente en el 
 - Escenario 4: Emision fallida Receta tipo simple por categoria invalida
-- Escenario 5: Emision fallida Receta tipo duplicada por categoria invalida
+- Escenario 5: Emision fallida Receta tipo duplicada por categoria invalido
