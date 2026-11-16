@@ -166,3 +166,4 @@ C
 a) Capacidad = Cantidad de caras X Cilindros (pistas) X Sectores por pista X Tamaño del sector 2x1100x300x512 = 3.717.120.000 bytes
 b)
 ![[Pasted image 20261116012206.png]]
+3x 1024 x 1024 = 3.145.728 / 512 = 6144
