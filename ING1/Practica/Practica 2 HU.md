@@ -957,4 +957,9 @@ Profesional medico
 - Si ingresa con la contraseña recibida por mail debe cambiarla.
 #### Dorso
 Escenario 1: Inicio de sesion Exitoso
-Dado un profesional medico que presiona el boton 
+Dado el mail "aa@gmail.com" registrado en el sistema y no bloqueado, contraseña "1111" no recibida por email y registrada para ese mail.
+Cuando ingresa el mail "aa@gmail.com", contraseña "1111" y presiona el boton "Iniciar sesion",
+Entonces el sistema redirige al usuario a la pagina principal.
+Escenario 2: Inicio de sesion exitoso mail bloquado
+Dado el mail "aaaa@gmail.com" registrado en el sistema, bloqueado y contraseña "asdA" recibida por mail
+Cuando Ingresa el mail "aaaa@gmail.com", contraseña "asdA" 
