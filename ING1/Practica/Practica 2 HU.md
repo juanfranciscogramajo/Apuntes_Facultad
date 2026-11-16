@@ -968,9 +968,21 @@ Profesional medico
   Dado el mail "aa212@gmail.com" registrado en el sistema y no bloqueado, contraseña "1233" recibida por mail y registrada para ese mail,
   Cuando ingresa el mail "aa212@gmail.com" y contraseña "12333" y presiona el boton "Iniciar sesion"
   entonces el sistema redirige al usuario a la pagina de cambio de contraseña
-- Escenario 4: Inicio de sesion fallido 
+- Escenario 4: Inicio de sesion fallido mail no registrado
   dado el mail "aa@gmail.com" no registrado en el sisttema, 
   cuando se ingresa "aa@gmail.com" y contraseña "1233"
   entonces el sistema informa "Datos ingresados invalidos" y incrementa en 1 la cantidad de intentos
-- Escenario 5: Inicio de sesion fallido contraseña incorrecta
-- Escenario 6: inicio de sesion fallido 
+- Escenario 5: Inicio de sesion fallido contraseña no correspondiente al mail ingresado sin superar el limite 
+- Escenario 6: inicio de sesion fallido contraseña no correspondiente al mail ingresado superando el limite
+- Escenario 7: Inicio de sesion fallido contraseña no correspondiente al mail y cuenta bloqueada
+#### Frente
+**ID:** Registrar profesional
+**Titulo:** como profesional quiero registrarme para usar el sistema
+**Reglas de negocio:** 
+- mail como nombre de usuario
+- una cuenta por profesional
+#### Dorso
+**Criterios de aceptacion:**
+- Escenario 1: Registro exitoso
+- Escenario 2: Registro fallido mail registrado
+- Escenario 3: Registro fallido dni ya  
