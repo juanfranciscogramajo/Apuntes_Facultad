@@ -992,3 +992,18 @@ Profesional medico
   Cuando ingresa el mail "aas@gmail.com", dni "33123111", nombre "Gonza", apellido "Lopez", domicilio "111 1112", localidad "La Plata", provinica "Buenos Aires" y se presiona el boton confirmar datos.
   Entonces el sistema informa en pantalla "Inicio de sesion fallido por mail registrado".
 - Escenario 3: Registro fallido dni ya registrado
+#### Frente
+**ID:** Cerrar sesion
+**Titulo:** Como usuario quiero cerrar sesion para salir del sistema
+**Reglas de negocio:**
+#### Dorso
+**Criterios de aceptacion:**
+- Escenario 1: Cierre de sesion exitoso
+  Dado el mail "aaa@gmail.com" autenticado en el sistema
+  cuando se presiona el boton cerrar sesion,
+  entonces el sistema cierra sesion y redirige a la pagina de iniciar sesion
+#### Frente
+**ID:** Emitir receta
+**Titulo:** Como usuario quiero emitir una receta para un preescribir medicacion
+**Reglas de negocio:**
+- 
