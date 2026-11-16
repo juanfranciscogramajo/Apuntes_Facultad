@@ -961,6 +961,16 @@ Profesional medico
   Cuando ingresa el mail "aa@gmail.com", contraseña "1111" y presiona el boton "Iniciar sesion",
   Entonces el sistema redirige al usuario a la pagina principal.
 - Escenario 2: Inicio de sesion exitoso mail bloqueado
-  Dado el mail "aaaa@gmail.com" registrado en el sistema, bloqueado y contraseña "asdA" recibida por mail
-  Cuando Ingresa el mail "aaaa@gmail.com", contraseña "asdA" y presiona el boton "Iniciar sesion", Entonces el sistema desbloquea la cuenta, abre sesion del usuario y redirige a la pagina de cambio de contraseña.
-- Escenario 3: Inicio de sesion exitoso
+  Dado el mail "aaaa@gmail.com" registrado en el sistema, bloqueado y contraseña "asdA" recibida por mail, registrada para ese mail.
+  Cuando Ingresa el mail "aaaa@gmail.com", contraseña "asdA" y presiona el boton "Iniciar sesion", 
+  Entonces el sistema desbloquea la cuenta, abre sesion del usuario y redirige a la pagina de cambio de contraseña.
+- Escenario 3: Inicio de sesion exitoso cuenta no bloqueada
+  Dado el mail "aa212@gmail.com" registrado en el sistema y no bloqueado, contraseña "1233" recibida por mail y registrada para ese mail,
+  Cuando ingresa el mail "aa212@gmail.com" y contraseña "12333" y presiona el boton "Iniciar sesion"
+  entonces el sistema redirige al usuario a la pagina de cambio de contraseña
+- Escenario 4: Inicio de sesion fallido 
+  dado el mail "aa@gmail.com" no registrado en el sisttema, 
+  cuando se ingresa "aa@gmail.com" y contraseña "1233"
+  entonces el sistema informa "Datos ingresados invalidos" y incrementa en 1 la cantidad de intentos
+- Escenario 5: Inicio de sesion fallido contraseña incorrecta
+- Escenario 6: inicio de sesion fallido 
