@@ -962,4 +962,4 @@ Cuando ingresa el mail "aa@gmail.com", contraseña "1111" y presiona el boton "I
 Entonces el sistema redirige al usuario a la pagina principal.
 Escenario 2: Inicio de sesion exitoso mail bloquado
 Dado el mail "aaaa@gmail.com" registrado en el sistema, bloqueado y contraseña "asdA" recibida por mail
-Cuando Ingresa el mail "aaaa@gmail.com", contraseña "asdA" 
+Cuando Ingresa el mail "aaaa@gmail.com", contraseña "asdA" y presiona el boton "Iniciar sesion", Entonces el sistema desbloquea la cuenta, abre sesion del usuario y redirige a la pagina de cambio de contraseña.
