@@ -1020,6 +1020,8 @@ Profesional medico
   Cuando ingresa tipo de receta "Duplicado", cantidad de unidades "1", dni del paciente "33221332", categoria del medicamento "Psicofarmaco" y presiona "Emitir receta".
   entonces el sistema emite la receta, registra la receta tipo duplicado para el mes del paciente y informa la cantidad de recetas que prescribio a el paciente en el mes.
 - Escenario 3: Emision fallida Receta tipo duplicado por superar limite mensual
-  Dado una receta de tipo duplicado, medicamento de categoria "Psicofarmaco" y ya emitida una receta al paciente en el 
+  Dado una receta de tipo "duplicado", medicamento de categoria "Psicofarmaco" y ya emitida una receta al paciente en el mes de tipo "duplicado",
+  cuando ingresa tipo de receta "Duplicado", canitdad de unidades "2", dni del paciente "33123123", categoria del medicamento "Psicofarmaco" y presiona "Emitir receta"
+  Entonces el sistema informa en pantalla "Limite de recetas Duplicadas para el paciente en el mes".
 - Escenario 4: Emision fallida Receta tipo simple por categoria invalida
 - Escenario 5: Emision fallida Receta tipo duplicada por categoria invalido
