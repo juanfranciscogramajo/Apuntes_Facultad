@@ -154,3 +154,12 @@ C
 | f3  |     |     | 4   | 4   | 4   | 1>  | 1   | 1*  |
 | PF  | X   | X   | X   | X   | X   | X   | X   |     |
 7
+12. 
+
+![[Pasted image 20261116003129.png]]
+
+13. 
+    - **_Seek Time_ (Tiempo de posicionamiento):** Es el tiempo que tarda el brazo mecánico en desplazar las cabezas de lectura/escritura hasta ubicarlas sobre el cilindro (pista) donde se encuentra el dato buscado.
+    - **_Latency Time_ (Latencia rotacional):** Es el tiempo que transcurre desde que la cabeza ya está posicionada sobre la pista correcta hasta que el plato gira y el sector deseado pasa exactamente por debajo de ella. _(Si no se conoce el valor exacto, se estima como el tiempo que tarda el disco en dar **media vuelta**)_.
+    - **_Transfer Time_ (Tiempo de transferencia):** Es el tiempo efectivo que demora leer o escribir los bytes del sector (o bloque) y transferirlos entre el disco y la memoria principal.
+14. 
