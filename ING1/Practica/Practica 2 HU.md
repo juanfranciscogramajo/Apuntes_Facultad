@@ -956,10 +956,11 @@ Profesional medico
 - Bloquear luego de 3 intentos continuos sin éxito
 - Si ingresa con la contraseña recibida por mail debe cambiarla.
 #### Dorso
-Escenario 1: Inicio de sesion Exitoso
-Dado el mail "aa@gmail.com" registrado en el sistema y no bloqueado, contraseña "1111" no recibida por email y registrada para ese mail.
-Cuando ingresa el mail "aa@gmail.com", contraseña "1111" y presiona el boton "Iniciar sesion",
-Entonces el sistema redirige al usuario a la pagina principal.
-Escenario 2: Inicio de sesion exitoso mail bloquado
-Dado el mail "aaaa@gmail.com" registrado en el sistema, bloqueado y contraseña "asdA" recibida por mail
-Cuando Ingresa el mail "aaaa@gmail.com", contraseña "asdA" y presiona el boton "Iniciar sesion", Entonces el sistema desbloquea la cuenta, abre sesion del usuario y redirige a la pagina de cambio de contraseña.
+- Escenario 1: Inicio de sesion Exitoso
+  Dado el mail "aa@gmail.com" registrado en el sistema y no bloqueado, contraseña "1111" no recibida por email y registrada para ese mail.
+  Cuando ingresa el mail "aa@gmail.com", contraseña "1111" y presiona el boton "Iniciar sesion",
+  Entonces el sistema redirige al usuario a la pagina principal.
+- Escenario 2: Inicio de sesion exitoso mail bloqueado
+  Dado el mail "aaaa@gmail.com" registrado en el sistema, bloqueado y contraseña "asdA" recibida por mail
+  Cuando Ingresa el mail "aaaa@gmail.com", contraseña "asdA" y presiona el boton "Iniciar sesion", Entonces el sistema desbloquea la cuenta, abre sesion del usuario y redirige a la pagina de cambio de contraseña.
+- Escenario 3: Inicio de sesion exitoso
