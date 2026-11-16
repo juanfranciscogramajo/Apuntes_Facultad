@@ -1006,4 +1006,14 @@ Profesional medico
 **ID:** Emitir receta
 **Titulo:** Como usuario quiero emitir una receta para un preescribir medicacion
 **Reglas de negocio:**
-- 
+- Solo una receta por mes de tipo duplicada por cliente
+- Si medicamento prescrito pertenece a la categoria "Psicofarmacos" debe ser de tipo "Duplicada"
+- Si el medicamento prescrito no pertenece a la categoria "Psicofarmacos" debe ser de tipo "Simple"
+#### Dorso
+**Criterios de aceptacion:**
+- Escenario 1: Receta simple emitida exitosamente
+  Dado e
+- Escenario 2: Receta duplicada emitida exitosamente
+- Escenario 3: Emision fallida Receta tipo duplicado por superar limite mensual
+- Escenario 4: Emision fallida Receta tipo simple por categoria invalida
+- Escenario 5: Emision fallida Receta tipo duplicada por categoria invalida
