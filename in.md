@@ -1,1 +1,1 @@
-i study IT at unlp, and i have a classmate called matias. He is a great classmate, he helps me everytime and is very kind. one thing i 
+i study IT at unlp, and i have a classmate called matias. He is a great classmate, he helps me everytime and is very kind. The only problem with him is he speaks to fast and often usually stutter  so much. When i was 2 classes with him my head 
