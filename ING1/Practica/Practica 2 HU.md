@@ -984,5 +984,11 @@ Profesional medico
 #### Dorso
 **Criterios de aceptacion:**
 - Escenario 1: Registro exitoso
+  Dado el mail "asbd@gmail.com" no registrado y dni "33124123" no registrado.
+  Cuando se ingresa el mail "asbd@gmail.com", dni "33124123", nombre "Pepe", apellido "gomez", domicilio "123 444", localidad "Beriso", provincia "Buenos aires" y presiona el boton confirmar datos.
+  Entonces el sistema registra los datos ingresados y envia un mail a la direccion ingresada con una contraseña. 
 - Escenario 2: Registro fallido mail registrado
-- Escenario 3: Registro fallido dni ya  
+  Dado el mail "aas@gmail.com" registrado 
+  Cuando ingresa el mail "aas@gmail.com", dni "33123111", nombre "Gonza", apellido "Lopez", domicilio "111 1112", localidad "La Plata", provinica "Buenos Aires" y se presiona el boton confirmar datos.
+  Entonces el sistema informa en pantalla "Inicio de sesion fallido por mail registrado".
+- Escenario 3: Registro fallido dni ya registrado
