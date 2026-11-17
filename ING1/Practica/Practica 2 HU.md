@@ -1039,10 +1039,24 @@ Actualmente, los préstamos se coordinan de manera informal por mensajería inst
 
 Se desea desarrollar una aplicación web que permita a los usuarios gestionar estos préstamos de manera autónoma.
 
-Para utilizar el sistema, las **personas** deben estar previamente **registradas** y **autenticadas** (el registro y la autenticación no deben modelarse).
+Para utilizar el sistema, las **personas** deben estar previamente <font color="#ffff00">registradas</font> y <font color="#ffff00">autenticadas</font> (el registro y la autenticación no deben modelarse).
 
-Para **solicitar un kit**, el **usuario** debe indicar: tipo de kit (básico o avanzado), día, hora de retiro y duración del préstamo en horas. Los préstamos no pueden durar más de 3 horas.
+Para <font color="#ffff00">solicitar un kit</font>, el **usuario** debe indicar:<font color="#00b050"> tipo de kit (básico o avanzado), día, hora de retiro y duración del préstamo en horas.</font><font color="#7030a0"> Los préstamos no pueden durar más de 3 horas. Un usuario no puede solicitar un préstamo si tiene algún préstamo anterior activo.</font>
 
-Un usuario no puede solicitar un préstamo si tiene algún préstamo anterior activo.
+Por otro lado, los **administradores** deben tener la posibilidad de <font color="#ffff00">agregar nuevos elementos</font> que formarán parte de un kit (el armado del kit es otra funcionalidad que no debe modelarse). De cada elemento se registra <font color="#00b050">número de serie (es único por elemento), tipo de elemento (cámara, micrófono o trípode), precio de compra (no puede superar el millón de pesos), origen de fabricación del elemento y fecha de alta.</font> Si el elemento no es nacional, entonces el sistema deberá guardar un<font color="#7030a0"> impuesto adicional del 10% calculado sobre el precio de compra.</font>
 
-Por otro lado, los administradores deben tener la posibilidad de agregar nuevos elementos que formarán parte de un kit (el armado del kit es otra funcionalidad que no debe modelarse). De cada elemento se registra número de serie (es único por elemento), tipo de elemento (cámara, micrófono o trípode), precio de compra (no puede superar el millón de pesos), origen de fabricación del elemento y fecha de alta. Si el elemento no es nacional, entonces el sistema deberá guardar un impuesto adicional del 10% calculado sobre el precio de compra.
+Historias de usuario:
+- Registrar usuario
+- Autenticar usuario
+- Solicitar prestamo
+- Agregar Elemento
+ Roles de usuarios:
+ - Administrador
+ - Usuario
+#### Frente
+**ID:** Solicitar Prestamo
+**Titulo:** como usuario quiero solicitar un prestamo para un trabajo academico
+**Reglas de negocio**: 
+- duracion maxima de prestamo 3 horas
+- Un prestamo activo por usuario
+#### Dorso
