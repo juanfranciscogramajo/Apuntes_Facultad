@@ -1172,4 +1172,21 @@ Para la **confirmación**, cuando se ingresa al enlace enviado por correo se deb
   Dado que la solicitud asociada al enlace de confirmación de "ana.gomez@mail.com" confirmada,
   cuando se ingresa al enlace
   entonces el sistema informa "La solicitud se encuentra aceptada"
-  
+
+## Parcial primera fecha 28/10 - Tema 1
+Enunciado para HU y CU
+Una nueva empresa de venta de libros en línea está diseñando su sitio web. Cualquier visitante puede acceder a su catálogo de libros y navegar los distintos libros que se encuentren en él y solo los usuarios registrados pueden realizar compras.
+Para poder comprar los libros se necesita un usuario registrado. El proceso de registro se realiza en dos pasos. En el primer paso el sistema requiere Nombre, Apellido, DNI y cuenta de correo electrónico (que no exista en ei sistema) y una clave de 6 caracteres para darlo de alta de forma parcial. En este proceso el sistema debe generar un código de 16 dígitos y enviarlo por correo para que luego el visitante confirme la cuenta. Como segundo paso el visitante debe entrar a la página de confirmación e ingresar su dirección de correo y el código de 16 dígitos, S estos dos
+son correctos el sistema lo registra definitivamente como usuario.
+Una vez registrado, para autenticarse, el sistema requiere el correo del usuario y la clave de 6 caracteres.
+Para realizar la compra de un libro el sistema pide ingresar el ISBN del mismo y muestra al usuario la portada con una descripción del libro y la opción "Comprar". Cuando el usuario selecciona "Comprar se le pide los datos de la tarjeta: Apellido, Nombre, Nro de tarjeta. Es importante tener en cuenta que por disposición del Banco Central solo el titular de la tarjeta puede realizar la compra, por lo que el nombre y apellido registrado debe coincidir con el de la tarjeta. Realizada esta verificación se procede a enviar los datos al servidor de la tarjeta para realizar el cobro. Si
+todo es correcto se genera un enlace de descarga al correo del usuario.
+
+1- Historias de usuario
+a. Liste id y titulo de todas las historias de usuario que identifique.
+b. Realice las tarjetas completas de 3 (tres) historias de usuario identificadas, exceptuando la
+autenticación (log in/log out) y la navegación por el sitio.
+
+2- Casos de uso
+a. Realice el diagrama completo.
+b. Realice los escenarios de los Casos de Uso referentes a la compra de un libro.
