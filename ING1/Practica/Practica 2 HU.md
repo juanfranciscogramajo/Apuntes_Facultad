@@ -1075,4 +1075,7 @@ Historias de usuario:
   entonces el sistema informa en pantalla "Solicitud fallida por prestamo activo" 
 - Escenario 4: Solicitud de prestamo fallida por falta de stock
   dado una duracion de "2 " horas, stock insuficiente para tipo de kit "Avanzado" y ningun prestamo activo para el usuario
-  cuando ingresa tipo de kit "Avanzado", dia "23", hora de retiro "13"
+  cuando ingresa tipo de kit "Avanzado", dia "23", hora de retiro "13", duracion del prestamo en horas de "2", y presiona "Solicitar prestamo"
+  entonces el sistema informa en pantalla "Solicitud fallida por stock insuficiente para el tipo ingresado".
+#### Frente 
+**ID:** 
