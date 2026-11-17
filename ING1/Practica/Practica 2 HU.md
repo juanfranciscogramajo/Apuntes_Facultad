@@ -1062,9 +1062,17 @@ Historias de usuario:
 #### Dorso
 **Criterios de aceptacion:** 
 - Escenario 1: Solicitud de prestamo Exitosa
-  Dado una duracion "2 horas", stock suficiente y ningun prestamo activo para el usuario 
+  Dado una duracion "2 horas", stock suficiente para el tipo de kit "Basico" y ningun prestamo activo para el usuario 
   Cuando ingresa tipo de kit "Basico", dia "3", hora de retiro "14" y duracion del prestamo en horas "2" y presiona "Solicitar prestamo",
-  entonces el sistema registra el prestamo 
+  entonces el sistema registra el prestamo y informa "Solicitud de prestamo exitosa".
 - Escenario 2: Solicitud de prestamo fallida por duracion maxima superada
+  Dado una duracion de "5 horas", stock suficiente para el tipo de kit "avanzado" y ningun prestamo activo para el usuario
+  cuando ingresa tipo de kit "Avanzado", dia "3", hora de retiro "8" y duracion del prestamo en horas "5" y presiona "Solicitar prestamo",
+  entonces el sistema informa "Solicitud fallida por duracion mayor al maximo permitido"
 - Escenario 3: Solicitud de prestamo fallida por prestamo activo
+  Dado una duracion de "3" horas, stock suficiente para el tipo de kit "Basico" y un prestamo activo para el usuario,
+  cuando se ingresa tipo de kit "Basico", dia "2", hora de retiro "9", duracion del prestamo en horas "1" y presiona "Solicitar Prestamo",
+  entonces el sistema informa en pantalla "Solicitud fallida por prestamo activo" 
 - Escenario 4: Solicitud de prestamo fallida por falta de stock
+  dado una duracion de "2 " horas, stock insuficiente para tipo de kit "Avanzado" y ningun prestamo activo para el usuario
+  cuando ingresa tipo de kit "Avanzado", dia "23", hora de retiro "13"
