@@ -1165,7 +1165,11 @@ Para la **confirmación**, cuando se ingresa al enlace enviado por correo se deb
   cuando ingresa el codigo "1111" y presiona "Confirmar solicitud"
   entonces el sistema cancela la solicitud, bloquea el mail asociado al enlace y informa en pantalla "Solicitud cancelada, se supero la cantidad de intentos posibles"
 - Escenario 4 Confirmacion de solicitud fallida por solicitud cancelada
-  dado una solicitud bloqueada
+  Dado que la solicitud asociada al enlace de confirmación de "ana.gomez@mail.com" anulada,
   cuando se ingresa al enlace
   entonces se informa en pantalla "Solicitud cancelada, se supero la cantidad de intentos posibles"
-- 
+- Escenario 5: Confirmacion de solicitud fallida por solicitud confirmada
+  Dado que la solicitud asociada al enlace de confirmación de "ana.gomez@mail.com" confirmada,
+  cuando se ingresa al enlace
+  entonces el sistema informa "La solicitud se encuentra aceptada"
+  
