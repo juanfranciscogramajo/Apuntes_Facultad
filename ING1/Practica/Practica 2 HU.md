@@ -1025,3 +1025,24 @@ Profesional medico
   Entonces el sistema informa en pantalla "Limite de recetas Duplicadas para el paciente en el mes".
 - Escenario 4: Emision fallida Receta tipo simple por categoria invalida
 - Escenario 5: Emision fallida Receta tipo duplicada por categoria invalido
+## Parcial 13/5/26
+
+Para cada HU solicitada (no se solicita registro, autenticación ni armado de KIT):
+
+• Hacer el frente de la tarjeta (id, título y reglas de negocio)
+
+• Hacer completos 1 escenario fallido y todos los exitosos, y sólo el título del resto de los escenarios
+
+El área de Tics de la facultad dispone de kits multimedia (cámara, micrófono y trípode) que **estudiantes** y **docentes** pueden solicitar para grabar presentaciones, entrevistas o material audiovisual para trabajos académicos.
+
+Actualmente, los préstamos se coordinan de manera informal por mensajería instantánea, lo que provoca superposiciones, olvidos y dificultad para saber qué kits están disponibles.
+
+Se desea desarrollar una aplicación web que permita a los usuarios gestionar estos préstamos de manera autónoma.
+
+Para utilizar el sistema, las **personas** deben estar previamente **registradas** y **autenticadas** (el registro y la autenticación no deben modelarse).
+
+Para **solicitar un kit**, el **usuario** debe indicar: tipo de kit (básico o avanzado), día, hora de retiro y duración del préstamo en horas. Los préstamos no pueden durar más de 3 horas.
+
+Un usuario no puede solicitar un préstamo si tiene algún préstamo anterior activo.
+
+Por otro lado, los administradores deben tener la posibilidad de agregar nuevos elementos que formarán parte de un kit (el armado del kit es otra funcionalidad que no debe modelarse). De cada elemento se registra número de serie (es único por elemento), tipo de elemento (cámara, micrófono o trípode), precio de compra (no puede superar el millón de pesos), origen de fabricación del elemento y fecha de alta. Si el elemento no es nacional, entonces el sistema deberá guardar un impuesto adicional del 10% calculado sobre el precio de compra.
