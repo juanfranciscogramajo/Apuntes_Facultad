@@ -1195,10 +1195,24 @@ b. Realice los escenarios de los Casos de Uso referentes a la compra de un libro
 
 Se desea modelar un sistema de pago electrónico de impuestos y servicios en efectivo.
 
-Cuando un cliente llega para <font color="#ffff00">realizar un pago</font>,<font color="#ff0000"> el empleado o el gerente </font>de la sucursal <font color="#7030a0">ingresa el código de pago electrónico</font> y el sistema se conecta con la central de cobro para recuperar los datos de la factura (empresa, nro de cliente, 1era fecha de vencimiento, 2da fecha de vencimiento, recargo, y monto original). Una vez recuperados los datos, el sistema debe verificar los vencimientos para determinar el monto a cobrar. Teniendo esto en cuenta, cuando el <font color="#00b0f0">2do vencimiento está vencido se debe informar que la factura no se puede cobrar por dicho motivo</font>. Cuando el 1er v<font color="#00b0f0">encimiento está vencido hay que aplicar el recargo al monto original.</font> <font color="#00b0f0">Si la factura no está vencida, se cobra el monto original.</font>
+Cuando un cliente llega para <font color="#ffff00">realizar un pago</font>,<font color="#ff0000"> el empleado o el gerente </font>de la sucursal <font color="#7030a0">ingresa el código de pago electrónico</font> y el sistema se conecta con la central de cobro para recuperar los datos de la factura (empresa, nro de cliente, 1era fecha de vencimiento, 2da fecha de vencimiento, recargo, y monto original). Una vez recuperados los datos, el sistema debe verificar los vencimientos para determinar el monto a cobrar. Teniendo esto en cuenta, cuando el <font color="#7030a0">2do vencimiento está vencido se debe informar que la factura no se puede cobrar por dicho motivo</font>. Cuando el 1er v<font color="#7030a0">encimiento está vencido hay que aplicar el recargo al monto original.</font> <font color="#7030a0">Si la factura no está vencida, se cobra el monto original.</font>
 
-Una vez al día, el gerente de la sucursal debe <font color="#ffff00">registrar</font> en la central de <font color="#ffff00">cobros</font> los pagos que hicieron los clientes. Para esto el sistema requiere la clave maestra y de ser correcta, recupera las transacciones de los impuestos y servicios cobrados en el día, se conecta a la central de cobro y se las envía. Cuando la central confirma la recepción exitosa, el sistema las registra como enviadas. Este último paso es importante porque no deben enviarse dos veces las transacciones. Si el gerente intenta enviar una segunda vez, el sistema no debe permitirlo.
+Una vez al día, el gerente de la sucursal debe <font color="#ffff00">registrar</font> en la central de <font color="#ffff00">cobros</font> los pagos que hicieron los clientes. Para esto el sistema requiere la <font color="#00b0f0">clave maestra</font> y de ser correcta, recupera las transacciones de los impuestos y servicios cobrados en el día, se conecta a la central de cobro y se las envía. Cuando la central confirma la recepción exitosa, el sistema las registra como enviadas. Este último paso es importante porque<font color="#7030a0"> no deben enviarse dos veces las transacciones</font>. Si el gerente intenta enviar una segunda vez, el sistema no debe permitirlo.
 
-Finalmente el Gerente puede ver las estadísticas de los impuestos y servicios cobrados. Para esto, se ingresa la clave maestra, un rango de fechas sobre las cuales debe calcularse las estadísticas y el sistema debe mostrar los montos y la cantidad de cobros realizados, agrupando por empresa.
+Finalmente el Gerente puede <font color="#ffff00">ver las estadísticas </font>de los impuestos y servicios cobrados. Para esto, se i<font color="#00b0f0">ngresa la clave maestra, un rango de fechas</font> sobre las cuales debe calcularse las estadísticas y el sistema debe mostrar los montos y la cantidad de cobros realizados, agrupando por empresa.
 
 Tenga en cuenta que cada vez que el sistema debe conectarse a la central, debe enviarle un token (código que identifica al sistema). Una vez que la central valida el token, el sistema envía el requerimiento para recuperar los datos de la factura o el requerimiento para registrar los pagos del día según corresponda.
+
+#### Frente
+**ID:** Realizar pago
+**Titulo:** Como empleado quiero realizar un pago para un cliente
+**Reglas de negocio:**
+- 1er vencimiento aplica recargo al monto original
+- 2do vencimiento no se puede cobrar factura
+- si no hay vencimiento monto original
+#### Dorso
+**Criterios de aceptacion:**
+- Escenario 1: Pago exitoso sin vencimiento
+- Escenario 2: Pago exitoso con 1er vencimiento
+- Escenario 3: Pago fallido por 2do vencimiento
+- Escenario 4: Pago fallido por factura paga
