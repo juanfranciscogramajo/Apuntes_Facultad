@@ -1118,8 +1118,12 @@ Se desea modelar a través de historias de usuario un módulo de asociación de 
 
 En la **solicitud de asociación** la persona debe <font color="#00b0f0">ingresar su nombre, apellido, correo electrónico y una clave de acceso que tenga como mínimo 6 caracteres.</font> <font color="#7030a0">El correo electrónico será utilizado como identificador único del socio, por lo tanto no puede repetirse. </font>Cuando se completa este paso, se debe enviar al correo ingresado un enlace de confirmación y un código de validación.
 
-Para la confirmación, cuando se ingresa al enlace enviado por correo se debe ingresar el código que ha llegado al correo electrónico. Si el mismo es correcto, la persona queda correctamente asociada a la biblioteca, enviando un nuevo correo dando la bienvenida e informando que el usuario de acceso es el correo electrónico y la clave la ingresada en el paso de solicitud.
+Para la **confirmación**, cuando se ingresa al enlace enviado por correo se debe<font color="#00b0f0"> ingresar el código que ha llegado al correo electrónico. </font>Si el mismo es correcto, la persona queda correctamente asociada a la biblioteca, enviando un nuevo correo dando la bienvenida e informando que el usuario de acceso es el correo electrónico y la clave la ingresada en el paso de solicitud.
+<font color="#ff0000">Si el intento de confirmación falla 3 veces, la solicitud queda anulada, no pudiendo intentar confirmar nuevamente la membresía ni utilizar ese correo electrónico para realizar una nueva solicitud de asociación.</font>
 
-Si el intento de confirmación falla 3 veces, la solicitud queda anulada, no pudiendo intentar confirmar nuevamente la membresía ni utilizar ese correo electrónico para realizar una nueva solicitud de asociación.
-
-**
+#### Frente
+**ID:** solicitar asociacion
+**Titulo:** como persona quiero solicitar asociacion para darme de alta en el sistema
+**Reglas de negocio:** 
+- El correo es usado como identificador del socio
+- Clave de acceso mayor a 5 caracteres
