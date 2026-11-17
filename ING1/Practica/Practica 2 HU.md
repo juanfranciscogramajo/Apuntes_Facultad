@@ -1102,3 +1102,24 @@ Historias de usuario:
   dado un elemento con un numero de serie "2233" registrado en el sistema
   cuando se ingresa numero de serie "2233", tipo de elemento "tripode", precio de compra "123.123", origen "Estados Unidos", fecha de alta "22-10-2026" y presionar "Agregar elemento"
   entonces el sistema informa en pantalla "El elemento se encuentra registrado" 
+
+
+## 12. Biblioteca digital | Asociación de nuevos socios
+
+Redictado Ingeniería de Software I — 23/6/2026
+
+Para cada HU identificada hacer:
+
+• Hacer el frente de la tarjeta (id, título y reglas de negocio)
+
+• Hacer completos 1 escenario fallido y todos los exitosos, y sólo el título del resto de los escenarios
+
+Se desea modelar a través de historias de usuario un módulo de asociación de nuevos socios para una biblioteca digital. Este módulo debe permitir el alta de un nuevo socio. El alta cuenta con dos pasos, la solicitud de asociación y la confirmación de la membresía.
+
+En la solicitud de asociación la persona debe ingresar su nombre, apellido, correo electrónico y una clave de acceso que tenga como mínimo 6 caracteres. El correo electrónico será utilizado como identificador único del socio, por lo tanto no puede repetirse. Cuando se completa este paso, se debe enviar al correo ingresado un enlace de confirmación y un código de validación.
+
+Para la confirmación, cuando se ingresa al enlace enviado por correo se debe ingresar el código que ha llegado al correo electrónico. Si el mismo es correcto, la persona queda correctamente asociada a la biblioteca, enviando un nuevo correo dando la bienvenida e informando que el usuario de acceso es el correo electrónico y la clave la ingresada en el paso de solicitud.
+
+Si el intento de confirmación falla 3 veces, la solicitud queda anulada, no pudiendo intentar confirmar nuevamente la membresía ni utilizar ese correo electrónico para realizar una nueva solicitud de asociación.
+
+**
