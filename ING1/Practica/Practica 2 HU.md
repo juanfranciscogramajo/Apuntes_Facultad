@@ -1213,6 +1213,9 @@ Tenga en cuenta que cada vez que el sistema debe conectarse a la central, debe e
 #### Dorso
 **Criterios de aceptacion:**
 - Escenario 1: Pago exitoso sin vencimiento
+  dado un codigo de pago "223132" valido, sin vencimiento y un token "2123 valido"
+  cuando el empleado ingresa el codigo "223132" y presiona "pagar factura"
+  entonces el sistema 
 - Escenario 2: Pago exitoso con 1er vencimiento
 - Escenario 3: Pago fallido por 2do vencimiento
-- Escenario 4: Pago fallido por factura paga
+- Escenario 4: Pago fallido por error de comunicacion con central
