@@ -1093,7 +1093,7 @@ Historias de usuario:
 - Escenario 2: agregacion de elemento con exito importado
   dado un numero de serie "1113" no registrado, precio de compra "100.000" y origen de fabricacion "Brasil".
   cuando se ingresa numero de serie "1113", tipo de elemento "microfono", precio de compra "100.000", origen de fabricacion "Brasil", fecha de alta "01-11-2026" y presiona "Agregar elemento",
-  entonces el sistema aplica un impuesto adicional sobre el precio de compra, registra el elemento y informa en pantalla "Elemento agregado exitosamente"
+  entonces el sistema aplica un impuesto adicional de 10% sobre el precio de compra, registra el elemento y informa en pantalla "Elemento agregado exitosamente"
 - Escenario 3: agregacion de elemento fallido por precio de compra mayor a 1 millon
   dado un elemento con precio de compra de "2.000.000"
   cuando se ingresa numero de serie "123", tipo de elemento "Camara", precio de compra "2.000.000'", origen de fabricacion "Argentina", fecha de alta "23-11-2026" y presiona "Agregar elemento"
