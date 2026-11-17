@@ -1088,7 +1088,17 @@ Historias de usuario:
 **Criterios de aceptacion:**
 - Escenario 1: agregacion de elemento con exito nacional
   dado un numero de serie "22323" no registrado, precio de compra de "200.000" y origen de fabricacion "Argentina",
-  cuando ingresa numero de serie "22323", tipo de elemento "camara", precio de compra "200.000", origen de fabricacion "Argentina", 
+  cuando ingresa numero de serie "22323", tipo de elemento "camara", precio de compra "200.000", origen de fabricacion "Argentina", fecha de alta "03-11-2026" y presiona "Agregar elemento",
+  entonces el sistema registra el elemento y informa en pantalla "Elemento agregado exitosamente"
 - Escenario 2: agregacion de elemento con exito importado
+  dado un numero de serie "1113" no registrado, precio de compra "100.000" y origen de fabricacion "Brasil".
+  cuando se ingresa numero de serie "1113", tipo de elemento "microfono", precio de compra "100.000", origen de fabricacion "Brasil", fecha de alta "01-11-2026" y presiona "Agregar elemento",
+  entonces el sistema aplica un impuesto adicional sobre el precio de compra, registra el elemento y informa en pantalla "Elemento agregado exitosamente"
 - Escenario 3: agregacion de elemento fallido por precio de compra mayor a 1 millon
+  dado un elemento con precio de compra de "2.000.000"
+  cuando se ingresa numero de serie "123", tipo de elemento "Camara", precio de compra "2.000.000'", origen de fabricacion "Argentina", fecha de alta "23-11-2026" y presiona "Agregar elemento"
+  entonces el sistema informa en pantalla "El precio de compra maximo es de 1 millon"
 - Escenario 4: agregacion de elemento fallido por numero de serie existente
+  dado un elemento con un numero de serie "2233" registrado en el sistema
+  cuando se ingresa numero de serie "2233", tipo de elemento "tripode", precio de compra "123.123", origen "Estados Unidos", fecha de alta "22-10-2026" y presionar "Agregar elemento"
+  entonces el sistema informa en pantalla "El elemento se encuentra registrado" 
