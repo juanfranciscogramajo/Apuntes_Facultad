@@ -1,0 +1,1 @@
+Para <font color="#ffff00">solicitar un kit</font>, el **usuario** debe indicar:<font color="#00b050"> tipo de kit (básico o avanzado), día, hora de retiro y duración del préstamo en horas.</font><font color="#7030a0"> Los préstamos no pueden durar más de 3 horas. Un usuario no puede solicitar un préstamo si tiene algún préstamo anterior activo.</font>

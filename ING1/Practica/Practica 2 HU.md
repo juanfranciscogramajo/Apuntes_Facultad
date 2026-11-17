@@ -1060,3 +1060,11 @@ Historias de usuario:
 - duracion maxima de prestamo 3 horas
 - Un prestamo activo por usuario
 #### Dorso
+**Criterios de aceptacion:** 
+- Escenario 1: Solicitud de prestamo Exitosa
+  Dado una duracion "2 horas", stock suficiente y ningun prestamo activo para el usuario 
+  Cuando ingresa tipo de kit "Basico", dia "3", hora de retiro "14" y duracion del prestamo en horas "2" y presiona "Solicitar prestamo",
+  entonces el sistema registra el prestamo 
+- Escenario 2: Solicitud de prestamo fallida por duracion maxima superada
+- Escenario 3: Solicitud de prestamo fallida por prestamo activo
+- Escenario 4: Solicitud de prestamo fallida por falta de stock
