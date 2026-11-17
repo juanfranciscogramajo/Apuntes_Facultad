@@ -1114,9 +1114,9 @@ Para cada HU identificada hacer:
 
 • Hacer completos 1 escenario fallido y todos los exitosos, y sólo el título del resto de los escenarios
 
-Se desea modelar a través de historias de usuario un módulo de asociación de nuevos socios para una biblioteca digital. Este módulo debe permitir el alta de un nuevo socio. El alta cuenta con dos pasos, la solicitud de asociación y la confirmación de la membresía.
+Se desea modelar a través de historias de usuario un módulo de asociación de nuevos **socios** para una biblioteca digital. Este módulo debe permitir el alta de un nuevo socio. El alta cuenta con dos pasos, la solicitud de asociación y la confirmación de la membresía.
 
-En la solicitud de asociación la persona debe ingresar su nombre, apellido, correo electrónico y una clave de acceso que tenga como mínimo 6 caracteres. El correo electrónico será utilizado como identificador único del socio, por lo tanto no puede repetirse. Cuando se completa este paso, se debe enviar al correo ingresado un enlace de confirmación y un código de validación.
+En la **solicitud de asociación** la persona debe <font color="#00b0f0">ingresar su nombre, apellido, correo electrónico y una clave de acceso que tenga como mínimo 6 caracteres.</font> <font color="#7030a0">El correo electrónico será utilizado como identificador único del socio, por lo tanto no puede repetirse. </font>Cuando se completa este paso, se debe enviar al correo ingresado un enlace de confirmación y un código de validación.
 
 Para la confirmación, cuando se ingresa al enlace enviado por correo se debe ingresar el código que ha llegado al correo electrónico. Si el mismo es correcto, la persona queda correctamente asociada a la biblioteca, enviando un nuevo correo dando la bienvenida e informando que el usuario de acceso es el correo electrónico y la clave la ingresada en el paso de solicitud.
 
