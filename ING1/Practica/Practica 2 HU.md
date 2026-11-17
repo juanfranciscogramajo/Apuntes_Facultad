@@ -1143,3 +1143,12 @@ Para la **confirmación**, cuando se ingresa al enlace enviado por correo se deb
   entonces el sistema informa en pantalla "La clave debe tener como minimo 6 caracteres"
 - Escenario 4: Solicitud fallida por correo bloqueado
   dado un mail "abc@gmail.com" bloqueado
+  cuando se ingresa el nombre "marco", apellido "Banzas", mail "abc@gmail.com", clave de acceso "123456" y presiona "Enviar Solicitud"
+  entonces el sistema informa en pantalla "El mail se encuentra bloqueado"
+#### Frente
+**ID:** Confirmar solicitud
+**Titulo:** como persona quiero confirmar la solicitud para estar registrado en el sistema
+**Reglas de negocio:** 
+- Bloquear mail y cancelar solicitud de asociacion tras fallar 3 veces la confirmacion
+#### Dorso
+**Criterios de aceptacion:** 
