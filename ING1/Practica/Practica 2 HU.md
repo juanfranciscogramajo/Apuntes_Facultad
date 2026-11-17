@@ -1086,4 +1086,9 @@ Historias de usuario:
 - Impuesto del 10% sobre el precio de compra a los elementos importados.
 #### Dorso
 **Criterios de aceptacion:**
-- Escenario 1: Elemento agregado con exito
+- Escenario 1: agregacion de elemento con exito nacional
+  dado un numero de serie "22323" no registrado, precio de compra de "200.000" y origen de fabricacion "Argentina",
+  cuando ingresa numero de serie "22323", tipo de elemento "camara", precio de compra "200.000", origen de fabricacion "Argentina", 
+- Escenario 2: agregacion de elemento con exito importado
+- Escenario 3: agregacion de elemento fallido por precio de compra mayor a 1 millon
+- Escenario 4: agregacion de elemento fallido por numero de serie existente
