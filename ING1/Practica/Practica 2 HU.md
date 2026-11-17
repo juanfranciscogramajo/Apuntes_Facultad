@@ -1152,3 +1152,12 @@ Para la **confirmación**, cuando se ingresa al enlace enviado por correo se deb
 - Bloquear mail y cancelar solicitud de asociacion tras fallar 3 veces la confirmacion
 #### Dorso
 **Criterios de aceptacion:** 
+- Escenario 1: Confirmacion de solicitud exitosa
+  dado una solicitud activa y el codigo "223" correspondiente al enlace enviado por mail
+  cuando ingresa el codigo "223" y presiona "Confirmar solicitud"
+  entonces se envia un correo de bienvenida con usuario de acceso, clave de acceso y informa "Confirmacion de solicitud exitosa"
+- Escenario 2: Confirmacion de solicitud fallida por clave incorrecta con 0 intento
+  dado un solicitud activa y el codigo "2123" no asociado al enlace enviado por mail
+  cuando ingresa le codigo "2123", no 
+- Escenario 3: Confirmacion de solicitud fallida por clave incorrecta con 2 intentos
+  Escenario 4 Confirmacion de solicitud fallida por solicitud cancelada
