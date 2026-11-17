@@ -1127,3 +1127,19 @@ Para la **confirmación**, cuando se ingresa al enlace enviado por correo se deb
 **Reglas de negocio:** 
 - El correo es usado como identificador del socio
 - Clave de acceso mayor a 5 caracteres
+#### Dorso
+**Criterios de aceptacion:**
+- Escenario 1: Solicitud exitosa 
+  Dado un mail "ped@gmail.com" no registrado ni bloqueado y una clave "123456"
+  Cuando se ingresa nombre "pedro", apellido "sanchez", mail "ped@gmail.com", clave de acceso "123456" y presiona "Enviar solicitud"
+  entonces el sistema envia un correo al correo ingresado con un enlace de confirmacion y un codigo de validacion e informa en pantalla "Solicitud exitosa"
+- Escenario 2: Solicitud fallida por correo ya asociado
+  Dado un mail "aa@gmail.com" registrado, no bloqueado
+  cuando se ingresa el nombre "alejo", apellido "maula", mail "aa@gmail.com", clave de acceso "1233442" y presiona "Enviar solicitud"
+  entonces el sistema informa en pantalla "El mail ingresado ya se encuentra registrado"
+- Escenario 3: Solicitud fallida por clave con menos de 6 digitos
+  dado una clave "1123"
+  cuando se ingresa el nombre "baut", apellido "Garcia", mail "baucomas@gmail.com", clave de acceso "1123" y presiona "Enviar solicitud"
+  entonces el sistema informa en pantalla "La clave debe tener como minimo 6 caracteres"
+- Escenario 4: Solicitud fallida por correo bloqueado
+  dado un mail "abc@gmail.com" bloqueado
