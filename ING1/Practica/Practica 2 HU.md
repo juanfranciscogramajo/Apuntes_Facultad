@@ -1153,11 +1153,18 @@ Para la **confirmación**, cuando se ingresa al enlace enviado por correo se deb
 #### Dorso
 **Criterios de aceptacion:** 
 - Escenario 1: Confirmacion de solicitud exitosa
-  dado una solicitud activa y el codigo "223" correspondiente al enlace enviado por mail
+  Dado que la persona ingresó al enlace de confirmación correspondiente a la solicitud vigente de "ana.gomez@mail.com", cuyo código de validación es "223" y posee menos de 3 intentos fallidos,
   cuando ingresa el codigo "223" y presiona "Confirmar solicitud"
-  entonces se envia un correo de bienvenida con usuario de acceso, clave de acceso y informa "Confirmacion de solicitud exitosa"
+  entonces se registra el alta del socio y se envia un correo de bienvenida con usuario de acceso, clave de acceso y informa "Confirmacion de solicitud exitosa"
 - Escenario 2: Confirmacion de solicitud fallida por clave incorrecta con 0 intento
   dado un solicitud activa y el codigo "2123" no asociado al enlace enviado por mail
-  cuando ingresa le codigo "2123", no 
+  cuando ingresa le codigo "2123" y presiona "Confirmar solicitud"
+  entonces el sistema informa "Clave incorrecta" y se incrementa la cantidad de intentos
 - Escenario 3: Confirmacion de solicitud fallida por clave incorrecta con 2 intentos
+  Dado que la solicitud asociada a "ana.gomez@mail.com" ya registra 2 intentos fallidos previos de validación de código, codigo "1111" no correspondiente al mail,
+  cuando ingresa el codigo "1111" y presiona "Confirmar solicitud"
+  entonces el sistema cancela la solicitud, bloquea el mail asociado al enlace y informa en pantalla "Solicitud cancelada, se supero la cantidad de intentos posibles"
   Escenario 4 Confirmacion de solicitud fallida por solicitud cancelada
+  dado una solicitud bloqueada
+  cuando se ingresa al enlace
+  entonces se informa en pantalla "Solicitud cancelada, se supero la cantidad de intentos posibles"
