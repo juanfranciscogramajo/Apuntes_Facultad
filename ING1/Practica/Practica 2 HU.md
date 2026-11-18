@@ -1190,7 +1190,10 @@ a. Liste id y titulo de todas las historias de usuario que identifique.
   Titulo: Como persona quiero confirmar el registro para quedar registrado definitivamente
 - ID: Comprar libro
   Titulo: Como usuaro quiero comprar un libro para descargarlo
-- ID:  
+- ID: Iniciar sesion
+  Titulo: Como usuario quiero iniciar sesion para acceder a la pagina principal
+- ID: Cerrar sesion
+  Titulo: Como usuario quiero cerrar sesion para salir del sistema
 b. Realice las tarjetas completas de 3 (tres) historias de usuario identificadas, exceptuando la
 autenticación (log in/log out) y la navegación por el sitio.
 
