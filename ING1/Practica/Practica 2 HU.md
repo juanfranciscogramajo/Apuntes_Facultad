@@ -1228,4 +1228,14 @@ Tenga en cuenta que cada vez que el sistema debe conectarse a la central, debe e
 **Criterios de aceptacion:**
 - Escenario 1:  Registro de cobros exitoso
 - Escenario 2:  Registro de cobros fallido por registro ya realizado en el dia
-- Escenario 3: Registro de cobros fallido por 
+- Escenario 3: Registro de cobros fallido por conexion a central fallida
+- Escenario 4: Registro de cobros fallido por clave invalida
+#### Frente
+**ID:** Ver estadisticas
+**Titulo:** como gerente quiero ver las estadisticas para analizar los datos
+**Reglas de negocio:**
+#### Dorso
+**Criterios de aceptacion:**
+- Escenario 1: Vista de estadisticas exitosa
+- Escenario 2: Vista de estadisticas fallida por rango invalido
+- Escenario 3 Vista de estadisticas fallida por clave invalida
