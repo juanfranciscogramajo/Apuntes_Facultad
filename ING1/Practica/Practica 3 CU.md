@@ -630,3 +630,20 @@ Para la solicitud del crédito debe<font color="#00b0f0"> ingresar el monto soli
 Una vez concretado el crédito el sistema imprime un recibo que deberá ser firmado por el cliente.
 Consigna requerida:  
 Realice el diagrama completo y los escenarios de los casos de uso identificados en el siguiente dominio. El diagrama debe contener extends y/o uses.
+
+Nombre del CU: registrar usuario
+descripcion: Este caso de uso describe como una persona se registra en el sistema
+Actores: Persona
+Precondicion:
+
+| **Nombre del caso de uso:** | Registrar usuario                                                    |                                                                                     |
+| --------------------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| **Descripción:**            | Este caso de uso describe como una persona se registra en el sistema |                                                                                     |
+| **Actores:**                | Persona                                                              |                                                                                     |
+| **Precondiciones:**         | ---                                                                  |                                                                                     |
+| **Curso Normal:**           | **Acciones del Actor**                                               | **Acciones del sistema**                                                            |
+|                             | Paso 1: La persona presiona el boton "Registrarse"                   | Paso 2: El sistema solicita mail, nombre, apellido. direccion, dni, ocupacion y cbu |
+|                             | Paso 3: La persona ingresa los datos solicitados                     |                                                                                     |
+|                             |                                                                      |                                                                                     |
+| **Curso Alterno:**          |                                                                      |                                                                                     |
+| **Postcondición:**          |                                                                      |                                                                                     |
