@@ -668,16 +668,27 @@ Realice el diagrama completo y los escenarios de los casos de uso identificados 
 | **Curso Alterno:**          |                                                                        |                                                                                          |
 | **Postcondición:**          | Se ha cerrado sesion y deshabilita las funciones de usuario registrado |                                                                                          |
 
-| **Nombre del caso de uso:** | Solicitar credito                                                     |                                                                                   |
-| --------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| **Descripción:**            | Este caso de uso describe como un usuario solicita un credito         |                                                                                   |
-| **Actores:**                | Usuario                                                               |                                                                                   |
-| **Precondiciones:**         | El usuario debe tener una sesion activa                               |                                                                                   |
-| **Curso Normal:**           | **Acciones del Actor**                                                | **Acciones del sistema**                                                          |
-|                             | Paso 1: El usuario presiona el boton "Solicitar Prestamo"             | Paso 2: El sistema solicita el monto, fotos del dni y del utlimo recibo de sueldo |
-|                             | Paso 3: El usuario ingresa los datos solicitados                      | Paso 4: Se ejecuta CU "Validar cuenta"                                            |
-|                             |                                                                       | Paso 5: El sistema recibe que la cuenta es valida                                 |
-|                             |                                                                       | Paso 6: El sistema transfiere el monto solicitado al cbu del cliente              |
-|                             |                                                                       | Paso 7: El sistema imprime recibo del credito                                     |
-| **Curso Alterno:**          | **Paso alternativo 5:** La cuenta no es valida, se notifica y fin CU. |                                                                                   |
-| **Postcondición:**          | Se transfiri                                                          |                                                                                   |
+| **Nombre del caso de uso:** | Solicitar credito                                                              |                                                                                   |
+| --------------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------- |
+| **Descripción:**            | Este caso de uso describe como un usuario solicita un credito                  |                                                                                   |
+| **Actores:**                | Usuario                                                                        |                                                                                   |
+| **Precondiciones:**         | El usuario debe tener una sesion activa                                        |                                                                                   |
+| **Curso Normal:**           | **Acciones del Actor**                                                         | **Acciones del sistema**                                                          |
+|                             | Paso 1: El usuario presiona el boton "Solicitar Prestamo"                      | Paso 2: El sistema solicita el monto, fotos del dni y del utlimo recibo de sueldo |
+|                             | Paso 3: El usuario ingresa el monto solicitado y adjunta las fotos solicitadas | Paso 4: Se ejecuta CU "Validar cuenta"                                            |
+|                             |                                                                                | Paso 7: El sistema imprime recibo del credito                                     |
+| **Curso Alterno:**          | **Paso 4:** La cuenta no es valida, se notifica y fin CU.                      |                                                                                   |
+| **Postcondición:**          | Se transfirio el dinero al cbu del cliente y se imprimio recibo de credito.    |                                                                                   |
+
+| **Nombre del caso de uso:** | Verificar cuenta                                                                |                                                               |
+| --------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| **Descripción:**            | Este caso de uso describe como el servidor externo verifica una cuenta          |                                                               |
+| **Actores:**                | Servidor del banco                                                              |                                                               |
+| **Precondiciones:**         | Se debe haber ejecutado CU "Solicitar credito"                                  |                                                               |
+| **Curso Normal:**           | **Acciones del Actor**                                                          | **Acciones del sistema**                                      |
+|                             | Paso 2: El servidor del banco establece conexion con el sistema                 | Paso 1:El sistema solicita conexion con el servidor del banco |
+|                             | Paso 3: El servidor del banco solicita dni y cbu                                | Paso 4: El sistema envia dni y cbu del cliente                |
+|                             | Paso 5: El servidor valida el dni y el cbu del cliente sea apto para un credito |                                                               |
+|                             |                                                                                 |                                                               |
+| **Curso Alterno:**          | **Paso 4:** La cuenta no es valida, se notifica y fin CU.                       |                                                               |
+| **Postcondición:**          | Se transfirio el dinero al cbu del cliente y se imprimio recibo de credito.     |                                                               |
