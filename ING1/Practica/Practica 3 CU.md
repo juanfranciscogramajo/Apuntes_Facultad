@@ -680,15 +680,16 @@ Realice el diagrama completo y los escenarios de los casos de uso identificados 
 | **Curso Alterno:**          | **Paso 4:** La cuenta no es valida, se notifica y fin CU.                      |                                                                                   |
 | **Postcondición:**          | Se transfirio el dinero al cbu del cliente y se imprimio recibo de credito.    |                                                                                   |
 
-| **Nombre del caso de uso:** | Verificar cuenta                                                                |                                                               |
-| --------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| **Descripción:**            | Este caso de uso describe como el servidor externo verifica una cuenta          |                                                               |
-| **Actores:**                | Servidor del banco                                                              |                                                               |
-| **Precondiciones:**         | Se debe haber ejecutado CU "Solicitar credito"                                  |                                                               |
-| **Curso Normal:**           | **Acciones del Actor**                                                          | **Acciones del sistema**                                      |
-|                             | Paso 2: El servidor del banco establece conexion con el sistema                 | Paso 1:El sistema solicita conexion con el servidor del banco |
-|                             | Paso 3: El servidor del banco solicita dni y cbu                                | Paso 4: El sistema envia dni y cbu del cliente                |
-|                             | Paso 5: El servidor valida el dni y el cbu del cliente sea apto para un credito |                                                               |
-|                             |                                                                                 |                                                               |
-| **Curso Alterno:**          | **Paso 4:** La cuenta no es valida, se notifica y fin CU.                       |                                                               |
-| **Postcondición:**          | Se transfirio el dinero al cbu del cliente y se imprimio recibo de credito.     |                                                               |
+| **Nombre del caso de uso:** | Verificar cuenta                                                            |                                                               |
+| --------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| **Descripción:**            | Este caso de uso describe como el servidor externo verifica una cuenta      |                                                               |
+| **Actores:**                | Servidor del banco                                                          |                                                               |
+| **Precondiciones:**         | Se debe haber ejecutado CU "Solicitar credito"                              |                                                               |
+| **Curso Normal:**           | **Acciones del Actor**                                                      | **Acciones del sistema**                                      |
+|                             | Paso 2: El servidor del banco responde solicitud de conexion                | Paso 1:El sistema solicita conexion con el servidor del banco |
+|                             |                                                                             | Paso 3: El sistema recibe conexion exitosa                    |
+|                             |                                                                             | Paso 4: El sistema solicita verificar cuenta                  |
+|                             | Paso 5: El servidor del banco solicita dni y cbu                            | Paso 6: El sistema envia dni y cbu del cliente                |
+|                             | Paso 7: El servidor valida la cuenta y envia respuesta                      | Paso 8;                                                       |
+| **Curso Alterno:**          | **Paso 4:** La cuenta no es valida, se notifica y fin CU.                   |                                                               |
+| **Postcondición:**          | Se transfirio el dinero al cbu del cliente y se imprimio recibo de credito. |                                                               |
