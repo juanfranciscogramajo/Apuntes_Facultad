@@ -1,1 +1,8 @@
-Finalmente el Gerente puede <font color="#ffff00">ver las estadísticas </font>de los impuestos y servicios cobrados. Para esto, se i<font color="#00b0f0">ngresa la clave maestra, un rango de fechas</font> sobre las cuales debe calcularse las estadísticas y el sistema debe mostrar los montos y la cantidad de cobros realizados, agrupando por empresa.
+## 2023 — Parcial Primera Fecha 25/10/23  
+Se desea automatizar un sistema que permita <font color="#ffff00">solicitar créditos</font> online en una financiera.
+Para poder solicitar un crédito es necesario estar <font color="#ffff00">registrado</font> en el sistema para lo cual debe <font color="#00b0f0">ingresarse mail (único y es utilizado como nombre de usuario), nombre, apellido, dirección, dni (no pueden existir dos usuarios con el mismo dni), ocupación y CBU.</font> Si el registro es exitoso, el sistema debe enviar al correo ingresado una contraseña generada aleatoriamente.
+Una vez <font color="#ffff00">autenticado</font> correctamente el <font color="#ff0000">usuario</font> se le habilita la opción de <font color="#ffff00">solicitar crédito</font>. Por seguridad una cuenta de usuario debe ser bloqueada al tercer intento de ingreso fallido.
+Para la solicitud del crédito debe<font color="#00b0f0"> ingresar el monto solicitado, se deben adjuntar fotos del dni y del último recibo de sueldo</font>. Luego el sistema debe conectarse con el <font color="#ff0000">servidor del banco</font> para<font color="#ffff00"> validar la cuenta del cliente</font> para lo cual le<font color="#00b0f0"> envía el dni y CBU del cliente</font>. Si el banco valida la cuenta, se encargará de transferir el monto solicitado al CBU del cliente.
+Una vez concretado el crédito el sistema imprime un recibo que deberá ser firmado por el cliente.
+Consigna requerida:  
+Realice el diagrama completo y los escenarios de los casos de uso identificados en el siguiente dominio. El diagrama debe contener extends y/o uses.
