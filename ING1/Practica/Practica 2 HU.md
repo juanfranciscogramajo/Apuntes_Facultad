@@ -1219,3 +1219,13 @@ Tenga en cuenta que cada vez que el sistema debe conectarse a la central, debe e
 - Escenario 2: Pago exitoso con 1er vencimiento
 - Escenario 3: Pago fallido por 2do vencimiento
 - Escenario 4: Pago fallido por error de comunicacion con central
+#### Frente
+**ID:** Registrar pagos
+**Titulo:** como gerente quiero registrar los cobros para que quede registrado en la central de cobros
+**Reglas de negocio:**
+- Solo es posible registrar los pagos 1 vez al dia
+#### Dorso
+**Criterios de aceptacion:**
+- Escenario 1:  Registro de cobros exitoso
+- Escenario 2:  Registro de cobros fallido por registro ya realizado en el dia
+- Escenario 3: Registro de cobros fallido por 
