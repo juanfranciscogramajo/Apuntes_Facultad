@@ -1,7 +1,34 @@
 
-## 5. Municipio de La Plata | Gestión de multas vehiculares
-Se requiere la implementación de un subsistema para la gestión de multas vehiculares. El proceso inicia cuando un <font color="#ff0000">empleado</font> <font color="#ffff00">registra una multa</font>, <font color="#7030a0">incluyendo la patente del vehículo, la fecha (la cual no puede ser anterior a 2 años), el motivo y el monto correspondiente. </font>En este punto, <font color="#00b0f0">el sistema genera un código de multa único y la fecha de vencimiento (60 días a partir de la fecha actual) así en cualquier momento otro subsistema se encargará de mandarle al dueño del vehículo la información de la multa.</font>
-Sólo los <font color="#ff0000">supervisores</font> tienen la autorización para <font color="#ffff00">eliminar una multa</font>, y, además, cuentan con la facultad de registrar la eliminación en el sistema. Para llevar a cabo la baja de una multa, el supervisor <font color="#7030a0">ingresa el código correspondiente y el motivo de la baja y, tras la confirmación,</font> <font color="#00b0f0">la multa se registra como "dada de baja" del sistema.</font>
-A través de la web, cualquier persona tiene la posibilidad de <font color="#ffff00">saldar una multa</font>. Para ello, el interesado<font color="#7030a0"> ingresa la patente del vehículo y selecciona de una lista la multa que desea abonar</font>. El proceso de pago (<font color="#ffff00">pagar con tarjeta</font>) se realiza mediante tarjeta de crédito, utilizando un <font color="#ff0000">sistema externo</font>. En este paso, se suministran el <font color="#7030a0">nombre del titular y el número de la tarjeta.</font> Una vez que los datos son <font color="#ff0000">verificados correctamente y se confirma la disponibilidad de fondos,</font> se procede a <font color="#00b0f0">efectuar el pago de la multa seleccionada</font>. Finalmente el <font color="#00b0f0">sistema genera un archivo pdf con la constancia de pago.</font>
-Consigna requerida:  
-Realice el diagrama completo y los escenarios de los casos de uso identificados en el siguiente dominio. El diagrama debe contener extends y/o uses.
+## 7. Vigilancia nocturna / Seguridad industrial | Dron de vigilancia autónomo
+Modele el comportamiento de un dron de vigilancia que patrulla una zona industrial durante la noche.
+El proceso comienza cuando el dron es activado por el sistema central y entra en modo espera, posado en su base de carga con la batería al 100%. En este estado, el dron permanece inactivo, pero con los sensores activos y atento a posibles movimientos o ruidos inusuales. Se asume que mientras el dron se encuentra en modo espera, la batería se carga automáticamente, sin requerir que dicha operación sea representada en el modelo.
+
+  
+
+Cuando el dron detecta un movimiento, su comportamiento varía según el origen:
+
+- Si el movimiento se detecta en el perímetro externo, el dron pone en marcha sus hélices, ilumina la zona con sus luces y comienza a inspeccionar desde la altura. La inspección en altura dura 10 segundos, luego si no se confirma la presencia de un intruso, el dron vuelve a la base.
+
+- Si el movimiento se detecta dentro del predio, el dron pone en marcha sus hélices, ilumina la zona con sus luces y comienza a patrullar. Cada 10 segundos el dron verifica la presencia de un intruso, emitiendo un pitido en caso de no detectarlo. Si transcurre un minuto y no se confirma la presencia de un intruso el dron vuelve a la base.
+
+  
+
+Durante la patrulla o inspección, si el dron confirma la presencia de un intruso, pasa al modo seguimiento, en el que enfoca su cámara en el objetivo y activa una sirena disuasoria. En este modo, el dron consume un 15% de batería cada 10 segundos debido al uso intensivo de sensores y motores.
+
+  
+
+El dron permanece en modo seguimiento hasta que ocurre alguno de los siguientes eventos:
+
+- El intruso abandona la zona.
+
+- La batería desciende por debajo del 20%.
+
+  
+
+Si la batería desciende por debajo del 20% o el intruso abandona la zona en el seguimiento, el dron vuelve a la base, enviando un mensaje a la central informando del acontecimiento.
+
+  
+
+En cualquier momento, si el operador emite una orden de cierre de jornada, el dron finaliza el proceso.
+
+**
