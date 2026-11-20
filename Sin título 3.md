@@ -1,10 +1,8 @@
-## 6. Logística de depósito | Robots autónomos de transporte de carga
-
-Ingeniería de software I 2023 — Parcial Primera Fecha 25/10/23
-Una empresa quiere usar robots autónomos para transportar productos dentro de su depósito. Los caminos que deben seguir los robots están compuestos por tramos e intersecciones, formando una red similar a un grafo.
-Cuando un <font color="#7030a0">robot recibe la orden de realizar una ruta</font>, queda<font color="#ff0000"> esperando</font> a que un empleado coloque la carga a transportar. Una vez que el <font color="#7030a0">empleado confirma que la carga está lista</font>, el robot <font color="#00b0f0">comienza el recorrido.</font>
-Para evitar las colisiones en las intersecciones, los robots cruzan según su prioridad. Cuando un robot <font color="#7030a0">llega a una intersección</font>, si<font color="#6425d0"> hay otro robot y éste tiene prioridad</font>, debe <font color="#00b0f0">detenerse</font> hasta que <font color="#6425d0">reciba una orden de continuar</font>. Cuando recibe dicha orden, el <font color="#00b0f0">robot selecciona un nuevo tramo y continúa su recorrido.</font>
-Si al <font color="#7030a0">llegar a la intersección no hay otro robot o bien hay otro robot pero de menor prioridad, </font>simplemente <font color="#00b0f0">selecciona el siguiente tramo y confirma el cruce por la intersección</font>.
-Mientras el robot está en movimiento <font color="#7030a0">si detecta algún objeto no identificado </font>en su cercanía debe <font color="#00b0f0">detenerse y esperar hasta que no detecte el objeto.</font>
-Finalmente, cuando el<font color="#6425d0"> robot llega a destino,</font> se <font color="#00b0f0">detiene y envía un mensaje para que un empleado retire la carga transportada.</font>
-IMPORTANTE: Modele la activación de los motores cuando el robot inicia un movimiento y la desactivación cuando se detiene.
+## ✔️10. Reservas de turnos en cancha de fútbol 5 | Subsistema on-line con bonificaciones
+Identifique TODAS las historias de usuario y para cada una de ellas:
+• Escriba la parte frontal de la tarjeta
+• Escriba los escenarios de éxito
+• Escriba un escenario de falla
+Se desea modelar un subsistema on-line para el manejo de reservas de turnos en una cancha de fútbol 5
+Para poder realizar una reserva es necesario <font color="#ffff00">registrarse</font> en el sistema. Para esto se debe <font color="#00b0f0">ingresar dni (es único y utilizado como nombre de usuario), nombre, apellido, edad, mail, dirección y en caso de registrarse por una recomendación del dni de la persona que recomendó.</font> !!! Una vez registrado <font color="#7030a0">el sistema generará una contraseña aleatoria que será enviada al correo ingresado. Si el registro es a través de una recomendación se le sumarán 10 puntos al usuario que ha recomendado. Además, si el usuario que ha recomendado llega a los 100 puntos, se le envía un correo electrónico avisando que es acreedor de un turno gratis, incrementando la cantidad de turnos gratis del usuario recomendado y seteando en 0 su cantidad de puntos.</font>
+Para <font color="#ffff00">realizar una reserva</font> es necesario estar <font color="#ffff00">autenticado</font> (no debe modelar el inicio ni cierre de sesión) e<font color="#00b0f0"> ingresar fecha, hora y cancha.</font> <font color="#7030a0">Si el turno está libre se otorga la reserva y se manda un mail a la persona que reservó con un código de reserva como comprobante indicando el precio bonificado o el precio del turno. Si el turno está ocupado, se informa que no hay turno para el día y la hora ingresada.  </font>
