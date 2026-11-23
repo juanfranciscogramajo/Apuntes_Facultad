@@ -52,3 +52,6 @@ bandasCerati = πcodigoB (σnombre_escenario = 'Gustavo Cerati'(Escenario|X|Reci
 bandasGardel = πcodigoB (σnombre_escenario = 'Carlos Gardel'(Escenario|X|Recital))
 π DNI, nombre, apellido, email(Integrante|X|(bandasCerati-bandasGardel))
 2-7)
+Banda <= σnombreBanda <> 'Ratones Paranoicos'(Banda)U π codigoB,nombreBanda,genero_musical,1983(σnombreBanda='Ratones Paranoicos'(Banda))
+2-8) 
+πnombreBanda,genero_musical,ano_creacion()
