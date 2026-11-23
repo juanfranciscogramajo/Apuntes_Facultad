@@ -38,3 +38,7 @@ compraronB <= π idCliente (σ nombreP = 'Producto B'(Factura |X| Detalle |X| Pr
 Producto<= Producto∪{(1000, “Producto Z”, “mi producto”, $10000, 1000)}
 2-1)
 π DNI, nombre, apellido, direccion, email, fecha_nacimiento(σ apellido = 'Garcia' ∨ fecha_nacimiento < '01/01/2005' ^ genero_musical = 'Rock and roll'(Integrante|X|Banda))
+2-2)
+escenarios2019 = πnroEscenario(σfecha >= '01/01/2019' ^ 'fecha<=31/12/2019'(Recital))
+πnombre_escenario, ubicación, descripción (Escenario|X|(πnroEscenario(Escenario) - escenarios2019)
+2-3)
