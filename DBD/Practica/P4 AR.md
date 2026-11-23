@@ -46,4 +46,8 @@ escenarios2019 = πnroEscenario(σfecha >= '01/01/2019' ^ 'fecha<=31/12/2019'(Re
 2-4)
 πnombreBanda, genero_musical, ano_creacion(σ cubierto=true^(fecha >= '01/01/2020' ^ 'fecha<=31/12/2020')(Banda|X|Recital|X|Escenario))
 2-5)
-π DNI, nombre, apellido, direccion, email(σ fecha_nacimiento >= '01/01/2005' ^ genero_musical = 'Rock and roll'(Integrante|X|Banda))
+π DNI, nombre, apellido, direccion, email(σ fecha_nacimiento >= '01/01/2000' ^fecha_nacimiento <= '31/12/2005' ^ genero_musical = 'Pop' ^ fecha >= '01/01/2020' ^ 'fecha<=31/12/2020' (Integrante|X|Banda|X|Recital)
+2-6)
+banda
+π DNI, nombre, apellido, email(σ fecha_nacimiento >= '01/01/2000' ^fecha_nacimiento <= '31/12/2005' ^ genero_musical = 'Pop' ^ fecha >= '01/01/2020' ^ 'fecha<=31/12/2020' (Integrante|X|Banda|X|Recital)
+2-7)
