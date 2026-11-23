@@ -10,5 +10,10 @@ Operadores derivados y extensiones
 - **Intersección (\(\cap \)):** Obtiene las tuplas comunes a dos relaciones compatibles.
 - **División (÷):** Encuentra tuplas de una relación que se relacionan con todas las de otra.
 - **Agregación y agrupación:** Extensiones prácticas para funciones como `SUM`, `COUNT`, `AVG`, `MIN` y
-1-1
-π nombre, apellido, DNI, telefono, direccion(σ (dni > 278342380))
+1-1)
+π nombre, apellido, DNI, telefono, direccion(σ (DNI > 278342380)(Cliente))
+1-2)
+π nombre, apellido, DNI, telefono, direccion(σ (DNI > 26345920 ^ total <= 100000)(Cliente|x| Factura))
+1-3) 
+π nombre, apellido, DNI, telefono, direccion(Cliente |x| σ (fecha >= '01/01/2020' ^ fecha <= '31/12/2020')( Factura))
+1-4)
