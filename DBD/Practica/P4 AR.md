@@ -18,4 +18,7 @@ Operadores derivados y extensiones
 1-3) 
 π nombre, apellido, DNI, telefono, direccion(Cliente |x| σ (fecha >= '01/01/2020' ^ fecha <= '31/12/2020')( Factura))
 1-4)$$\pi_{\text{nombre, apellido, DNI, telefono, direccion}} \left( \text{Cliente} - \pi_{\text{idCliente, nombre, apellido, DNI, telefono, direccion}} \left( \text{Cliente} \bowtie \sigma_{\text{fecha} \ge \text{'01/01/2020'} \land \text{fecha} \le \text{'31/12/2020'}}(\text{Factura}) \right) \right)$$
-1-5)π nombre, apellido, DNI, telefono, direccion(Cliente - π nombre, apellido, DNI, telefono, direccion(fecha <= '01/01/2020' ^ fecha >= '31/12/2020')( Factura))
+1-5)
+Compraron2020 <= π idCliente (σ fecha >= 01/01/2020 ^ fecha <= 31/12/2020(factura))
+CompraronSin2020 <= π idCliente (σ fecha <= 01/01/2020 ^ fecha >= 31/12/2020(factura))
+π nombre, apellido, DNI, telefono, direccion( Cliente |X| (ClienteSin2020 - Compraron2020))
