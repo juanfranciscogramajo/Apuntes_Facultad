@@ -33,4 +33,6 @@ compraronA <= π idCliente (σ nombreP = 'Producto A'(Factura |X| Detalle |X| Pr
 compraronB <= π idCliente (σ nombreP = 'Producto B'(Factura |X| Detalle |X| Producto))
 π nombre, apellido, DNI, telefono, direccion (Cliente |X| (compraronA - compraronB)) 
 1-9)
-facturasC <= π nroTicket (σ nombreP = 'Producto C'(Factura |X| Detalle |X| Producto))
+π nroTicket, total, fecha, hora, DNI(σ nombreP = 'Producto C'(Factura |X| Detalle |X| Producto|x|Cliente))
+1-10)
+Producto<= Producto∪{(1000, “Producto Z”, “mi producto”, $10000, 1000)}
