@@ -23,5 +23,6 @@ Compraron2020 <= π idCliente (σ fecha >= 01/01/2020 ^ fecha <= 31/12/2020(fact
 CompraronSin2020 <= π idCliente (σ fecha <= 01/01/2020 ^ fecha >= 31/12/2020(factura))
 π nombre, apellido, DNI, telefono, direccion( Cliente |X| (ClienteSin2020 - Compraron2020))
 1-6)
-
-π nombreP, descripcion, precio, stock (Productos |x| (σ idProducto (Detalle - factura)))
+π nombreP, descripcion, precio, stock (Producto |x| (π idProducto (Producto) - π idProducto (Detalle)))
+1-7)
+compraron <= π idCliente (Producto)
