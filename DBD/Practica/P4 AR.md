@@ -25,4 +25,5 @@ CompraronSin2020 <= π idCliente (σ fecha <= 01/01/2020 ^ fecha >= 31/12/2020(f
 1-6)
 π nombreP, descripcion, precio, stock (Producto |x| (π idProducto (Producto) - π idProducto (Detalle)))
 1-7)
+producto <= π idCliente (σ nombreP = 'ProductoX'(Producto)^fecha >= '01/01/2020' ^ fecha<= '31/12/2020'(Factura |X| Detalle |X| Producto))
 compraron <= π idCliente (Producto)
