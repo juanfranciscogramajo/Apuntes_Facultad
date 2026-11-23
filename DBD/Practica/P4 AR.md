@@ -54,4 +54,6 @@ bandasGardel = πcodigoB (σnombre_escenario = 'Carlos Gardel'(Escenario|X|Recit
 2-7)
 Banda <= σnombreBanda <> 'Ratones Paranoicos'(Banda)U π codigoB,nombreBanda,genero_musical,1983(σnombreBanda='Ratones Paranoicos'(Banda))
 2-8) 
-πnombreBanda,genero_musical,ano_creacion()
+bandas2020 <= πcodigoB(fecha >= '01/01/2020'^'fecha<=31/12/2020'(Recital))
+bandas2019 <= πcodigoB(fecha >= '01/01/2019'^'fecha<=31/12/2019'(Recital))
+πnombreBanda,genero_musical,ano_creacion(σ(fecha >= '01/01/2020' ^ 'fecha<=31/12/2020')^(fecha >= '01/01/2020' ^ 'fecha<=31/12/2020')(Bandas|X|Recital))
