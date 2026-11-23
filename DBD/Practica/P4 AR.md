@@ -44,3 +44,4 @@ escenarios2019 = πnroEscenario(σfecha >= '01/01/2019' ^ 'fecha<=31/12/2019'(Re
 2-3)
 πnombre_escenario, ubicación, descripción (σ(fecha >= '01/01/2020' ^ 'fecha<=31/12/2020')∨ genero_musical = 'Rock and roll'(Recital|X|Banda|X|Escenario))
 2-4)
+πnombreBanda, genero_musical, ano_creacion(σ cubierto=true^(fecha >= '01/01/2020' ^ 'fecha<=31/12/2020')(Recital|X|Banda|X|Escenario))
