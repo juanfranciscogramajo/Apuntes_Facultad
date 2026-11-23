@@ -17,3 +17,4 @@ Operadores derivados y extensiones
 1-3) 
 π nombre, apellido, DNI, telefono, direccion(Cliente |x| σ (fecha >= '01/01/2020' ^ fecha <= '31/12/2020')( Factura))
 1-4)
+π nombre, apellido, DNI, telefono, direccion(Cliente |x| - (fecha >= '01/01/2020' ^ fecha <= '31/12/2020')( Factura))
