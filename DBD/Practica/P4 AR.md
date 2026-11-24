@@ -90,3 +90,6 @@ viajes2020 <= σ CODIGOPOSTAL (πcpDestino (σFECHA >= '01/01/2020' ^ FECHA <= '
 3-9)
 agencias2019<=πrazon_social(σFECHA >= '01/01/2019' ^ FECHA <= '31/12/2019'(Viaje))
 ( Agencia ⋈ A2019 ) ∪ σ dirección='General Pinto 1234' (Agencia)
+3-10)
+ClientesSin<=Cliente - σDNI=2789655(Cliente)
+Cliente<= ClienteSin U πDNI, nombre, apellido, '221-4400345', dirección(σDNI=)
