@@ -73,3 +73,10 @@ Agencia-viajes
 viajes2020 <= πrazon_social(σFECHA >= '01/01/2020' ^ FECHA <= '31/12/2020'(Viaje))
 viajes2019 <= πrazon_social(σFECHA >= '01/01/2019' ^ FECHA <= '31/12/2019'(Viaje))
 πRAZON_SOCIAL,direccion,telef,e-mail(Agencia|X|(viajes2019-viajes2020))
+3-5)
+Agencia <= Agencia U {(2000, 132 1231, 2231451234, casamarino@gmail.com)}
+3-6)
+3-4)
+viajes2020 <= πrazon_social(σFECHA >= '01/01/2020' ^ FECHA <= '31/12/2020'(Viaje))
+viajes2019 <= πrazon_social(σFECHA >= '01/01/2019' ^ FECHA <= '31/12/2019'(Viaje))
+πDNI, nombre, apellido, teléfono, dirección(Agencia|X|(viajes2019-viajes2020))
