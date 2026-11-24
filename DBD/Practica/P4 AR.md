@@ -89,5 +89,4 @@ viajes2020 <= σ CODIGOPOSTAL (πcpDestino (σFECHA >= '01/01/2020' ^ FECHA <= '
 πCODIGOPOSTAL, nombreCiudad, añoCreacion(Ciudad|X|(πCODIGOPOSTAL(Ciudad)-viajes2020))
 3-9)
 agencias2019<=πrazon_social(σFECHA >= '01/01/2019' ^ FECHA <= '31/12/2019'(Viaje))
-
-πRAZON_SOCIAL, dirección, telef, e-mail()
+( Agencia ⋈ A2019 ) ∪ σ dirección='General Pinto 1234' (Agencia)
