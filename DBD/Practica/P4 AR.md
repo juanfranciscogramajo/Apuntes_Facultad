@@ -76,7 +76,8 @@ viajes2019 <= πrazon_social(σFECHA >= '01/01/2019' ^ FECHA <= '31/12/2019'(Via
 3-5)
 Agencia <= Agencia U {(2000, 132 1231, 2231451234, casamarino@gmail.com)}
 3-6)
-3-4)
-viajes2020 <= πrazon_social(σFECHA >= '01/01/2020' ^ FECHA <= '31/12/2020'(Viaje))
-viajes2019 <= πrazon_social(σFECHA >= '01/01/2019' ^ FECHA <= '31/12/2019'(Viaje))
-πDNI, nombre, apellido, teléfono, dirección(Agencia|X|(viajes2019-viajes2020))
+lp <= πCODIGOPOSTAL(σnombreCiudad='La Plata'(Ciudad))
+lincoln <= πCODIGOPOSTAL(σnombreCiudad='Lincoln'(Ciudad))
+viajesLincoln<=πDNI(σcpDestino=lincoln(Viaje))
+viajesLp<=πDNI(σcpOrigen=lp(Viaje))
+πDNI, nombre, apellido, teléfono, dirección(Cliente|X|(viajesLincoln-viajesLp))
