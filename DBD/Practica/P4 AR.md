@@ -67,5 +67,5 @@ Locales <=πDNI(σcpOrigen=cpDestino(viaje))
 NoLocales <=πDNI(σcpOrigen<>cpDestino(viaje))
 πDNI, nombre, apellido, telefono, direccion(Cliente|X|(NoLocales-Locales))
 3-3)
-
-πRAZON_SOCIAL,direccion,telef,e-mail(σcpOrigen=cpDestino(viaje))
+viajes <= πRAZON_SOCIAL,direccion,telef,e-mail(σDNI <> 22222222 ^ FECHA >= '01/01/2020' ^ FECHA <= '31/12/2020'(Viaje))
+Agencia-viajes)
