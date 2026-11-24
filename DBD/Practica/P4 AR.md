@@ -78,6 +78,6 @@ Agencia <= Agencia U {(2000, 132 1231, 2231451234, casamarino@gmail.com)}
 3-6)
 lp <= πCODIGOPOSTAL(σnombreCiudad='La Plata'(Ciudad))
 lincoln <= πCODIGOPOSTAL(σnombreCiudad='Lincoln'(Ciudad))
-viajesLincoln<=πDNI(σcpDestino=lincoln(Viaje))
-viajesLp<=πDNI(σcpOrigen=lp(Viaje))
+viajesLincoln<=πDNI(Viaje|X|lincoln)
+viajesLp<=πDNI(Viaje|X|lp))
 πDNI, nombre, apellido, teléfono, dirección(Cliente|X|(viajesLincoln-viajesLp))
