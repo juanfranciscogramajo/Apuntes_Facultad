@@ -95,4 +95,7 @@ ClientesSin<=Cliente - σDNI=2789655(Cliente)
 Cliente<= ClienteSin U πDNI, nombre, apellido, '221-4400345', dirección(σDNI=2789655(Cliente))
 4-1)
 
-πDNI, nombre apellido, email
+πDNI, nombre apellido, email(σciudad='La Plata' ^ fecha >= '01/01/2019' ^ fecha <= '31/12/2019'(Integrante|X|Inscripcion|X|Torneo))
+4-2)
+equipos2019<=πfecha >= '01/01/2019' ^ fecha <= '31/12/2019')
+πnombreE, descripcionE
