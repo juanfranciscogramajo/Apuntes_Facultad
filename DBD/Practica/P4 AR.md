@@ -93,3 +93,6 @@ agencias2019<=πrazon_social(σFECHA >= '01/01/2019' ^ FECHA <= '31/12/2019'(Via
 3-10)
 ClientesSin<=Cliente - σDNI=2789655(Cliente)
 Cliente<= ClienteSin U πDNI, nombre, apellido, '221-4400345', dirección(σDNI=2789655(Cliente))
+4-1)
+
+πDNI, nombre apellido, email
