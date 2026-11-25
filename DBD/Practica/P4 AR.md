@@ -108,3 +108,4 @@ lagunas2019 <= πnroLaguna(σfecha < '01/01/2019' ^ fecha > '31/12/2019'(TorneoP
 torneos2019 <=πcodTorneo(σfecha >= '01/01/2020' ^ fecha <= '31/12/2020'^ nombreL = 'laguna x'(TorneoPesca|X|Laguna))
 gan <=πcodigoE(σgano =  true(Inscripcion|X|torneos2019)) 
 πnombreE, descripcionE(Equipo|X|gan)
+4-5)
