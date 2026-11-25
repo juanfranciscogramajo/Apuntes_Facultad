@@ -97,5 +97,8 @@ Cliente<= ClienteSin U πDNI, nombre, apellido, '221-4400345', dirección(σDNI=
 
 πDNI, nombre apellido, email(σciudad='La Plata' ^ fecha >= '01/01/2019' ^ fecha <= '31/12/2019'(Integrante|X|Inscripcion|X|Torneo))
 4-2)
-equipos2019<=πfecha >= '01/01/2019' ^ fecha <= '31/12/2019')
-πnombreE, descripcionE
+equipos2019<=πcodigoE(σfecha >= '01/01/2019' ^ fecha <= '31/12/2019'(Inscripcion|X|TorneoPesca))
+otro<=πcodigoE(σfecha < '01/01/2019' ^ fecha > '31/12/2019'(Inscripcion|X|TorneoPesca))
+πnombreE, descripcionE(Equipo|X|(equipos2019-otro)
+4-3)
+πnombreL, ubicacion, extension, descripcion()
