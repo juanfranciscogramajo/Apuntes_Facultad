@@ -109,5 +109,10 @@ torneos2019 <=πcodTorneo(σfecha >= '01/01/2020' ^ fecha <= '31/12/2020'^ nombr
 gan <=πcodigoE(σgano =  true(Inscripcion|X|torneos2019)) 
 πnombreE, descripcionE(Equipo|X|gan)
 4-5)
-EquipoLaguna
-πnombreE, descripcionE(Equipos % Inscripcion)
+EquipoLaguna <=πcodigoE, nroLaguna(Inscripcion|X| TorneoPesca)
+Lagunas<= nroLaguna(Laguna)
+πnombreE, descripcionE(Equipos |X|(EquipoLaguna%Lagunas))
+4-6)
+Equipo<= Equipo-σcodigo=1000(Equipo))
+Inscripcion<= Equipo-σcodigo=1000(Equipo))
+Equipo<= Equipo-σcodigo=1000(Equipo))
