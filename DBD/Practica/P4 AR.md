@@ -101,4 +101,8 @@ equipos2019<=πcodigoE(σfecha >= '01/01/2019' ^ fecha <= '31/12/2019'(Inscripci
 otro<=πcodigoE(σfecha < '01/01/2019' ^ fecha > '31/12/2019'(Inscripcion|X|TorneoPesca))
 πnombreE, descripcionE(Equipo|X|(equipos2019-otro)
 4-3)
-πnombreL, ubicacion, extension, descripcion()
+lagunas2020 <= πnroLaguna(σfecha < '01/01/2020' ^ fecha > '31/12/2020'(TorneoPesca))
+lagunas2019 <= πnroLaguna(σfecha < '01/01/2019' ^ fecha > '31/12/2019'(TorneoPesca))
+πnombreL, ubicacion, extension, descripcion(Laguna|X|(lagunas2019-lagunas2020))
+4-4)
+nombre
