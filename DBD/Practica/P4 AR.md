@@ -109,3 +109,4 @@ torneos2019 <=πcodTorneo(σfecha >= '01/01/2020' ^ fecha <= '31/12/2020'^ nombr
 gan <=πcodigoE(σgano =  true(Inscripcion|X|torneos2019)) 
 πnombreE, descripcionE(Equipo|X|gan)
 4-5)
+πnombreE, descripcionE(Equipos % Inscripcion)
