@@ -113,6 +113,10 @@ EquipoLaguna <=πcodigoE, nroLaguna(Inscripcion|X| TorneoPesca)
 Lagunas<= nroLaguna(Laguna)
 πnombreE, descripcionE(Equipos |X|(EquipoLaguna%Lagunas))
 4-6)
-Equipo<= Equipo-σcodigo=1000(Equipo))
-Inscripcion<= Equipo-σcodigo=1000(Equipo))
-Equipo<= Equipo-σcodigo=1000(Equipo))
+Equipo<= Equipo - σcodigo=1000(Equipo))
+Inscripcion<= Inscripcion - σcodigo=1000(Equipo))
+Integrante<= Integrante - σcodigo=1000(Equipo))
+4-7)
+lagunas <= σnroLaguna(TorneoPesca)
+nros<= σnro
+πnombreL, ubicacion, extension, descripcion(Laguna -
