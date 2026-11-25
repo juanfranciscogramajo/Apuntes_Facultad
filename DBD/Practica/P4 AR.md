@@ -117,6 +117,8 @@ Equipo<= Equipo - σcodigo=1000(Equipo))
 Inscripcion<= Inscripcion - σcodigo=1000(Equipo))
 Integrante<= Integrante - σcodigo=1000(Equipo))
 4-7)
-lagunas <= σnroLaguna(TorneoPesca)
-nros<= σnro
-πnombreL, ubicacion, extension, descripcion(Laguna -
+lagunas <= πnroLaguna(TorneoPesca)
+nros<= πnroLaguna(Laguna)-Lagunas
+πnombreL, ubicacion, extension, descripcion(Laguna |X|nros)
+4-8)
+equipos2019<= πcodigoE((σfecha < '01/01/2019' ^ fecha > '31/12/2019'(Inscripcion))
