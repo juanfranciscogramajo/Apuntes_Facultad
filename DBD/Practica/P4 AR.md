@@ -121,5 +121,6 @@ lagunas <= πnroLaguna(TorneoPesca)
 nros<= πnroLaguna(Laguna)-Lagunas
 πnombreL, ubicacion, extension, descripcion(Laguna |X|nros)
 4-8)
-equipos2019<= πcodigoE((σfecha < '01/01/2019' ^ fecha > '31/12/2019'(Inscripción))
-equipos2020<= πcodigoE((σfecha < '01/01/2020' ^ fecha > '31/12/2020'(Inscripción))
+equipos2019<= πcodigoE((σfecha < '01/01/2019' ^ fecha > '31/12/2019'(Inscripción|x|TorneoPesca))
+equipos2020<= πcodigoE((σfecha < '01/01/2020' ^ fecha > '31/12/2020'(Inscripción|x|TorneoPesca))
+πnombreE, descripcionE(Equipo |X|(equipos2019-equipos2020))
