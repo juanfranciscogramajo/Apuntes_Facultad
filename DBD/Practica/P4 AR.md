@@ -150,3 +150,8 @@ clubes <= π codigoClub (σ hasta = null (Jugadores |X| ClubJugador))
 5-6)
 clubes <=  π dni, codigoClub (ClubJugador) % π codigoClub (Club)
 π nombre, apellido (Jugador |X| clubes)
+5-7)
+lp<=π codigoCiudad (σ nombre = 'La Plata'(Ciudad))
+jugadores<=π dni (Jugador |X| lp)
+clubes<=π codigoClub (ClubJugador |X| jugadores)
+club <= Club |X| clubes
