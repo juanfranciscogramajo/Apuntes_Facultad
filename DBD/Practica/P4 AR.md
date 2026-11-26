@@ -124,3 +124,10 @@ equipos2019<= πcodigoE((σfecha < '01/01/2019' ^ fecha > '31/12/2019'(Inscripci
 equipos2020<= πcodigoE((σfecha < '01/01/2020' ^ fecha > '31/12/2020'(Inscripción|x|TorneoPesca))
 πnombreE, descripcionE(Equipo |X|(equipos2019-equipos2020))
 5-1)
+lp <=  πcodigoCiudad(σnombre = 'La Plata')
+clubLP <= Club|X| lp
+est <= ρ (codigoEstadio, codigoClub, nombreEstadio, direccion) (Estadio)
+π nombre, anioFundacion, nombreEstadio, direccion (clubesLP |X| est)
+5-2)
+riverPlate<= π codigoClub(σnombre = 'River Plate'(Club)
+boca<= π codigoClub(σnombre = 'Boca Juniors'(Club)
