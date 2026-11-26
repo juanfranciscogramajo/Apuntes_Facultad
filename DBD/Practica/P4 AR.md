@@ -11,7 +11,7 @@ Operadores derivados y extensiones
 - **División (÷):** Encuentra tuplas de una relación que se relacionan con todas las de otra.
 - **Agregación y agrupación:** Extensiones prácticas para funciones como `SUM`, `COUNT`, `AVG`, `MIN` y
 - 
-1-1)
+## 1-1)
 π nombre, apellido, DNI, telefono, direccion(σ (DNI > 278342380)(Cliente))
 1-2)
 π nombre, apellido, DNI, telefono, direccion(σ (DNI > 26345920 ^ total <= 100000)(Cliente|x| Factura))
@@ -36,7 +36,7 @@ compraronB <= π idCliente (σ nombreP = 'Producto B'(Factura |X| Detalle |X| Pr
 π nroTicket, total, fecha, hora, DNI(σ nombreP = 'Producto C'(Factura |X| Detalle |X| Producto|x|Cliente))
 1-10)
 Producto<= Producto∪{(1000, “Producto Z”, “mi producto”, $10000, 1000)}
-2-1)
+## 2-1)
 π DNI, nombre, apellido, direccion, email, fecha_nacimiento(σ apellido = 'Garcia' ∨ fecha_nacimiento < '01/01/2005' ^ genero_musical = 'Rock and roll'(Integrante|X|Banda))
 2-2)
 escenarios2019 = πnroEscenario(σfecha >= '01/01/2019' ^ 'fecha<=31/12/2019'(Recital))
@@ -59,7 +59,7 @@ bandas2019 <= πcodigoB(σfecha >= '01/01/2019'^'fecha<=31/12/2019'(Recital))
 πnombreBanda,genero_musical,ano_creacion(Banda|X|(bandas2020∩bandas2019))
 2-9)
 πnombreBanda,fecha,hora,nombre_escenario,ubicacion(σ fecha ='14/12/2019'(Bandas|X|Recital|X|Escenario))
-3-1)
+## 3-1)
 Cliente <= Cliente-(σDni = 25326992(Cliente))
 Viaje <= Viaje-(σDni = 25326992(Cliente))
 3-2)
@@ -93,8 +93,7 @@ agencias2019<=πrazon_social(σFECHA >= '01/01/2019' ^ FECHA <= '31/12/2019'(Via
 3-10)
 ClientesSin<=Cliente - σDNI=2789655(Cliente)
 Cliente<= ClienteSin U πDNI, nombre, apellido, '221-4400345', dirección(σDNI=2789655(Cliente))
-4-1)
-
+## 4-1)
 πDNI, nombre apellido, email(σciudad='La Plata' ^ fecha >= '01/01/2019' ^ fecha <= '31/12/2019'(Integrante|X|Inscripcion|X|Torneo))
 4-2)
 equipos2019<=πcodigoE(σfecha >= '01/01/2019' ^ fecha <= '31/12/2019'(Inscripcion|X|TorneoPesca))
