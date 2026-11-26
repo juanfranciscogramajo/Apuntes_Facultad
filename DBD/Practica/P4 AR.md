@@ -123,7 +123,7 @@ nros<= πnroLaguna(Laguna)-Lagunas
 equipos2019<= πcodigoE((σfecha < '01/01/2019' ^ fecha > '31/12/2019'(Inscripción|x|TorneoPesca))
 equipos2020<= πcodigoE((σfecha < '01/01/2020' ^ fecha > '31/12/2020'(Inscripción|x|TorneoPesca))
 πnombreE, descripcionE(Equipo |X|(equipos2019-equipos2020))
-5-1)
+## 5-1)
 lp <=  πcodigoCiudad(σnombre = 'La Plata')
 clubLP <= Club|X| lp
 est <= ρ (codigoEstadio, codigoClub, nombreEstadio, direccion) (Estadio)
@@ -132,3 +132,4 @@ est <= ρ (codigoEstadio, codigoClub, nombreEstadio, direccion) (Estadio)
 riverPlate<= π dni(σnombre = 'River Plate'^hasta=null(Club|X|ClubJugador)
 boca<= π dni(σnombre = 'Boca Juniors'(Club|X|ClubJugador)
 π dni,nombre,apellido,edad,codigoCiudad (jugador |X| (riverPlate ∩ boca))
+5-3)
