@@ -129,5 +129,6 @@ clubLP <= Club|X| lp
 est <= ρ (codigoEstadio, codigoClub, nombreEstadio, direccion) (Estadio)
 π nombre, anioFundacion, nombreEstadio, direccion (clubesLP |X| est)
 5-2)
-riverPlate<= π codigoClub(σnombre = 'River Plate'(Club)
-boca<= π codigoClub(σnombre = 'Boca Juniors'(Club)
+riverPlate<= π dni(σnombre = 'River Plate'^hasta=null(Club|X|ClubJugador)
+boca<= π dni(σnombre = 'Boca Juniors'(Club|X|ClubJugador)
+π dni,nombre,apellido,edad,codigoCiudad (jugador |X| (riverPlate ∩ boca))
