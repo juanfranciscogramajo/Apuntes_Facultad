@@ -160,4 +160,6 @@ clubR <= π codigoClub(σ nombre = 'Rosario Central'(Club))
 jugadores<= π dni(ClubJugador |X| clubR)
 π dni, nombre, apellido (Jugador |X| jugadores)\
 5-9)
-j <= π dni (σ dni = 24242424 )
+j <= π dni (σ dni = 24242424 (Jugador))
+ClubJugador <= (ClubJugador - (ClubJugador |X| j))
+Jugador <= (Jugador - (Jugador |X| j))
