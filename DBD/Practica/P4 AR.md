@@ -176,3 +176,7 @@ empleFront <= π DNI (Empleado_Equipo |X| front)
 π DNI, nombre, apellido, telefono, direccion (Empleado |X| (empleBack U empleFront))
 6-4)
 sinEmp <= π codEquipo (Equipo) - π codEquipo(Empleado_Equipo)
+lid <= π DNI
+equip <= σ descripcionTecnologias = 'Java'(Equipo |X| sinEmp)
+lider <= ρ (DNILider, nombre, apellido, telefono, direccion, fechaIngreso) (Empleado)
+π nombreE, DNILider, nombre, apellido, telefono, direccion, fechaIngreso (java |X| lider)
