@@ -181,6 +181,8 @@ equip <= σ descripcionTecnologias = 'Java'(Equipo |X| sinEmp)
 lider <= ρ (DNILider, nombre, apellido, telefono, direccion, fechaIngreso) (Empleado)
 π nombreE, DNILider, nombre, apellido, telefono, direccion, fechaIngreso (java |X| lider)
 6-5)
-emp <= σ DNI = 40568965(Empleado)
+emp <= σ DNI = 40568965 (Empleado)
 Empleado <= Empleado - emp
 Empleado <= Empleado U {(40568965, carlos, Memen, 221323, 213123124, 03/10/2023)}
+6-6)
+resp <= 
