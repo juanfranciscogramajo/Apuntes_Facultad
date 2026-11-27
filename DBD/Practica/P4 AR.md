@@ -182,4 +182,5 @@ lider <= ρ (DNILider, nombre, apellido, telefono, direccion, fechaIngreso) (Emp
 π nombreE, DNILider, nombre, apellido, telefono, direccion, fechaIngreso (java |X| lider)
 6-5)
 emp <= σ DNI = 40568965(Empleado)
-Empleado <= Equipo - emp
+Empleado <= Empleado - emp
+Empleado <= Empleado U {(40568965, carlos, Memen, 221323, 213123124, 03/10/2023)}
