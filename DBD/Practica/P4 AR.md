@@ -192,3 +192,7 @@ lid <= ρ DNI(π DNILider(Equipo))
 a)
 10.2)
 a)
+10.3)
+a,d
+10.4) a,d
+10.5) b,c
