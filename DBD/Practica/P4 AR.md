@@ -185,4 +185,6 @@ emp <= σ DNI = 40568965 (Empleado)
 Empleado <= Empleado - emp
 Empleado <= Empleado U {(40568965, carlos, Memen, 221323, 213123124, 03/10/2023)}
 6-6)
-resp <= 
+resp <= ρ DNI(π DNIResponsable(Proyecto))
+lid <= ρ DNI(π DNILider(Equipo))
+π DNI, nombre, apellido, telefono, direccion (Empleado |X| (resp - lid)) 
